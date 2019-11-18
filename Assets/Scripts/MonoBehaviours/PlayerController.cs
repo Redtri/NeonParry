@@ -118,7 +118,9 @@ public class PlayerController : MonoBehaviour
         if(strike.cooldown.CanRefresh(Time.time)) {
             strike.cooldown.Refresh(Time.time);
             animator.SetTrigger("strike");
-            Attack();
+            if (Attack()) {
+                GameManager.instance.StrikeSuccessful(playerIndex);
+            }
         }
     }
 
