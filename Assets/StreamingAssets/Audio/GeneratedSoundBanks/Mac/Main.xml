@@ -13,10 +13,15 @@
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<IncludedEvents>
+				<Event Id="3991942870" Name="Music" ObjectPath="\Events\Default Work Unit\Music" GUID="{1B46CDCB-E9F7-47CF-87B5-82B35654E733}" DurationType="OneShot" DurationMin="121.263168" DurationMax="121.263168"/>
 				<Event Id="573997305" Name="SFX_Test2" ObjectPath="\Events\Default Work Unit\SFX_Test2" GUID="{ECC339CE-D821-4306-BFD7-013F5EF8464A}" DurationType="OneShot" DurationMin="1.407379" DurationMax="1.579729"/>
 				<Event Id="3157003241" Name="Test" ObjectPath="\Events\Default Work Unit\Test" GUID="{B3DBF2E6-5D55-4325-8F08-F9C702943000}" DurationType="OneShot" DurationMin="0.241979" DurationMax="0.241979"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
+				<File Id="718859843" Language="SFX">
+					<ShortName>TennisVoice_BO_v1.wav</ShortName>
+					<Path>SFX/TennisVoice_BO_v1_D79FB2B7.wem</Path>
+				</File>
 				<File Id="773513163" Language="SFX">
 					<ShortName>Metal Hit 01.wav</ShortName>
 					<Path>SFX/Metal Hit 01_10C4C929.wem</Path>

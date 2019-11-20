@@ -1,8 +1,10 @@
 Event	ID	Name			Wwise Object Path	Notes
 	573997305	SFX_Test2			\Default Work Unit\SFX_Test2	
 	3157003241	Test			\Default Work Unit\Test	
+	3991942870	Music			\Default Work Unit\Music	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	718859843	TennisVoice_BO_v1	Y:\Desktop\Cours ENJMIN\NanoProjet\Git_Sound\NeonParrySound\NeonParry_WwiseProject\.cache\Mac\SFX\TennisVoice_BO_v1_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\TennisVoice_BO_v1\TennisVoice_BO_v1		21390888
 	773513163	Metal Hit 01	Y:\Desktop\Cours ENJMIN\NanoProjet\Git_Sound\NeonParrySound\NeonParry_WwiseProject\.cache\Mac\SFX\Metal Hit 01_10C4C929.wem		\Actor-Mixer Hierarchy\SFX\Metal Hit 01		263088
 	958968845	New Sound SFX	Y:\Desktop\Cours ENJMIN\NanoProjet\Git_Sound\NeonParrySound\NeonParry_WwiseProject\.cache\Mac\SFX\break_back_bone_snappy_10C4C929.wem		\Actor-Mixer Hierarchy\SFX\New Sound SFX		46524
 

@@ -32,6 +32,15 @@
     "Path": "Main.bnk",
     "IncludedEvents": [
      {
+      "Id": "3991942870",
+      "Name": "Music",
+      "ObjectPath": "\\Events\\Default Work Unit\\Music",
+      "GUID": "{1B46CDCB-E9F7-47CF-87B5-82B35654E733}",
+      "DurationType": "OneShot",
+      "DurationMin": "121.263168",
+      "DurationMax": "121.263168"
+     },
+     {
       "Id": "573997305",
       "Name": "SFX_Test2",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX_Test2",
@@ -51,6 +60,12 @@
      }
     ],
     "IncludedMemoryFiles": [
+     {
+      "Id": "718859843",
+      "Language": "SFX",
+      "ShortName": "TennisVoice_BO_v1.wav",
+      "Path": "SFX/TennisVoice_BO_v1_D79FB2B7.wem"
+     },
      {
       "Id": "773513163",
       "Language": "SFX",
