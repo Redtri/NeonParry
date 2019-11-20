@@ -13,25 +13,25 @@ MonoBehaviour:
   m_Name: AkWwiseProjectData
   m_EditorClassIdentifier: 
   AcousticTextureWwu:
-  - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
+  - PhysicalPath: Virtual Acoustics/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 83551d33ae3a43489959aa0b3f1739e1
     GuidInternal: 
-    m_lastTime: -8586274227914234480
+    m_lastTime: -8586273406794775808
     List: []
   AuxBusWwu:
-  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
+  - PhysicalPath: Master-Mixer Hierarchy/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 56f6a746797f0a4fbbe996ff7dbe6fa2
     GuidInternal: 
-    m_lastTime: -8586274227915487467
+    m_lastTime: -8586273406804775808
     List: []
   BankWwu:
-  - PhysicalPath: SoundBanks\Default Work Unit.wwu
+  - PhysicalPath: SoundBanks/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: aab038f70511ac40accedade1b746b70
     GuidInternal: 
-    m_lastTime: -8586274208985818547
+    m_lastTime: -8586273406794775808
     List:
     - name: Main
       guid: ffba85163ec5c641b7a666271bb1c36e
@@ -41,14 +41,26 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Main
         ObjectType: 7
-      Path: Default Work Unit\Main
+      Path: Default Work Unit/Main
   EventWwu:
-  - PhysicalPath: Events\Default Work Unit.wwu
+  - PhysicalPath: Events/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 2a81fdbbb1505e4aa9b924cc4da74340
     GuidInternal: 
-    m_lastTime: -8586274208985778414
+    m_lastTime: -8586273406804775808
     List:
+    - name: SFX_Test2
+      guid: ce39c3ec21d80643bfd7013f5ef8464a
+      id: 573997305
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX_Test2
+        ObjectType: 3
+      Path: Default Work Unit/SFX_Test2
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Test
       guid: e6f2dbb3555d25438f08f9c702943000
       id: 3157003241
@@ -57,37 +69,37 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Test
         ObjectType: 3
-      Path: Default Work Unit\Test
+      Path: Default Work Unit/Test
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
   RtpcWwu:
-  - PhysicalPath: Game Parameters\Default Work Unit.wwu
+  - PhysicalPath: Game Parameters/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 877bfb69bb34254997bc686db894f7e0
     GuidInternal: 
-    m_lastTime: -8586274227914883438
+    m_lastTime: -8586273406804775808
     List: []
   StateWwu:
-  - PhysicalPath: States\Default Work Unit.wwu
+  - PhysicalPath: States/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 63f8cb137edd08448f7f5c3e8e1dcee3
     GuidInternal: 
-    m_lastTime: -8586274227914284398
+    m_lastTime: -8586273406794775808
     List: []
   SwitchWwu:
-  - PhysicalPath: Switches\Default Work Unit.wwu
+  - PhysicalPath: Switches/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: a4f6631705f8a84f9dbce18c0a015370
     GuidInternal: 
-    m_lastTime: -8586274227914663792
+    m_lastTime: -8586273406794775808
     List: []
   TriggerWwu:
-  - PhysicalPath: Triggers\Default Work Unit.wwu
+  - PhysicalPath: Triggers/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 81cfa00d5576604d8c63d698b38a82dd
     GuidInternal: 
-    m_lastTime: -8586274227914698735
+    m_lastTime: -8586273406794775808
     List: []
   ExpandedItems:
   - /NeonParry_WwiseProject

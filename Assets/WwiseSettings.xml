@@ -7,7 +7,7 @@
   <GenerateSoundBanksAsPreBuildStep>false</GenerateSoundBanksAsPreBuildStep>
   <ShowMissingRigidBodyWarning>true</ShowMissingRigidBodyWarning>
   <SoundbankPath>Audio/GeneratedSoundBanks</SoundbankPath>
-  <WwiseInstallationPathMac />
+  <WwiseInstallationPathMac>/Applications/Audiokinetic/Wwise 2019.1.4.7065/Wwise.app</WwiseInstallationPathMac>
   <WwiseInstallationPathWindows>C:\Program Files (x86)\Audiokinetic\Wwise 2019.1.5.7093</WwiseInstallationPathWindows>
-  <WwiseProjectPath>../../../Git_Son/NeonParrySound/NeonParry_WwiseProject/NeonParry_WwiseProject.wproj</WwiseProjectPath>
+  <WwiseProjectPath>../../../Git_Sound/NeonParrySound/NeonParry_WwiseProject/NeonParry_WwiseProject.wproj</WwiseProjectPath>
 </WwiseSettings>
