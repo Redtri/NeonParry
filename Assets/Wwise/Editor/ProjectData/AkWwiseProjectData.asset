@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9323ba3b6a46b64489d044e9d21feec1, type: 3}
+  m_Name: AkWwiseProjectData
+  m_EditorClassIdentifier: 
+  AcousticTextureWwu:
+  - PhysicalPath: Virtual Acoustics/Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 83551d33ae3a43489959aa0b3f1739e1
+    GuidInternal: 
+    m_lastTime: -8586273406794775808
+    List: []
+  AuxBusWwu:
+  - PhysicalPath: Master-Mixer Hierarchy/Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 56f6a746797f0a4fbbe996ff7dbe6fa2
+    GuidInternal: 
+    m_lastTime: -8586273406804775808
+    List: []
+  BankWwu:
+  - PhysicalPath: SoundBanks/Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: aab038f70511ac40accedade1b746b70
+    GuidInternal: 
+    m_lastTime: -8586273368864775808
+    List:
+    - name: Main
+      guid: ffba85163ec5c641b7a666271bb1c36e
+      id: 3161908922
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Main
+        ObjectType: 7
+      Path: Default Work Unit/Main
+  EventWwu:
+  - PhysicalPath: Events/Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 2a81fdbbb1505e4aa9b924cc4da74340
+    GuidInternal: 
+    m_lastTime: -8586273368864775808
+    List:
+    - name: Music
+      guid: cbcd461bf7e9cf4787b582b35654e733
+      id: 3991942870
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 3
+      Path: Default Work Unit/Music
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: SFX_Test2
+      guid: ce39c3ec21d80643bfd7013f5ef8464a
+      id: 573997305
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX_Test2
+        ObjectType: 3
+      Path: Default Work Unit/SFX_Test2
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Test
+      guid: e6f2dbb3555d25438f08f9c702943000
+      id: 3157003241
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Test
+        ObjectType: 3
+      Path: Default Work Unit/Test
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+  RtpcWwu:
+  - PhysicalPath: Game Parameters/Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 877bfb69bb34254997bc686db894f7e0
+    GuidInternal: 
+    m_lastTime: -8586273406804775808
+    List: []
+  StateWwu:
+  - PhysicalPath: States/Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 63f8cb137edd08448f7f5c3e8e1dcee3
+    GuidInternal: 
+    m_lastTime: -8586273406794775808
+    List: []
+  SwitchWwu:
+  - PhysicalPath: Switches/Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: a4f6631705f8a84f9dbce18c0a015370
+    GuidInternal: 
+    m_lastTime: -8586273406794775808
+    List: []
+  TriggerWwu:
+  - PhysicalPath: Triggers/Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 81cfa00d5576604d8c63d698b38a82dd
+    GuidInternal: 
+    m_lastTime: -8586273406794775808
+    List: []
+  ExpandedItems:
+  - /NeonParry_WwiseProject
+  - /NeonParry_WwiseProject/Events
+  - /NeonParry_WwiseProject/Events/Default Work Unit
+  - /NeonParry_WwiseProject/SoundBanks
+  - /NeonParry_WwiseProject/SoundBanks/Default Work Unit
+  autoPopulateEnabled: 1
+  CurrentPluginConfig: 

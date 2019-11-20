@@ -61,3 +61,11 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+# wwise
+.cache/
+*.akd
+*.validationcache
+[Aa]ssets/WwiseSettings.xml
+
+Assets/WwiseSettings.xml.meta
+# End of https://www.gitignore.io/api/unity
