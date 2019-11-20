@@ -1,0 +1,59 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "11",
+  "SoundbankVersion": "134",
+  "RootPaths": {
+   "ProjectRoot": "/Users/romainmineur/Library/Application Support/Wwise2019/Bottles/wwise/dosdevices/y:/Desktop/Cours ENJMIN/NanoProjet/Git_Sound/NeonParrySound/NeonParry_WwiseProject/",
+   "SourceFilesRoot": "/Users/romainmineur/Library/Application Support/Wwise2019/Bottles/wwise/dosdevices/y:/Desktop/Cours ENJMIN/NanoProjet/Git_Sound/NeonParrySound/NeonParry_WwiseProject/.cache/Windows/",
+   "SoundBanksRoot": "/Users/romainmineur/Library/Application Support/Wwise2019/Bottles/wwise/dosdevices/y:/Desktop/Cours ENJMIN/NanoProjet/Git_Prog/NeonParry/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/",
+   "ExternalSourcesInputFile": "",
+   "ExternalSourcesOutputRoot": "/Users/romainmineur/Library/Application Support/Wwise2019/Bottles/wwise/dosdevices/y:/Desktop/Cours ENJMIN/NanoProjet/Git_Sound/NeonParrySound/NeonParry_WwiseProject/GeneratedSoundBanks/Windows"
+  },
+  "SoundBanks": [
+   {
+    "Id": "3161908922",
+    "GUID": "{1685BAFF-C53E-41C6-B7A6-66271BB1C36E}",
+    "Language": "SFX",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
+    "ShortName": "Main",
+    "Path": "Main.bnk",
+    "IncludedEvents": [
+     {
+      "Id": "573997305",
+      "Name": "SFX_Test2",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX_Test2",
+      "GUID": "{ECC339CE-D821-4306-BFD7-013F5EF8464A}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.407379",
+      "DurationMax": "1.579729"
+     },
+     {
+      "Id": "3157003241",
+      "Name": "Test",
+      "ObjectPath": "\\Events\\Default Work Unit\\Test",
+      "GUID": "{B3DBF2E6-5D55-4325-8F08-F9C702943000}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.241979",
+      "DurationMax": "0.241979"
+     }
+    ],
+    "IncludedMemoryFiles": [
+     {
+      "Id": "773513163",
+      "Language": "SFX",
+      "ShortName": "Metal Hit 01.wav",
+      "Path": "SFX/Metal Hit 01_10C4C929.wem"
+     },
+     {
+      "Id": "958968845",
+      "Language": "SFX",
+      "ShortName": "break_back_bone_snappy.wav",
+      "Path": "SFX/break_back_bone_snappy_10C4C929.wem"
+     }
+    ]
+   }
+  ]
+ }
+}
