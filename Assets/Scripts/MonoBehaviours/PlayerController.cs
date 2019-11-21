@@ -139,7 +139,6 @@ public class PlayerController : MonoBehaviour
             if (strike.IsActionPerforming(Time.time)) {
                 if (opponent) {
                     if (opponent.parry.IsActionPerforming(Time.time, strike.direction)) {
-                        print("HEY : Reset");
                         Debug.Log("Opponent parried successfully");
                         ResetPerforming();
                         strike.BlankRefreshTime(Time.time);
@@ -150,7 +149,6 @@ public class PlayerController : MonoBehaviour
                     }
                 }
             } else {
-                print("HEY : Not performing");
                 if (strokeOpponent) {
                     Debug.Log("Opponent being stroke successfully");
                     GameManager.instance.StrikeSuccessful(playerIndex);
@@ -240,7 +238,7 @@ public class PlayerController : MonoBehaviour
     public void Attack() {
         strike.Refresh(Time.time);
         strike.direction = charge.direction;
-        sprRenderer.color = Color.black;
+        sprRenderer.color = Color.magenta;
     }
 
     private IEnumerator Striking() {

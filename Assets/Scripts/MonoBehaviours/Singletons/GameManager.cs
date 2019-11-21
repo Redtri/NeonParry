@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void StrikeSuccessful(int playerIndex) {
+        Camera.main.GetComponent<CameraShake>().Shake();
         ++ playerInfos[playerIndex].score;
     }
 }
