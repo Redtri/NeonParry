@@ -22,7 +22,9 @@ public class UI_Manager : MonoBehaviour
     }
 
     private void RefreshScore() {
-        scoreLeft.text = GameManager.instance.playerInfos[0].score.ToString();
-        scoreRight.text = GameManager.instance.playerInfos[1].score.ToString();
+        if (GameManager.instance.playerInfos.Count > 1) {
+            scoreLeft.text = GameManager.instance.playerInfos[0].score.ToString();
+            scoreRight.text = GameManager.instance.playerInfos[1].score.ToString();
+        }
     }
 }

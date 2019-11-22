@@ -9,5 +9,5 @@
   <SoundbankPath>Audio/GeneratedSoundBanks</SoundbankPath>
   <WwiseInstallationPathMac>/Applications/Audiokinetic/Wwise 2019.1.4.7065/Wwise.app</WwiseInstallationPathMac>
   <WwiseInstallationPathWindows>C:\Program Files (x86)\Audiokinetic\Wwise 2019.1.5.7093</WwiseInstallationPathWindows>
-  <WwiseProjectPath>../../../Git_Sound/NeonParrySound/NeonParry_WwiseProject/NeonParry_WwiseProject.wproj</WwiseProjectPath>
+  <WwiseProjectPath>../NeonParrySound/NeonParry_WwiseProject/NeonParry_WwiseProject.wproj</WwiseProjectPath>
 </WwiseSettings>

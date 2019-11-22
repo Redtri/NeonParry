@@ -1,0 +1,3 @@
+[submodule "NeonParrySound"]
+	path = NeonParrySound
+	url = https://github.com/kinaar/NeonParrySound.git
