@@ -165,6 +165,7 @@ public class PlayerController : MonoBehaviour
         cursorAnimator.SetFloat("duration_strike", 1 / strike.currentActionDuration);
         cursorAnimator.SetFloat("duration_charge", 1 / charge.currentActionDuration);
         cursorAnimator.SetFloat("duration_parry", 1 / parry.currentActionDuration);
+        charge.currentCooldownDuration = strike.currentActionDuration + charge.currentCooldownDuration;
     }
 
     private void InitController(InputAction.CallbackContext value) {
