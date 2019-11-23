@@ -213,19 +213,25 @@ MonoBehaviour:
   opponent: {fileID: 0}
   sword: {fileID: 5317940446147470247}
   strike:
-    cooldownDuration: 0
+    baseCooldownDuration: 0
+    currentCooldownDuration: 0
     lastRefreshTime: 0
-    actionDuration: 0.45
+    baseActionDuration: 0.5
+    currentActionDuration: 0
     direction: 0
   charge:
-    cooldownDuration: 1.5
+    baseCooldownDuration: 1
+    currentCooldownDuration: 0
     lastRefreshTime: 0
-    actionDuration: 0.3
+    baseActionDuration: 0.3
+    currentActionDuration: 0
     direction: 0
   parry:
-    cooldownDuration: 0.05
+    baseCooldownDuration: 0.25
+    currentCooldownDuration: 0
     lastRefreshTime: 0
-    actionDuration: 0.25
+    baseActionDuration: 0.25
+    currentActionDuration: 0
     direction: 0
   angleFullWindow: 130
   nbDirections: 3
