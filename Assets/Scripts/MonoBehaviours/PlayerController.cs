@@ -165,7 +165,10 @@ public class PlayerController : MonoBehaviour
         cursorAnimator.SetFloat("duration_strike", 1 / strike.currentActionDuration);
         cursorAnimator.SetFloat("duration_charge", 1 / charge.currentActionDuration);
         cursorAnimator.SetFloat("duration_parry", 1 / parry.currentActionDuration);
-        charge.currentCooldownDuration = strike.currentActionDuration + charge.currentCooldownDuration;
+        animator.SetFloat("duration_strike", 1 / strike.currentActionDuration);
+        animator.SetFloat("duration_parry", 1 / parry.currentActionDuration);
+        animator.SetFloat("duration_charge", 1 / charge.currentActionDuration);
+        charge.currentCooldownDuration = strike.currentActionDuration + charge.baseCooldownDuration;
     }
 
     private void InitController(InputAction.CallbackContext value) {
@@ -222,7 +225,7 @@ public class PlayerController : MonoBehaviour
                 performingAction = true;
                 charge.direction = currentDirection;
 
-                //animator.SetTrigger("strike");
+                animator.SetTrigger("strike");
                 cursorAnimator.SetTrigger("strike");
                 Invoke("Attack", charge.currentActionDuration);
                 sprRenderer.color = Color.yellow;
@@ -237,7 +240,7 @@ public class PlayerController : MonoBehaviour
                 performingAction = true;
                 parry.direction = currentDirection;
 
-                //animator.SetTrigger("parry");
+                animator.SetTrigger("parry");
                 cursorAnimator.SetTrigger("parry");
                 Invoke("ResetPerforming", parry.currentActionDuration);
                 sprRenderer.color = Color.cyan;

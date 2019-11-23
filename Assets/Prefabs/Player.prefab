@@ -223,7 +223,7 @@ MonoBehaviour:
     baseCooldownDuration: 1
     currentCooldownDuration: 0
     lastRefreshTime: 0
-    baseActionDuration: 0.3
+    baseActionDuration: 0.6
     currentActionDuration: 0
     direction: 0
   parry:
@@ -234,7 +234,7 @@ MonoBehaviour:
     currentActionDuration: 0
     direction: 0
   angleFullWindow: 130
-  nbDirections: 3
+  nbDirections: 5
   facingLeft: 0
 --- !u!1001 &5774975942321685648
 PrefabInstance:
