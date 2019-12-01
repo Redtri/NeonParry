@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StateDash : PlayerState
 {
+    private Vector3 startPosition;
 
     public StateDash(PlayerController player, FSM_Player machine, SwordAction infos, ePLAYER_STATE next, eSTATE_PRIORITY statePriority) :
         base(player, machine, infos, next, statePriority) {
@@ -12,14 +13,14 @@ public class StateDash : PlayerState
     
     public override void Enter()
     {
-        owner.currentSpotIndex++;
         base.Enter();
+        ++owner.currentSpotIndex;
+        startPosition = owner.transform.position;
     }
 
     public override void Update() {
         base.Update();
-        float mult = (owner.facingLeft) ? 1f : -1f;
-        owner.transform.Translate(new Vector3(mult * (GameManager.instance.stepValue / actionInfos.currentActionDuration) * Time.deltaTime, 0, 0));
+        owner.transform.position = Vector3.Lerp(startPosition, GameManager.instance.GetDashPos(owner.playerIndex), (Time.time- actionInfos.lastRefreshTime)/actionInfos.currentActionDuration);
     }
 
     public override void Exit(bool reset = false) {

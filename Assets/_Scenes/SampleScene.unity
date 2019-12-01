@@ -987,10 +987,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a62f4a39ef83d64c97b7ee2d84acd12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nbSteps: 3
-  stepValue: 0.5
-  spotsLeft: []
-  spotsRight: []
+  nbSteps: 4
+  stepValue: 0.4
+  spots: []
 --- !u!1 &1316008281
 GameObject:
   m_ObjectHideFlags: 3

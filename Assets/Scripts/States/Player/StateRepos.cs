@@ -4,33 +4,26 @@ using UnityEngine;
 
 public class StateRepos : PlayerState
 {
-    private bool opponentParried;
+    private Vector3 startPosition;
 
     public StateRepos(PlayerController player, FSM_Player machine, SwordAction infos, ePLAYER_STATE next, eSTATE_PRIORITY statePriority) :
         base(player, machine, infos, next, statePriority) {
-        stateColor = Color.magenta;
+        stateColor = Color.grey;
     }
     
     public override void Enter()
     {
         base.Enter();
-        opponentParried = false;
+        --owner.currentSpotIndex;
+        startPosition = owner.transform.position;
     }
 
     public override void Update() {
         base.Update();
-        if(owner.opponent.parry.IsActionPerforming(Time.time, actionInfos.direction)) {
-            Debug.Log("Opponent parried successfully");
-            opponentParried = true;
-            stateMachine.ChangeState(nextState);
-        }
+        owner.transform.position = Vector3.Lerp(startPosition, GameManager.instance.GetDashPos(owner.playerIndex), (Time.time - actionInfos.lastRefreshTime) / actionInfos.currentActionDuration);
     }
 
     public override void Exit(bool reset = false) {
         base.Exit(reset);
-        if (!opponentParried) {
-            Debug.Log("Opponent being stroke successfully");
-            GameManager.instance.StrikeSuccessful(owner.playerIndex);
-        }
     }
 }

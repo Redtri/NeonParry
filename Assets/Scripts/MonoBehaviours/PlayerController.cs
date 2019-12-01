@@ -192,12 +192,14 @@ public class PlayerController : MonoBehaviour
     }
 
     private void OnDash(InputAction.CallbackContext value) {
-        if (machineState.StateRequest(ePLAYER_STATE.DASH)) {
-
+        if(currentSpotIndex < GameManager.instance.nbSteps-1) {
+            if (machineState.StateRequest(ePLAYER_STATE.DASH)) {
+                opponent.OnOpponentDash();
+            }
         }
     }
 
     public void OnOpponentDash() {
-
+        machineState.StateRequest(ePLAYER_STATE.REPOS);
     }
 }

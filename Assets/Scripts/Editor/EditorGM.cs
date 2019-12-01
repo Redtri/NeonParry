@@ -12,17 +12,27 @@ public class EditorGM : Editor
         gm = (GameManager)target;
 
         if(gm != null) {
-            Handles.color = Color.blue;
+            Handles.color = Color.red;
+
+            if(gm.spots != null) {
+                for (int i = 0; i < gm.spots.Count; ++i) {
+                    Debug.DrawLine(gm.spots[i], gm.spots[i] + Vector3.up);
+                }
+            }
+            
+            /*
             float stepValue = gm.stepValue;
             float startPoint = 0f;
             int nbSteps = gm.nbSteps;
-
+            
             for (int i = 0; i < nbSteps; ++i) {
                 Vector3 tmp = new Vector3(startPoint + i*stepValue + (stepValue/2), 0f, 0f);
                 Handles.DrawLine(tmp, tmp + Vector3.up*1f);
                 tmp = new Vector3((startPoint + i * stepValue + (stepValue / 2)) * -1f, 0f, 0f);
                 Handles.DrawLine(tmp, tmp + Vector3.up * 1f);
             }
+            */
+            
         }
     }
 }
