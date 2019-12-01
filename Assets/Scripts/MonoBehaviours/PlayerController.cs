@@ -195,9 +195,14 @@ public class PlayerController : MonoBehaviour
     private void OnDash(InputAction.CallbackContext value) {
         if(currentSpotIndex < GameManager.instance.nbSteps-1) {
             if (machineState.StateRequest(ePLAYER_STATE.DASH)) {
-                opponent.OnOpponentDash();
+                StartCoroutine(OpponentDashDelay());
             }
         }
+    }
+    //Coroutine used to trigger the opponent REPOS state because otherwise, it is done in the same frame and doesn't detect the player dash when striking
+    private IEnumerator OpponentDashDelay() {
+        yield return new WaitForSeconds(0.0001f);
+        opponent.OnOpponentDash();
     }
 
     public void OnOpponentDash() {
