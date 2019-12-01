@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3794bc4213b39841892bd9ba646cf79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overlappedSword: {fileID: 0}
+  overlappedOpponent: {fileID: 0}
 --- !u!95 &8930808059521085736
 Animator:
   serializedVersion: 3
@@ -132,7 +132,7 @@ Animator:
   m_GameObject: {fileID: 473848070671101330}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: faa2bab7feec0234488fa0204e5af07a, type: 2}
+  m_Controller: {fileID: 22100000, guid: 8f561c968e581864780fde9ffcf3775b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1

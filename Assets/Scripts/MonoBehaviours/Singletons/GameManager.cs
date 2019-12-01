@@ -17,6 +17,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public int nbSteps;
+    public float stepValue;
+    [HideInInspector] public List<Vector3> spotsLeft;
+    [HideInInspector] public List<Vector3> spotsRight;
     public List<PlayerInfo> playerInfos;
     public static GameManager instance { get; private set; }
 
@@ -27,6 +31,13 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject);
         }
         playerInfos = new List<PlayerInfo>();
+        spotsLeft = new List<Vector3>();
+        spotsRight = new List<Vector3>();
+
+        for (int i = 0; i < nbSteps; ++i) {
+            spotsRight.Add(new Vector3(i * stepValue + (stepValue / 2), 0f, 0f));
+            spotsLeft.Add(new Vector3((i * stepValue + (stepValue / 2)) * -1f, 0f, 0f));
+        }
     }
 
     // Update is called once per frame
@@ -45,11 +56,11 @@ public class GameManager : MonoBehaviour
 
         switch (playerIndex) {
             case 0:
-                newPlayer.transform.position -= new Vector3(0.125f, 0, 0);
+                newPlayer.transform.position = spotsLeft[0];
                 newPlayer.facingLeft = false;
                 break;
             case 1:
-                newPlayer.transform.position += new Vector3(0.125f, 0, 0);
+                newPlayer.transform.position = spotsRight[0];
                 newPlayer.facingLeft = true;
                 newPlayer.opponent = playerInfos[0].controller;
                 playerInfos[0].controller.opponent = newPlayer;
