@@ -3,96 +3,98 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public enum eDIRECTION { UP, MID, DOWN };
+public enum eDIRECTION { NONE, UP, MID, DOWN };
+public enum eCONTROLLER { KEYBOARD, GAMEPAD };
+
+//CLASSES
+[System.Serializable]
+public class SwordAction : Action {
+    [HideInInspector] public eDIRECTION direction;
+    public AnimationCurve curve;
+
+    public bool IsActionPerforming(float time, eDIRECTION tDirection) {
+        return base.IsActionPerforming(time) && direction == tDirection;
+    }
+}
+[System.Serializable]
+public class Action : Cooldown {
+    public float baseActionDuration;
+    public float currentActionDuration;
+
+    public override void Init(float time) {
+        base.Init(time);
+        currentActionDuration = baseActionDuration;
+    }
+
+    public bool IsActionPerforming(float time) {
+        return (time <= lastRefreshTime + currentActionDuration);
+    }
+}
+//TODO : We may want to create a separate class file for this one as Cooldowns could be used by other classes.
+[System.Serializable]
+public class Cooldown {
+    public float baseCooldownDuration;
+    public float currentCooldownDuration;
+    [HideInInspector] public float lastRefreshTime;
+
+    //INIT
+    public virtual void Init(float time) {
+        currentCooldownDuration = baseCooldownDuration;
+        BlankRefreshTime(time);
+    }
+
+    public void BlankRefreshTime(float time) {
+        lastRefreshTime = time - currentCooldownDuration;
+    }
+
+    //TESTS
+    public bool CanRefresh(float time) {
+        return (time - lastRefreshTime > currentCooldownDuration);
+    }
+
+    //OPERATIONS
+    public void Refresh(float time) {
+        if (CanRefresh(time)) {
+            lastRefreshTime = time;
+        }
+    }
+}
 
 public class PlayerController : MonoBehaviour
 {
-    //CLASSES
-    [System.Serializable]
-    public class SwordAction : Action {
-        [HideInInspector] public eDIRECTION direction;
-
-        public SwordAction(float tDuration, float time) :
-            base(tDuration, time)
-        {
-            actionDuration = tDuration;
-            lastRefreshTime = time;
-        }
-
-        public bool IsActionPerforming(float time, eDIRECTION tDirection) {
-            return base.IsActionPerforming(time) && direction == tDirection;
-        }
-    }
-    [System.Serializable]
-    public class Action : Cooldown {
-        public float actionDuration;
-
-        public Action(float tDuration, float time) :
-            base(tDuration, time)
-        {
-            cooldownDuration = tDuration;
-            lastRefreshTime = time;
-        }
-
-        public bool IsActionPerforming(float time) {
-            return (time <= lastRefreshTime + actionDuration);
-        }
-    }
-    //TODO : We may want to create a separate class file for this one as Cooldowns could be used by other classes.
-    [System.Serializable]
-    public class Cooldown {
-        public float cooldownDuration;
-        [HideInInspector] public float lastRefreshTime;
-
-        //INIT
-        public Cooldown(float tDuration, float time) {
-            cooldownDuration = tDuration;
-            lastRefreshTime = time - cooldownDuration;
-        }
-
-        public void BlankRefreshTime(float time) {
-            lastRefreshTime = time - cooldownDuration;
-        }
-
-        //TESTS
-        public bool CanRefresh(float time) {
-            return (time - lastRefreshTime > cooldownDuration);
-        }
-
-        //OPERATIONS
-        public void Refresh(float time) {
-            if (CanRefresh(time)) {
-                lastRefreshTime = time;
-            }
-        }
-    }
     
     //REFERENCES
     private PlayerInput inputSystem;
-    private Animator animator;
-    private Animator cursorAnimator;
-    private SpriteRenderer sprRenderer;
+    public Animator animator { get; private set; }
+    public Animator cursorAnimator { get; private set; }
+    public SpriteRenderer sprRenderer { get; private set; }
     private Rigidbody2D rb;
     [HideInInspector] public PlayerController opponent;
     [Header("REFERENCES")]
     [SerializeField] private Sword sword;
     //PARAMETERS
     [Header("PARAMETERS")]
-    [SerializeField] private SwordAction strike;
-    [SerializeField] private SwordAction charge;
-    [SerializeField] private SwordAction parry;
+    [SerializeField] public SwordAction strike;
+    [SerializeField] public SwordAction charge;
+    [SerializeField] public SwordAction parry;
+    [SerializeField] public SwordAction dash;
     [SerializeField, Range(0, 180)] private float angleFullWindow;
     [SerializeField, Range(2, 10)] private int nbDirections;
 
     //OTHER
-    private int playerIndex;
-    public bool facingLeft;
+    public int playerIndex { get; private set; }
+    [HideInInspector] public bool facingLeft;
+    private eCONTROLLER controllerType;
+
+    private FSM_Player machineState;
     private Vector2 look;
     private eDIRECTION currentDirection;
     private bool performingAction;
     private bool strokeOpponent;
+    public int currentSpotIndex { get; set; }
 
     private void Awake() {
+
         //REFERENCES
         inputSystem = this.GetComponent<PlayerInput>();
         animator = this.GetComponent<Animator>();
@@ -101,29 +103,33 @@ public class PlayerController : MonoBehaviour
         sprRenderer = this.GetComponent<SpriteRenderer>();
 
         //VALUES
+        machineState = new FSM_Player(this);
         angleFullWindow *= -1;
+        currentSpotIndex = 0;
         performingAction = false;
         strokeOpponent = false;
-        cursorAnimator.SetFloat("duration_strike", 1 / strike.actionDuration);
-        cursorAnimator.SetFloat("duration_charge", 1 / charge.actionDuration);
-        cursorAnimator.SetFloat("duration_parry", 1 / parry.actionDuration);
+        if (GetComponent<PlayerInput>().currentControlScheme.Contains("Keyboard")) {
+            controllerType = eCONTROLLER.KEYBOARD;
+        } else {
+            controllerType = eCONTROLLER.GAMEPAD;
+        }
 
         //LISTENERS
-        inputSystem.currentActionMap["Move"].performed += context => OnMovement(context);
-        inputSystem.currentActionMap["Move"].canceled += context => OnMovement(context);
-
         inputSystem.currentActionMap["Look"].performed += context => OnLook(context);
         inputSystem.currentActionMap["Look"].canceled += context => OnLook(context);
 
-        inputSystem.currentActionMap["Parry"].started += OnParry;
         inputSystem.currentActionMap["Strike"].started += OnStrike;
+        inputSystem.currentActionMap["Parry"].started += OnParry;
+        inputSystem.currentActionMap["Dash"].started += OnDash;
 
-        //Charge cooldown is the "attack" skill cooldown, so it needs to consider the strike duration in its cooldown
-        charge.cooldownDuration += strike.actionDuration;
-        strike.BlankRefreshTime(Time.time);
-        charge.BlankRefreshTime(Time.time);
-        parry.BlankRefreshTime(Time.time);
+        //Charge cooldown is the "attack" skill cooldown, so it needs to consider the strike duration as part of its cooldown
+
+        charge.Init(Time.time);
+        strike.Init(Time.time);
+        parry.Init(Time.time);
+        dash.Init(Time.time);
         sword.Initialize(this);
+        charge.currentCooldownDuration = strike.currentActionDuration + charge.currentCooldownDuration;
     }
 
     private void Start() {
@@ -133,53 +139,28 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update() {
         sprRenderer.flipX = facingLeft;
+        machineState.Update();
 
-        //TODO : FIXME
-        if (performingAction) {
-            if (strike.IsActionPerforming(Time.time)) {
-                if (opponent) {
-                    if (opponent.parry.IsActionPerforming(Time.time, strike.direction)) {
-                        Debug.Log("Opponent parried successfully");
-                        ResetPerforming();
-                        strike.BlankRefreshTime(Time.time);
-                        strokeOpponent = false;
-                        return;
-                    } else {
-                        strokeOpponent = true;
-                    }
-                }
-            } else {
-                if (strokeOpponent) {
-                    Debug.Log("Opponent being stroke successfully");
-                    GameManager.instance.StrikeSuccessful(playerIndex);
-                    ResetPerforming();
-                    strokeOpponent = false;
-                }
-            }
+        if(machineState.currentState == ePLAYER_STATE.NEUTRAL) {
+            performingAction = false;
+        } else {
+            performingAction = true;
         }
+    }
+
+    private void InitController(InputAction.CallbackContext value) {
+        controllerType = (value.control.ToString().Contains("Keyboard") ? eCONTROLLER.KEYBOARD : eCONTROLLER.GAMEPAD);
     }
 
     //INPUTS
 
-    private void OnMovement(InputAction.CallbackContext value) {
-        Vector2 movement = value.ReadValue<Vector2>();
-
-        //Player cannot move on vertical axis
-        movement.y = 0;
-        /*
-        rb.velocity = movement;
-        animator.SetFloat("speed", movement.magnitude);
-        if(movement.x < 0) {
-            facingLeft = true;
-        } else if(movement.x > 0){
-            facingLeft = false;
-        }
-        */
-    }
-
     private void OnLook(InputAction.CallbackContext value) {
         if (!performingAction) {
-            look = value.ReadValue<Vector2>().normalized;
+            if(controllerType == eCONTROLLER.KEYBOARD) {
+                look = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
+            } else {
+                look = value.ReadValue<Vector2>().normalized;
+            }
             //print("Look :" + look);
             var angleRadians = Mathf.Atan2(look.y, Mathf.Abs(look.x));
             var deg = (angleRadians * Mathf.Rad2Deg) - 90f;//-90 is offset sprite
@@ -193,55 +174,38 @@ public class PlayerController : MonoBehaviour
                 //print(deg);
                 deg *= -1f;
             }
-            currentDirection = (eDIRECTION)(nbDirections/Mathf.Abs(angleFullWindow / deg)-1);
+            currentDirection = (eDIRECTION)(nbDirections/Mathf.Abs(angleFullWindow / deg));
             sword.transform.rotation = Quaternion.Euler(0, 0, deg);
         }
     }
 
     private void OnStrike(InputAction.CallbackContext value) {
-        if (!performingAction) {
-            if (charge.CanRefresh(Time.time)) {
-                charge.Refresh(Time.time);
-                performingAction = true;
-                charge.direction = currentDirection;
-
-                //animator.SetTrigger("strike");
-                cursorAnimator.SetTrigger("strike");
-                Invoke("Attack", charge.actionDuration);
-                sprRenderer.color = Color.yellow;
-            }
+        if (machineState.StateRequest(ePLAYER_STATE.CHARGE)) {
+            charge.direction = currentDirection;
+            strike.direction = currentDirection;
         }
     }
 
     private void OnParry(InputAction.CallbackContext value) {
-        if (!performingAction) {
-            if (parry.CanRefresh(Time.time)) {
-                parry.Refresh(Time.time);
-                performingAction = true;
-                parry.direction = currentDirection;
-
-                //animator.SetTrigger("parry");
-                cursorAnimator.SetTrigger("parry");
-                Invoke("ResetPerforming", parry.actionDuration);
-                sprRenderer.color = Color.cyan;
-            }
+        if (machineState.StateRequest(ePLAYER_STATE.PARRY)) {
+            parry.direction = currentDirection;
         }
     }
 
-    //OTHER
-
-    private void ResetPerforming() {
-        performingAction = false;
-        sprRenderer.color = Color.white;
+    private void OnDash(InputAction.CallbackContext value) {
+        if(currentSpotIndex < GameManager.instance.nbSteps-1) {
+            if (machineState.StateRequest(ePLAYER_STATE.DASH)) {
+                StartCoroutine(OpponentDashDelay());
+            }
+        }
+    }
+    //Coroutine used to trigger the opponent REPOS state because otherwise, it is done in the same frame and doesn't detect the player dash when striking
+    private IEnumerator OpponentDashDelay() {
+        yield return new WaitForSeconds(0.0001f);
+        opponent.OnOpponentDash();
     }
 
-    public void Attack() {
-        strike.Refresh(Time.time);
-        strike.direction = charge.direction;
-        sprRenderer.color = Color.magenta;
-    }
-
-    private IEnumerator Striking() {
-        yield break;
+    public void OnOpponentDash() {
+        machineState.StateRequest(ePLAYER_STATE.REPOS);
     }
 }

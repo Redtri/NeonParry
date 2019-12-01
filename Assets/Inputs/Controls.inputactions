@@ -36,6 +36,22 @@
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Dash",
+                    "type": "Button",
+                    "id": "dd84da74-4fdb-4255-8c8d-4abe32083698",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Feint",
+                    "type": "Button",
+                    "id": "cd68e2ed-2dd8-4ac9-9235-75f86ba19ca7",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -107,8 +123,8 @@
                 },
                 {
                     "name": "",
-                    "id": "330d3fac-9d85-4f1b-81d7-93a6b8e2ad9d",
-                    "path": "<Gamepad>/rightStick",
+                    "id": "e8e811f1-55ad-430d-90f6-f9dcb4888c44",
+                    "path": "<Gamepad>/leftStick",
                     "interactions": "",
                     "processors": "StickDeadzone",
                     "groups": "Gamepad",
@@ -130,7 +146,7 @@
                 {
                     "name": "",
                     "id": "893d89db-644a-4717-83d0-4bbc7ee982f7",
-                    "path": "<Gamepad>/rightTrigger",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
@@ -152,7 +168,7 @@
                 {
                     "name": "",
                     "id": "0392e6bf-db6a-43e1-824f-e9d523f796ee",
-                    "path": "<Gamepad>/leftTrigger",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
@@ -168,6 +184,50 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Parry",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d7516e38-78ac-4b6c-bc4b-8ff8b4910a58",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2734f6e9-3d45-46fb-949b-4df640f1cfad",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ea2db4bb-9aa6-4b54-b277-d805fc9c1970",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Feint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "51a3d4d5-65c3-4070-b4a2-4e4034fdd4bd",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Feint",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -213,20 +213,102 @@ MonoBehaviour:
   opponent: {fileID: 0}
   sword: {fileID: 5317940446147470247}
   strike:
-    cooldownDuration: 0
+    baseCooldownDuration: 0
+    currentCooldownDuration: 0
     lastRefreshTime: 0
-    actionDuration: 0.45
+    baseActionDuration: 1.5
+    currentActionDuration: 0
     direction: 0
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.52407026
+        value: 0.21300133
+        inSlope: 1.0128763
+        outSlope: 1.0128763
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
   charge:
-    cooldownDuration: 1.5
+    baseCooldownDuration: 2
+    currentCooldownDuration: 0
     lastRefreshTime: 0
-    actionDuration: 0.3
+    baseActionDuration: 0.6
+    currentActionDuration: 0
     direction: 0
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
   parry:
-    cooldownDuration: 0.05
+    baseCooldownDuration: 0.25
+    currentCooldownDuration: 0
     lastRefreshTime: 0
-    actionDuration: 0.25
+    baseActionDuration: 0.25
+    currentActionDuration: 0
     direction: 0
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  dash:
+    baseCooldownDuration: 0.5
+    currentCooldownDuration: 0
+    lastRefreshTime: 0
+    baseActionDuration: 0.6
+    currentActionDuration: 0
+    direction: 0
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
   angleFullWindow: 130
   nbDirections: 3
   facingLeft: 0

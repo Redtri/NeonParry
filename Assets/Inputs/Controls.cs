@@ -49,6 +49,22 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Dash"",
+                    ""type"": ""Button"",
+                    ""id"": ""dd84da74-4fdb-4255-8c8d-4abe32083698"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Feint"",
+                    ""type"": ""Button"",
+                    ""id"": ""cd68e2ed-2dd8-4ac9-9235-75f86ba19ca7"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -120,8 +136,8 @@ public class @Controls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""330d3fac-9d85-4f1b-81d7-93a6b8e2ad9d"",
-                    ""path"": ""<Gamepad>/rightStick"",
+                    ""id"": ""e8e811f1-55ad-430d-90f6-f9dcb4888c44"",
+                    ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
                     ""processors"": ""StickDeadzone"",
                     ""groups"": ""Gamepad"",
@@ -143,7 +159,7 @@ public class @Controls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""893d89db-644a-4717-83d0-4bbc7ee982f7"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
@@ -165,7 +181,7 @@ public class @Controls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""0392e6bf-db6a-43e1-824f-e9d523f796ee"",
-                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
@@ -181,6 +197,50 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Parry"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d7516e38-78ac-4b6c-bc4b-8ff8b4910a58"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2734f6e9-3d45-46fb-949b-4df640f1cfad"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ea2db4bb-9aa6-4b54-b277-d805fc9c1970"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Feint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""51a3d4d5-65c3-4070-b4a2-4e4034fdd4bd"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Feint"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -223,6 +283,8 @@ public class @Controls : IInputActionCollection, IDisposable
         m_Gameplay_Look = m_Gameplay.FindAction("Look", throwIfNotFound: true);
         m_Gameplay_Strike = m_Gameplay.FindAction("Strike", throwIfNotFound: true);
         m_Gameplay_Parry = m_Gameplay.FindAction("Parry", throwIfNotFound: true);
+        m_Gameplay_Dash = m_Gameplay.FindAction("Dash", throwIfNotFound: true);
+        m_Gameplay_Feint = m_Gameplay.FindAction("Feint", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -276,6 +338,8 @@ public class @Controls : IInputActionCollection, IDisposable
     private readonly InputAction m_Gameplay_Look;
     private readonly InputAction m_Gameplay_Strike;
     private readonly InputAction m_Gameplay_Parry;
+    private readonly InputAction m_Gameplay_Dash;
+    private readonly InputAction m_Gameplay_Feint;
     public struct GameplayActions
     {
         private @Controls m_Wrapper;
@@ -284,6 +348,8 @@ public class @Controls : IInputActionCollection, IDisposable
         public InputAction @Look => m_Wrapper.m_Gameplay_Look;
         public InputAction @Strike => m_Wrapper.m_Gameplay_Strike;
         public InputAction @Parry => m_Wrapper.m_Gameplay_Parry;
+        public InputAction @Dash => m_Wrapper.m_Gameplay_Dash;
+        public InputAction @Feint => m_Wrapper.m_Gameplay_Feint;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -305,6 +371,12 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Parry.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnParry;
                 @Parry.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnParry;
                 @Parry.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnParry;
+                @Dash.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnDash;
+                @Dash.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnDash;
+                @Dash.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnDash;
+                @Feint.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFeint;
+                @Feint.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFeint;
+                @Feint.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFeint;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -321,6 +393,12 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Parry.started += instance.OnParry;
                 @Parry.performed += instance.OnParry;
                 @Parry.canceled += instance.OnParry;
+                @Dash.started += instance.OnDash;
+                @Dash.performed += instance.OnDash;
+                @Dash.canceled += instance.OnDash;
+                @Feint.started += instance.OnFeint;
+                @Feint.performed += instance.OnFeint;
+                @Feint.canceled += instance.OnFeint;
             }
         }
     }
@@ -349,5 +427,7 @@ public class @Controls : IInputActionCollection, IDisposable
         void OnLook(InputAction.CallbackContext context);
         void OnStrike(InputAction.CallbackContext context);
         void OnParry(InputAction.CallbackContext context);
+        void OnDash(InputAction.CallbackContext context);
+        void OnFeint(InputAction.CallbackContext context);
     }
 }
