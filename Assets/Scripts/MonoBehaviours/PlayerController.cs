@@ -10,6 +10,7 @@ public enum eCONTROLLER { KEYBOARD, GAMEPAD };
 [System.Serializable]
 public class SwordAction : Action {
     [HideInInspector] public eDIRECTION direction;
+    public AnimationCurve curve;
 
     public bool IsActionPerforming(float time, eDIRECTION tDirection) {
         return base.IsActionPerforming(time) && direction == tDirection;

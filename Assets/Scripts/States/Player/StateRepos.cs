@@ -20,7 +20,7 @@ public class StateRepos : PlayerState
 
     public override void Update() {
         base.Update();
-        owner.transform.position = Vector3.Lerp(startPosition, GameManager.instance.GetDashPos(owner.playerIndex), (Time.time - actionInfos.lastRefreshTime) / actionInfos.currentActionDuration);
+        owner.transform.position = Vector3.Lerp(startPosition, GameManager.instance.GetDashPos(owner.playerIndex), actionInfos.curve.Evaluate((Time.time - actionInfos.lastRefreshTime) / actionInfos.currentActionDuration));
     }
 
     public override void Exit(bool reset = false) {
