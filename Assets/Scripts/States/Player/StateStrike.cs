@@ -21,21 +21,25 @@ public class StateStrike : PlayerState
 
     public override void Update() {
         base.Update();
-        if(owner.opponent.parry.IsActionPerforming(Time.time, actionInfos.direction)) {
-            Debug.Log("Opponent parried successfully");
-            opponentParried = true;
-            stateMachine.ChangeState(nextState);
-        }else if (owner.opponent.dash.IsActionPerforming(Time.time)) {
-            Debug.Log("Opponent dodged, coward !");
-            opponentDashed = true;
+        if(owner.opponent != null) {
+            if (owner.opponent.parry.IsActionPerforming(Time.time, actionInfos.direction)) {
+                Debug.Log("Opponent parried successfully");
+                opponentParried = true;
+                stateMachine.ChangeState(nextState);
+            } else if (owner.opponent.dash.IsActionPerforming(Time.time)) {
+                Debug.Log("Opponent dodged, coward !");
+                opponentDashed = true;
+            }
         }
     }
 
     public override void Exit(bool reset = false) {
         base.Exit(reset);
-        if (!opponentParried && !opponentDashed) {
-            Debug.Log("Opponent being stroke successfully");
-            GameManager.instance.StrikeSuccessful(owner.playerIndex);
+        if (owner.opponent != null) {
+            if (!opponentParried && !opponentDashed) {
+                Debug.Log("Opponent being stroke successfully");
+                GameManager.instance.StrikeSuccessful(owner.playerIndex);
+            }
         }
     }
 }
