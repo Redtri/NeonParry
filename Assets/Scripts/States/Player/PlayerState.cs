@@ -28,6 +28,7 @@ public abstract class PlayerState
         owner.cursorAnimator.SetTrigger(stateMachine.currentState.ToString().ToLower());
         if (actionInfos != null) {
             actionInfos.Refresh(Time.time);
+            owner.animator.SetInteger("direction", (int)actionInfos.direction);
             //Refresh animation clips speeds
             owner.animator.SetFloat("duration_" + stateMachine.currentState.ToString().ToLower(), 1 / actionInfos.currentActionDuration);
             owner.cursorAnimator.SetFloat("duration_" + stateMachine.currentState.ToString().ToLower(), 1 / actionInfos.currentActionDuration);
@@ -43,11 +44,12 @@ public abstract class PlayerState
     }
 
     public virtual void Exit(bool reset = false) {
-        //TODO : Watch out, it may not do the expected thing
         if(actionInfos != null) {
             if (reset) {
                 actionInfos.BlankRefreshTime(Time.time);
             }
         }
+        owner.animator.ResetTrigger(stateMachine.currentState.ToString().ToLower());
+        owner.cursorAnimator.ResetTrigger(stateMachine.currentState.ToString().ToLower());
     }
 }
