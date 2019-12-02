@@ -100,7 +100,7 @@ public class PlayerController : MonoBehaviour
         animator = this.GetComponent<Animator>();
         cursorAnimator = sword.GetComponent<Animator>();
         rb = this.GetComponent<Rigidbody2D>();
-        sprRenderer = this.GetComponent<SpriteRenderer>();
+        sprRenderer = this.transform.GetChild(1).GetComponent<SpriteRenderer>();
 
         //VALUES
         machineState = new FSM_Player(this);
@@ -202,7 +202,9 @@ public class PlayerController : MonoBehaviour
     //Coroutine used to trigger the opponent REPOS state because otherwise, it is done in the same frame and doesn't detect the player dash when striking
     private IEnumerator OpponentDashDelay() {
         yield return new WaitForSeconds(0.0001f);
-        opponent.OnOpponentDash();
+        if(opponent != null) {
+            opponent.OnOpponentDash();
+        }
     }
 
     public void OnOpponentDash() {

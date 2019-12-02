@@ -1,0 +1,253 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf7c34a0dc4e6348bea04faa70406ee, type: 3}
+  m_Name: New Sprite Library Asset
+  m_EditorClassIdentifier: 
+  m_Labels:
+  - m_Name: head
+    m_Hash: -1477183844
+    m_CategoryList:
+    - m_Name: essai
+      m_Hash: -263891647
+      m_Sprite: {fileID: 2532419690149805059, guid: 98b70cdfff192974b95db4a8abedb64d,
+        type: 3}
+    - m_Name: kev
+      m_Hash: 439334456
+      m_Sprite: {fileID: 8743813795101218981, guid: 303b2b09f83632f48891c28bcace09d8,
+        type: 3}
+    - m_Name: 
+      m_Hash: 0
+      m_Sprite: {fileID: 0}
+    - m_Name: 
+      m_Hash: 0
+      m_Sprite: {fileID: 0}
+  - m_Name: marteau
+    m_Hash: -1048609698
+    m_CategoryList:
+    - m_Name: essai
+      m_Hash: -263891647
+      m_Sprite: {fileID: -1892512145248610523, guid: 98b70cdfff192974b95db4a8abedb64d,
+        type: 3}
+    - m_Name: kev
+      m_Hash: 439334456
+      m_Sprite: {fileID: 4127174703851136127, guid: 303b2b09f83632f48891c28bcace09d8,
+        type: 3}
+    - m_Name: 
+      m_Hash: 0
+      m_Sprite: {fileID: 0}
+    - m_Name: 
+      m_Hash: 0
+      m_Sprite: {fileID: 0}
+  - m_Name: corps
+    m_Hash: -894175077
+    m_CategoryList:
+    - m_Name: essai
+      m_Hash: -263891647
+      m_Sprite: {fileID: 994543500441190721, guid: 98b70cdfff192974b95db4a8abedb64d,
+        type: 3}
+    - m_Name: kev
+      m_Hash: 439334456
+      m_Sprite: {fileID: -2340356904163749453, guid: 303b2b09f83632f48891c28bcace09d8,
+        type: 3}
+    - m_Name: 
+      m_Hash: 0
+      m_Sprite: {fileID: 0}
+    - m_Name: 
+      m_Hash: 0
+      m_Sprite: {fileID: 0}
+  - m_Name: bras
+    m_Hash: 1391732426
+    m_CategoryList:
+    - m_Name: essai
+      m_Hash: -263891647
+      m_Sprite: {fileID: -9187315908331168355, guid: 98b70cdfff192974b95db4a8abedb64d,
+        type: 3}
+    - m_Name: 
+      m_Hash: 0
+      m_Sprite: {fileID: 8420724707328468137, guid: 303b2b09f83632f48891c28bcace09d8,
+        type: 3}
+    - m_Name: 
+      m_Hash: 0
+      m_Sprite: {fileID: 0}
+    - m_Name: 
+      m_Hash: 0
+      m_Sprite: {fileID: 0}
+  - m_Name: main devant
+    m_Hash: 1562288477
+    m_CategoryList:
+    - m_Name: essai
+      m_Hash: -263891647
+      m_Sprite: {fileID: -7357100911539108043, guid: 98b70cdfff192974b95db4a8abedb64d,
+        type: 3}
+    - m_Name: kev
+      m_Hash: 439334456
+      m_Sprite: {fileID: 1848475151391400893, guid: 303b2b09f83632f48891c28bcace09d8,
+        type: 3}
+    - m_Name: 
+      m_Hash: 0
+      m_Sprite: {fileID: 0}
+    - m_Name: 
+      m_Hash: 0
+      m_Sprite: {fileID: 0}
+  - m_Name: bras derriere
+    m_Hash: -951374149
+    m_CategoryList:
+    - m_Name: essai
+      m_Hash: -263891647
+      m_Sprite: {fileID: 3010055165443669435, guid: 98b70cdfff192974b95db4a8abedb64d,
+        type: 3}
+    - m_Name: 
+      m_Hash: 0
+      m_Sprite: {fileID: -9016083126852711070, guid: 303b2b09f83632f48891c28bcace09d8,
+        type: 3}
+    - m_Name: 
+      m_Hash: 0
+      m_Sprite: {fileID: 0}
+    - m_Name: 
+      m_Hash: 0
+      m_Sprite: {fileID: 0}
+  - m_Name: avant bras der
+    m_Hash: -873402931
+    m_CategoryList:
+    - m_Name: essai
+      m_Hash: -263891647
+      m_Sprite: {fileID: -8629000661019992938, guid: 98b70cdfff192974b95db4a8abedb64d,
+        type: 3}
+    - m_Name: 
+      m_Hash: 0
+      m_Sprite: {fileID: -1950142992775415645, guid: 303b2b09f83632f48891c28bcace09d8,
+        type: 3}
+    - m_Name: 
+      m_Hash: 0
+      m_Sprite: {fileID: 0}
+    - m_Name: 
+      m_Hash: 0
+      m_Sprite: {fileID: 0}
+  - m_Name: jambe dev
+    m_Hash: -2088090671
+    m_CategoryList:
+    - m_Name: essai
+      m_Hash: -263891647
+      m_Sprite: {fileID: 5323941939336627276, guid: 98b70cdfff192974b95db4a8abedb64d,
+        type: 3}
+    - m_Name: 
+      m_Hash: 0
+      m_Sprite: {fileID: 1774196073834427802, guid: 303b2b09f83632f48891c28bcace09d8,
+        type: 3}
+    - m_Name: 
+      m_Hash: 0
+      m_Sprite: {fileID: 0}
+    - m_Name: 
+      m_Hash: 0
+      m_Sprite: {fileID: 0}
+  - m_Name: genou devant
+    m_Hash: 142982502
+    m_CategoryList:
+    - m_Name: essai
+      m_Hash: -263891647
+      m_Sprite: {fileID: 3189400605303842503, guid: 98b70cdfff192974b95db4a8abedb64d,
+        type: 3}
+    - m_Name: kev
+      m_Hash: 439334456
+      m_Sprite: {fileID: -865442863271205683, guid: 303b2b09f83632f48891c28bcace09d8,
+        type: 3}
+    - m_Name: 
+      m_Hash: 0
+      m_Sprite: {fileID: 0}
+    - m_Name: 
+      m_Hash: 0
+      m_Sprite: {fileID: 0}
+  - m_Name: pied dev
+    m_Hash: -1378381950
+    m_CategoryList:
+    - m_Name: essai
+      m_Hash: -263891647
+      m_Sprite: {fileID: 8066894205903068559, guid: 98b70cdfff192974b95db4a8abedb64d,
+        type: 3}
+    - m_Name: kev
+      m_Hash: 439334456
+      m_Sprite: {fileID: 3514050941544912972, guid: 303b2b09f83632f48891c28bcace09d8,
+        type: 3}
+    - m_Name: 
+      m_Hash: 0
+      m_Sprite: {fileID: 0}
+    - m_Name: 
+      m_Hash: 0
+      m_Sprite: {fileID: 0}
+  - m_Name: jambe derriere
+    m_Hash: 930794913
+    m_CategoryList:
+    - m_Name: essai
+      m_Hash: -263891647
+      m_Sprite: {fileID: 258035032981839436, guid: 98b70cdfff192974b95db4a8abedb64d,
+        type: 3}
+    - m_Name: keb
+      m_Hash: 16081477
+      m_Sprite: {fileID: -3347544475281400613, guid: 303b2b09f83632f48891c28bcace09d8,
+        type: 3}
+    - m_Name: 
+      m_Hash: 0
+      m_Sprite: {fileID: 0}
+    - m_Name: 
+      m_Hash: 0
+      m_Sprite: {fileID: 0}
+  - m_Name: genou derriere
+    m_Hash: -610416269
+    m_CategoryList:
+    - m_Name: essai
+      m_Hash: -263891647
+      m_Sprite: {fileID: -8533908973313218078, guid: 98b70cdfff192974b95db4a8abedb64d,
+        type: 3}
+    - m_Name: kev
+      m_Hash: 439334456
+      m_Sprite: {fileID: 8414262502814639136, guid: 303b2b09f83632f48891c28bcace09d8,
+        type: 3}
+    - m_Name: 
+      m_Hash: 0
+      m_Sprite: {fileID: 0}
+    - m_Name: 
+      m_Hash: 0
+      m_Sprite: {fileID: 0}
+  - m_Name: pied derriere
+    m_Hash: 456236491
+    m_CategoryList:
+    - m_Name: essai
+      m_Hash: -263891647
+      m_Sprite: {fileID: 5191337846665065323, guid: 98b70cdfff192974b95db4a8abedb64d,
+        type: 3}
+    - m_Name: kev
+      m_Hash: 439334456
+      m_Sprite: {fileID: -5522730671616614978, guid: 303b2b09f83632f48891c28bcace09d8,
+        type: 3}
+    - m_Name: 
+      m_Hash: 0
+      m_Sprite: {fileID: 0}
+    - m_Name: 
+      m_Hash: 0
+      m_Sprite: {fileID: 0}
+  - m_Name: New Category 6
+    m_Hash: -1615735370
+    m_CategoryList:
+    - m_Name: essai
+      m_Hash: -263891647
+      m_Sprite: {fileID: 3010055165443669435, guid: 98b70cdfff192974b95db4a8abedb64d,
+        type: 3}
+    - m_Name: 
+      m_Hash: 0
+      m_Sprite: {fileID: -9016083126852711070, guid: 303b2b09f83632f48891c28bcace09d8,
+        type: 3}
+    - m_Name: 
+      m_Hash: 0
+      m_Sprite: {fileID: 0}
+    - m_Name: 
+      m_Hash: 0
+      m_Sprite: {fileID: 0}
