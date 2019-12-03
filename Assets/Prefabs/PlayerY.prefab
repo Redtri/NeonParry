@@ -1689,12 +1689,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   opponent: {fileID: 0}
   sword: {fileID: 94511185006289815}
+  fury:
+    lowestValueOfFury: 0
+    highestValueOfFury: 100
+    currentFury: 0
+    startingValueOfFury: 0
+    minimumMultiplicator: 1
+    maximumMultiplicator: 3
+    winnerFuryPercentageLeft: 50
+    isFeintAndChargeTheSame: 0
+    percentagePerfectParyFury: 200
   strike:
-    baseCooldownDuration: 2
+    baseCooldownDuration: 0
+    fury:
+      lowestValueOfFury: 0
+      highestValueOfFury: 0
+      currentFury: 0
+      startingValueOfFury: 0
+      minimumMultiplicator: 0
+      maximumMultiplicator: 0
+      winnerFuryPercentageLeft: 0
+      isFeintAndChargeTheSame: 0
+      percentagePerfectParyFury: 0
     currentCooldownDuration: 0
+    percentageWeightFuryOnCD: 100
     lastRefreshTime: 0
     baseActionDuration: 1.5
     currentActionDuration: 0
+    percentageWeightFury: 100
+    furyModificationOnSuccess: 0
     direction: 0
     curve:
       serializedVersion: 2
@@ -1730,11 +1753,24 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   charge:
-    baseCooldownDuration: 0
+    baseCooldownDuration: 2
+    fury:
+      lowestValueOfFury: 0
+      highestValueOfFury: 0
+      currentFury: 0
+      startingValueOfFury: 0
+      minimumMultiplicator: 0
+      maximumMultiplicator: 0
+      winnerFuryPercentageLeft: 0
+      isFeintAndChargeTheSame: 0
+      percentagePerfectParyFury: 0
     currentCooldownDuration: 0
+    percentageWeightFuryOnCD: 100
     lastRefreshTime: 0
     baseActionDuration: 0.6
     currentActionDuration: 0
+    percentageWeightFury: 100
+    furyModificationOnSuccess: 10
     direction: 0
     curve:
       serializedVersion: 2
@@ -1744,10 +1780,23 @@ MonoBehaviour:
       m_RotationOrder: 4
   parry:
     baseCooldownDuration: 0.25
+    fury:
+      lowestValueOfFury: 0
+      highestValueOfFury: 0
+      currentFury: 0
+      startingValueOfFury: 0
+      minimumMultiplicator: 0
+      maximumMultiplicator: 0
+      winnerFuryPercentageLeft: 0
+      isFeintAndChargeTheSame: 0
+      percentagePerfectParyFury: 0
     currentCooldownDuration: 0
+    percentageWeightFuryOnCD: 100
     lastRefreshTime: 0
     baseActionDuration: 0.25
     currentActionDuration: 0
+    percentageWeightFury: 100
+    furyModificationOnSuccess: 0
     direction: 0
     curve:
       serializedVersion: 2
@@ -1757,10 +1806,23 @@ MonoBehaviour:
       m_RotationOrder: 4
   dash:
     baseCooldownDuration: 0.5
+    fury:
+      lowestValueOfFury: 0
+      highestValueOfFury: 0
+      currentFury: 0
+      startingValueOfFury: 0
+      minimumMultiplicator: 0
+      maximumMultiplicator: 0
+      winnerFuryPercentageLeft: 0
+      isFeintAndChargeTheSame: 0
+      percentagePerfectParyFury: 0
     currentCooldownDuration: 0
+    percentageWeightFuryOnCD: 0
     lastRefreshTime: 0
     baseActionDuration: 0.6
     currentActionDuration: 0
+    percentageWeightFury: 0
+    furyModificationOnSuccess: 0
     direction: 0
     curve:
       serializedVersion: 2
@@ -2259,11 +2321,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3502125612023623525}
     m_Modifications:
-    - target: {fileID: 473848070671101330, guid: ed4a7b306288eb443ba34b4d315186e2,
-        type: 3}
-      propertyPath: m_Name
-      value: Sword
-      objectReference: {fileID: 0}
     - target: {fileID: 6937198034833313784, guid: ed4a7b306288eb443ba34b4d315186e2,
         type: 3}
       propertyPath: m_RootOrder
@@ -2318,6 +2375,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 473848070671101330, guid: ed4a7b306288eb443ba34b4d315186e2,
+        type: 3}
+      propertyPath: m_Name
+      value: Sword
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed4a7b306288eb443ba34b4d315186e2, type: 3}
