@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     public Cinemachine.CinemachineVirtualCamera camera;
 
     private void Awake() {
-        //Time.timeScale = 0.25f;
+        Time.timeScale = 0.1f;
         if (!instance) {
             instance = this;
         } else {

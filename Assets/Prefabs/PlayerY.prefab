@@ -1714,9 +1714,9 @@ MonoBehaviour:
     currentCooldownDuration: 0
     percentageWeightFuryOnCD: 100
     lastRefreshTime: 0
-    baseActionDuration: 0.8
+    baseActionDuration: 0.25
     currentActionDuration: 0
-    percentageWeightFury: 100
+    percentageWeightFury: 0
     furyModificationOnSuccess: 0
     direction: 0
     curve:
@@ -1767,10 +1767,10 @@ MonoBehaviour:
     currentCooldownDuration: 0
     percentageWeightFuryOnCD: 100
     lastRefreshTime: 0
-    baseActionDuration: 0.6
+    baseActionDuration: 1
     currentActionDuration: 0
-    percentageWeightFury: 100
-    furyModificationOnSuccess: 10
+    percentageWeightFury: 0
+    furyModificationOnSuccess: 0
     direction: 0
     curve:
       serializedVersion: 2
@@ -1795,7 +1795,7 @@ MonoBehaviour:
     lastRefreshTime: 0
     baseActionDuration: 0.25
     currentActionDuration: 0
-    percentageWeightFury: 100
+    percentageWeightFury: 0
     furyModificationOnSuccess: 0
     direction: 0
     curve:
@@ -2321,11 +2321,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3502125612023623525}
     m_Modifications:
-    - target: {fileID: 473848070671101330, guid: ed4a7b306288eb443ba34b4d315186e2,
-        type: 3}
-      propertyPath: m_Name
-      value: Sword
-      objectReference: {fileID: 0}
     - target: {fileID: 6937198034833313784, guid: ed4a7b306288eb443ba34b4d315186e2,
         type: 3}
       propertyPath: m_RootOrder
@@ -2380,6 +2375,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 473848070671101330, guid: ed4a7b306288eb443ba34b4d315186e2,
+        type: 3}
+      propertyPath: m_Name
+      value: Sword
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed4a7b306288eb443ba34b4d315186e2, type: 3}
