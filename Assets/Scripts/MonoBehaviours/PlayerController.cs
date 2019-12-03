@@ -97,7 +97,7 @@ public class Fury
         float proportionOfFury = ((float)currentFury / ((float)highestValueOfFury - (float)lowestValueOfFury)); // can't be <1
         float proportionOfMultiplicator = ((float)maximumMultiplicator - (float)minimumMultiplicator); // if we're max fury we need to return 1/maximumMultiplicator, if we're at 0 fury we need to return 1/minimumMultiplicator
         float weight = (float)percentageWeight / (float)100;
-        float ret = (((float)minimumMultiplicator + (proportionOfFury * proportionOfMultiplicator)) * weight);// [1/] because we need a multiplicator that reduce speed ; [minimumMultiplicator+] to be sure that at 0% fury we multipli by the right amount 
+        float ret = ((float)minimumMultiplicator + (proportionOfFury * proportionOfMultiplicator) * weight);// [1/] because we need a multiplicator that reduce speed ; [minimumMultiplicator+] to be sure that at 0% fury we multipli by the right amount 
         Debug.Log("pA " + percentageWeight + " | pF " + proportionOfFury + " | pM " + proportionOfMultiplicator + " | weight " + weight + " | ret " + ret);
         if (ret != 0) return (float)1 /ret; //that formula is so much dependent on so much variable we need to be sure
         else return (float)1 / (float)10000; //because we don't really need to have that much of a specific case

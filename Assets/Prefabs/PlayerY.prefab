@@ -1714,7 +1714,7 @@ MonoBehaviour:
     currentCooldownDuration: 0
     percentageWeightFuryOnCD: 100
     lastRefreshTime: 0
-    baseActionDuration: 1.5
+    baseActionDuration: 0.8
     currentActionDuration: 0
     percentageWeightFury: 100
     furyModificationOnSuccess: 0
@@ -1779,7 +1779,7 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   parry:
-    baseCooldownDuration: 0.25
+    baseCooldownDuration: 2
     fury:
       lowestValueOfFury: 0
       highestValueOfFury: 0
@@ -1819,7 +1819,7 @@ MonoBehaviour:
     currentCooldownDuration: 0
     percentageWeightFuryOnCD: 0
     lastRefreshTime: 0
-    baseActionDuration: 0.6
+    baseActionDuration: 1
     currentActionDuration: 0
     percentageWeightFury: 0
     furyModificationOnSuccess: 0
