@@ -1716,7 +1716,7 @@ MonoBehaviour:
     lastRefreshTime: 0
     baseActionDuration: 0.8
     currentActionDuration: 0
-    percentageWeightFury: 110
+    percentageWeightFury: 100
     furyModificationOnSuccess: 0
     direction: 0
     curve:
