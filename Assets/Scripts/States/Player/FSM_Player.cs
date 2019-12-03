@@ -35,9 +35,9 @@ public class FSM_Player
     }
 
     //Should be called by any state that can ensure the state transition
-    public void ChangeState(ePLAYER_STATE newState, bool trigger = true) {
+    public void ChangeState(ePLAYER_STATE newState, bool trigger = true, bool reset = false) {
         previousState = currentState;
-        states[currentState].Exit();
+        states[currentState].Exit(reset);
         currentState = newState;
         states[currentState].Enter(trigger);
     }

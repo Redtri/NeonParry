@@ -13,6 +13,7 @@ public class StateParry : PlayerState
     
     public override void Enter(bool trigger = true)
     {
+        Debug.Log("current action duration : " + actionInfos.currentActionDuration);
         base.Enter();
         parrySuccessful = false;
     }
@@ -22,7 +23,8 @@ public class StateParry : PlayerState
         if(owner.opponent != null) {
             if (owner.opponent.strike.IsActionPerforming(Time.time, actionInfos.direction)) {
                 parrySuccessful = true;
-                stateMachine.ChangeState(nextState);
+                owner.furyChange(actionInfos.furyModificationOnSuccess); //change the fury of a fixed amount
+                stateMachine.ChangeState(nextState, true);
             }
         }
     }

@@ -26,6 +26,8 @@ public class StateStrike : PlayerState
                 Debug.Log("Opponent parried successfully");
                 opponentParried = true;
                 owner.animator.SetTrigger("knockback");
+                //TODO : FIXME
+                owner.opponent.parry.BlankRefreshTime(Time.time);
                 stateMachine.ChangeState(nextState, false);
             } else if (owner.opponent.dash.IsActionPerforming(Time.time)) {
                 Debug.Log("Opponent dodged, coward !");
@@ -42,6 +44,7 @@ public class StateStrike : PlayerState
             if (!opponentParried && !opponentDashed) {
                 Debug.Log("Opponent being stroke successfully");
                 GameManager.instance.StrikeSuccessful(owner.playerIndex);
+            Debug.Log("CD modification : " + actionInfos.currentCooldownDuration + " | Action modification : " + actionInfos.currentActionDuration);
             }
         }
     }
