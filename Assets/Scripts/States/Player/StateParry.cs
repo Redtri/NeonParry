@@ -29,7 +29,11 @@ public class StateParry : PlayerState
 
     public override void Exit(bool reset = false) {
         if (parrySuccessful) {
-            base.Exit(reset);
+            if (actionInfos != null) {
+                if (reset) {
+                    actionInfos.BlankRefreshTime(Time.time);
+                }
+            }
         }
     }
 }

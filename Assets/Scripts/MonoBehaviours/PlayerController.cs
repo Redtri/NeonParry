@@ -49,12 +49,12 @@ public class Cooldown {
 
     //TESTS
     public bool CanRefresh(float time) {
-        return (time - lastRefreshTime > currentCooldownDuration);
+        return (time - lastRefreshTime > currentCooldownDuration || currentCooldownDuration == 0.0f);
     }
 
     //OPERATIONS
-    public void Refresh(float time) {
-        if (CanRefresh(time)) {
+    public void Refresh(float time, bool force = false) {
+        if (force || CanRefresh(time)) {
             lastRefreshTime = time;
         }
     }
@@ -121,6 +121,7 @@ public class PlayerController : MonoBehaviour
         inputSystem.currentActionMap["Strike"].started += OnStrike;
         inputSystem.currentActionMap["Parry"].started += OnParry;
         inputSystem.currentActionMap["Dash"].started += OnDash;
+        inputSystem.currentActionMap["Feint"].started += OnFeint;
 
         //Charge cooldown is the "attack" skill cooldown, so it needs to consider the strike duration as part of its cooldown
 
@@ -129,16 +130,18 @@ public class PlayerController : MonoBehaviour
         parry.Init(Time.time);
         dash.Init(Time.time);
         sword.Initialize(this);
-        charge.currentCooldownDuration = strike.currentActionDuration + charge.currentCooldownDuration;
+        //charge.currentCooldownDuration = strike.currentActionDuration + charge.currentCooldownDuration;
     }
 
     private void Start() {
         playerIndex = GameManager.instance.NewPlayer(this);
+        if (facingLeft) {
+            transform.rotation = Quaternion.Euler(0f, -180f, 0f);
+        }
     }
 
     // Update is called once per frame
     void Update() {
-        sprRenderer.flipX = facingLeft;
         machineState.Update();
 
         if(machineState.currentState == ePLAYER_STATE.NEUTRAL) {
@@ -183,12 +186,14 @@ public class PlayerController : MonoBehaviour
         if (machineState.StateRequest(ePLAYER_STATE.CHARGE)) {
             charge.direction = currentDirection;
             strike.direction = currentDirection;
+            machineState.ChangeState(ePLAYER_STATE.CHARGE);
         }
     }
 
     private void OnParry(InputAction.CallbackContext value) {
         if (machineState.StateRequest(ePLAYER_STATE.PARRY)) {
             parry.direction = currentDirection;
+            machineState.ChangeState(ePLAYER_STATE.PARRY);
         }
     }
 
@@ -196,9 +201,21 @@ public class PlayerController : MonoBehaviour
         if(currentSpotIndex < GameManager.instance.nbSteps-1) {
             if (machineState.StateRequest(ePLAYER_STATE.DASH)) {
                 StartCoroutine(OpponentDashDelay());
+                machineState.ChangeState(ePLAYER_STATE.DASH);
             }
         }
     }
+
+    private void OnFeint(InputAction.CallbackContext value) {
+        if (machineState.StateRequest(ePLAYER_STATE.FEINT)) {
+            print("feint");
+            charge.direction = currentDirection;
+            machineState.ChangeState(ePLAYER_STATE.FEINT);
+        } else {
+            print("Cannto feint");
+        }
+    }
+
     //Coroutine used to trigger the opponent REPOS state because otherwise, it is done in the same frame and doesn't detect the player dash when striking
     private IEnumerator OpponentDashDelay() {
         yield return new WaitForSeconds(0.0001f);
@@ -208,6 +225,8 @@ public class PlayerController : MonoBehaviour
     }
 
     public void OnOpponentDash() {
-        machineState.StateRequest(ePLAYER_STATE.REPOS);
+        if (machineState.StateRequest(ePLAYER_STATE.REPOS)) {
+            machineState.ChangeState(ePLAYER_STATE.REPOS);
+        }
     }
 }

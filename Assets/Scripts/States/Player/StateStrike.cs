@@ -35,6 +35,8 @@ public class StateStrike : PlayerState
 
     public override void Exit(bool reset = false) {
         base.Exit(reset);
+        owner.charge.currentCooldownDuration = actionInfos.currentCooldownDuration;
+        owner.charge.Refresh(Time.time, true);
         if (owner.opponent != null) {
             if (!opponentParried && !opponentDashed) {
                 Debug.Log("Opponent being stroke successfully");

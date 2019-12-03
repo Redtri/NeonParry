@@ -14,7 +14,7 @@ public class StateCharge : PlayerState
     public override void Enter()
     {
         base.Enter();
-        actionInfos.currentCooldownDuration = owner.strike.currentActionDuration + actionInfos.baseCooldownDuration;
+        //actionInfos.currentCooldownDuration = owner.strike.currentActionDuration + actionInfos.baseCooldownDuration;
     }
     
     public override void Update()

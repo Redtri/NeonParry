@@ -1690,7 +1690,7 @@ MonoBehaviour:
   opponent: {fileID: 0}
   sword: {fileID: 94511185006289815}
   strike:
-    baseCooldownDuration: 0
+    baseCooldownDuration: 2
     currentCooldownDuration: 0
     lastRefreshTime: 0
     baseActionDuration: 1.5
@@ -1730,7 +1730,7 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   charge:
-    baseCooldownDuration: 2
+    baseCooldownDuration: 0
     currentCooldownDuration: 0
     lastRefreshTime: 0
     baseActionDuration: 0.6
