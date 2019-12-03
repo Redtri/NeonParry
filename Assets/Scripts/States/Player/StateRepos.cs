@@ -13,6 +13,7 @@ public class StateRepos : PlayerState
     
     public override void Enter()
     {
+        Debug.Log("Repos");
         base.Enter();
         --owner.currentSpotIndex;
         startPosition = owner.transform.position;

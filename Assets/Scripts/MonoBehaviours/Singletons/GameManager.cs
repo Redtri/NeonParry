@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Cinemachine;
 
 
 public class GameManager : MonoBehaviour
@@ -22,8 +22,10 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public List<Vector3> spots;
     public List<PlayerInfo> playerInfos;
     public static GameManager instance { get; private set; }
+    public Cinemachine.CinemachineVirtualCamera camera;
 
     private void Awake() {
+        //Time.timeScale = 0.25f;
         if (!instance) {
             instance = this;
         } else {
@@ -37,6 +39,7 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < nbSteps*2; ++i) {
             spots.Add(new Vector3(startPoint + i * stepValue, 0, 0));
         }
+        camera = Camera.main.transform.GetChild(0).GetComponent<CinemachineVirtualCamera>();
     }
 
     // Update is called once per frame

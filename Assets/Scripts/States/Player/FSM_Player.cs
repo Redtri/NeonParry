@@ -16,7 +16,9 @@ public class FSM_Player
                                                               { ePLAYER_STATE.STRIKE, new StateStrike(player, this, player.strike, ePLAYER_STATE.NEUTRAL, eSTATE_PRIORITY.DEFAULT) },
                                                               { ePLAYER_STATE.PARRY, new StateParry(player, this, player.parry, ePLAYER_STATE.NEUTRAL, eSTATE_PRIORITY.DEFAULT) },
                                                               { ePLAYER_STATE.DASH, new StateDash(player, this, player.dash, ePLAYER_STATE.NEUTRAL, eSTATE_PRIORITY.OVERRIDE) },
-                                                              { ePLAYER_STATE.REPOS, new StateRepos(player, this, player.dash, ePLAYER_STATE.NEUTRAL, eSTATE_PRIORITY.OVERRIDE) }
+                                                              { ePLAYER_STATE.REPOS, new StateRepos(player, this, player.dash, ePLAYER_STATE.NEUTRAL, eSTATE_PRIORITY.OVERRIDE) },
+                                                              //TODO : Watch out, we may want to create a new feint swordaction for this
+                                                              { ePLAYER_STATE.FEINT, new StateFeint(player, this, player.charge, ePLAYER_STATE.NEUTRAL, eSTATE_PRIORITY.DEFAULT) }
         };
         currentState = ePLAYER_STATE.NEUTRAL;
         previousState = currentState;
@@ -44,11 +46,9 @@ public class FSM_Player
     public bool StateRequest(ePLAYER_STATE newState, eDIRECTION direction = eDIRECTION.NONE) {
         if (states[newState].actionInfos.CanRefresh(Time.time)) {
             if (states[newState].priority == eSTATE_PRIORITY.OVERRIDE && newState != currentState) {
-                ChangeState(newState);
 
                 return true;
             } else if (currentState == ePLAYER_STATE.NEUTRAL) {
-                ChangeState(newState);
 
                 return true;
             }

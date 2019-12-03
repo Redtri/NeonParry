@@ -19,15 +19,21 @@ public class StateParry : PlayerState
 
     public override void Update() {
         base.Update();
-        if (owner.opponent.strike.IsActionPerforming(Time.time, actionInfos.direction)) {
-            parrySuccessful = true;
-            stateMachine.ChangeState(nextState);
+        if(owner.opponent != null) {
+            if (owner.opponent.strike.IsActionPerforming(Time.time, actionInfos.direction)) {
+                parrySuccessful = true;
+                stateMachine.ChangeState(nextState);
+            }
         }
     }
 
     public override void Exit(bool reset = false) {
         if (parrySuccessful) {
-            base.Exit(reset);
+            if (actionInfos != null) {
+                if (reset) {
+                    actionInfos.BlankRefreshTime(Time.time);
+                }
+            }
         }
     }
 }
