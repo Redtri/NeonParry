@@ -21,11 +21,13 @@ public abstract class PlayerState
         priority = statePriority;
     }
 
-    public virtual void Enter() {
+    public virtual void Enter(bool trigger = true) {
         owner.sprRenderer.color = stateColor;
         //Send to the animator, the enum value converted to string of the current state as trigger event
-        owner.animator.SetTrigger(stateMachine.currentState.ToString().ToLower());
-        owner.cursorAnimator.SetTrigger(stateMachine.currentState.ToString().ToLower());
+        if (trigger) {
+            owner.animator.SetTrigger(stateMachine.currentState.ToString().ToLower());
+            owner.cursorAnimator.SetTrigger(stateMachine.currentState.ToString().ToLower());
+        }
         if (actionInfos != null) {
             actionInfos.Refresh(Time.time);
             owner.animator.SetInteger("direction", (int)actionInfos.direction);

@@ -11,7 +11,7 @@ public class StateDash : PlayerState
         stateColor = Color.green;
     }
     
-    public override void Enter()
+    public override void Enter(bool trigger = true)
     {
         base.Enter();
         ++owner.currentSpotIndex;
