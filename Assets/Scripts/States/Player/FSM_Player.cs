@@ -35,11 +35,11 @@ public class FSM_Player
     }
 
     //Should be called by any state that can ensure the state transition
-    public void ChangeState(ePLAYER_STATE newState) {
+    public void ChangeState(ePLAYER_STATE newState, bool trigger = true) {
         previousState = currentState;
         states[currentState].Exit();
         currentState = newState;
-        states[currentState].Enter();
+        states[currentState].Enter(trigger);
     }
 
     //Should be called by the PlayerController when receiving input event

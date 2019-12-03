@@ -11,7 +11,7 @@ public class StateFeint : PlayerState
         stateColor = Color.yellow;
     }
     
-    public override void Enter() {
+    public override void Enter(bool trigger = true) {
         owner.sprRenderer.color = stateColor;
         //Send to the animator, the enum value converted to string of the current state as trigger event
         owner.animator.SetTrigger("feint");
@@ -35,7 +35,7 @@ public class StateFeint : PlayerState
     public override void Exit(bool reset = false)
     {
         actionInfos.currentCooldownDuration = 0f;
-        owner.animator.SetBool("feinting", false);
+        //owner.animator.SetBool("feinting", false);
         base.Exit(reset);
     }
 }

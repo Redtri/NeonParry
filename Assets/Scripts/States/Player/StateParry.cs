@@ -11,7 +11,7 @@ public class StateParry : PlayerState
         stateColor = Color.cyan;
     }
     
-    public override void Enter()
+    public override void Enter(bool trigger = true)
     {
         Debug.Log("current action duration : " + actionInfos.currentActionDuration);
         base.Enter();

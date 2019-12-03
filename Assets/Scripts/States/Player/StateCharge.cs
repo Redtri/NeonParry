@@ -11,8 +11,8 @@ public class StateCharge : PlayerState
         stateColor = Color.yellow;
     }
     
-    public override void Enter()
-    {
+    public override void Enter(bool trigger = true) {
+        owner.animator.SetBool("feinting", false);
         base.Enter();
         //actionInfos.currentCooldownDuration = owner.strike.currentActionDuration + actionInfos.baseCooldownDuration;
     }
