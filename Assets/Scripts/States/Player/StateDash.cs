@@ -24,6 +24,7 @@ public class StateDash : PlayerState
     }
 
     public override void Exit(bool reset = false) {
+        owner.furyChange(actionInfos.furyModificationOnSuccess); //change the fury of a fixed amount
         base.Exit(reset);
     }
 }

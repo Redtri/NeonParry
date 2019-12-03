@@ -41,6 +41,7 @@ public class StateStrike : PlayerState
             if (!opponentParried && !opponentDashed) {
                 Debug.Log("Opponent being stroke successfully");
                 GameManager.instance.StrikeSuccessful(owner.playerIndex);
+            Debug.Log("CD modification : " + actionInfos.currentCooldownDuration + " | Action modification : " + actionInfos.currentActionDuration);
             }
         }
     }
