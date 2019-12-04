@@ -12,12 +12,14 @@ public class CameraShake : MonoBehaviour {
 
     // Amplitude of the shake. A larger value shakes the camera harder.
     public float shakeAmount = 0.7f;
+    private float baseShakeAmount;
 
     Vector3 originalPos;
 
     void Awake() {
         camera = this.GetComponent<CinemachineVirtualCamera>();
         multiChannel = camera.GetCinemachineComponent<Cinemachine.CinemachineBasicMultiChannelPerlin>();
+        baseShakeAmount = multiChannel.m_AmplitudeGain;
         shaking = false;
         originalPos = transform.localPosition;
     }
@@ -34,6 +36,6 @@ public class CameraShake : MonoBehaviour {
     
     private void StopShake() {
         shaking = false;
-        multiChannel.m_AmplitudeGain = 0f;
+        multiChannel.m_AmplitudeGain = baseShakeAmount;
     }
 }

@@ -44,6 +44,7 @@ public class StateStrike : PlayerState
             if (!opponentParried) {
                 if (!opponentDashed) {
                     Debug.Log("Opponent being stroke successfully");
+                    owner.opponent.animator.SetTrigger("hit");
                     actionInfos.additionalSounds[0].Post(owner.gameObject);
                     GameManager.instance.StrikeSuccessful(owner.playerIndex);
                 }

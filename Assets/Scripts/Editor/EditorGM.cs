@@ -10,29 +10,27 @@ public class EditorGM : Editor
 
     private void OnSceneGUI() {
         gm = (GameManager)target;
-
         if(gm != null) {
             Handles.color = Color.red;
-
-            if(gm.spots != null) {
+            
+            if(gm.spots.Count > 0) {
                 for (int i = 0; i < gm.spots.Count; ++i) {
-                    Debug.DrawLine(gm.spots[i], gm.spots[i] + Vector3.up);
+                    Handles.DrawLine(gm.spots[i], gm.spots[i] + Vector3.up * 35f);
+                }
+            } else {
+                float stepValue = gm.stepValue;
+                int nbSteps = gm.nbSteps;
+
+                float startPoint = -((nbSteps * stepValue) - stepValue / 2);
+
+                for (int i = 0; i < nbSteps * 2; ++i) {
+                    Handles.DrawLine(new Vector3(startPoint + i * stepValue, 0, 0) - gm.groundOffset, new Vector3(startPoint + i * stepValue, 0, 0) - gm.groundOffset + Vector3.up * 35f);
                 }
             }
-            
-            /*
-            float stepValue = gm.stepValue;
-            float startPoint = 0f;
-            int nbSteps = gm.nbSteps;
-            
-            for (int i = 0; i < nbSteps; ++i) {
-                Vector3 tmp = new Vector3(startPoint + i*stepValue + (stepValue/2), 0f, 0f);
-                Handles.DrawLine(tmp, tmp + Vector3.up*1f);
-                tmp = new Vector3((startPoint + i * stepValue + (stepValue / 2)) * -1f, 0f, 0f);
-                Handles.DrawLine(tmp, tmp + Vector3.up * 1f);
-            }
-            */
-            
+
+
+        } else {
+            Debug.Log("hé ba null");
         }
     }
 }

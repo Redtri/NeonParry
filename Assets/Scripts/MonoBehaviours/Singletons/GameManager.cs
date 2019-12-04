@@ -19,10 +19,12 @@ public class GameManager : MonoBehaviour
 
     public int nbSteps;
     public float stepValue;
+    public Vector3 groundOffset;
     [HideInInspector] public List<Vector3> spots;
     public List<PlayerInfo> playerInfos;
     public static GameManager instance { get; private set; }
     public Cinemachine.CinemachineVirtualCamera camera;
+    public InterpItem cameraCenterPoint;
 
     private void Awake() {
         Time.timeScale = 1f;
@@ -37,7 +39,7 @@ public class GameManager : MonoBehaviour
         float startPoint = -((nbSteps * stepValue) - stepValue / 2);
 
         for (int i = 0; i < nbSteps*2; ++i) {
-            spots.Add(new Vector3(startPoint + i * stepValue, 0, 0));
+            spots.Add(new Vector3(startPoint + i * stepValue, 0, 0) - groundOffset);
         }
         camera = Camera.main.transform.GetChild(0).GetComponent<CinemachineVirtualCamera>();
     }
@@ -66,6 +68,8 @@ public class GameManager : MonoBehaviour
                 newPlayer.facingLeft = true;
                 newPlayer.opponent = playerInfos[0].controller;
                 playerInfos[0].controller.opponent = newPlayer;
+                cameraCenterPoint.startObject = playerInfos[0].controller.transform;
+                cameraCenterPoint.endObject = newPlayer.transform;
                 break;
         }
         playerInfos.Add(new PlayerInfo(newPlayer, playerIndex));
