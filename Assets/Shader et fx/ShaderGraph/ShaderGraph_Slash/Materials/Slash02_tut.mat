@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Slash02_tut
+  m_Shader: {fileID: -6465566751694194690, guid: c99e8a9260c9d9b458331fd1d2965524,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap:
+    MotionVector: User
+  disabledShaderPasses:
+  - MOTIONVECTORS
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_23061E94:
+        m_Texture: {fileID: 2800000, guid: cf14d683ff759f5478742e041e423c88, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_650FDD28:
+        m_Texture: {fileID: 2800000, guid: 9413e7012e32318449e04673782707a2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_21A390EE: 2
+    - Vector1_9C320C70: 1
+    - Vector1_E9C4EAD1: 10
+    m_Colors:
+    - Color_1F3F071E: {r: 24.79487, g: 21.34485, b: 27.761402, a: 1}

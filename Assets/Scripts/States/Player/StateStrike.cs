@@ -21,7 +21,7 @@ public class StateStrike : PlayerState
 
     public override void Update() {
         base.Update();
-        if(owner.opponent != null) {
+        if (owner.opponent != null) {
             if (owner.opponent.parry.IsActionPerforming(Time.time, actionInfos.direction)) {
                 Debug.Log("Opponent parried successfully");
                 opponentParried = true;
