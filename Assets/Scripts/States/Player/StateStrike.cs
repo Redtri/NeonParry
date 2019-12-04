@@ -38,9 +38,14 @@ public class StateStrike : PlayerState
         owner.charge.currentCooldownDuration = actionInfos.currentCooldownDuration;
         owner.charge.Refresh(Time.time, true);
         if (owner.opponent != null) {
-            if (!opponentParried && !opponentDashed) {
-                Debug.Log("Opponent being stroke successfully");
-                GameManager.instance.StrikeSuccessful(owner.playerIndex);
+            if (!opponentParried) {
+                if (!opponentDashed) {
+                    Debug.Log("Opponent being stroke successfully");
+                    actionInfos.additionalSounds[0].Post(owner.gameObject);
+                    GameManager.instance.StrikeSuccessful(owner.playerIndex);
+                }
+            } else {
+                actionInfos.additionalSounds[0].Post(owner.gameObject);
             }
         }
     }

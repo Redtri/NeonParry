@@ -29,6 +29,7 @@ public class StateParry : PlayerState
 
     public override void Exit(bool reset = false) {
         if (parrySuccessful) {
+            actionInfos.additionalSounds[0].Post(owner.gameObject);
             if (actionInfos != null) {
                 if (reset) {
                     actionInfos.BlankRefreshTime(Time.time);
