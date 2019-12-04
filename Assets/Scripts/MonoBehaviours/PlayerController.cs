@@ -11,6 +11,8 @@ public enum eCONTROLLER { KEYBOARD, GAMEPAD };
 public class SwordAction : Action {
     [HideInInspector] public eDIRECTION direction;
     public AnimationCurve curve;
+    public AK.Wwise.Event[] actionSounds;
+    public AK.Wwise.Event[] additionalSounds;
 
     public bool IsActionPerforming(float time, eDIRECTION tDirection) {
         return base.IsActionPerforming(time) && direction == tDirection;
