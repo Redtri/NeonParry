@@ -212,12 +212,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   opponent: {fileID: 0}
   sword: {fileID: 5317940446147470247}
+  fury:
+    lowestValueOfFury: 0
+    highestValueOfFury: 100
+    currentFury: 0
+    startingValueOfFury: 0
+    minimumMultiplicator: 1
+    maximumMultiplicator: 3
+    winnerFuryPercentageLeft: 50
+    isFeintAndChargeTheSame: 0
+    percentagePerfectParyFury: 200
   strike:
     baseCooldownDuration: 0
+    fury:
+      lowestValueOfFury: 0
+      highestValueOfFury: 0
+      currentFury: 0
+      startingValueOfFury: 0
+      minimumMultiplicator: 0
+      maximumMultiplicator: 0
+      winnerFuryPercentageLeft: 0
+      isFeintAndChargeTheSame: 0
+      percentagePerfectParyFury: 0
     currentCooldownDuration: 0
+    percentageWeightFuryOnCD: 100
     lastRefreshTime: 0
     baseActionDuration: 1.5
     currentActionDuration: 0
+    percentageWeightFury: 100
+    furyModificationOnSuccess: 0
     direction: 0
     curve:
       serializedVersion: 2
@@ -254,10 +277,23 @@ MonoBehaviour:
       m_RotationOrder: 4
   charge:
     baseCooldownDuration: 2
+    fury:
+      lowestValueOfFury: 0
+      highestValueOfFury: 0
+      currentFury: 0
+      startingValueOfFury: 0
+      minimumMultiplicator: 0
+      maximumMultiplicator: 0
+      winnerFuryPercentageLeft: 0
+      isFeintAndChargeTheSame: 0
+      percentagePerfectParyFury: 0
     currentCooldownDuration: 0
+    percentageWeightFuryOnCD: 100
     lastRefreshTime: 0
     baseActionDuration: 0.6
     currentActionDuration: 0
+    percentageWeightFury: 100
+    furyModificationOnSuccess: 10
     direction: 0
     curve:
       serializedVersion: 2
@@ -267,10 +303,23 @@ MonoBehaviour:
       m_RotationOrder: 4
   parry:
     baseCooldownDuration: 0.25
+    fury:
+      lowestValueOfFury: 0
+      highestValueOfFury: 0
+      currentFury: 0
+      startingValueOfFury: 0
+      minimumMultiplicator: 0
+      maximumMultiplicator: 0
+      winnerFuryPercentageLeft: 0
+      isFeintAndChargeTheSame: 0
+      percentagePerfectParyFury: 0
     currentCooldownDuration: 0
+    percentageWeightFuryOnCD: 100
     lastRefreshTime: 0
     baseActionDuration: 0.25
     currentActionDuration: 0
+    percentageWeightFury: 100
+    furyModificationOnSuccess: 0
     direction: 0
     curve:
       serializedVersion: 2
@@ -280,10 +329,23 @@ MonoBehaviour:
       m_RotationOrder: 4
   dash:
     baseCooldownDuration: 0.5
+    fury:
+      lowestValueOfFury: 0
+      highestValueOfFury: 0
+      currentFury: 0
+      startingValueOfFury: 0
+      minimumMultiplicator: 0
+      maximumMultiplicator: 0
+      winnerFuryPercentageLeft: 0
+      isFeintAndChargeTheSame: 0
+      percentagePerfectParyFury: 0
     currentCooldownDuration: 0
+    percentageWeightFuryOnCD: 0
     lastRefreshTime: 0
     baseActionDuration: 0.6
     currentActionDuration: 0
+    percentageWeightFury: 0
+    furyModificationOnSuccess: 0
     direction: 0
     curve:
       serializedVersion: 2

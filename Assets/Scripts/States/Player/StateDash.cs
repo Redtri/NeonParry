@@ -11,7 +11,7 @@ public class StateDash : PlayerState
         stateColor = Color.green;
     }
     
-    public override void Enter()
+    public override void Enter(bool trigger = true)
     {
         base.Enter();
         ++owner.currentSpotIndex;
@@ -24,6 +24,7 @@ public class StateDash : PlayerState
     }
 
     public override void Exit(bool reset = false) {
+        owner.furyChange(actionInfos.furyModificationOnSuccess); //change the fury of a fixed amount
         base.Exit(reset);
     }
 }

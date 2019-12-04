@@ -11,9 +11,12 @@ public class StateCharge : PlayerState
         stateColor = Color.yellow;
     }
     
-    public override void Enter()
-    {
+    public override void Enter(bool trigger = true) {
+        owner.animator.SetBool("feinting", false);
         base.Enter();
+        if (actionInfos.direction == eDIRECTION.UP) {
+            owner.animator.speed = 0.5f;
+        }
         //actionInfos.currentCooldownDuration = owner.strike.currentActionDuration + actionInfos.baseCooldownDuration;
     }
     
@@ -22,8 +25,9 @@ public class StateCharge : PlayerState
         base.Update();
     }
     
-    public override void Exit(bool reset = false)
-    {
+    public override void Exit(bool reset = false) {
+        owner.animator.speed = 1f;
+        owner.furyChange(actionInfos.furyModificationOnSuccess); //change the fury of a fixed amount
         base.Exit(reset);
     }
 }

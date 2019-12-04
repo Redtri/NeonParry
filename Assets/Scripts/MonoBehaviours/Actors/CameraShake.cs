@@ -23,6 +23,7 @@ public class CameraShake : MonoBehaviour {
     }
 
     void Update() {
+
     }
 
     public void Shake() {

@@ -10,9 +10,9 @@ public class StateNeutral : PlayerState
         stateColor = Color.white;
     }
     
-    public override void Enter()
+    public override void Enter(bool trigger = true)
     {
-        base.Enter();
+        base.Enter(trigger);
     }
 
     public override void Update() {

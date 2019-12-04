@@ -22,7 +22,13 @@ public class SwordAction : Action {
 public class Action : Cooldown {
     public float baseActionDuration;
     public float currentActionDuration;
+    public int percentageWeightFury; //how much, in percentage, the Action is affected by the fury
+    public int furyModificationOnSuccess; //how much the fury changed when the Action is perform successfully
 
+    public void updateCurrentActionDuration()
+    {
+        currentActionDuration = fury.speedMultiplicator(percentageWeightFury) * baseActionDuration ;
+    }
     public override void Init(float time) {
         base.Init(time);
         currentActionDuration = baseActionDuration;
@@ -36,7 +42,9 @@ public class Action : Cooldown {
 [System.Serializable]
 public class Cooldown {
     public float baseCooldownDuration;
+    [HideInInspector] public Fury fury;
     public float currentCooldownDuration;
+    public int percentageWeightFuryOnCD; //how much, in percentage, the Action cooldown is affected by the fury
     [HideInInspector] public float lastRefreshTime;
 
     //INIT
@@ -60,8 +68,56 @@ public class Cooldown {
             lastRefreshTime = time;
         }
     }
+
+    public void updateCurrentCooldownDuration ()
+    {
+        currentCooldownDuration = fury.speedMultiplicator(percentageWeightFuryOnCD) * baseCooldownDuration;
+    }
+
+    public void setFury(Fury f)
+    {
+        fury = f;
+    }
+
 }
 
+[System.Serializable]
+public class Fury
+{
+    public int lowestValueOfFury; //the lowest cap of fury 
+    public int highestValueOfFury; //the higher cap of fury ; must be bigger (strictly) than lowestValueOfFury
+    public int currentFury; //actual value of the player's Fury // should be [HideInInspector]
+    public int startingValueOfFury; //the base value of the fury when a new match start, must be beetween lowestValueOfFury and HighestValueOfFury
+    public int minimumMultiplicator; //indicate how many times faster an action is at 0% of fury
+    public int maximumMultiplicator; //indicate how many times faster an action is at 100% of fury
+    public int winnerFuryPercentageLeft; //wich percentage of his current fury the winner keep
+    public bool isFeintAndChargeTheSame; //determine if theire's the need to separate Feinte and Charge
+    public int percentagePerfectParyFury; //how much better, in percentage, is a perfect parry
+
+    public float speedMultiplicator (int percentageWeight)
+    {
+        float proportionOfFury = ((float)currentFury / ((float)highestValueOfFury - (float)lowestValueOfFury)); // can't be <1
+        float proportionOfMultiplicator = ((float)maximumMultiplicator - (float)minimumMultiplicator); // if we're max fury we need to return 1/maximumMultiplicator, if we're at 0 fury we need to return 1/minimumMultiplicator
+        float weight = (float)percentageWeight / (float)100;
+        float ret = ((float)minimumMultiplicator + (proportionOfFury * proportionOfMultiplicator) * weight);// [1/] because we need a multiplicator that reduce speed ; [minimumMultiplicator+] to be sure that at 0% fury we multipli by the right amount 
+        Debug.Log("pA " + percentageWeight + " | pF " + proportionOfFury + " | pM " + proportionOfMultiplicator + " | weight " + weight + " | ret " + ret);
+        if (ret != 0) return (float)1 /ret; //that formula is so much dependent on so much variable we need to be sure
+        else return (float)1 / (float)10000; //because we don't really need to have that much of a specific case
+    }
+
+    public void furyModification (int mod)
+    {
+        currentFury += mod;
+        if (currentFury > highestValueOfFury) currentFury = highestValueOfFury;
+        else if (currentFury < lowestValueOfFury) currentFury = lowestValueOfFury;
+    }
+    public void Init()
+    {
+        currentFury = startingValueOfFury;
+    }
+
+
+}
 public class PlayerController : MonoBehaviour
 {
     
@@ -70,12 +126,14 @@ public class PlayerController : MonoBehaviour
     public Animator animator { get; private set; }
     public Animator cursorAnimator { get; private set; }
     public SpriteRenderer sprRenderer { get; private set; }
+
     private Rigidbody2D rb;
     [HideInInspector] public PlayerController opponent;
     [Header("REFERENCES")]
     [SerializeField] private Sword sword;
     //PARAMETERS
     [Header("PARAMETERS")]
+    [SerializeField] public Fury fury;
     [SerializeField] public SwordAction strike;
     [SerializeField] public SwordAction charge;
     [SerializeField] public SwordAction parry;
@@ -104,7 +162,13 @@ public class PlayerController : MonoBehaviour
         rb = this.GetComponent<Rigidbody2D>();
         sprRenderer = this.transform.GetChild(1).GetComponent<SpriteRenderer>();
 
+
         //VALUES
+        strike.setFury(fury);
+        charge.setFury(fury);
+        parry.setFury(fury);
+        dash.setFury(fury);
+
         machineState = new FSM_Player(this);
         angleFullWindow *= -1;
         currentSpotIndex = 0;
@@ -127,12 +191,13 @@ public class PlayerController : MonoBehaviour
 
         //Charge cooldown is the "attack" skill cooldown, so it needs to consider the strike duration as part of its cooldown
 
+        fury.Init();
         charge.Init(Time.time);
         strike.Init(Time.time);
         parry.Init(Time.time);
         dash.Init(Time.time);
         sword.Initialize(this);
-        //charge.currentCooldownDuration = strike.currentActionDuration + charge.currentCooldownDuration;
+        // charge.currentCooldownDuration = strike.currentActionDuration + charge.currentCooldownDuration;
     }
 
     private void Start() {
@@ -146,7 +211,7 @@ public class PlayerController : MonoBehaviour
     void Update() {
         machineState.Update();
 
-        if(machineState.currentState == ePLAYER_STATE.NEUTRAL) {
+        if (machineState.currentState == ePLAYER_STATE.NEUTRAL) {
             performingAction = false;
         } else {
             performingAction = true;
@@ -230,5 +295,26 @@ public class PlayerController : MonoBehaviour
         if (machineState.StateRequest(ePLAYER_STATE.REPOS)) {
             machineState.ChangeState(ePLAYER_STATE.REPOS);
         }
+    }
+
+
+    public void furyChange(int mod)
+    {
+        fury.furyModification(mod);
+        updateAllAction();
+    }
+    public void updateAllAction()
+    {
+        charge.updateCurrentActionDuration();
+        charge.updateCurrentCooldownDuration();
+
+        strike.updateCurrentActionDuration();
+        strike.updateCurrentCooldownDuration();
+
+        parry.updateCurrentActionDuration();
+        parry.updateCurrentCooldownDuration();
+
+        dash.updateCurrentActionDuration();
+        dash.updateCurrentCooldownDuration();
     }
 }

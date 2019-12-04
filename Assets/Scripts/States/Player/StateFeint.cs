@@ -11,7 +11,7 @@ public class StateFeint : PlayerState
         stateColor = Color.yellow;
     }
     
-    public override void Enter() {
+    public override void Enter(bool trigger = true) {
         owner.sprRenderer.color = stateColor;
         //Send to the animator, the enum value converted to string of the current state as trigger event
         owner.animator.SetTrigger("feint");
@@ -21,6 +21,7 @@ public class StateFeint : PlayerState
             owner.animator.SetInteger("direction", (int)actionInfos.direction);
             //Refresh animation clips speeds
             owner.animator.SetFloat("duration_" + "charge", 1 / actionInfos.currentActionDuration);
+            //owner.animator.speed = 2f;
             owner.cursorAnimator.SetFloat("duration_" + "charge", 1 / actionInfos.currentActionDuration);
         }
         owner.animator.SetBool("feinting", true);
@@ -32,10 +33,10 @@ public class StateFeint : PlayerState
         base.Update();
     }
     
-    public override void Exit(bool reset = false)
-    {
+    public override void Exit(bool reset = false) {
+        //owner.animator.speed = 1f;
         actionInfos.currentCooldownDuration = 0f;
-        owner.animator.SetBool("feinting", false);
+        //owner.animator.SetBool("feinting", false);
         base.Exit(reset);
     }
 }

@@ -11,9 +11,8 @@ public class StateRepos : PlayerState
         stateColor = Color.grey;
     }
     
-    public override void Enter()
+    public override void Enter(bool trigger = true)
     {
-        Debug.Log("Repos");
         base.Enter();
         --owner.currentSpotIndex;
         startPosition = owner.transform.position;
@@ -21,6 +20,7 @@ public class StateRepos : PlayerState
 
     public override void Update() {
         base.Update();
+        owner.animator.SetFloat("duration_repos", actionInfos.curve.Evaluate((Time.time - actionInfos.lastRefreshTime) / actionInfos.currentActionDuration));
         owner.transform.position = Vector3.Lerp(startPosition, GameManager.instance.GetDashPos(owner.playerIndex), actionInfos.curve.Evaluate((Time.time - actionInfos.lastRefreshTime) / actionInfos.currentActionDuration));
     }
 
