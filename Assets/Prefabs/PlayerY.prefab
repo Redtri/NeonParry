@@ -1748,8 +1748,8 @@ MonoBehaviour:
     lastRefreshTime: 0
     baseActionDuration: 0.25
     currentActionDuration: 0
-    percentageWeightFury: 0
-    furyModificationOnSuccess: 0
+    percentageWeightFury: 100
+    furyModificationOnSuccess: 10
     direction: 0
     curve:
       serializedVersion: 2
@@ -1807,8 +1807,8 @@ MonoBehaviour:
     lastRefreshTime: 0
     baseActionDuration: 1
     currentActionDuration: 0
-    percentageWeightFury: 0
-    furyModificationOnSuccess: 0
+    percentageWeightFury: 100
+    furyModificationOnSuccess: 10
     direction: 0
     curve:
       serializedVersion: 2
@@ -1847,7 +1847,7 @@ MonoBehaviour:
     lastRefreshTime: 0
     baseActionDuration: 0.53
     currentActionDuration: 0
-    percentageWeightFury: 0
+    percentageWeightFury: 100
     furyModificationOnSuccess: 0
     direction: 0
     curve:
