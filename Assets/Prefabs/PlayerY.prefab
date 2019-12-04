@@ -1567,6 +1567,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3502125612023623525}
   - component: {fileID: 111415530175298906}
+  - component: {fileID: 1686558839499964621}
   - component: {fileID: 2937669626301000192}
   - component: {fileID: 5194589654437277206}
   m_Layer: 0
@@ -1629,6 +1630,28 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1686558839499964621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6731785915697604276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d4ec2b82447ba84fbd0e5727f0298d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 0
+  isStaticObject: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
 --- !u!114 &2937669626301000192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1761,6 +1784,11 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+    actionSounds: []
+    additionalSounds:
+    - idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 0}
   charge:
     baseCooldownDuration: 2
     fury:
@@ -1787,6 +1815,20 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+    actionSounds:
+    - idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: a97f38f7d0b7edc47ab089e134e8612e,
+        type: 2}
+    - idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: bc4e368762bf547e1b4974443117b32a,
+        type: 2}
+    - idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 11045925571868b4480760db903f348b,
+        type: 2}
+    additionalSounds: []
   parry:
     baseCooldownDuration: 2
     fury:
@@ -1813,6 +1855,16 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+    actionSounds:
+    - idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 53ee73ff9eab6f841a13c3ca60e23ffa,
+        type: 2}
+    additionalSounds:
+    - idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: aa3952b8a1d067a448f9b55a26407c77,
+        type: 2}
   dash:
     baseCooldownDuration: 0.5
     fury:
@@ -1857,6 +1909,12 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+    actionSounds:
+    - idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: c65011007f4ab47fe85e2637da8e175a,
+        type: 2}
+    additionalSounds: []
   angleFullWindow: 130
   nbDirections: 3
   facingLeft: 0

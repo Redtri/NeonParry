@@ -1,0 +1,342 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "11",
+  "SoundbankVersion": "134",
+  "RootPaths": {
+   "ProjectRoot": "/Users/romainmineur/Library/Application Support/Wwise2019/Bottles/wwise/dosdevices/y:/Desktop/Cours ENJMIN/NanoProjet/Git_Prog/NeonParry/NeonParrySound/NeonParry_WwiseProject/",
+   "SourceFilesRoot": "/Users/romainmineur/Library/Application Support/Wwise2019/Bottles/wwise/dosdevices/y:/Desktop/Cours ENJMIN/NanoProjet/Git_Prog/NeonParry/NeonParrySound/NeonParry_WwiseProject/.cache/Mac/",
+   "SoundBanksRoot": "/Users/romainmineur/Library/Application Support/Wwise2019/Bottles/wwise/dosdevices/y:/Desktop/Cours ENJMIN/NanoProjet/Git_Prog/NeonParry/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Mac/",
+   "ExternalSourcesInputFile": "",
+   "ExternalSourcesOutputRoot": "/Users/romainmineur/Library/Application Support/Wwise2019/Bottles/wwise/dosdevices/y:/Desktop/Cours ENJMIN/NanoProjet/Git_Prog/NeonParry/NeonParrySound/NeonParry_WwiseProject/GeneratedSoundBanks/Mac"
+  },
+  "SoundBanks": [
+   {
+    "Id": "3161908922",
+    "GUID": "{1685BAFF-C53E-41C6-B7A6-66271BB1C36E}",
+    "Language": "SFX",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
+    "ShortName": "Main",
+    "Path": "Main.bnk",
+    "IncludedEvents": [
+     {
+      "Id": "1919125814",
+      "Name": "attackHighLeft",
+      "ObjectPath": "\\Events\\SFX\\attackHighLeft",
+      "GUID": "{37C8C997-A9E2-456D-ABB5-049CDDC9E6F6}",
+      "DurationType": "OneShot",
+      "DurationMin": "3.316939",
+      "DurationMax": "3.316939"
+     },
+     {
+      "Id": "2089799477",
+      "Name": "attackHighRight",
+      "ObjectPath": "\\Events\\SFX\\attackHighRight",
+      "GUID": "{971038AA-D04E-4346-9D2A-A883CCAC5784}",
+      "DurationType": "OneShot",
+      "DurationMin": "3.316939",
+      "DurationMax": "3.316939"
+     },
+     {
+      "Id": "3260672922",
+      "Name": "attackLowLeft",
+      "ObjectPath": "\\Events\\SFX\\attackLowLeft",
+      "GUID": "{6D3611D3-A24E-485D-89B7-AA159976BD01}",
+      "DurationType": "OneShot",
+      "DurationMin": "2.093515",
+      "DurationMax": "2.093515"
+     },
+     {
+      "Id": "454784401",
+      "Name": "attackLowRight",
+      "ObjectPath": "\\Events\\SFX\\attackLowRight",
+      "GUID": "{313BB4A0-83D6-485D-8DC9-BD608ABDB838}",
+      "DurationType": "OneShot",
+      "DurationMin": "2.093515",
+      "DurationMax": "2.093515"
+     },
+     {
+      "Id": "1591749358",
+      "Name": "attackMidLeft",
+      "ObjectPath": "\\Events\\SFX\\attackMidLeft",
+      "GUID": "{33B85F5B-D3B9-4B20-9E8B-3CB116F02D53}",
+      "DurationType": "OneShot",
+      "DurationMin": "2.133333",
+      "DurationMax": "2.133333"
+     },
+     {
+      "Id": "74495757",
+      "Name": "attackMidRight",
+      "ObjectPath": "\\Events\\SFX\\attackMidRight",
+      "GUID": "{6E994665-D2C3-4211-8F32-9A18BE3A8FC3}",
+      "DurationType": "OneShot",
+      "DurationMin": "2.133333",
+      "DurationMax": "2.133333"
+     },
+     {
+      "Id": "1585787840",
+      "Name": "clash",
+      "ObjectPath": "\\Events\\SFX\\clash",
+      "GUID": "{BB52A7FD-7A07-4A91-A1FF-550B5BF563CA}",
+      "MaxAttenuation": "0.000000",
+      "DurationType": "OneShot",
+      "DurationMin": "0.000000",
+      "DurationMax": "0.000000"
+     },
+     {
+      "Id": "1942692385",
+      "Name": "dash",
+      "ObjectPath": "\\Events\\SFX\\dash",
+      "GUID": "{CEE601B8-7A6B-41B2-84BC-FA5D98A0D045}",
+      "MaxAttenuation": "0.000000",
+      "DurationType": "OneShot",
+      "DurationMin": "0.000000",
+      "DurationMax": "0.000000"
+     },
+     {
+      "Id": "763920020",
+      "Name": "Dash_Event",
+      "ObjectPath": "\\Events\\SFX\\Dash_Event",
+      "GUID": "{70E1C08F-A2AF-4B6A-B992-CB5682397054}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.542086",
+      "DurationMax": "1.542086"
+     },
+     {
+      "Id": "779278001",
+      "Name": "death",
+      "ObjectPath": "\\Events\\SFX\\death",
+      "GUID": "{4CB30F7C-ABF0-4EC4-8EE2-5A315168D754}",
+      "MaxAttenuation": "0.000000",
+      "DurationType": "OneShot",
+      "DurationMin": "0.000000",
+      "DurationMax": "0.000000"
+     },
+     {
+      "Id": "168610243",
+      "Name": "fighting",
+      "ObjectPath": "\\Events\\Music\\fighting",
+      "GUID": "{CC3EAD2B-9816-48A8-B271-D33D563C37C2}",
+      "MaxAttenuation": "0.000000",
+      "DurationType": "OneShot",
+      "DurationMin": "0.000000",
+      "DurationMax": "0.000000"
+     },
+     {
+      "Id": "3151422571",
+      "Name": "firstRound",
+      "ObjectPath": "\\Events\\Music\\firstRound",
+      "GUID": "{EA174F9C-3A27-4D99-9B67-D0F6322BFD39}",
+      "DurationType": "Infinite"
+     },
+     {
+      "Id": "4203913494",
+      "Name": "follow",
+      "ObjectPath": "\\Events\\SFX\\follow",
+      "GUID": "{A5236A68-68C9-43D5-B437-0E94253AA05B}",
+      "MaxAttenuation": "0.000000",
+      "DurationType": "OneShot",
+      "DurationMin": "0.000000",
+      "DurationMax": "0.000000"
+     },
+     {
+      "Id": "116178158",
+      "Name": "Footstep_Event",
+      "ObjectPath": "\\Events\\SFX\\Footstep_Event",
+      "GUID": "{588DE496-7896-45AB-9248-4806C0F32C17}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.724600",
+      "DurationMax": "1.013649"
+     },
+     {
+      "Id": "1133475131",
+      "Name": "hitLeft",
+      "ObjectPath": "\\Events\\SFX\\hitLeft",
+      "GUID": "{5AB6FB50-6E9C-440E-AB03-23526A56863F}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.500000",
+      "DurationMax": "1.500000"
+     },
+     {
+      "Id": "1778295094",
+      "Name": "hitRight",
+      "ObjectPath": "\\Events\\SFX\\hitRight",
+      "GUID": "{A0853263-061E-4AF7-B975-01A8A2BB89A4}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.500000",
+      "DurationMax": "1.500000"
+     },
+     {
+      "Id": "2109051510",
+      "Name": "parryLeft",
+      "ObjectPath": "\\Events\\SFX\\parryLeft",
+      "GUID": "{256A09FB-9903-4A50-94D7-81B33F438AD2}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.850000",
+      "DurationMax": "0.900000"
+     },
+     {
+      "Id": "2394082421",
+      "Name": "parryRight",
+      "ObjectPath": "\\Events\\SFX\\parryRight",
+      "GUID": "{B0B0E6E2-5AD2-440C-A8ED-340910F13443}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.850000",
+      "DurationMax": "0.900000"
+     },
+     {
+      "Id": "2136132677",
+      "Name": "parryWhiff",
+      "ObjectPath": "\\Events\\SFX\\parryWhiff",
+      "GUID": "{329C0CE5-4BCC-4A5D-B0FC-04CBCC33B084}",
+      "MaxAttenuation": "0.000000",
+      "DurationType": "OneShot",
+      "DurationMin": "0.000000",
+      "DurationMax": "0.000000"
+     },
+     {
+      "Id": "1600228609",
+      "Name": "perfectParryLeft",
+      "ObjectPath": "\\Events\\SFX\\perfectParryLeft",
+      "GUID": "{D337EEF3-FC8B-4D8E-B2B5-C20ED5466F6D}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.250000",
+      "DurationMax": "1.250000"
+     },
+     {
+      "Id": "2689861876",
+      "Name": "perfectParryRight",
+      "ObjectPath": "\\Events\\SFX\\perfectParryRight",
+      "GUID": "{FF062256-407C-4D9F-A004-31F9D0766007}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.250000",
+      "DurationMax": "1.250000"
+     },
+     {
+      "Id": "479647031",
+      "Name": "secondRound",
+      "ObjectPath": "\\Events\\Music\\secondRound",
+      "GUID": "{727A7112-18F7-435B-9AF5-70FC16C9DD9E}",
+      "MaxAttenuation": "0.000000",
+      "DurationType": "OneShot",
+      "DurationMin": "0.000000",
+      "DurationMax": "0.000000"
+     },
+     {
+      "Id": "3092733402",
+      "Name": "standOff",
+      "ObjectPath": "\\Events\\Music\\standOff",
+      "GUID": "{BEB816CA-5E36-4B69-AE74-302E7B6916BD}",
+      "MaxAttenuation": "0.000000",
+      "DurationType": "OneShot",
+      "DurationMin": "0.000000",
+      "DurationMax": "0.000000"
+     },
+     {
+      "Id": "777271008",
+      "Name": "thirdRound",
+      "ObjectPath": "\\Events\\Music\\thirdRound",
+      "GUID": "{9A9BBF68-1461-4943-BC7B-1182D336320C}",
+      "MaxAttenuation": "0.000000",
+      "DurationType": "OneShot",
+      "DurationMin": "0.000000",
+      "DurationMax": "0.000000"
+     }
+    ],
+    "IncludedMemoryFiles": [
+     {
+      "Id": "134202983",
+      "Language": "SFX",
+      "ShortName": "dash_01.wav",
+      "Path": "SFX/dash_01_11697732.wem"
+     },
+     {
+      "Id": "136294100",
+      "Language": "SFX",
+      "ShortName": "robotstep_03.wav",
+      "Path": "SFX/robotstep_03_11697732.wem"
+     },
+     {
+      "Id": "220227563",
+      "Language": "SFX",
+      "ShortName": "perfectParry.wav",
+      "Path": "SFX/perfectParry_11697732.wem"
+     },
+     {
+      "Id": "296044258",
+      "Language": "SFX",
+      "ShortName": "main_bass_noclick.wav",
+      "Path": "SFX/main_bass_noclick_469574DC.wem"
+     },
+     {
+      "Id": "305375330",
+      "Language": "SFX",
+      "ShortName": "attackLow.wav",
+      "Path": "SFX/attackLow_11697732.wem"
+     },
+     {
+      "Id": "326377906",
+      "Language": "SFX",
+      "ShortName": "parry02.wav",
+      "Path": "SFX/parry02_11697732.wem"
+     },
+     {
+      "Id": "509773085",
+      "Language": "SFX",
+      "ShortName": "parry01.wav",
+      "Path": "SFX/parry01_11697732.wem"
+     },
+     {
+      "Id": "584322416",
+      "Language": "SFX",
+      "ShortName": "parry03.wav",
+      "Path": "SFX/parry03_11697732.wem"
+     },
+     {
+      "Id": "716077513",
+      "Language": "SFX",
+      "ShortName": "ambient_background.wav",
+      "Path": "SFX/ambient_background_469574DC.wem"
+     },
+     {
+      "Id": "823978589",
+      "Language": "SFX",
+      "ShortName": "kick_snare.wav",
+      "Path": "SFX/kick_snare_469574DC.wem"
+     },
+     {
+      "Id": "866938126",
+      "Language": "SFX",
+      "ShortName": "attackHigh.wav",
+      "Path": "SFX/attackHigh_11697732.wem"
+     },
+     {
+      "Id": "984257227",
+      "Language": "SFX",
+      "ShortName": "robotstep_01.wav",
+      "Path": "SFX/robotstep_01_11697732.wem"
+     },
+     {
+      "Id": "1013949862",
+      "Language": "SFX",
+      "ShortName": "robotstep_02.wav",
+      "Path": "SFX/robotstep_02_11697732.wem"
+     },
+     {
+      "Id": "1057970230",
+      "Language": "SFX",
+      "ShortName": "attackMid.wav",
+      "Path": "SFX/attackMid_11697732.wem"
+     },
+     {
+      "Id": "1070117648",
+      "Language": "SFX",
+      "ShortName": "Hit.wav",
+      "Path": "SFX/Hit_11697732.wem"
+     }
+    ]
+   }
+  ]
+ }
+}
