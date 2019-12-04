@@ -13,25 +13,25 @@ MonoBehaviour:
   m_Name: AkWwiseProjectData
   m_EditorClassIdentifier: 
   AcousticTextureWwu:
-  - PhysicalPath: Virtual Acoustics/Default Work Unit.wwu
+  - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 83551d33ae3a43489959aa0b3f1739e1
     GuidInternal: 
-    m_lastTime: -8586262227514775808
+    m_lastTime: -8586271857686566638
     List: []
   AuxBusWwu:
-  - PhysicalPath: Master-Mixer Hierarchy/Default Work Unit.wwu
+  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 56f6a746797f0a4fbbe996ff7dbe6fa2
     GuidInternal: 
-    m_lastTime: -8586262227514775808
+    m_lastTime: -8586271857687753466
     List: []
   BankWwu:
-  - PhysicalPath: SoundBanks/Default Work Unit.wwu
+  - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: aab038f70511ac40accedade1b746b70
     GuidInternal: 
-    m_lastTime: -8586262175144775808
+    m_lastTime: -8586261249267837073
     List:
     - name: Main
       guid: ffba85163ec5c641b7a666271bb1c36e
@@ -41,19 +41,19 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Main
         ObjectType: 7
-      Path: Default Work Unit/Main
+      Path: Default Work Unit\Main
   EventWwu:
-  - PhysicalPath: Events/Default Work Unit.wwu
+  - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 2a81fdbbb1505e4aa9b924cc4da74340
     GuidInternal: 
-    m_lastTime: -8586262175144775808
+    m_lastTime: -8586261249274748794
     List: []
-  - PhysicalPath: Events/Music.wwu
+  - PhysicalPath: Events\Music.wwu
     ParentPhysicalPath: 
     guid: 1db4f74826e35f4092d5c6972967e448
     GuidInternal: 
-    m_lastTime: -8586262175144775808
+    m_lastTime: -8586261249274748794
     List:
     - name: fighting
       guid: 2bad3ecc1698a848b271d33d563c37c2
@@ -63,7 +63,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: fighting
         ObjectType: 3
-      Path: Music/fighting
+      Path: Music\fighting
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -75,7 +75,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: firstRound
         ObjectType: 3
-      Path: Music/firstRound
+      Path: Music\firstRound
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -87,7 +87,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: secondRound
         ObjectType: 3
-      Path: Music/secondRound
+      Path: Music\secondRound
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -99,7 +99,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: standOff
         ObjectType: 3
-      Path: Music/standOff
+      Path: Music\standOff
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -111,15 +111,15 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: thirdRound
         ObjectType: 3
-      Path: Music/thirdRound
+      Path: Music\thirdRound
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-  - PhysicalPath: Events/SFX.wwu
+  - PhysicalPath: Events\SFX.wwu
     ParentPhysicalPath: 
     guid: d2144fa278e9474fa08953a4a0b4c57d
     GuidInternal: 
-    m_lastTime: -8586261444564775808
+    m_lastTime: -8586261249274010761
     List:
     - name: attackHighLeft
       guid: 97c9c837e2a96d45abb5049cddc9e6f6
@@ -129,7 +129,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: attackHighLeft
         ObjectType: 3
-      Path: SFX/attackHighLeft
+      Path: SFX\attackHighLeft
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -141,7 +141,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: attackHighRight
         ObjectType: 3
-      Path: SFX/attackHighRight
+      Path: SFX\attackHighRight
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -153,7 +153,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: attackLowLeft
         ObjectType: 3
-      Path: SFX/attackLowLeft
+      Path: SFX\attackLowLeft
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -165,7 +165,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: attackLowRight
         ObjectType: 3
-      Path: SFX/attackLowRight
+      Path: SFX\attackLowRight
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -177,7 +177,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: attackMidLeft
         ObjectType: 3
-      Path: SFX/attackMidLeft
+      Path: SFX\attackMidLeft
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -189,7 +189,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: attackMidRight
         ObjectType: 3
-      Path: SFX/attackMidRight
+      Path: SFX\attackMidRight
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -201,7 +201,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: clash
         ObjectType: 3
-      Path: SFX/clash
+      Path: SFX\clash
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -213,7 +213,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: dash
         ObjectType: 3
-      Path: SFX/dash
+      Path: SFX\dash
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -225,7 +225,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Dash_Event
         ObjectType: 3
-      Path: SFX/Dash_Event
+      Path: SFX\Dash_Event
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -237,7 +237,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: death
         ObjectType: 3
-      Path: SFX/death
+      Path: SFX\death
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -249,7 +249,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: follow
         ObjectType: 3
-      Path: SFX/follow
+      Path: SFX\follow
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -261,7 +261,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Footstep_Event
         ObjectType: 3
-      Path: SFX/Footstep_Event
+      Path: SFX\Footstep_Event
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -273,7 +273,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: hitLeft
         ObjectType: 3
-      Path: SFX/hitLeft
+      Path: SFX\hitLeft
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -285,7 +285,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: hitRight
         ObjectType: 3
-      Path: SFX/hitRight
+      Path: SFX\hitRight
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -297,7 +297,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: parryLeft
         ObjectType: 3
-      Path: SFX/parryLeft
+      Path: SFX\parryLeft
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -309,7 +309,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: parryRight
         ObjectType: 3
-      Path: SFX/parryRight
+      Path: SFX\parryRight
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -321,7 +321,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: parryWhiff
         ObjectType: 3
-      Path: SFX/parryWhiff
+      Path: SFX\parryWhiff
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -333,7 +333,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: perfectParryLeft
         ObjectType: 3
-      Path: SFX/perfectParryLeft
+      Path: SFX\perfectParryLeft
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -345,16 +345,16 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: perfectParryRight
         ObjectType: 3
-      Path: SFX/perfectParryRight
+      Path: SFX\perfectParryRight
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
   RtpcWwu:
-  - PhysicalPath: Game Parameters/Default Work Unit.wwu
+  - PhysicalPath: Game Parameters\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 877bfb69bb34254997bc686db894f7e0
     GuidInternal: 
-    m_lastTime: -8586261446074775808
+    m_lastTime: -8586261249274688961
     List:
     - name: Fury_RTPC
       guid: 0032026f833a4f44b9852e8a0a22d3c4
@@ -364,13 +364,13 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Fury_RTPC
         ObjectType: 13
-      Path: Default Work Unit/Fury_RTPC
+      Path: Default Work Unit\Fury_RTPC
   StateWwu:
-  - PhysicalPath: States/Default Work Unit.wwu
+  - PhysicalPath: States\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 63f8cb137edd08448f7f5c3e8e1dcee3
     GuidInternal: 
-    m_lastTime: -8586262227514775808
+    m_lastTime: -8586262330047919014
     List:
     - name: inGame
       guid: 39b379b82f69ba47ad1966e0aed0ed42
@@ -380,7 +380,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: inGame
         ObjectType: 9
-      Path: Default Work Unit/inGame
+      Path: Default Work Unit\inGame
       values:
       - name: fighting
         guid: 0d112b7d9d96ec4fabb6611d867c77e1
@@ -410,24 +410,22 @@ MonoBehaviour:
       ValueIcons: []
       valuesInternal: []
   SwitchWwu:
-  - PhysicalPath: Switches/Default Work Unit.wwu
+  - PhysicalPath: Switches\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: a4f6631705f8a84f9dbce18c0a015370
     GuidInternal: 
-    m_lastTime: -8586262227514775808
+    m_lastTime: -8586271857686636144
     List: []
   TriggerWwu:
-  - PhysicalPath: Triggers/Default Work Unit.wwu
+  - PhysicalPath: Triggers\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 81cfa00d5576604d8c63d698b38a82dd
     GuidInternal: 
-    m_lastTime: -8586262227514775808
+    m_lastTime: -8586271857686586584
     List: []
   ExpandedItems:
   - /NeonParry_WwiseProject
   - /NeonParry_WwiseProject/Events
   - /NeonParry_WwiseProject/Events/SFX
-  - /NeonParry_WwiseProject/SoundBanks
-  - /NeonParry_WwiseProject/SoundBanks/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
