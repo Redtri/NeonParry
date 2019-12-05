@@ -16,17 +16,15 @@ public class FX_Handler : MonoBehaviour
 
     public void UpdateFuryFX(float furyPercent) {
         //0.45 0.87
-        print(furyPercent);
+
         var main = furyElecFxPrefab.GetComponent<ParticleSystem>().main;
         main.startSize = new ParticleSystem.MinMaxCurve(0.05f * furyPercent, 0.1f * furyPercent);
 
         if(furyPercent > 0) {
             //TODO : Handle fury percent with FX feedback amount
-            print("Hello FXs");
             furySteamFxPrefab.SetActive(true);
             furyElecFxPrefab.SetActive(true);
         } else {
-            print("Bye Fxs");
             furySteamFxPrefab.SetActive(false);
             furyElecFxPrefab.SetActive(false);
         }
