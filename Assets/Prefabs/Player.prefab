@@ -1572,7 +1572,7 @@ GameObject:
   - component: {fileID: 5194589654437277206}
   - component: {fileID: 1650136128622054671}
   m_Layer: 0
-  m_Name: PlayerY
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1696,6 +1696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80b1ba4d4f812a84c88c034a4509dc33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fxHandler: {fileID: 0}
   opponent: {fileID: 0}
   sword: {fileID: 94511185006289815}
   fury:
@@ -1725,8 +1726,8 @@ MonoBehaviour:
     lastRefreshTime: 0
     baseActionDuration: 0.25
     currentActionDuration: 0
-    percentageWeightFury: 0
-    furyModificationOnSuccess: 0
+    percentageWeightFury: 50
+    furyModificationOnSuccess: 50
     direction: 0
     curve:
       serializedVersion: 2
@@ -1878,6 +1879,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parryFxPrefab: {fileID: 9161726182216717751}
   hitFxPrefab: {fileID: 4243178508787684413}
+  furySteamFxPrefab: {fileID: 5284863295090770080}
+  furyElecFxPrefab: {fileID: 6583234435971271725}
 --- !u!1 &7202519543677114687
 GameObject:
   m_ObjectHideFlags: 0
@@ -2513,6 +2516,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: elec hache plus perso fury
       objectReference: {fileID: 0}
+    - target: {fileID: 6583234436534548960, guid: bdaa1317eef2f4c4b83e8de36a7945cc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6581915550035048910, guid: bdaa1317eef2f4c4b83e8de36a7945cc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2600,6 +2608,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdaa1317eef2f4c4b83e8de36a7945cc, type: 3}
+--- !u!1 &6583234435971271725 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6583234436534548960, guid: bdaa1317eef2f4c4b83e8de36a7945cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 602764749}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6581915549517220867 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6581915550035048910, guid: bdaa1317eef2f4c4b83e8de36a7945cc,
@@ -2617,6 +2631,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FURY AURA
+      objectReference: {fileID: 0}
+    - target: {fileID: 5284863296140973400, guid: 4dc7afda41934184c995d0ababcc093c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5278461371922914532, guid: 4dc7afda41934184c995d0ababcc093c,
         type: 3}
@@ -2738,6 +2757,12 @@ PrefabInstance:
 --- !u!4 &5278461372971043100 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5278461371922914532, guid: 4dc7afda41934184c995d0ababcc093c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1117345272}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5284863295090770080 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5284863296140973400, guid: 4dc7afda41934184c995d0ababcc093c,
     type: 3}
   m_PrefabInstance: {fileID: 1117345272}
   m_PrefabAsset: {fileID: 0}
@@ -3008,6 +3033,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: IMPACT PARRY
       objectReference: {fileID: 0}
+    - target: {fileID: 8619440182146400695, guid: 9f5df837c2f192c4280779f1c779e57b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8617567516785384165, guid: 9f5df837c2f192c4280779f1c779e57b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3186,16 +3216,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3502125612023623525}
     m_Modifications:
-    - target: {fileID: 1100962945144173823, guid: 25590d53d86c8194a8a385034698549a,
-        type: 3}
-      propertyPath: m_Name
-      value: HIT ON PLAYER 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1100962945144173823, guid: 25590d53d86c8194a8a385034698549a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1103029124560007085, guid: 25590d53d86c8194a8a385034698549a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3250,6 +3270,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -45.636
+      objectReference: {fileID: 0}
+    - target: {fileID: 1100962945144173823, guid: 25590d53d86c8194a8a385034698549a,
+        type: 3}
+      propertyPath: m_Name
+      value: HIT ON PLAYER 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1100962945144173823, guid: 25590d53d86c8194a8a385034698549a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25590d53d86c8194a8a385034698549a, type: 3}

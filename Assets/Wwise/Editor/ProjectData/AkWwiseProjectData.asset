@@ -17,21 +17,25 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 83551d33ae3a43489959aa0b3f1739e1
     GuidInternal: 
-    m_lastTime: -8586271857686566638
+    m_lastTime: -8586262052917536951
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 56f6a746797f0a4fbbe996ff7dbe6fa2
     GuidInternal: 
-    m_lastTime: -8586271857687753466
+    m_lastTime: -8586262052917976245
     List: []
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: aab038f70511ac40accedade1b746b70
     GuidInternal: 
+<<<<<<< HEAD
     m_lastTime: -8586262467731104877
+=======
+    m_lastTime: -8586260353747032216
+>>>>>>> Audio
     List:
     - name: Main
       guid: ffba85163ec5c641b7a666271bb1c36e
@@ -47,7 +51,59 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 2a81fdbbb1505e4aa9b924cc4da74340
     GuidInternal: 
+<<<<<<< HEAD
     m_lastTime: -8586262467732462920
+=======
+    m_lastTime: -8586262052918091060
+    List: []
+  - PhysicalPath: Events\Music.wwu
+    ParentPhysicalPath: 
+    guid: 1db4f74826e35f4092d5c6972967e448
+    GuidInternal: 
+    m_lastTime: -8586260591412049973
+    List:
+    - name: Music_FirstPVLost
+      guid: 2bad3ecc1698a848b271d33d563c37c2
+      id: 723605745
+      PathAndIcons:
+      - ElementName: Music
+        ObjectType: 12
+      - ElementName: Music_FirstPVLost
+        ObjectType: 3
+      Path: Music\Music_FirstPVLost
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Music_SecondPVLost
+      guid: ca16b8be365e694bae74302e7b6916bd
+      id: 2154872981
+      PathAndIcons:
+      - ElementName: Music
+        ObjectType: 12
+      - ElementName: Music_SecondPVLost
+        ObjectType: 3
+      Path: Music\Music_SecondPVLost
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Music_Start
+      guid: 9c4f17ea273a994d9b67d0f6322bfd39
+      id: 3725903807
+      PathAndIcons:
+      - ElementName: Music
+        ObjectType: 12
+      - ElementName: Music_Start
+        ObjectType: 3
+      Path: Music\Music_Start
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+  - PhysicalPath: Events\SFX.wwu
+    ParentPhysicalPath: 
+    guid: d2144fa278e9474fa08953a4a0b4c57d
+    GuidInternal: 
+    m_lastTime: -8586260606331009643
+>>>>>>> Audio
     List:
     - name: attackHigh
       guid: 97c9c837e2a96d45abb5049cddc9e6f6
@@ -264,14 +320,32 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 877bfb69bb34254997bc686db894f7e0
     GuidInternal: 
+<<<<<<< HEAD
     m_lastTime: -8586271857700662552
     List: []
+=======
+    m_lastTime: -8586260606331004641
+    List:
+    - name: Fury_RTPC
+      guid: 0032026f833a4f44b9852e8a0a22d3c4
+      id: 1993867557
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Fury_RTPC
+        ObjectType: 13
+      Path: Default Work Unit\Fury_RTPC
+>>>>>>> Audio
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 63f8cb137edd08448f7f5c3e8e1dcee3
     GuidInternal: 
+<<<<<<< HEAD
     m_lastTime: -8586262467731104877
+=======
+    m_lastTime: -8586262052917566902
+>>>>>>> Audio
     List:
     - name: inGame
       guid: 39b379b82f69ba47ad1966e0aed0ed42
@@ -315,22 +389,26 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: a4f6631705f8a84f9dbce18c0a015370
     GuidInternal: 
-    m_lastTime: -8586271857686636144
+    m_lastTime: -8586262052917561912
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 81cfa00d5576604d8c63d698b38a82dd
     GuidInternal: 
-    m_lastTime: -8586271857686586584
+    m_lastTime: -8586262052917541944
     List: []
   ExpandedItems:
   - /NeonParry_WwiseProject
   - /NeonParry_WwiseProject/Events
+<<<<<<< HEAD
   - /NeonParry_WwiseProject/Events/Default Work Unit
   - /NeonParry_WwiseProject/Events/Default Work Unit/MusicEvents
   - /NeonParry_WwiseProject/Events/Default Work Unit/SfxEvents
   - /NeonParry_WwiseProject/SoundBanks
   - /NeonParry_WwiseProject/SoundBanks/Default Work Unit
+=======
+  - /NeonParry_WwiseProject/Events/Music
+>>>>>>> Audio
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

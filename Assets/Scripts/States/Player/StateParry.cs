@@ -31,6 +31,7 @@ public class StateParry : PlayerState
 
     public override void Exit(bool reset = false) {
         if (parrySuccessful) {
+            owner.fxHandler.SpawnFX(ePLAYER_STATE.PARRY);
             actionInfos.samples.additionalSounds[0].Post(owner.gameObject);
             if (actionInfos != null) {
                 if (reset) {

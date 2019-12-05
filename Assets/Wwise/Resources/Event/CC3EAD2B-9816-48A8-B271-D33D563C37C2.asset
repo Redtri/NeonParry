@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0c5bf129bee02d4eb8afd73705fe01a, type: 3}
   m_Name: CC3EAD2B-9816-48A8-B271-D33D563C37C2
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   objectName: fighting
   id: 168610243
+=======
+  objectName: Music_FirstPVLost
+  id: 723605745
+>>>>>>> Audio
   guid: CC3EAD2B-9816-48A8-B271-D33D563C37C2

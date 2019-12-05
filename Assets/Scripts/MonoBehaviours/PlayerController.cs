@@ -158,7 +158,6 @@ public class PlayerController : MonoBehaviour
         animator = this.GetComponent<Animator>();
         cursorAnimator = sword.GetComponent<Animator>();
         rb = this.GetComponent<Rigidbody2D>();
-        sprRenderer = this.transform.GetChild(1).GetComponent<SpriteRenderer>();
         fxHandler = this.GetComponent<FX_Handler>();
 
 
@@ -332,6 +331,7 @@ public class PlayerController : MonoBehaviour
     public void furyChange(int mod)
     {
         fury.furyModification(mod);
+        fxHandler.UpdateFuryFX(((float)fury.currentFury) / 100);
         updateAllAction();
     }
 
