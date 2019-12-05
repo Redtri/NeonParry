@@ -29,17 +29,17 @@ public abstract class PlayerState
             owner.cursorAnimator.SetTrigger(stateMachine.currentState.ToString().ToLower());
         }
         if (actionInfos != null) {
-            actionInfos.Refresh(Time.time);
-            owner.animator.SetInteger("direction", (int)actionInfos.direction);
-            //Refresh animation clips speeds
-            owner.animator.SetFloat("duration_" + stateMachine.currentState.ToString().ToLower(), 1 / actionInfos.currentActionDuration);
-            owner.cursorAnimator.SetFloat("duration_" + stateMachine.currentState.ToString().ToLower(), 1 / actionInfos.currentActionDuration);
-            if(actionInfos.actionSounds != null) {
-                if (actionInfos.actionSounds.Length > 1) {
-                    actionInfos.actionSounds[(int)actionInfos.direction-1].Post(owner.gameObject);
-                } else if(actionInfos.actionSounds.Length > 0){
-                    actionInfos.actionSounds[0].Post(owner.gameObject);
+            if (actionInfos.samples != null) {
+                if (actionInfos.samples.actionSounds.Length > 1) {
+                    actionInfos.samples.actionSounds[(int)actionInfos.direction - 1].Post(owner.gameObject);
+                } else if (actionInfos.samples.actionSounds.Length > 0) {
+                    actionInfos.samples.actionSounds[0].Post(owner.gameObject);
                 }
+                actionInfos.Refresh(Time.time);
+                owner.animator.SetInteger("direction", (int)actionInfos.direction);
+                //Refresh animation clips speeds
+                owner.animator.SetFloat("duration_" + stateMachine.currentState.ToString().ToLower(), 1 / actionInfos.currentActionDuration);
+                owner.cursorAnimator.SetFloat("duration_" + stateMachine.currentState.ToString().ToLower(), 1 / actionInfos.currentActionDuration);
             }
         }
     }

@@ -1514,7 +1514,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: VFX attaque haut
+    path: VFX attaque haut (1)
     classID: 1
     script: {fileID: 0}
   - curve:
@@ -1533,7 +1533,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: VFX HIT GROUND
+    path: VFX HIT GROUND (1)
     classID: 1
     script: {fileID: 0}
   m_PPtrCurves: []
@@ -1727,14 +1727,14 @@ AnimationClip:
       customType: 4
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 2216555285
+      path: 4131109285
       attribute: 2086281974
       script: {fileID: 0}
       typeID: 1
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 2830747482
+      path: 4003309964
       attribute: 2086281974
       script: {fileID: 0}
       typeID: 1
@@ -6503,7 +6503,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: VFX attaque haut
+    path: VFX attaque haut (1)
     classID: 1
     script: {fileID: 0}
   - curve:
@@ -6522,7 +6522,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: VFX HIT GROUND
+    path: VFX HIT GROUND (1)
     classID: 1
     script: {fileID: 0}
   m_EulerEditorCurves:

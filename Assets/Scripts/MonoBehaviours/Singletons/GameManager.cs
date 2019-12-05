@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.InputSystem;
 
 
 public class GameManager : MonoBehaviour
 {
     public class PlayerInfo {
-        public PlayerController controller;
-        public int playerIndex;
-        public int score;
+        [HideInInspector] public PlayerController controller;
+        [HideInInspector] public int playerIndex;
+        [HideInInspector] public int score;
 
         public PlayerInfo(PlayerController tController, int tPlayerIndex) {
             controller = tController;
@@ -17,6 +18,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public GameObject[] prefabs;
+    public PlayerInputManager inputSystem;
     public int nbSteps;
     public float stepValue;
     public Vector3 groundOffset;
@@ -62,6 +65,7 @@ public class GameManager : MonoBehaviour
             case 0:
                 newPlayer.transform.position = spots[nbSteps-1];
                 newPlayer.facingLeft = false;
+                inputSystem.playerPrefab = prefabs[1];
                 break;
             case 1:
                 newPlayer.transform.position = spots[nbSteps];

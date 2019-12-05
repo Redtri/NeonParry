@@ -3782,7 +3782,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 11
+        value: 10
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -3792,15 +3792,6 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.05
         value: 13
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.083333336
-        value: 10
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -3951,6 +3942,25 @@ AnimationClip:
     attribute: m_SortingOrder
     path: brad devant
     classID: 212
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_IsActive
+    path: VFX HIT GROUND (1)
+    classID: 1
     script: {fileID: 0}
   m_PPtrCurves: []
   m_SampleRate: 60
@@ -4169,6 +4179,13 @@ AnimationClip:
       script: {fileID: 0}
       typeID: 212
       customType: 26
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 4003309964
+      attribute: 2086281974
+      script: {fileID: 0}
+      typeID: 1
+      customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
       path: 1820176679
@@ -15427,7 +15444,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 11
+        value: 10
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -15437,15 +15454,6 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.05
         value: 13
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.083333336
-        value: 10
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -15596,6 +15604,25 @@ AnimationClip:
     attribute: m_SortingOrder
     path: brad devant
     classID: 212
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_IsActive
+    path: VFX HIT GROUND (1)
+    classID: 1
     script: {fileID: 0}
   m_EulerEditorCurves:
   - curve:
