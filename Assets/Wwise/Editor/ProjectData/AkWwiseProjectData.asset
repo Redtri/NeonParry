@@ -53,41 +53,41 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 1db4f74826e35f4092d5c6972967e448
     GuidInternal: 
-    m_lastTime: -8586260596697612113
+    m_lastTime: -8586260591412049973
     List:
-    - name: fighting
+    - name: Music_FirstPVLost
       guid: 2bad3ecc1698a848b271d33d563c37c2
-      id: 168610243
+      id: 723605745
       PathAndIcons:
       - ElementName: Music
         ObjectType: 12
-      - ElementName: fighting
+      - ElementName: Music_FirstPVLost
         ObjectType: 3
-      Path: Music\fighting
+      Path: Music\Music_FirstPVLost
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: firstRound
-      guid: 9c4f17ea273a994d9b67d0f6322bfd39
-      id: 3151422571
-      PathAndIcons:
-      - ElementName: Music
-        ObjectType: 12
-      - ElementName: firstRound
-        ObjectType: 3
-      Path: Music\firstRound
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
-    - name: standOff
+    - name: Music_SecondPVLost
       guid: ca16b8be365e694bae74302e7b6916bd
-      id: 3092733402
+      id: 2154872981
       PathAndIcons:
       - ElementName: Music
         ObjectType: 12
-      - ElementName: standOff
+      - ElementName: Music_SecondPVLost
         ObjectType: 3
-      Path: Music\standOff
+      Path: Music\Music_SecondPVLost
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Music_Start
+      guid: 9c4f17ea273a994d9b67d0f6322bfd39
+      id: 3725903807
+      PathAndIcons:
+      - ElementName: Music
+        ObjectType: 12
+      - ElementName: Music_Start
+        ObjectType: 3
+      Path: Music\Music_Start
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -402,6 +402,6 @@ MonoBehaviour:
   ExpandedItems:
   - /NeonParry_WwiseProject
   - /NeonParry_WwiseProject/Events
-  - /NeonParry_WwiseProject/Events/SFX
+  - /NeonParry_WwiseProject/Events/Music
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

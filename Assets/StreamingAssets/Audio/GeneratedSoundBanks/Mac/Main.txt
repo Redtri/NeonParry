@@ -32,7 +32,7 @@ State	ID	Name	State Group			Notes
 	3092733402	standOff	inGame			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	134202983	dash_01	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Mac\SFX\dash_01_DCA4608F.wem		\Actor-Mixer Hierarchy\Guerric\Dash\dash_01		29232
+	134202983	dash_01	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Mac\SFX\dash_01_70006264.wem		\Actor-Mixer Hierarchy\Guerric\Dash\dash_01		29232
 	136294100	robotstep_03	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Mac\SFX\robotstep_03_11697732.wem		\Actor-Mixer Hierarchy\Guerric\Footstep\robotstep_03		13184
 	220227563	perfectParry	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Mac\SFX\perfectParry_11697732.wem		\Actor-Mixer Hierarchy\Thomas\perfectParry		27740
 	296044258	RythmicLayer02	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Mac\SFX\main_bass_noclick_469574DC.wem		\Interactive Music Hierarchy\Guerric\inGameMusic\fightingMusic\fightingMusic\RythmicLayer02		156988

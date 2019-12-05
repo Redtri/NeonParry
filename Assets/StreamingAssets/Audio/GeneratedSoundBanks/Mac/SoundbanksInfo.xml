@@ -21,33 +21,33 @@
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<IncludedEvents>
-				<Event Id="1919125814" Name="attackHighLeft" ObjectPath="\Events\SFX\attackHighLeft" DurationType="OneShot" DurationMin="3.316939" DurationMax="3.316939"/>
-				<Event Id="2089799477" Name="attackHighRight" ObjectPath="\Events\SFX\attackHighRight" DurationType="OneShot" DurationMin="3.316939" DurationMax="3.316939"/>
-				<Event Id="3260672922" Name="attackLowLeft" ObjectPath="\Events\SFX\attackLowLeft" DurationType="OneShot" DurationMin="2.093515" DurationMax="2.093515"/>
-				<Event Id="454784401" Name="attackLowRight" ObjectPath="\Events\SFX\attackLowRight" DurationType="OneShot" DurationMin="2.093515" DurationMax="2.093515"/>
-				<Event Id="1591749358" Name="attackMidLeft" ObjectPath="\Events\SFX\attackMidLeft" DurationType="OneShot" DurationMin="2.133333" DurationMax="2.133333"/>
-				<Event Id="74495757" Name="attackMidRight" ObjectPath="\Events\SFX\attackMidRight" DurationType="OneShot" DurationMin="2.133333" DurationMax="2.133333"/>
-				<Event Id="1585787840" Name="clash" ObjectPath="\Events\SFX\clash" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="1942692385" Name="dash" ObjectPath="\Events\SFX\dash" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="763920020" Name="Dash_Event" ObjectPath="\Events\SFX\Dash_Event" DurationType="OneShot" DurationMin="1.246344" DurationMax="1.246344"/>
-				<Event Id="779278001" Name="death" ObjectPath="\Events\SFX\death" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="4203913494" Name="follow" ObjectPath="\Events\SFX\follow" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="116178158" Name="Footstep_Event" ObjectPath="\Events\SFX\Footstep_Event" DurationType="OneShot" DurationMin="0.724600" DurationMax="1.013649"/>
-				<Event Id="1133475131" Name="hitLeft" ObjectPath="\Events\SFX\hitLeft" DurationType="OneShot" DurationMin="1.500000" DurationMax="1.500000"/>
-				<Event Id="1778295094" Name="hitRight" ObjectPath="\Events\SFX\hitRight" DurationType="OneShot" DurationMin="1.500000" DurationMax="1.500000"/>
-				<Event Id="723605745" Name="Music_FirstPVLost" ObjectPath="\Events\Music\Music_FirstPVLost" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="2154872981" Name="Music_SecondPVLost" ObjectPath="\Events\Music\Music_SecondPVLost" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="3725903807" Name="Music_Start" ObjectPath="\Events\Music\Music_Start" DurationType="Infinite"/>
-				<Event Id="2109051510" Name="parryLeft" ObjectPath="\Events\SFX\parryLeft" DurationType="OneShot" DurationMin="0.850000" DurationMax="0.900000"/>
-				<Event Id="2394082421" Name="parryRight" ObjectPath="\Events\SFX\parryRight" DurationType="OneShot" DurationMin="0.850000" DurationMax="0.900000"/>
-				<Event Id="2136132677" Name="parryWhiff" ObjectPath="\Events\SFX\parryWhiff" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="1600228609" Name="perfectParryLeft" ObjectPath="\Events\SFX\perfectParryLeft" DurationType="OneShot" DurationMin="1.250000" DurationMax="1.250000"/>
-				<Event Id="2689861876" Name="perfectParryRight" ObjectPath="\Events\SFX\perfectParryRight" DurationType="OneShot" DurationMin="1.250000" DurationMax="1.250000"/>
+				<Event Id="1919125814" Name="attackHighLeft" ObjectPath="\Events\SFX\attackHighLeft"/>
+				<Event Id="2089799477" Name="attackHighRight" ObjectPath="\Events\SFX\attackHighRight"/>
+				<Event Id="3260672922" Name="attackLowLeft" ObjectPath="\Events\SFX\attackLowLeft"/>
+				<Event Id="454784401" Name="attackLowRight" ObjectPath="\Events\SFX\attackLowRight"/>
+				<Event Id="1591749358" Name="attackMidLeft" ObjectPath="\Events\SFX\attackMidLeft"/>
+				<Event Id="74495757" Name="attackMidRight" ObjectPath="\Events\SFX\attackMidRight"/>
+				<Event Id="1585787840" Name="clash" ObjectPath="\Events\SFX\clash"/>
+				<Event Id="1942692385" Name="dash" ObjectPath="\Events\SFX\dash"/>
+				<Event Id="763920020" Name="Dash_Event" ObjectPath="\Events\SFX\Dash_Event"/>
+				<Event Id="779278001" Name="death" ObjectPath="\Events\SFX\death"/>
+				<Event Id="4203913494" Name="follow" ObjectPath="\Events\SFX\follow"/>
+				<Event Id="116178158" Name="Footstep_Event" ObjectPath="\Events\SFX\Footstep_Event"/>
+				<Event Id="1133475131" Name="hitLeft" ObjectPath="\Events\SFX\hitLeft"/>
+				<Event Id="1778295094" Name="hitRight" ObjectPath="\Events\SFX\hitRight"/>
+				<Event Id="723605745" Name="Music_FirstPVLost" ObjectPath="\Events\Music\Music_FirstPVLost"/>
+				<Event Id="2154872981" Name="Music_SecondPVLost" ObjectPath="\Events\Music\Music_SecondPVLost"/>
+				<Event Id="3725903807" Name="Music_Start" ObjectPath="\Events\Music\Music_Start"/>
+				<Event Id="2109051510" Name="parryLeft" ObjectPath="\Events\SFX\parryLeft"/>
+				<Event Id="2394082421" Name="parryRight" ObjectPath="\Events\SFX\parryRight"/>
+				<Event Id="2136132677" Name="parryWhiff" ObjectPath="\Events\SFX\parryWhiff"/>
+				<Event Id="1600228609" Name="perfectParryLeft" ObjectPath="\Events\SFX\perfectParryLeft"/>
+				<Event Id="2689861876" Name="perfectParryRight" ObjectPath="\Events\SFX\perfectParryRight"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="134202983" Language="SFX">
 					<ShortName>dash_01.wav</ShortName>
-					<Path>SFX\dash_01_DCA4608F.wem</Path>
+					<Path>SFX\dash_01_70006264.wem</Path>
 				</File>
 				<File Id="136294100" Language="SFX">
 					<ShortName>robotstep_03.wav</ShortName>
