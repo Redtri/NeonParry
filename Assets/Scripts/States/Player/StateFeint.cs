@@ -12,7 +12,6 @@ public class StateFeint : PlayerState
     }
     
     public override void Enter(bool trigger = true) {
-        owner.sprRenderer.color = stateColor;
         //Send to the animator, the enum value converted to string of the current state as trigger event
         owner.animator.SetTrigger("feint");
         owner.cursorAnimator.SetTrigger("feint");

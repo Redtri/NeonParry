@@ -10,6 +10,9 @@ public class FSM_Player
     public ePLAYER_STATE currentState { get; private set; }
     public Dictionary<ePLAYER_STATE, PlayerState> states;
 
+    public delegate void StateChanged();
+    public event StateChanged onStateChanged;
+
     public FSM_Player(PlayerController player) {
         states = new Dictionary<ePLAYER_STATE, PlayerState> { { ePLAYER_STATE.NEUTRAL, new StateNeutral(player, this, null, ePLAYER_STATE.NEUTRAL, eSTATE_PRIORITY.DEFAULT) },
                                                               { ePLAYER_STATE.CHARGE, new StateCharge(player, this, player.charge, ePLAYER_STATE.STRIKE, eSTATE_PRIORITY.DEFAULT) },
@@ -36,6 +39,7 @@ public class FSM_Player
 
     //Should be called by any state that can ensure the state transition
     public void ChangeState(ePLAYER_STATE newState, bool trigger = true, bool reset = false) {
+        onStateChanged?.Invoke();
         previousState = currentState;
         states[currentState].Exit(reset);
         currentState = newState;
