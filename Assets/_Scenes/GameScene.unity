@@ -952,6 +952,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreLeft: {fileID: 325669628}
   scoreRight: {fileID: 1186133624}
+  barLeft: {fileID: 0}
+  barRight: {fileID: 0}
 --- !u!114 &1412723704
 MonoBehaviour:
   m_ObjectHideFlags: 0
