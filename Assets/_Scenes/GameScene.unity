@@ -24,7 +24,7 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 3
+  m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
@@ -208,6 +208,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a62f4a39ef83d64c97b7ee2d84acd12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefabs:
+  - {fileID: 0}
+  - {fileID: 4729761028141108296, guid: 34891b075e8d01b4e869d5f3af51afc1, type: 3}
+  inputSystem: {fileID: 1142575001}
   nbSteps: 4
   stepValue: 12
   groundOffset: {x: 0, y: 10, z: 0}
@@ -639,7 +643,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
     m_Reference: {fileID: 0}
-  m_PlayerPrefab: {fileID: 6731785915697604276, guid: dc7450c1e03c9854ca86db3c72446622,
+  m_PlayerPrefab: {fileID: 6667156457388154233, guid: d7066d6aef5c78741abe163d204d00b6,
     type: 3}
   m_SplitScreen: 0
   m_MaintainAspectRatioInSplitScreen: 0
