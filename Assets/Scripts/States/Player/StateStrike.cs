@@ -45,6 +45,7 @@ public class StateStrike : PlayerState
                 if (!opponentDashed) {
                     Debug.Log("Opponent being stroke successfully");
                     owner.furyChange(actionInfos.furyModificationOnSuccess); //change the fury of a fixed amount
+                    owner.opponent.fxHandler.SpawnFX(ePLAYER_STATE.STRIKE);
                     owner.opponent.animator.SetTrigger("hit");
                     actionInfos.samples.additionalSounds[0].Post(owner.gameObject);
                     GameManager.instance.StrikeSuccessful(owner.playerIndex);

@@ -22,7 +22,7 @@ public abstract class PlayerState
     }
 
     public virtual void Enter(bool trigger = true) {
-        owner.sprRenderer.color = stateColor;
+        //owner.sprRenderer.color = stateColor;
         //Send to the animator, the enum value converted to string of the current state as trigger event
         if (trigger) {
             owner.animator.SetTrigger(stateMachine.currentState.ToString().ToLower());

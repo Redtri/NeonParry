@@ -122,6 +122,7 @@ public class PlayerController : MonoBehaviour
     public Animator animator { get; private set; }
     public Animator cursorAnimator { get; private set; }
     public SpriteRenderer sprRenderer { get; private set; }
+    [HideInInspector] public FX_Handler fxHandler;
 
     private Rigidbody2D rb;
     [HideInInspector] public PlayerController opponent;
@@ -158,6 +159,7 @@ public class PlayerController : MonoBehaviour
         cursorAnimator = sword.GetComponent<Animator>();
         rb = this.GetComponent<Rigidbody2D>();
         sprRenderer = this.transform.GetChild(1).GetComponent<SpriteRenderer>();
+        fxHandler = this.GetComponent<FX_Handler>();
 
 
         //VALUES

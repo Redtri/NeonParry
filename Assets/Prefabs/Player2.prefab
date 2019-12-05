@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PPlayer death (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4745709338420314886, guid: cd4c23b22d35dce49bebfcf081e2cddc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4743976706164693076, guid: cd4c23b22d35dce49bebfcf081e2cddc,
         type: 3}
       propertyPath: m_LocalPosition.x
