@@ -1544,7 +1544,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: vfx attaque milieu
+    path: vfx attaque milieu (1)
     classID: 1
     script: {fileID: 0}
   m_PPtrCurves: []
@@ -1731,7 +1731,7 @@ AnimationClip:
       customType: 26
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 1471531762
+      path: 4012747700
       attribute: 2086281974
       script: {fileID: 0}
       typeID: 1
@@ -6491,7 +6491,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: vfx attaque milieu
+    path: vfx attaque milieu (1)
     classID: 1
     script: {fileID: 0}
   m_EulerEditorCurves:

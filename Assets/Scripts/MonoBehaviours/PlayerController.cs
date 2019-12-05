@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -11,8 +11,7 @@ public enum eCONTROLLER { KEYBOARD, GAMEPAD };
 public class SwordAction : Action {
     [HideInInspector] public eDIRECTION direction;
     public AnimationCurve curve;
-    public AK.Wwise.Event[] actionSounds;
-    public AK.Wwise.Event[] additionalSounds;
+    public AudioSampler samples;
 
     public bool IsActionPerforming(float time, eDIRECTION tDirection) {
         return base.IsActionPerforming(time) && direction == tDirection;
@@ -78,7 +77,6 @@ public class Cooldown {
     {
         fury = f;
     }
-
 }
 
 [System.Serializable]
@@ -100,7 +98,7 @@ public class Fury
         float proportionOfMultiplicator = ((float)maximumMultiplicator - (float)minimumMultiplicator); // if we're max fury we need to return 1/maximumMultiplicator, if we're at 0 fury we need to return 1/minimumMultiplicator
         float weight = (float)percentageWeight / (float)100;
         float ret = ((float)minimumMultiplicator + (proportionOfFury * proportionOfMultiplicator) * weight);// [1/] because we need a multiplicator that reduce speed ; [minimumMultiplicator+] to be sure that at 0% fury we multipli by the right amount 
-        Debug.Log("pA " + percentageWeight + " | pF " + proportionOfFury + " | pM " + proportionOfMultiplicator + " | weight " + weight + " | ret " + ret);
+
         if (ret != 0) return (float)1 /ret; //that formula is so much dependent on so much variable we need to be sure
         else return (float)1 / (float)10000; //because we don't really need to have that much of a specific case
     }
@@ -115,17 +113,16 @@ public class Fury
     {
         currentFury = startingValueOfFury;
     }
-
-
 }
+
 public class PlayerController : MonoBehaviour
 {
-    
     //REFERENCES
     private PlayerInput inputSystem;
     public Animator animator { get; private set; }
     public Animator cursorAnimator { get; private set; }
     public SpriteRenderer sprRenderer { get; private set; }
+    [HideInInspector] public FX_Handler fxHandler;
 
     private Rigidbody2D rb;
     [HideInInspector] public PlayerController opponent;
@@ -148,6 +145,7 @@ public class PlayerController : MonoBehaviour
 
     private FSM_Player machineState;
     private Vector2 look;
+    private Vector2 temporaryLastLook;
     private eDIRECTION currentDirection;
     private bool performingAction;
     private bool strokeOpponent;
@@ -160,7 +158,7 @@ public class PlayerController : MonoBehaviour
         animator = this.GetComponent<Animator>();
         cursorAnimator = sword.GetComponent<Animator>();
         rb = this.GetComponent<Rigidbody2D>();
-        sprRenderer = this.transform.GetChild(1).GetComponent<SpriteRenderer>();
+        fxHandler = this.GetComponent<FX_Handler>();
 
 
         //VALUES
@@ -205,6 +203,17 @@ public class PlayerController : MonoBehaviour
         if (facingLeft) {
             transform.rotation = Quaternion.Euler(0f, -180f, 0f);
         }
+        machineState.onStateChanged += UpdateLook;
+    }
+
+    private void OnEnable() {
+        if (machineState != null) {
+            machineState.onStateChanged += UpdateLook;
+        }
+    }
+
+    private void OnDisable() {
+        machineState.onStateChanged -= UpdateLook;
     }
 
     // Update is called once per frame
@@ -225,16 +234,20 @@ public class PlayerController : MonoBehaviour
     //INPUTS
 
     private void OnLook(InputAction.CallbackContext value) {
+
+        if (controllerType == eCONTROLLER.KEYBOARD) {
+            temporaryLastLook = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
+        } else {
+            temporaryLastLook = value.ReadValue<Vector2>().normalized;
+        }
         if (!performingAction) {
             if(controllerType == eCONTROLLER.KEYBOARD) {
                 look = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
             } else {
                 look = value.ReadValue<Vector2>().normalized;
             }
-            //print("Look :" + look);
             var angleRadians = Mathf.Atan2(look.y, Mathf.Abs(look.x));
             var deg = (angleRadians * Mathf.Rad2Deg) - 90f;//-90 is offset sprite
-
 
             if (deg % (angleFullWindow / nbDirections) != 0) {
                 deg = (deg - (deg % (angleFullWindow / nbDirections)));
@@ -244,7 +257,7 @@ public class PlayerController : MonoBehaviour
                 //print(deg);
                 deg *= -1f;
             }
-            currentDirection = (eDIRECTION)(nbDirections/Mathf.Abs(angleFullWindow / deg));
+            currentDirection = (eDIRECTION)(nbDirections / Mathf.Abs(angleFullWindow / deg));
             sword.transform.rotation = Quaternion.Euler(0, 0, deg);
         }
     }
@@ -275,11 +288,8 @@ public class PlayerController : MonoBehaviour
 
     private void OnFeint(InputAction.CallbackContext value) {
         if (machineState.StateRequest(ePLAYER_STATE.FEINT)) {
-            print("feint");
             charge.direction = currentDirection;
             machineState.ChangeState(ePLAYER_STATE.FEINT);
-        } else {
-            print("Cannto feint");
         }
     }
 
@@ -297,12 +307,34 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void UpdateLook() {
+        if (look != temporaryLastLook && machineState.currentState != ePLAYER_STATE.STRIKE) {
+            look = temporaryLastLook;
+
+            var angleRadians = Mathf.Atan2(look.y, Mathf.Abs(look.x));
+            var deg = (angleRadians * Mathf.Rad2Deg) - 90f;//-90 is offset sprite
+
+
+            if (deg % (angleFullWindow / nbDirections) != 0) {
+                deg = (deg - (deg % (angleFullWindow / nbDirections)));
+            }
+            deg = Mathf.Clamp(deg, angleFullWindow, angleFullWindow / nbDirections);
+            if (facingLeft) {
+                //print(deg);
+                deg *= -1f;
+            }
+            currentDirection = (eDIRECTION)(nbDirections / Mathf.Abs(angleFullWindow / deg));
+            sword.transform.rotation = Quaternion.Euler(0, 0, deg);
+        }
+    }
 
     public void furyChange(int mod)
     {
         fury.furyModification(mod);
+        fxHandler.UpdateFuryFX(((float)fury.currentFury) / 100);
         updateAllAction();
     }
+
     public void updateAllAction()
     {
         charge.updateCurrentActionDuration();

@@ -44,11 +44,14 @@ public class StateStrike : PlayerState
             if (!opponentParried) {
                 if (!opponentDashed) {
                     Debug.Log("Opponent being stroke successfully");
-                    actionInfos.additionalSounds[0].Post(owner.gameObject);
+                    owner.furyChange(actionInfos.furyModificationOnSuccess); //change the fury of a fixed amount
+                    owner.opponent.fxHandler.SpawnFX(ePLAYER_STATE.STRIKE);
+                    owner.opponent.animator.SetTrigger("hit");
+                    actionInfos.samples.additionalSounds[0].Post(owner.gameObject);
                     GameManager.instance.StrikeSuccessful(owner.playerIndex);
                 }
             } else {
-                actionInfos.additionalSounds[0].Post(owner.gameObject);
+                actionInfos.samples.additionalSounds[0].Post(owner.gameObject);
             }
         }
     }
