@@ -33,6 +33,12 @@ State	ID	Name	State Group			Notes
 	2996998095	winning	inGame			
 	3092733402	standOff	inGame			
 
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	3901535175	FX_RTPC			\Default Work Unit\FX_RTPC	
+
+Effect plug-ins	ID	Name	Type				Notes
+	317472413	Deep_(Custom)	Wwise Flanger			
+
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	102222190	stem02reverb2	Y:\Desktop\Cours ENJMIN\NanoProjet\Git_Prog\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Windows\SFX\stem02reverb2_469574DC.wem		\Interactive Music Hierarchy\Guerric\inGameMusic\fightingMusic\stem02reverb2\stem02reverb2		452689
 	134202983	dash_01	Y:\Desktop\Cours ENJMIN\NanoProjet\Git_Prog\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Windows\SFX\dash_01_005CB2C3.wem		\Actor-Mixer Hierarchy\Guerric\Dash\dash_01		29232

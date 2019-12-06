@@ -5,6 +5,11 @@
   "BasePlatform": "Mac",
   "Plugins": {
    "Plugin": {
+    "Name": "Wwise Flanger",
+    "ID": "8192003",
+    "DLL": "AkFlanger"
+   },
+   "Plugin": {
     "Name": "System",
     "ID": "11403271",
     "DLL": "DefaultSink"
