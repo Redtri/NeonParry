@@ -21,7 +21,7 @@ public class SwordAction : Action {
 public class Action : Cooldown {
     public float baseActionDuration;
     public float currentActionDuration;
-    public int percentageWeightFury; //how much, in percentage, the Action is affected by the fury
+    public float percentageWeightFury; //how much, in percentage, the Action is affected by the fury
     public int furyModificationOnSuccess; //how much the fury changed when the Action is perform successfully
 
     public void updateCurrentActionDuration()
@@ -43,7 +43,7 @@ public class Cooldown {
     public float baseCooldownDuration;
     [HideInInspector] public Fury fury;
     public float currentCooldownDuration;
-    public int percentageWeightFuryOnCD; //how much, in percentage, the Action cooldown is affected by the fury
+    public float percentageWeightFuryOnCD; //how much, in percentage, the Action cooldown is affected by the fury
     [HideInInspector] public float lastRefreshTime;
 
     //INIT
@@ -88,15 +88,15 @@ public class Fury
     public int startingValueOfFury; //the base value of the fury when a new match start, must be beetween lowestValueOfFury and HighestValueOfFury
     public int minimumMultiplicator; //indicate how many times faster an action is at 0% of fury
     public int maximumMultiplicator; //indicate how many times faster an action is at 100% of fury
-    public int winnerFuryPercentageLeft; //wich percentage of his current fury the winner keep
+    public float winnerFuryPercentageLeft; //wich percentage of his current fury the winner keep
     public bool isFeintAndChargeTheSame; //determine if theire's the need to separate Feinte and Charge
-    public int percentagePerfectParyFury; //how much better, in percentage, is a perfect parry
+    public float percentagePerfectParyFury; //how much better, in percentage, is a perfect parry
 
-    public float speedMultiplicator (int percentageWeight)
+    public float speedMultiplicator (float percentageWeight)
     {
         float proportionOfFury = ((float)currentFury / ((float)highestValueOfFury - (float)lowestValueOfFury)); // can't be <1
         float proportionOfMultiplicator = ((float)maximumMultiplicator - (float)minimumMultiplicator); // if we're max fury we need to return 1/maximumMultiplicator, if we're at 0 fury we need to return 1/minimumMultiplicator
-        float weight = (float)percentageWeight / (float)100;
+        float weight = percentageWeight;
         float ret = ((float)minimumMultiplicator + (proportionOfFury * proportionOfMultiplicator) * weight);// [1/] because we need a multiplicator that reduce speed ; [minimumMultiplicator+] to be sure that at 0% fury we multipli by the right amount 
 
         if (ret != 0) return (float)1 /ret; //that formula is so much dependent on so much variable we need to be sure
@@ -109,6 +109,13 @@ public class Fury
         if (currentFury > highestValueOfFury) currentFury = highestValueOfFury;
         else if (currentFury < lowestValueOfFury) currentFury = lowestValueOfFury;
     }
+
+    public void furyModification (int mod, float perfectParry)
+    {
+        int ret = mod * (int)perfectParry;
+        furyModification(ret);
+    }
+
     public void Init()
     {
         currentFury = startingValueOfFury;
@@ -149,6 +156,7 @@ public class PlayerController : MonoBehaviour
     private eDIRECTION currentDirection;
     private bool performingAction;
     private bool strokeOpponent;
+    private bool isHit;
     public int currentSpotIndex { get; set; }
 
     private void Awake() {
