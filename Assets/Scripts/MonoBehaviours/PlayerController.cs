@@ -339,6 +339,7 @@ public class PlayerController : MonoBehaviour
     {
         fury.furyModification(mod);
         fxHandler.UpdateFuryFX(((float)fury.currentFury) / 100);
+        Debug.Log("fury : " + fury.currentFury);
         updateAllAction();
     }
 
