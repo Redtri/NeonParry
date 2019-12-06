@@ -100,8 +100,8 @@
       "ObjectPath": "\\Events\\SFX\\Dash_Event",
       "GUID": "{70E1C08F-A2AF-4B6A-B992-CB5682397054}",
       "DurationType": "OneShot",
-      "DurationMin": "1.542086",
-      "DurationMax": "1.542086"
+      "DurationMin": "1.246344",
+      "DurationMax": "1.246344"
      },
      {
       "Id": "779278001",
@@ -112,23 +112,6 @@
       "DurationType": "OneShot",
       "DurationMin": "0.000000",
       "DurationMax": "0.000000"
-     },
-     {
-      "Id": "168610243",
-      "Name": "fighting",
-      "ObjectPath": "\\Events\\Music\\fighting",
-      "GUID": "{CC3EAD2B-9816-48A8-B271-D33D563C37C2}",
-      "MaxAttenuation": "0.000000",
-      "DurationType": "OneShot",
-      "DurationMin": "0.000000",
-      "DurationMax": "0.000000"
-     },
-     {
-      "Id": "3151422571",
-      "Name": "firstRound",
-      "ObjectPath": "\\Events\\Music\\firstRound",
-      "GUID": "{EA174F9C-3A27-4D99-9B67-D0F6322BFD39}",
-      "DurationType": "Infinite"
      },
      {
       "Id": "4203913494",
@@ -166,6 +149,33 @@
       "DurationType": "OneShot",
       "DurationMin": "1.500000",
       "DurationMax": "1.500000"
+     },
+     {
+      "Id": "723605745",
+      "Name": "Music_FirstPVLost",
+      "ObjectPath": "\\Events\\Music\\Music_FirstPVLost",
+      "GUID": "{CC3EAD2B-9816-48A8-B271-D33D563C37C2}",
+      "MaxAttenuation": "0.000000",
+      "DurationType": "OneShot",
+      "DurationMin": "0.000000",
+      "DurationMax": "0.000000"
+     },
+     {
+      "Id": "2154872981",
+      "Name": "Music_SecondPVLost",
+      "ObjectPath": "\\Events\\Music\\Music_SecondPVLost",
+      "GUID": "{BEB816CA-5E36-4B69-AE74-302E7B6916BD}",
+      "MaxAttenuation": "0.000000",
+      "DurationType": "OneShot",
+      "DurationMin": "0.000000",
+      "DurationMax": "0.000000"
+     },
+     {
+      "Id": "3725903807",
+      "Name": "Music_Start",
+      "ObjectPath": "\\Events\\Music\\Music_Start",
+      "GUID": "{EA174F9C-3A27-4D99-9B67-D0F6322BFD39}",
+      "DurationType": "Infinite"
      },
      {
       "Id": "2109051510",
@@ -212,44 +222,26 @@
       "DurationType": "OneShot",
       "DurationMin": "1.250000",
       "DurationMax": "1.250000"
-     },
-     {
-      "Id": "479647031",
-      "Name": "secondRound",
-      "ObjectPath": "\\Events\\Music\\secondRound",
-      "GUID": "{727A7112-18F7-435B-9AF5-70FC16C9DD9E}",
-      "MaxAttenuation": "0.000000",
-      "DurationType": "OneShot",
-      "DurationMin": "0.000000",
-      "DurationMax": "0.000000"
-     },
-     {
-      "Id": "3092733402",
-      "Name": "standOff",
-      "ObjectPath": "\\Events\\Music\\standOff",
-      "GUID": "{BEB816CA-5E36-4B69-AE74-302E7B6916BD}",
-      "MaxAttenuation": "0.000000",
-      "DurationType": "OneShot",
-      "DurationMin": "0.000000",
-      "DurationMax": "0.000000"
-     },
-     {
-      "Id": "777271008",
-      "Name": "thirdRound",
-      "ObjectPath": "\\Events\\Music\\thirdRound",
-      "GUID": "{9A9BBF68-1461-4943-BC7B-1182D336320C}",
-      "MaxAttenuation": "0.000000",
-      "DurationType": "OneShot",
-      "DurationMin": "0.000000",
-      "DurationMax": "0.000000"
      }
     ],
     "IncludedMemoryFiles": [
      {
+      "Id": "25095978",
+      "Language": "SFX",
+      "ShortName": "stem05variante.wav",
+      "Path": "SFX/stem05variante_469574DC.wem"
+     },
+     {
+      "Id": "37477589",
+      "Language": "SFX",
+      "ShortName": "stem04drop.wav",
+      "Path": "SFX/stem04drop_469574DC.wem"
+     },
+     {
       "Id": "134202983",
       "Language": "SFX",
       "ShortName": "dash_01.wav",
-      "Path": "SFX/dash_01_11697732.wem"
+      "Path": "SFX/dash_01_005CB2C3.wem"
      },
      {
       "Id": "136294100",
@@ -262,12 +254,6 @@
       "Language": "SFX",
       "ShortName": "perfectParry.wav",
       "Path": "SFX/perfectParry_11697732.wem"
-     },
-     {
-      "Id": "296044258",
-      "Language": "SFX",
-      "ShortName": "main_bass_noclick.wav",
-      "Path": "SFX/main_bass_noclick_469574DC.wem"
      },
      {
       "Id": "305375330",
@@ -294,22 +280,22 @@
       "Path": "SFX/parry03_11697732.wem"
      },
      {
-      "Id": "716077513",
+      "Id": "835180850",
       "Language": "SFX",
-      "ShortName": "ambient_background.wav",
-      "Path": "SFX/ambient_background_469574DC.wem"
-     },
-     {
-      "Id": "823978589",
-      "Language": "SFX",
-      "ShortName": "kick_snare.wav",
-      "Path": "SFX/kick_snare_469574DC.wem"
+      "ShortName": "stem02reverb.wav",
+      "Path": "SFX/stem02reverb_469574DC.wem"
      },
      {
       "Id": "866938126",
       "Language": "SFX",
       "ShortName": "attackHigh.wav",
       "Path": "SFX/attackHigh_11697732.wem"
+     },
+     {
+      "Id": "910824346",
+      "Language": "SFX",
+      "ShortName": "stem02reverb2.wav",
+      "Path": "SFX/stem02reverb2_469574DC.wem"
      },
      {
       "Id": "984257227",

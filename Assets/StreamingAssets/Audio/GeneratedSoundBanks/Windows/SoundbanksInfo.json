@@ -1,15 +1,15 @@
 {
  "SoundBanksInfo": {
-  "Platform": "Mac",
-  "BasePlatform": "Mac",
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
   "SchemaVersion": "11",
   "SoundbankVersion": "134",
   "RootPaths": {
    "ProjectRoot": "/Users/romainmineur/Library/Application Support/Wwise2019/Bottles/wwise/dosdevices/y:/Desktop/Cours ENJMIN/NanoProjet/Git_Prog/NeonParry/NeonParrySound/NeonParry_WwiseProject/",
-   "SourceFilesRoot": "/Users/romainmineur/Library/Application Support/Wwise2019/Bottles/wwise/dosdevices/y:/Desktop/Cours ENJMIN/NanoProjet/Git_Prog/NeonParry/NeonParrySound/NeonParry_WwiseProject/.cache/Mac/",
-   "SoundBanksRoot": "/Users/romainmineur/Library/Application Support/Wwise2019/Bottles/wwise/dosdevices/y:/Desktop/Cours ENJMIN/NanoProjet/Git_Prog/NeonParry/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Mac/",
+   "SourceFilesRoot": "/Users/romainmineur/Library/Application Support/Wwise2019/Bottles/wwise/dosdevices/y:/Desktop/Cours ENJMIN/NanoProjet/Git_Prog/NeonParry/NeonParrySound/NeonParry_WwiseProject/.cache/Windows/",
+   "SoundBanksRoot": "/Users/romainmineur/Library/Application Support/Wwise2019/Bottles/wwise/dosdevices/y:/Desktop/Cours ENJMIN/NanoProjet/Git_Prog/NeonParry/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/",
    "ExternalSourcesInputFile": "",
-   "ExternalSourcesOutputRoot": "/Users/romainmineur/Library/Application Support/Wwise2019/Bottles/wwise/dosdevices/y:/Desktop/Cours ENJMIN/NanoProjet/Git_Prog/NeonParry/NeonParrySound/NeonParry_WwiseProject/GeneratedSoundBanks/Mac"
+   "ExternalSourcesOutputRoot": "/Users/romainmineur/Library/Application Support/Wwise2019/Bottles/wwise/dosdevices/y:/Desktop/Cours ENJMIN/NanoProjet/Git_Prog/NeonParry/NeonParrySound/NeonParry_WwiseProject/GeneratedSoundBanks/Windows"
   },
   "DialogueEvents": [],
   "StreamedFiles": [],
