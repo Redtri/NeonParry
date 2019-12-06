@@ -1706,9 +1706,9 @@ MonoBehaviour:
     startingValueOfFury: 0
     minimumMultiplicator: 1
     maximumMultiplicator: 3
-    winnerFuryPercentageLeft: 50
+    winnerFuryPercentageLeft: 0.5
     isFeintAndChargeTheSame: 0
-    percentagePerfectParyFury: 200
+    percentagePerfectParyFury: 2
   strike:
     baseCooldownDuration: 0
     fury:
@@ -1726,8 +1726,8 @@ MonoBehaviour:
     lastRefreshTime: 0
     baseActionDuration: 0.25
     currentActionDuration: 0
-    percentageWeightFury: 50
-    furyModificationOnSuccess: 50
+    percentageWeightFury: 0.5
+    furyModificationOnSuccess: 0
     direction: 0
     curve:
       serializedVersion: 2
@@ -1808,7 +1808,7 @@ MonoBehaviour:
     baseActionDuration: 0.53
     currentActionDuration: 0
     percentageWeightFury: 0
-    furyModificationOnSuccess: 0
+    furyModificationOnSuccess: 5
     direction: 0
     curve:
       serializedVersion: 2
@@ -2521,6 +2521,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6456066603297020624, guid: bdaa1317eef2f4c4b83e8de36a7945cc,
+        type: 3}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456066603297020624, guid: bdaa1317eef2f4c4b83e8de36a7945cc,
+        type: 3}
+      propertyPath: TrailModule.widthOverTrail.minScalar
+      value: 5.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456066603297020624, guid: bdaa1317eef2f4c4b83e8de36a7945cc,
+        type: 3}
+      propertyPath: TrailModule.widthOverTrail.scalar
+      value: 6.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458017459153129700, guid: bdaa1317eef2f4c4b83e8de36a7945cc,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6581915550035048910, guid: bdaa1317eef2f4c4b83e8de36a7945cc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2585,26 +2605,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 4.6500063
-      objectReference: {fileID: 0}
-    - target: {fileID: 6456066603297020624, guid: bdaa1317eef2f4c4b83e8de36a7945cc,
-        type: 3}
-      propertyPath: looping
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6456066603297020624, guid: bdaa1317eef2f4c4b83e8de36a7945cc,
-        type: 3}
-      propertyPath: TrailModule.widthOverTrail.minScalar
-      value: 5.21
-      objectReference: {fileID: 0}
-    - target: {fileID: 6456066603297020624, guid: bdaa1317eef2f4c4b83e8de36a7945cc,
-        type: 3}
-      propertyPath: TrailModule.widthOverTrail.scalar
-      value: 6.86
-      objectReference: {fileID: 0}
-    - target: {fileID: 6458017459153129700, guid: bdaa1317eef2f4c4b83e8de36a7945cc,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdaa1317eef2f4c4b83e8de36a7945cc, type: 3}
@@ -3114,6 +3114,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3502125612023623525}
     m_Modifications:
+    - target: {fileID: 473848070671101330, guid: ed4a7b306288eb443ba34b4d315186e2,
+        type: 3}
+      propertyPath: m_Name
+      value: Sword
+      objectReference: {fileID: 0}
     - target: {fileID: 6937198034833313784, guid: ed4a7b306288eb443ba34b4d315186e2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3183,11 +3188,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 473848070671101330, guid: ed4a7b306288eb443ba34b4d315186e2,
-        type: 3}
-      propertyPath: m_Name
-      value: Sword
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed4a7b306288eb443ba34b4d315186e2, type: 3}

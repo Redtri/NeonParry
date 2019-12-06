@@ -155,7 +155,7 @@ public class PlayerController : MonoBehaviour
     private eDIRECTION currentDirection;
     private bool performingAction;
     private bool strokeOpponent;
-    private bool isHit;
+    [HideInInspector] public bool isHit;
     public int currentSpotIndex { get; set; }
 
     private void Awake() {
