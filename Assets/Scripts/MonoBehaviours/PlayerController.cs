@@ -17,16 +17,18 @@ public class SwordAction : Action {
         return base.IsActionPerforming(time) && direction == tDirection;
     }
 }
+
 [System.Serializable]
 public class Action : Cooldown {
     public float baseActionDuration;
     public float currentActionDuration;
     public float percentageWeightFury; //how much, in percentage, the Action is affected by the fury
     public int furyModificationOnSuccess; //how much the fury changed when the Action is perform successfully
+    public float perfectPercentTiming;
 
     public void updateCurrentActionDuration()
     {
-        currentActionDuration = fury.speedMultiplicator(percentageWeightFury) * baseActionDuration ;
+        currentActionDuration = fury.speedMultiplicator(percentageWeightFury) * baseActionDuration;
     }
     public override void Init(float time) {
         base.Init(time);
@@ -36,7 +38,13 @@ public class Action : Cooldown {
     public bool IsActionPerforming(float time) {
         return (time <= lastRefreshTime + currentActionDuration);
     }
+
+    //OTHER
+    public float GetPercentTime(float time) {
+        return ((time - lastRefreshTime) / currentActionDuration);
+    }
 }
+
 //TODO : We may want to create a separate class file for this one as Cooldowns could be used by other classes.
 [System.Serializable]
 public class Cooldown {

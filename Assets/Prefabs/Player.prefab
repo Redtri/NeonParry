@@ -1706,9 +1706,9 @@ MonoBehaviour:
     startingValueOfFury: 0
     minimumMultiplicator: 1
     maximumMultiplicator: 3
-    winnerFuryPercentageLeft: 50
+    winnerFuryPercentageLeft: 0.5
     isFeintAndChargeTheSame: 0
-    percentagePerfectParyFury: 200
+    percentagePerfectParyFury: 10
   strike:
     baseCooldownDuration: 0
     fury:
@@ -1726,8 +1726,9 @@ MonoBehaviour:
     lastRefreshTime: 0
     baseActionDuration: 0.25
     currentActionDuration: 0
-    percentageWeightFury: 50
-    furyModificationOnSuccess: 50
+    percentageWeightFury: 0.5
+    furyModificationOnSuccess: 3
+    perfectPercentTiming: 0.7
     direction: 0
     curve:
       serializedVersion: 2
@@ -1782,6 +1783,7 @@ MonoBehaviour:
     currentActionDuration: 0
     percentageWeightFury: 0
     furyModificationOnSuccess: 0
+    perfectPercentTiming: 0
     direction: 0
     curve:
       serializedVersion: 2
@@ -1808,7 +1810,8 @@ MonoBehaviour:
     baseActionDuration: 0.53
     currentActionDuration: 0
     percentageWeightFury: 0
-    furyModificationOnSuccess: 0
+    furyModificationOnSuccess: 10
+    perfectPercentTiming: 0
     direction: 0
     curve:
       serializedVersion: 2
@@ -1836,6 +1839,7 @@ MonoBehaviour:
     currentActionDuration: 0
     percentageWeightFury: 0
     furyModificationOnSuccess: 0
+    perfectPercentTiming: 0
     direction: 0
     curve:
       serializedVersion: 2
