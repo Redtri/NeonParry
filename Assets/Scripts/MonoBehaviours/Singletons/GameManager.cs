@@ -29,6 +29,9 @@ public class GameManager : MonoBehaviour
     public Cinemachine.CinemachineVirtualCamera camera;
     public InterpItem cameraCenterPoint;
 
+    public delegate void Strike(int score);
+    public Strike onStrike;
+
     private void Awake() {
         Time.timeScale = 1f;
         if (!instance) {
@@ -84,6 +87,7 @@ public class GameManager : MonoBehaviour
     public void StrikeSuccessful(int playerIndex) {
         Camera.main.GetComponent<CameraShake>().Shake();
         ++ playerInfos[playerIndex].score;
+        onStrike?.Invoke(playerInfos[playerIndex].score);
     }
 
     public Vector3 GetDashPos(int playerIndex) {

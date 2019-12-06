@@ -1710,7 +1710,7 @@ MonoBehaviour:
     isFeintAndChargeTheSame: 0
     percentagePerfectParyFury: 200
   strike:
-    baseCooldownDuration: 2
+    baseCooldownDuration: 0
     fury:
       lowestValueOfFury: 0
       highestValueOfFury: 0
@@ -1764,7 +1764,7 @@ MonoBehaviour:
       m_RotationOrder: 4
     samples: {fileID: 11400000, guid: 522ef02ebe727b2478cf0cbdc07181b9, type: 2}
   charge:
-    baseCooldownDuration: 0
+    baseCooldownDuration: 2
     fury:
       lowestValueOfFury: 0
       highestValueOfFury: 0
@@ -3114,11 +3114,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3502125612023623525}
     m_Modifications:
-    - target: {fileID: 473848070671101330, guid: ed4a7b306288eb443ba34b4d315186e2,
-        type: 3}
-      propertyPath: m_Name
-      value: Sword
-      objectReference: {fileID: 0}
     - target: {fileID: 6937198034833313784, guid: ed4a7b306288eb443ba34b4d315186e2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3189,6 +3184,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 473848070671101330, guid: ed4a7b306288eb443ba34b4d315186e2,
+        type: 3}
+      propertyPath: m_Name
+      value: Sword
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed4a7b306288eb443ba34b4d315186e2, type: 3}
 --- !u!4 &8711066803722341208 stripped
@@ -3216,6 +3216,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3502125612023623525}
     m_Modifications:
+    - target: {fileID: 1100962945144173823, guid: 25590d53d86c8194a8a385034698549a,
+        type: 3}
+      propertyPath: m_Name
+      value: HIT ON PLAYER 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1100962945144173823, guid: 25590d53d86c8194a8a385034698549a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1103029124560007085, guid: 25590d53d86c8194a8a385034698549a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3270,16 +3280,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -45.636
-      objectReference: {fileID: 0}
-    - target: {fileID: 1100962945144173823, guid: 25590d53d86c8194a8a385034698549a,
-        type: 3}
-      propertyPath: m_Name
-      value: HIT ON PLAYER 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1100962945144173823, guid: 25590d53d86c8194a8a385034698549a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25590d53d86c8194a8a385034698549a, type: 3}
