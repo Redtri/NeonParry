@@ -103,17 +103,16 @@ public class Fury
         else return (float)1 / (float)10000; //because we don't really need to have that much of a specific case
     }
 
-    public void furyModification (int mod)
+    public void furyModification (float mod)
     {
-        currentFury += mod;
+        currentFury += (int)mod;
         if (currentFury > highestValueOfFury) currentFury = highestValueOfFury;
         else if (currentFury < lowestValueOfFury) currentFury = lowestValueOfFury;
     }
 
-    public void furyModification (int mod, float perfectParry)
+    public void furyModification (float mod, float perfectParry)
     {
-        int ret = mod * (int)perfectParry;
-        furyModification(ret);
+        furyModification(mod*perfectParry);
     }
 
     public void Init()
@@ -336,7 +335,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void furyChange(int mod)
+    public void furyChange(float mod)
     {
         fury.furyModification(mod);
         fxHandler.UpdateFuryFX(((float)fury.currentFury) / 100);
