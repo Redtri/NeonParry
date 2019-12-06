@@ -4,7 +4,7 @@ State Group	ID	Name			Wwise Object Path	Notes
 State	ID	Name	State Group			Notes
 	0	None	inGame			
 	168610243	fighting	inGame			
-	1832613826	fightevolved	inGame			
+	1709125184	fightingevolved	inGame			
 	2996998095	winning	inGame			
 	3092733402	standOff	inGame			
 

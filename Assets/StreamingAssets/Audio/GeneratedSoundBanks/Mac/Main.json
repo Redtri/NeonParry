@@ -161,6 +161,16 @@
       "DurationMax": "0.000000"
      },
      {
+      "Id": "3282946978",
+      "Name": "Music_Reset",
+      "ObjectPath": "\\Events\\Music\\Music_Reset",
+      "GUID": "{F6A3440C-51F9-47D5-B590-E04EFB208A2C}",
+      "MaxAttenuation": "0.000000",
+      "DurationType": "OneShot",
+      "DurationMin": "0.000000",
+      "DurationMax": "0.000000"
+     },
+     {
       "Id": "2154872981",
       "Name": "Music_SecondPVLost",
       "ObjectPath": "\\Events\\Music\\Music_SecondPVLost",
@@ -226,16 +236,10 @@
     ],
     "IncludedMemoryFiles": [
      {
-      "Id": "25095978",
+      "Id": "102222190",
       "Language": "SFX",
-      "ShortName": "stem05variante.wav",
-      "Path": "SFX/stem05variante_469574DC.wem"
-     },
-     {
-      "Id": "37477589",
-      "Language": "SFX",
-      "ShortName": "stem04drop.wav",
-      "Path": "SFX/stem04drop_469574DC.wem"
+      "ShortName": "stem02reverb2.wav",
+      "Path": "SFX/stem02reverb2_469574DC.wem"
      },
      {
       "Id": "134202983",
@@ -248,6 +252,12 @@
       "Language": "SFX",
       "ShortName": "robotstep_03.wav",
       "Path": "SFX/robotstep_03_11697732.wem"
+     },
+     {
+      "Id": "158783193",
+      "Language": "SFX",
+      "ShortName": "stem02reverb.wav",
+      "Path": "SFX/stem02reverb_469574DC.wem"
      },
      {
       "Id": "220227563",
@@ -280,10 +290,10 @@
       "Path": "SFX/parry03_11697732.wem"
      },
      {
-      "Id": "835180850",
+      "Id": "829946370",
       "Language": "SFX",
-      "ShortName": "stem02reverb.wav",
-      "Path": "SFX/stem02reverb_469574DC.wem"
+      "ShortName": "stem05variante.wav",
+      "Path": "SFX/stem05variante_469574DC.wem"
      },
      {
       "Id": "866938126",
@@ -292,10 +302,10 @@
       "Path": "SFX/attackHigh_11697732.wem"
      },
      {
-      "Id": "910824346",
+      "Id": "882041133",
       "Language": "SFX",
-      "ShortName": "stem02reverb2.wav",
-      "Path": "SFX/stem02reverb2_469574DC.wem"
+      "ShortName": "stem04drop.wav",
+      "Path": "SFX/stem04drop_469574DC.wem"
      },
      {
       "Id": "984257227",

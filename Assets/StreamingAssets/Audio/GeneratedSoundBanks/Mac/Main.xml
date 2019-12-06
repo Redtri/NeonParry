@@ -28,6 +28,7 @@
 				<Event Id="1133475131" Name="hitLeft" ObjectPath="\Events\SFX\hitLeft" GUID="{5AB6FB50-6E9C-440E-AB03-23526A56863F}" DurationType="OneShot" DurationMin="1.500000" DurationMax="1.500000"/>
 				<Event Id="1778295094" Name="hitRight" ObjectPath="\Events\SFX\hitRight" GUID="{A0853263-061E-4AF7-B975-01A8A2BB89A4}" DurationType="OneShot" DurationMin="1.500000" DurationMax="1.500000"/>
 				<Event Id="723605745" Name="Music_FirstPVLost" ObjectPath="\Events\Music\Music_FirstPVLost" GUID="{CC3EAD2B-9816-48A8-B271-D33D563C37C2}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3282946978" Name="Music_Reset" ObjectPath="\Events\Music\Music_Reset" GUID="{F6A3440C-51F9-47D5-B590-E04EFB208A2C}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="2154872981" Name="Music_SecondPVLost" ObjectPath="\Events\Music\Music_SecondPVLost" GUID="{BEB816CA-5E36-4B69-AE74-302E7B6916BD}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="3725903807" Name="Music_Start" ObjectPath="\Events\Music\Music_Start" GUID="{EA174F9C-3A27-4D99-9B67-D0F6322BFD39}" DurationType="Infinite"/>
 				<Event Id="2109051510" Name="parryLeft" ObjectPath="\Events\SFX\parryLeft" GUID="{256A09FB-9903-4A50-94D7-81B33F438AD2}" DurationType="OneShot" DurationMin="0.850000" DurationMax="0.900000"/>
@@ -37,13 +38,9 @@
 				<Event Id="2689861876" Name="perfectParryRight" ObjectPath="\Events\SFX\perfectParryRight" GUID="{FF062256-407C-4D9F-A004-31F9D0766007}" DurationType="OneShot" DurationMin="1.250000" DurationMax="1.250000"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
-				<File Id="25095978" Language="SFX">
-					<ShortName>stem05variante.wav</ShortName>
-					<Path>SFX/stem05variante_469574DC.wem</Path>
-				</File>
-				<File Id="37477589" Language="SFX">
-					<ShortName>stem04drop.wav</ShortName>
-					<Path>SFX/stem04drop_469574DC.wem</Path>
+				<File Id="102222190" Language="SFX">
+					<ShortName>stem02reverb2.wav</ShortName>
+					<Path>SFX/stem02reverb2_469574DC.wem</Path>
 				</File>
 				<File Id="134202983" Language="SFX">
 					<ShortName>dash_01.wav</ShortName>
@@ -52,6 +49,10 @@
 				<File Id="136294100" Language="SFX">
 					<ShortName>robotstep_03.wav</ShortName>
 					<Path>SFX/robotstep_03_11697732.wem</Path>
+				</File>
+				<File Id="158783193" Language="SFX">
+					<ShortName>stem02reverb.wav</ShortName>
+					<Path>SFX/stem02reverb_469574DC.wem</Path>
 				</File>
 				<File Id="220227563" Language="SFX">
 					<ShortName>perfectParry.wav</ShortName>
@@ -73,17 +74,17 @@
 					<ShortName>parry03.wav</ShortName>
 					<Path>SFX/parry03_11697732.wem</Path>
 				</File>
-				<File Id="835180850" Language="SFX">
-					<ShortName>stem02reverb.wav</ShortName>
-					<Path>SFX/stem02reverb_469574DC.wem</Path>
+				<File Id="829946370" Language="SFX">
+					<ShortName>stem05variante.wav</ShortName>
+					<Path>SFX/stem05variante_469574DC.wem</Path>
 				</File>
 				<File Id="866938126" Language="SFX">
 					<ShortName>attackHigh.wav</ShortName>
 					<Path>SFX/attackHigh_11697732.wem</Path>
 				</File>
-				<File Id="910824346" Language="SFX">
-					<ShortName>stem02reverb2.wav</ShortName>
-					<Path>SFX/stem02reverb2_469574DC.wem</Path>
+				<File Id="882041133" Language="SFX">
+					<ShortName>stem04drop.wav</ShortName>
+					<Path>SFX/stem04drop_469574DC.wem</Path>
 				</File>
 				<File Id="984257227" Language="SFX">
 					<ShortName>robotstep_01.wav</ShortName>
