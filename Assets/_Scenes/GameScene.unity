@@ -1314,5 +1314,17 @@ PrefabInstance:
       propertyPath: cameraCenterPoint
       value: 
       objectReference: {fileID: 21733434}
+    - target: {fileID: 3822954530596038550, guid: 025629b7bbbd3b841a8d1dcb4e029ed1,
+        type: 3}
+      propertyPath: events.Array.data[0].WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 059dbd6e039425a4f902411043ef4cb4,
+        type: 2}
+    - target: {fileID: 3822954530596038550, guid: 025629b7bbbd3b841a8d1dcb4e029ed1,
+        type: 3}
+      propertyPath: events.Array.data[1].WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: f97cc7fd16fadc04cb531b0d1b505d9a,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 025629b7bbbd3b841a8d1dcb4e029ed1, type: 3}
