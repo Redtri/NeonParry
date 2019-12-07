@@ -148,7 +148,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public SwordAction charge;
     [SerializeField] public SwordAction parry;
     [SerializeField] public SwordAction dash;
-    [SerializeField] public SwordAction hit;
+    [SerializeField] public SwordAction stop;
     [SerializeField, Range(0, 180)] private float angleFullWindow;
     [SerializeField, Range(2, 10)] private int nbDirections;
 
@@ -181,6 +181,7 @@ public class PlayerController : MonoBehaviour
         charge.setFury(fury);
         parry.setFury(fury);
         dash.setFury(fury);
+        stop.setFury(fury);
 
         machineState = new FSM_Player(this);
         angleFullWindow *= -1;
@@ -209,6 +210,7 @@ public class PlayerController : MonoBehaviour
         strike.Init(Time.time);
         parry.Init(Time.time);
         dash.Init(Time.time);
+        stop.Init(Time.time);
         sword.Initialize(this);
         // charge.currentCooldownDuration = strike.currentActionDuration + charge.currentCooldownDuration;
     }
@@ -342,7 +344,10 @@ public class PlayerController : MonoBehaviour
             sword.transform.rotation = Quaternion.Euler(0, 0, deg);
         }
     }
-
+    public void onHit()
+    {
+        machineState.ChangeState(ePLAYER_STATE.STOP);
+    }
     public void furyChange(float mod)
     {
         fury.furyModification(mod);
@@ -350,13 +355,12 @@ public class PlayerController : MonoBehaviour
         // Debug.Log("fury : " + fury.currentFury);
         updateAllAction();
     }
-    public void allActionsOnCd()
+    public void allActionsOnCd(float t)
     {
-        Debug.Log("CD");
-        charge.currentCooldownDuration = 2;
-        strike.currentCooldownDuration = 2;
-        parry.currentCooldownDuration = 2;
-        dash.currentCooldownDuration = 2;
+        charge.currentCooldownDuration = t;
+        strike.currentCooldownDuration = t;
+        parry.currentCooldownDuration = t;
+        dash.currentCooldownDuration = t;
     }
 
     public void updateAllAction()

@@ -28,6 +28,9 @@ public abstract class PlayerState
             owner.animator.SetTrigger(stateMachine.currentState.ToString().ToLower());
             owner.cursorAnimator.SetTrigger(stateMachine.currentState.ToString().ToLower());
         }
+        else
+        {
+        }
         if (actionInfos != null) {
             if (actionInfos.samples != null) {
                 if (actionInfos.samples.actionSounds.Length > 1) {
@@ -45,7 +48,7 @@ public abstract class PlayerState
     }
 
     public virtual void Update() {
-        if(actionInfos != null) {
+        if (actionInfos != null) {
             if (!actionInfos.IsActionPerforming(Time.time)) {
                 stateMachine.ChangeState(nextState);
             }

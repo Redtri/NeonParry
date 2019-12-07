@@ -95,7 +95,7 @@ public class GameManager : MonoBehaviour
     public int StrikeSuccessful(int playerIndex) { // strike succesfull return 0, at the end of a round return 1, at the end of the match return 2
         Camera.main.GetComponent<CameraShake>().Shake();
         ++score[currentRound][playerIndex];
-        Debug.Log(currentRound + " : " + score[currentRound][0] + " | " + score[currentRound][1]);
+        //Debug.Log(currentRound + " : " + score[currentRound][0] + " | " + score[currentRound][1]);
         if (score[currentRound][playerIndex] >= nbExchangeForARound)
         {
             ++score[0][playerIndex];
