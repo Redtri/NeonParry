@@ -13,7 +13,6 @@ public class StateParry : PlayerState
     
     public override void Enter(bool trigger = true)
     {
-        Debug.Log("current action duration : " + actionInfos.currentActionDuration);
         base.Enter();
         parrySuccessful = false;
     }

@@ -6,36 +6,47 @@ using Cinemachine;
 public class CameraShake : MonoBehaviour {
     // How long the object should shake for.
     public float shakeDuration = 0f;
+    [SerializeField] Transform parent;
     private bool shaking;
     private CinemachineVirtualCamera camera;
     private Cinemachine.CinemachineBasicMultiChannelPerlin multiChannel;
-
-    // Amplitude of the shake. A larger value shakes the camera harder.
-    public float shakeAmount = 0.7f;
+    
     private float baseShakeAmount;
+    private float baseFrequency;
+    private bool trueShaking;
 
     Vector3 originalPos;
 
     void Awake() {
         camera = this.GetComponent<CinemachineVirtualCamera>();
         multiChannel = camera.GetCinemachineComponent<Cinemachine.CinemachineBasicMultiChannelPerlin>();
+
         baseShakeAmount = multiChannel.m_AmplitudeGain;
-        shaking = false;
-        originalPos = transform.localPosition;
+        baseFrequency = multiChannel.m_FrequencyGain;
+        originalPos = transform.parent.localPosition;
     }
 
     void Update() {
-
     }
 
-    public void Shake() {
-        shaking = true;
-        multiChannel.m_AmplitudeGain = shakeAmount;
+    public void TrueShake() {
+        trueShaking = true;
+        Invoke("StopTrueShaking", shakeDuration);
+    }
+
+    private void StopTrueShaking() {
+        trueShaking = false;
+        parent.localPosition = originalPos;
+    }
+
+    public void Shake(float shake, float frequency, float duration) {
+        multiChannel.m_AmplitudeGain = shake;
+        multiChannel.m_FrequencyGain = frequency;
         Invoke("StopShake", shakeDuration);
     }
     
     private void StopShake() {
-        shaking = false;
         multiChannel.m_AmplitudeGain = baseShakeAmount;
+        multiChannel.m_FrequencyGain = baseFrequency;
     }
 }

@@ -20,11 +20,12 @@ public class StateRepos : PlayerState
 
     public override void Update() {
         base.Update();
+        owner.transform.position = Vector3.Lerp(startPosition, GameManager.instance.GetDashPos(owner.playerIndex), actionInfos.curve.Evaluate(actionInfos.GetPercentTime(Time.time)));
         //owner.animator.SetFloat("duration_repos", actionInfos.curve.Evaluate((Time.time - actionInfos.lastRefreshTime) / actionInfos.currentActionDuration));
-        owner.transform.position = Vector3.Lerp(startPosition, GameManager.instance.GetDashPos(owner.playerIndex), actionInfos.curve.Evaluate((Time.time - actionInfos.lastRefreshTime) / actionInfos.currentActionDuration));
     }
 
     public override void Exit(bool reset = false) {
+        Debug.Log("Leaving repos");
         base.Exit(reset);
     }
 }

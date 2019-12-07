@@ -149,6 +149,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public SwordAction charge;
     [SerializeField] public SwordAction parry;
     [SerializeField] public SwordAction dash;
+    [SerializeField] public SwordAction repos;
     [SerializeField, Range(0, 180)] private float angleFullWindow;
     [SerializeField, Range(2, 10)] private int nbDirections;
 
@@ -209,6 +210,7 @@ public class PlayerController : MonoBehaviour
         strike.Init(Time.time);
         parry.Init(Time.time);
         dash.Init(Time.time);
+        repos.Init(Time.time);
         sword.Initialize(this);
         // charge.currentCooldownDuration = strike.currentActionDuration + charge.currentCooldownDuration;
     }
@@ -295,7 +297,7 @@ public class PlayerController : MonoBehaviour
     private void OnDash(InputAction.CallbackContext value) {
         if(currentSpotIndex < GameManager.instance.nbSteps-1) {
             if (machineState.StateRequest(ePLAYER_STATE.DASH)) {
-                StartCoroutine(OpponentDashDelay());
+                StartCoroutine(OpponentReposDelay());
                 machineState.ChangeState(ePLAYER_STATE.DASH);
             }
         }
@@ -309,7 +311,7 @@ public class PlayerController : MonoBehaviour
     }
 
     //Coroutine used to trigger the opponent REPOS state because otherwise, it is done in the same frame and doesn't detect the player dash when striking
-    private IEnumerator OpponentDashDelay() {
+    private IEnumerator OpponentReposDelay() {
         yield return new WaitForSeconds(0.0001f);
         if(opponent != null) {
             opponent.OnOpponentDash();
@@ -320,6 +322,10 @@ public class PlayerController : MonoBehaviour
         if (machineState.StateRequest(ePLAYER_STATE.REPOS)) {
             machineState.ChangeState(ePLAYER_STATE.REPOS);
         }
+    }
+
+    public void EventPlay(int index) {
+        repos.samples.additionalSounds[index].Post(gameObject);
     }
 
     private void UpdateLook() {
@@ -346,8 +352,7 @@ public class PlayerController : MonoBehaviour
     public void furyChange(float mod)
     {
         fury.furyModification(mod);
-        fxHandler.UpdateFuryFX(((float)fury.currentFury) / 100);
-        Debug.Log("fury : " + fury.currentFury);
+        fxHandler.UpdateFuryFX(((float)fury.currentFury)/100);
         updateAllAction();
     }
 
@@ -364,5 +369,8 @@ public class PlayerController : MonoBehaviour
 
         dash.updateCurrentActionDuration();
         dash.updateCurrentCooldownDuration();
+
+        //repos.updateCurrentActionDuration();
+        //repos.updateCurrentCooldownDuration();
     }
 }

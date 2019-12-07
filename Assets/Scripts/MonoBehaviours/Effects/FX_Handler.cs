@@ -30,14 +30,23 @@ public class FX_Handler : MonoBehaviour
         }
     }
 
-    public void SpawnFX(ePLAYER_STATE type) {
+    public void SpawnFX(ePLAYER_STATE type, eDIRECTION direction = eDIRECTION.NONE) {
+        float zRot = 0f;
+
+        if(direction != eDIRECTION.NONE) {
+            zRot = -45f * (int)direction;
+        }
+
         switch (type) {
             case ePLAYER_STATE.PARRY:
+
                 parryFxPrefab.SetActive(true);
+                //parryFxPrefab.transform.rotation = Quaternion.Euler(0, 0, zRot);
                 StartCoroutine(DisableFX(parryFxPrefab));
                 break;
             case ePLAYER_STATE.STRIKE:
                 hitFxPrefab.SetActive(true);
+                hitFxPrefab.transform.rotation = Quaternion.Euler(0, 0, zRot);
                 StartCoroutine(DisableFX(hitFxPrefab));
                 break;
         }
@@ -45,8 +54,8 @@ public class FX_Handler : MonoBehaviour
 
     private IEnumerator DisableFX(GameObject fxPrefab) {
         float duration = 0f;
-        
-        duration = fxPrefab.GetComponent<ParticleSystem>().main.duration;
+
+        duration = 1f;//fxPrefab.GetComponent<ParticleSystem>().main.duration;
 
         yield return new WaitForSeconds(duration);
         

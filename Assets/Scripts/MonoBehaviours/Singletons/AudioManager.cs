@@ -2,12 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
-{
-    public AkEvent akEvent;
+public class AudioManager : MonoBehaviour {
+    public AK.Wwise.Event[] events;
+
+    public static AudioManager instance;
+
+    private void Awake() {
+        if (!instance) {
+            instance = this;
+        } else {
+            Destroy(this.gameObject);
+        }
+    }
 
     private void Start() {
         GameManager.instance.onStrike += UpdateMusic;
+        events[0].Post(gameObject);
     }
 
     private void OnEnable() {
@@ -20,13 +30,8 @@ public class AudioManager : MonoBehaviour
         GameManager.instance.onStrike -= UpdateMusic;
     }    
 
-    private void UpdateMusic(int nbStrikes) {
-        switch (nbStrikes) {
-        case 1:
+    public void UpdateMusic(int index) {
 
-            break;
-        case 2:
-            break;
-        }
+        events[index].Post(gameObject);
     }
 }

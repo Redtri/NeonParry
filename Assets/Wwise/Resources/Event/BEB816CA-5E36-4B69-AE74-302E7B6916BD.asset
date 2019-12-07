@@ -9,12 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 351b7097f3932d045b668de69225be15, type: 3}
-  m_Name: Strike
+  m_Script: {fileID: 11500000, guid: c0c5bf129bee02d4eb8afd73705fe01a, type: 3}
+  m_Name: BEB816CA-5E36-4B69-AE74-302E7B6916BD
   m_EditorClassIdentifier: 
-  actionSounds: []
-  additionalSounds:
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 537474f76f33749c384e4c58ee2b66c5,
-      type: 2}
+  objectName: Music_SecondPVLost
+  id: 2154872981
+  guid: BEB816CA-5E36-4B69-AE74-302E7B6916BD
