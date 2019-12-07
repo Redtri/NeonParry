@@ -115,6 +115,13 @@ public class Fury
         furyModification(mod*perfectParry);
     }
 
+    public void furyMultiplication(float mult)
+    {
+        float f = currentFury * mult;
+        currentFury = (int)f;
+        if (currentFury > highestValueOfFury) currentFury = highestValueOfFury;
+        else if (currentFury < lowestValueOfFury) currentFury = lowestValueOfFury;
+    }
     public void Init()
     {
         currentFury = startingValueOfFury;
@@ -141,6 +148,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public SwordAction charge;
     [SerializeField] public SwordAction parry;
     [SerializeField] public SwordAction dash;
+    [SerializeField] public SwordAction hit;
     [SerializeField, Range(0, 180)] private float angleFullWindow;
     [SerializeField, Range(2, 10)] private int nbDirections;
 
@@ -339,8 +347,16 @@ public class PlayerController : MonoBehaviour
     {
         fury.furyModification(mod);
         fxHandler.UpdateFuryFX(((float)fury.currentFury) / 100);
-        Debug.Log("fury : " + fury.currentFury);
+        // Debug.Log("fury : " + fury.currentFury);
         updateAllAction();
+    }
+    public void allActionsOnCd()
+    {
+        Debug.Log("CD");
+        charge.currentCooldownDuration = 2;
+        strike.currentCooldownDuration = 2;
+        parry.currentCooldownDuration = 2;
+        dash.currentCooldownDuration = 2;
     }
 
     public void updateAllAction()

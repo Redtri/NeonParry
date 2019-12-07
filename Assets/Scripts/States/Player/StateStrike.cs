@@ -43,11 +43,31 @@ public class StateStrike : PlayerState
             if (!opponentParried) {
                 if (!opponentDashed) {
                     Debug.Log("Opponent being stroke successfully");
-                    owner.furyChange(actionInfos.furyModificationOnSuccess); //change the fury of a fixed amount
-                    owner.opponent.fxHandler.SpawnFX(ePLAYER_STATE.STRIKE);
-                    owner.opponent.animator.SetTrigger("hit");
-                    actionInfos.samples.additionalSounds[0].Post(owner.gameObject);
-                    GameManager.instance.StrikeSuccessful(owner.playerIndex);
+                    owner.opponent.isHit = true;
+                    if (!owner.isHit)
+                    {
+                        owner.furyChange(actionInfos.furyModificationOnSuccess); //change the fury of a fixed amount
+                        owner.opponent.fxHandler.SpawnFX(ePLAYER_STATE.STRIKE);
+                        switch (GameManager.instance.StrikeSuccessful(owner.playerIndex))
+                        {
+                            case 0:
+                                owner.opponent.animator.SetTrigger("hit");
+                                break;
+                            case 1:
+
+                                owner.opponent.animator.SetTrigger("down");
+                                break;
+                            case 2:
+                                owner.animator.SetTrigger("victory");
+                                owner.opponent.animator.SetTrigger("death");
+                                break;
+                        };
+
+                        actionInfos.samples.additionalSounds[0].Post(owner.gameObject);
+                        //TODO it's really not clean but at least player can't strike after being hit.
+                        owner.allActionsOnCd();
+                        owner.opponent.isHit = false;
+                    }
                 }
             } else {
                 actionInfos.samples.additionalSounds[0].Post(owner.gameObject);
