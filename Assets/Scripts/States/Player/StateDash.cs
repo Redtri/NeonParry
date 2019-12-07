@@ -15,6 +15,7 @@ public class StateDash : PlayerState
     {
         base.Enter();
         ++owner.currentSpotIndex;
+        AudioManager.instance.UpdateMusic(2);
         startPosition = owner.transform.position;
     }
 

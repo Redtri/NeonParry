@@ -19,7 +19,7 @@ public class FSM_Player
                                                               { ePLAYER_STATE.STRIKE, new StateStrike(player, this, player.strike, ePLAYER_STATE.NEUTRAL, eSTATE_PRIORITY.DEFAULT) },
                                                               { ePLAYER_STATE.PARRY, new StateParry(player, this, player.parry, ePLAYER_STATE.NEUTRAL, eSTATE_PRIORITY.DEFAULT) },
                                                               { ePLAYER_STATE.DASH, new StateDash(player, this, player.dash, ePLAYER_STATE.NEUTRAL, eSTATE_PRIORITY.OVERRIDE) },
-                                                              { ePLAYER_STATE.REPOS, new StateRepos(player, this, player.dash, ePLAYER_STATE.NEUTRAL, eSTATE_PRIORITY.OVERRIDE) },
+                                                              { ePLAYER_STATE.REPOS, new StateRepos(player, this, player.repos, ePLAYER_STATE.NEUTRAL, eSTATE_PRIORITY.DEFAULT) },
                                                               //TODO : Watch out, we may want to create a new feint swordaction for this
                                                               { ePLAYER_STATE.FEINT, new StateFeint(player, this, player.charge, ePLAYER_STATE.NEUTRAL, eSTATE_PRIORITY.DEFAULT) }
         };

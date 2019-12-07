@@ -22,12 +22,16 @@ public class GameManager : MonoBehaviour
     public PlayerInputManager inputSystem;
     public int nbSteps;
     public float stepValue;
+    public float freezeFrameDuration;
     public Vector3 groundOffset;
     [HideInInspector] public List<Vector3> spots;
     public List<PlayerInfo> playerInfos;
     public static GameManager instance { get; private set; }
     public Cinemachine.CinemachineVirtualCamera camera;
     public InterpItem cameraCenterPoint;
+
+    public delegate void Strike(int score);
+    public Strike onStrike;
 
     private void Awake() {
         Time.timeScale = 1f;
@@ -48,9 +52,7 @@ public class GameManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    void Update() {
     }
 
     public int NewPlayer(PlayerController newPlayer) {
@@ -82,8 +84,17 @@ public class GameManager : MonoBehaviour
     }
 
     public void StrikeSuccessful(int playerIndex) {
-        Camera.main.GetComponent<CameraShake>().Shake();
+        Camera.main.GetComponent<CameraShake>().Shake(16f, 16f, 1.5f);
+        AudioManager.instance.UpdateMusic(1);
+        StartCoroutine(StopFreezeFrame());
         ++ playerInfos[playerIndex].score;
+        //onStrike?.Invoke(playerInfos[playerIndex].score);
+    }
+
+    private IEnumerator StopFreezeFrame() {
+        Time.timeScale = 0.1f;
+        yield return new WaitForSecondsRealtime(freezeFrameDuration);
+        Time.timeScale = 1f;
     }
 
     public Vector3 GetDashPos(int playerIndex) {

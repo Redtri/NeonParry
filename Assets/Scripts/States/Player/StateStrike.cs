@@ -6,6 +6,7 @@ public class StateStrike : PlayerState
 {
     private bool opponentParried;
     private bool opponentDashed;
+    private bool clash;
 
     public StateStrike(PlayerController player, FSM_Player machine, SwordAction infos, ePLAYER_STATE next, eSTATE_PRIORITY statePriority) :
         base(player, machine, infos, next, statePriority) {
@@ -17,7 +18,9 @@ public class StateStrike : PlayerState
         base.Enter();
         opponentParried = false;
         opponentDashed = false;
-}
+        clash = false;
+        nextState = ePLAYER_STATE.NEUTRAL;
+    }
 
     public override void Update() {
         base.Update();
@@ -32,23 +35,32 @@ public class StateStrike : PlayerState
             } else if (owner.opponent.dash.IsActionPerforming(Time.time)) {
                 Debug.Log("Opponent dodged, coward !");
                 opponentDashed = true;
+                nextState = ePLAYER_STATE.REPOS;
+            }else if(owner.opponent.strike.IsActionPerforming(Time.time, actionInfos.direction)) {
+                clash = true;
+                owner.animator.SetTrigger("knockback");
+                stateMachine.ChangeState(nextState, false);
+
             }
         }
     }
 
     public override void Exit(bool reset = false) {
         base.Exit(reset);
-        owner.charge.currentCooldownDuration = actionInfos.currentCooldownDuration;
         owner.charge.Refresh(Time.time, true);
         if (owner.opponent != null) {
             if (!opponentParried) {
                 if (!opponentDashed) {
-                    Debug.Log("Opponent being stroke successfully");
-                    owner.furyChange(actionInfos.furyModificationOnSuccess); //change the fury of a fixed amount
-                    owner.opponent.fxHandler.SpawnFX(ePLAYER_STATE.STRIKE);
-                    owner.opponent.animator.SetTrigger("hit");
-                    actionInfos.samples.additionalSounds[0].Post(owner.gameObject);
-                    GameManager.instance.StrikeSuccessful(owner.playerIndex);
+                    if (!clash) {
+                        Debug.Log("Opponent being stroke successfully");
+                        owner.furyChange(actionInfos.furyModificationOnSuccess); //change the fury of a fixed amount
+                        owner.opponent.fxHandler.SpawnFX(ePLAYER_STATE.STRIKE, actionInfos.direction);
+                        owner.opponent.animator.SetTrigger("hit");
+                        actionInfos.samples.additionalSounds[0].Post(owner.gameObject);
+                        GameManager.instance.StrikeSuccessful(owner.playerIndex);
+                    } else {
+                        actionInfos.samples.additionalSounds[1].Post(owner.gameObject);
+                    }
                 }
             } else {
                 actionInfos.samples.additionalSounds[0].Post(owner.gameObject);
