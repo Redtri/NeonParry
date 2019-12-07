@@ -62,7 +62,7 @@ public class StateStrike : PlayerState
                                 owner.opponent.animator.SetTrigger("death");
                                 break;
                         };
-
+                        owner.fury.furyMultiplication(owner.fury.winnerFuryPercentageLeft);
                         actionInfos.samples.additionalSounds[0].Post(owner.gameObject);
                         //TODO it's really not clean but at least player can't strike after being hit.
                         owner.allActionsOnCd();
