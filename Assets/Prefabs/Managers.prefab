@@ -56,7 +56,6 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: c47d5e069751a9f4da81b94e10ea1511,
       type: 2}
-  states: []
 --- !u!1 &6268276687221777030
 GameObject:
   m_ObjectHideFlags: 0

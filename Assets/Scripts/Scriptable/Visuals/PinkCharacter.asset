@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e5e6dc9b9521ba4f9f75edd29ec1bb4, type: 3}
+  m_Name: PinkCharacter
+  m_EditorClassIdentifier: 
+  bodyParts:
+  - {fileID: -4818522007694911340, guid: 45528607e23327947b7d6d9170d5bdd2, type: 3}
+  - {fileID: 3129353750543146001, guid: 45528607e23327947b7d6d9170d5bdd2, type: 3}
+  - {fileID: -7942379403346420905, guid: 45528607e23327947b7d6d9170d5bdd2, type: 3}
+  - {fileID: -4933872694814699690, guid: 45528607e23327947b7d6d9170d5bdd2, type: 3}
+  - {fileID: 4899969875071135705, guid: 45528607e23327947b7d6d9170d5bdd2, type: 3}
+  - {fileID: -5120025314321719576, guid: 45528607e23327947b7d6d9170d5bdd2, type: 3}
+  - {fileID: -3897856454070453960, guid: 45528607e23327947b7d6d9170d5bdd2, type: 3}
+  - {fileID: 5067081724322886125, guid: 45528607e23327947b7d6d9170d5bdd2, type: 3}
+  - {fileID: 2803387975425181273, guid: 45528607e23327947b7d6d9170d5bdd2, type: 3}
+  - {fileID: 2595712235774007705, guid: 45528607e23327947b7d6d9170d5bdd2, type: 3}
+  - {fileID: -4528473503523568709, guid: 45528607e23327947b7d6d9170d5bdd2, type: 3}
+  - {fileID: 5494695765446531099, guid: 45528607e23327947b7d6d9170d5bdd2, type: 3}
+  - {fileID: 5458258395434630314, guid: 45528607e23327947b7d6d9170d5bdd2, type: 3}
