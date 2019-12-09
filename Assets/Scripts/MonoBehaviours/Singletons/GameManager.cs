@@ -20,6 +20,10 @@ public class GameManager : MonoBehaviour
 
     public GameObject[] prefabs;
     public PlayerInputManager inputSystem;
+    public int nbExchangeForARound;
+    public int nbRoundForAMatch;
+    public List<int[]> score; //[0] will stock the number of round won by each player, next well be stock the number of exchange won by each player for each round
+    public int currentRound;
     public int nbSteps;
     public float stepValue;
     public float freezeFrameDuration;
@@ -40,6 +44,10 @@ public class GameManager : MonoBehaviour
         } else {
             Destroy(this.gameObject);
         }
+        currentRound = 1;
+        score = new List<int[]>();
+        score.Add(new int[2] { 0, 0 });
+        score.Add(new int[2] { 0, 0 });
         playerInfos = new List<PlayerInfo>();
         spots = new List<Vector3>();
 
@@ -83,12 +91,29 @@ public class GameManager : MonoBehaviour
         return playerIndex;
     }
 
-    public void StrikeSuccessful(int playerIndex) {
+    public int StrikeSuccessful(int playerIndex) { // strike succesfull return 0, at the end of a round return 1, at the end of the match return 2
         Camera.main.GetComponent<CameraShake>().Shake(16f, 16f, 1.5f);
+        ++score[currentRound][playerIndex];
         AudioManager.instance.UpdateMusic(1);
         StartCoroutine(StopFreezeFrame());
-        ++ playerInfos[playerIndex].score;
-        //onStrike?.Invoke(playerInfos[playerIndex].score);
+        if (score[currentRound][playerIndex] >= nbExchangeForARound)
+        {
+            ++score[0][playerIndex];
+            if (score[0][playerIndex] >= nbRoundForAMatch)
+            {
+                return 2;
+            }
+            else
+            {
+                score.Add(new int[2] { 0, 0 });
+                ++currentRound;
+
+                return 1;
+            }
+        } else
+        {
+            return 0;
+        }
     }
 
     private IEnumerator StopFreezeFrame() {

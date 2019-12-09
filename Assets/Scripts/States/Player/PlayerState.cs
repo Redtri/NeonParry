@@ -45,7 +45,7 @@ public abstract class PlayerState
     }
 
     public virtual void Update() {
-        if(actionInfos != null) {
+        if (actionInfos != null) {
             if (!actionInfos.IsActionPerforming(Time.time)) {
                 stateMachine.ChangeState(nextState);
             }

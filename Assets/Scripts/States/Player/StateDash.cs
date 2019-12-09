@@ -14,6 +14,7 @@ public class StateDash : PlayerState
     public override void Enter(bool trigger = true)
     {
         base.Enter();
+        owner.allActionsOnCd(actionInfos.currentActionDuration);
         ++owner.currentSpotIndex;
         AudioManager.instance.UpdateMusic(2);
         startPosition = owner.transform.position;
@@ -25,7 +26,7 @@ public class StateDash : PlayerState
     }
 
     public override void Exit(bool reset = false) {
-        owner.furyChange(actionInfos.furyModificationOnSuccess); //change the fury of a fixed amount
         base.Exit(reset);
+        owner.furyChange(actionInfos.furyModificationOnSuccess); //change the fury of a fixed amount
     }
 }
