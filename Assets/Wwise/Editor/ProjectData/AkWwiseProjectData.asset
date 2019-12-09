@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 56f6a746797f0a4fbbe996ff7dbe6fa2
     GuidInternal: 
-    m_lastTime: -8586258767754603861
+    m_lastTime: -8586256983865735101
     List: []
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
@@ -43,6 +43,36 @@ MonoBehaviour:
         ObjectType: 7
       Path: Default Work Unit\Main
   EventWwu:
+  - PhysicalPath: Events\Ambiance.wwu
+    ParentPhysicalPath: 
+    guid: 50b214ac3fa6614795c5eceb4820a998
+    GuidInternal: 
+    m_lastTime: -8586256983865750255
+    List:
+    - name: inGame_Ambiance
+      guid: c0a9ee0452e76f4e8e1fff3e31f5362d
+      id: 2370107561
+      PathAndIcons:
+      - ElementName: Ambiance
+        ObjectType: 12
+      - ElementName: inGame_Ambiance
+        ObjectType: 3
+      Path: Ambiance\inGame_Ambiance
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Menu_Ambiance
+      guid: 1a0c6b230a390e46af0e25ebceea809f
+      id: 626061955
+      PathAndIcons:
+      - ElementName: Ambiance
+        ObjectType: 12
+      - ElementName: Menu_Ambiance
+        ObjectType: 3
+      Path: Ambiance\Menu_Ambiance
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 2a81fdbbb1505e4aa9b924cc4da74340
@@ -354,17 +384,26 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 877bfb69bb34254997bc686db894f7e0
     GuidInternal: 
-    m_lastTime: -8586258781310258863
+    m_lastTime: -8586256983865755247
     List:
-    - name: Fury_RTPC
+    - name: FuryLeft_RTPC
       guid: 0032026f833a4f44b9852e8a0a22d3c4
-      id: 1993867557
+      id: 2056782216
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Fury_RTPC
+      - ElementName: FuryLeft_RTPC
         ObjectType: 13
-      Path: Default Work Unit\Fury_RTPC
+      Path: Default Work Unit\FuryLeft_RTPC
+    - name: FuryRight_RTPC
+      guid: b3ffe49f735acc4cbc4253b269372ef9
+      id: 3810431161
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: FuryRight_RTPC
+        ObjectType: 13
+      Path: Default Work Unit\FuryRight_RTPC
     - name: FX_RTPC
       guid: 3c07cfff0135944da04bd6048c0d59b6
       id: 3901535175
@@ -388,8 +427,39 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 63f8cb137edd08448f7f5c3e8e1dcee3
     GuidInternal: 
-    m_lastTime: -8586258781310178993
+    m_lastTime: -8586256983865725258
     List:
+    - name: GeneralGameStates
+      guid: 368f452f521c2e4c8b3e14c699dede29
+      id: 3811713195
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: GeneralGameStates
+        ObjectType: 9
+      Path: Default Work Unit\GeneralGameStates
+      values:
+      - name: inGame_State
+        guid: d4c96a9acc067c48b6ce347ee8b5ff0b
+        id: 2678566748
+        PathAndIcons:
+        - ElementName: inGame_State
+          ObjectType: 8
+      - name: Menu_State
+        guid: c10a85b51841ca46b423cef757208c69
+        id: 3941853002
+        PathAndIcons:
+        - ElementName: Menu_State
+          ObjectType: 8
+      - name: None
+        guid: 16a6fb5e3ad63142a9b54fef4d7daf4d
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
     - name: inGame
       guid: 39b379b82f69ba47ad1966e0aed0ed42
       id: 984691642
