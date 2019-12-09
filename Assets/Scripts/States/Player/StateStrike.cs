@@ -50,10 +50,10 @@ public class StateStrike : PlayerState
                 {
                     if (!opponentDashed)
                     {
-                        if (!owner.isHit)
+                        if (!owner.isStop)
                         {
                             Debug.Log("Opponent being stroke successfully");
-                            owner.opponent.isHit = true;
+                            owner.opponent.isStop = true;
                             owner.furyChange(actionInfos.furyModificationOnSuccess); //change the fury of a fixed amount
                             owner.opponent.fxHandler.SpawnFX(ePLAYER_STATE.STRIKE);
                             switch (GameManager.instance.StrikeSuccessful(owner.playerIndex))
@@ -74,9 +74,10 @@ public class StateStrike : PlayerState
                             actionInfos.samples.additionalSounds[0].Post(owner.gameObject);
                             //TODO it's really not clean but at least player can't strike after being hit.
                             alreadyDoneOnce = true;
-                            owner.onHit();
+                            owner.isStop = true;
+                            //owner.onStop();
                             //nextState = ePLAYER_STATE.STOP;
-                            owner.opponent.onHit();
+                            owner.opponent.onStop();
                         }
                     }
                 }

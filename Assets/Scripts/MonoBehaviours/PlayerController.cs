@@ -163,7 +163,7 @@ public class PlayerController : MonoBehaviour
     private eDIRECTION currentDirection;
     private bool performingAction;
     private bool strokeOpponent;
-    [HideInInspector] public bool isHit;
+    [HideInInspector] public bool isStop;
     public int currentSpotIndex { get; set; }
 
     private void Awake() {
@@ -344,7 +344,7 @@ public class PlayerController : MonoBehaviour
             sword.transform.rotation = Quaternion.Euler(0, 0, deg);
         }
     }
-    public void onHit()
+    public void onStop()
     {
         machineState.ChangeState(ePLAYER_STATE.STOP);
     }

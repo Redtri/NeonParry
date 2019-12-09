@@ -26,7 +26,7 @@ public class StateStop : PlayerState
     public override void Exit(bool reset = false)
     {
         Debug.Log("exit StateStop");
-        owner.isHit = false;
+        owner.isStop = false;
         base.Exit(reset);
     }
 }

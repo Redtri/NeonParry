@@ -13,6 +13,10 @@ public class StateNeutral : PlayerState
     public override void Enter(bool trigger = true)
     {
         base.Enter(trigger);
+        if (owner.isStop)
+        {
+            owner.onStop();
+        }
     }
 
     public override void Update() {
