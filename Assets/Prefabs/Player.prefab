@@ -1865,6 +1865,34 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     samples: {fileID: 11400000, guid: 3a35b764c9817c0468bbe3625c6b8b9a, type: 2}
+  stop:
+    baseCooldownDuration: 0
+    fury:
+      lowestValueOfFury: 0
+      highestValueOfFury: 0
+      currentFury: 0
+      startingValueOfFury: 0
+      minimumMultiplicator: 0
+      maximumMultiplicator: 0
+      winnerFuryPercentageLeft: 0
+      isFeintAndChargeTheSame: 0
+      percentagePerfectParyFury: 0
+    currentCooldownDuration: 0
+    percentageWeightFuryOnCD: 0
+    lastRefreshTime: 0
+    baseActionDuration: 2
+    currentActionDuration: 0
+    percentageWeightFury: 0
+    furyModificationOnSuccess: 0
+    perfectPercentTiming: 0
+    direction: 0
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    samples: {fileID: 0}
   repos:
     baseCooldownDuration: 0.1
     fury:
@@ -1914,6 +1942,7 @@ MonoBehaviour:
   angleFullWindow: 130
   nbDirections: 3
   facingLeft: 0
+  isStop: 0
 --- !u!114 &1650136128622054671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3269,7 +3298,7 @@ PrefabInstance:
     - target: {fileID: 473848070671101330, guid: ed4a7b306288eb443ba34b4d315186e2,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6937198034833313784, guid: ed4a7b306288eb443ba34b4d315186e2,
         type: 3}

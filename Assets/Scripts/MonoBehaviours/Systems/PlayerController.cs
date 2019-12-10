@@ -77,9 +77,12 @@ public class Cooldown {
         }
     }
 
-    public void updateCurrentCooldownDuration ()
-    {
+    public void updateCurrentCooldownDuration (bool current = false) {
         currentCooldownDuration = fury.speedMultiplicator(percentageWeightFuryOnCD) * baseCooldownDuration;
+        if (current) {
+            currentCooldownDuration = fury.speedMultiplicator(percentageWeightFuryOnCD) * currentCooldownDuration;
+        } else {
+        }
     }
 
     public void setFury(Fury f)
@@ -119,6 +122,15 @@ public class Fury
         else if (currentFury < lowestValueOfFury) currentFury = lowestValueOfFury;
     }
 
+    public void furyMultiplication(float mult) {
+        float f = currentFury * mult;
+        currentFury = (int)f;
+        if (currentFury > highestValueOfFury)
+            currentFury = highestValueOfFury;
+        else if (currentFury < lowestValueOfFury)
+            currentFury = lowestValueOfFury;
+    }
+
     public void furyModification (float mod, float perfectParry)
     {
         furyModification(mod*perfectParry);
@@ -150,6 +162,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public SwordAction charge;
     [SerializeField] public SwordAction parry;
     [SerializeField] public SwordAction dash;
+    [SerializeField] public SwordAction stop;
     [SerializeField] public SwordAction repos;
     [SerializeField, Range(0, 180)] private float angleFullWindow;
     [SerializeField, Range(2, 10)] private int nbDirections;
@@ -165,7 +178,7 @@ public class PlayerController : MonoBehaviour
     private eDIRECTION currentDirection;
     private bool performingAction;
     private bool strokeOpponent;
-    private bool isHit;
+    [HideInInspector] public bool isStop;
     public int currentSpotIndex { get; set; }
 
     private void Awake() {
@@ -183,6 +196,7 @@ public class PlayerController : MonoBehaviour
         charge.setFury(fury);
         parry.setFury(fury);
         dash.setFury(fury);
+        stop.setFury(fury);
 
         machineState = new FSM_Player(this);
         angleFullWindow *= -1;
@@ -212,6 +226,7 @@ public class PlayerController : MonoBehaviour
         parry.Init(Time.time);
         dash.Init(Time.time);
         repos.Init(Time.time);
+        stop.Init(Time.time);
         sword.Initialize(this);
         // charge.currentCooldownDuration = strike.currentActionDuration + charge.currentCooldownDuration;
     }
@@ -344,9 +359,7 @@ public class PlayerController : MonoBehaviour
     }
 
     public void OnOpponentDash() {
-        if (machineState.StateRequest(ePLAYER_STATE.REPOS)) {
             machineState.ChangeState(ePLAYER_STATE.REPOS);
-        }
     }
 
     public void EventPlay(int index) {
@@ -374,11 +387,28 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void onStop() {
+        machineState.ChangeState(ePLAYER_STATE.STOP);
+    }
+
     public void furyChange(float mod)
     {
         fury.furyModification(mod);
         fxHandler.UpdateFuryFX(((float)fury.currentFury)/100);
-        updateAllAction();
+        if(machineState.currentState != ePLAYER_STATE.DASH) {
+            updateAllAction();
+        }
+    }
+
+    public void allActionsOnCd(float t) {
+        charge.currentCooldownDuration = t;
+        charge.Refresh(Time.time, true);
+        strike.currentCooldownDuration = t;
+        strike.Refresh(Time.time, true);
+        parry.currentCooldownDuration = t;
+        parry.Refresh(Time.time, true);
+        dash.currentCooldownDuration = t;
+        dash.Refresh(Time.time, true);
     }
 
     public void updateAllAction()
@@ -394,8 +424,5 @@ public class PlayerController : MonoBehaviour
 
         dash.updateCurrentActionDuration();
         dash.updateCurrentCooldownDuration();
-
-        //repos.updateCurrentActionDuration();
-        //repos.updateCurrentCooldownDuration();
     }
 }

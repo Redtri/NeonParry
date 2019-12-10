@@ -14,9 +14,6 @@ public class StateCharge : PlayerState
     public override void Enter(bool trigger = true) {
         owner.animator.SetBool("feinting", false);
         base.Enter();
-        if (actionInfos.direction == eDIRECTION.UP) {
-            owner.animator.speed = 0.5f;
-        }
         //actionInfos.currentCooldownDuration = owner.strike.currentActionDuration + actionInfos.baseCooldownDuration;
     }
     
