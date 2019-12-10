@@ -24,9 +24,14 @@ Event	ID	Name			Wwise Object Path	Notes
 	4203913494	follow			\SFX\follow	
 
 State Group	ID	Name			Wwise Object Path	Notes
+	244845258	roundState			\Default Work Unit\roundState	
 	984691642	inGame			\Default Work Unit\inGame	
 
 State	ID	Name	State Group			Notes
+	0	None	roundState			
+	4039654992	round_02	roundState			
+	4039654993	round_03	roundState			
+	4039654995	round_01	roundState			
 	0	None	inGame			
 	168610243	fighting	inGame			
 	1709125184	fightingevolved	inGame			
@@ -35,22 +40,25 @@ State	ID	Name	State Group			Notes
 	3092733402	standOff	inGame			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	102222190	stem02reverb2	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Windows\SFX\stem02reverb2_469574DC.wem		\Interactive Music Hierarchy\Guerric\inGameMusic\fightingMusic\stem02reverb2\stem02reverb2		452689
+	15285904	round3_drop1	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Windows\SFX\round3_drop1_469574DC.wem		\Interactive Music Hierarchy\Guerric\roundSwitcher\inGameMusic_Round3\fightingMusic\round3_drop1\round3_drop1		138338
+	102222190	stem02reverb2	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Windows\SFX\stem02reverb2_469574DC.wem		\Interactive Music Hierarchy\Guerric\roundSwitcher\inGameMusic_Round1\fightingMusic\stem02reverb2\stem02reverb2		452689
 	134202983	dash_01	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Windows\SFX\dash_01_70006264.wem		\Actor-Mixer Hierarchy\Guerric\Dash\dash_01		29232
 	136294100	robotstep_03	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Windows\SFX\robotstep_03_11697732.wem		\Actor-Mixer Hierarchy\Guerric\Footstep\robotstep_03		13184
-	158783193	stem02reverb	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Windows\SFX\stem02reverb_469574DC.wem		\Interactive Music Hierarchy\Guerric\inGameMusic\standOffMusic\stem02reverb\stem02reverb		585305
+	158783193	stem02reverb	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Windows\SFX\stem02reverb_469574DC.wem		\Interactive Music Hierarchy\Guerric\roundSwitcher\inGameMusic_Round1\standOffMusic\stem02reverb\stem02reverb		585305
 	220227563	perfectParry	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Windows\SFX\perfectParry_11697732.wem		\Actor-Mixer Hierarchy\Thomas\perfectParry		27740
 	305375330	attackLow	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Windows\SFX\attackLow_11697732.wem		\Actor-Mixer Hierarchy\Thomas\SFX\attackLowRight\attackLow		51096
 	326377906	parry02	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Windows\SFX\parry02_11697732.wem		\Actor-Mixer Hierarchy\Thomas\SFX\ParryLeft\parry02		20607
-	425976934	round1_var2_hihat	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Windows\SFX\round1_var2_hihat_469574DC.wem		\Interactive Music Hierarchy\Guerric\inGameMusic\fightingMusicEvolved\stem05variante\round1_var2_hihat		185877
+	407386197	round3_intro	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Windows\SFX\round3_intro_469574DC.wem		\Interactive Music Hierarchy\Guerric\roundSwitcher\inGameMusic_Round3\standOffMusic\round3_intro\round3_intro		178752
+	425976934	round1_var2_hihat	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Windows\SFX\round1_var2_hihat_469574DC.wem		\Interactive Music Hierarchy\Guerric\roundSwitcher\inGameMusic_Round1\fightingMusicEvolved\stem05variante\round1_var2_hihat		185877
+	437581663	round3_drop2	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Windows\SFX\round3_drop2_469574DC.wem		\Interactive Music Hierarchy\Guerric\roundSwitcher\inGameMusic_Round3\fightingMusicEvolved\round3_drop2\round3_drop2		202246
 	509773085	parry01	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Windows\SFX\parry01_11697732.wem		\Actor-Mixer Hierarchy\Thomas\SFX\ParryLeft\parry01		21505
 	584322416	parry03	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Windows\SFX\parry03_11697732.wem		\Actor-Mixer Hierarchy\Thomas\SFX\ParryLeft\parry03		19693
-	760556342	round1_var4_lead	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Windows\SFX\round1_var4_lead_469574DC.wem		\Interactive Music Hierarchy\Guerric\inGameMusic\fightingMusicEvolved\stem05variante\round1_var4_lead		209749
-	794123468	round1_dash_bassfiltered	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Windows\SFX\round1_dash_bassfiltered_469574DC.wem		\Interactive Music Hierarchy\Guerric\inGameMusic\isDashingMusic\round1_dash_bassfiltered\round1_dash_bassfiltered		140832
-	829946370	stem05variante	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Windows\SFX\stem05variante_469574DC.wem		\Interactive Music Hierarchy\Guerric\inGameMusic\fightingMusicEvolved\stem05variante\stem05variante		241802
+	760556342	round1_var4_lead	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Windows\SFX\round1_var4_lead_469574DC.wem		\Interactive Music Hierarchy\Guerric\roundSwitcher\inGameMusic_Round1\fightingMusicEvolved\stem05variante\round1_var4_lead		209749
+	794123468	round1_dash_bassfiltered	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Windows\SFX\round1_dash_bassfiltered_469574DC.wem		\Interactive Music Hierarchy\Guerric\roundSwitcher\inGameMusic_Round1\isDashingMusic\round1_dash_bassfiltered\round1_dash_bassfiltered		140832
+	829946370	stem05variante	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Windows\SFX\stem05variante_469574DC.wem		\Interactive Music Hierarchy\Guerric\roundSwitcher\inGameMusic_Round1\fightingMusicEvolved\stem05variante\stem05variante		241802
 	866938126	attackHigh	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Windows\SFX\attackHigh_11697732.wem		\Actor-Mixer Hierarchy\Thomas\SFX\attackHighRight\attackHigh		66046
-	882041133	stem04drop	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Windows\SFX\stem04drop_469574DC.wem		\Interactive Music Hierarchy\Guerric\inGameMusic\fightingMusic\stem04drop\stem04drop		130177
-	922072234	round1_var1	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Windows\SFX\round1_var1_469574DC.wem		\Interactive Music Hierarchy\Guerric\inGameMusic\fightingMusicEvolved\stem05variante\round1_var1		211523
+	882041133	stem04drop	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Windows\SFX\stem04drop_469574DC.wem		\Interactive Music Hierarchy\Guerric\roundSwitcher\inGameMusic_Round1\fightingMusic\stem04drop\stem04drop		130177
+	922072234	round1_var1	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Windows\SFX\round1_var1_469574DC.wem		\Interactive Music Hierarchy\Guerric\roundSwitcher\inGameMusic_Round1\fightingMusicEvolved\stem05variante\round1_var1		211523
 	984257227	robotstep_01	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Windows\SFX\robotstep_01_11697732.wem		\Actor-Mixer Hierarchy\Guerric\Footstep\robotstep_01		10136
 	1013949862	robotstep_02	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Windows\SFX\robotstep_02_11697732.wem		\Actor-Mixer Hierarchy\Guerric\Footstep\robotstep_02		11872
 	1057970230	attackMid	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Windows\SFX\attackMid_11697732.wem		\Actor-Mixer Hierarchy\Thomas\SFX\attackMidLeft\attackMid		40896

@@ -1,8 +1,13 @@
 State Group	ID	Name			Wwise Object Path	Notes
+	244845258	roundState			\Default Work Unit\roundState	
 	984691642	inGame			\Default Work Unit\inGame	
 	3811713195	GeneralGameStates			\Default Work Unit\GeneralGameStates	
 
 State	ID	Name	State Group			Notes
+	0	None	roundState			
+	4039654992	round_02	roundState			
+	4039654993	round_03	roundState			
+	4039654995	round_01	roundState			
 	0	None	inGame			
 	168610243	fighting	inGame			
 	1709125184	fightingevolved	inGame			

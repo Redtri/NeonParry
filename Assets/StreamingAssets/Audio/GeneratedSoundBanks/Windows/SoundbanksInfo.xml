@@ -46,6 +46,10 @@
 				<Event Id="2689861876" Name="perfectParryRight" ObjectPath="\Events\SFX\perfectParryRight"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
+				<File Id="15285904" Language="SFX">
+					<ShortName>round3_drop1.wav</ShortName>
+					<Path>SFX\round3_drop1_469574DC.wem</Path>
+				</File>
 				<File Id="102222190" Language="SFX">
 					<ShortName>stem02reverb2.wav</ShortName>
 					<Path>SFX\stem02reverb2_469574DC.wem</Path>
@@ -74,9 +78,17 @@
 					<ShortName>parry02.wav</ShortName>
 					<Path>SFX\parry02_11697732.wem</Path>
 				</File>
+				<File Id="407386197" Language="SFX">
+					<ShortName>round3_intro.wav</ShortName>
+					<Path>SFX\round3_intro_469574DC.wem</Path>
+				</File>
 				<File Id="425976934" Language="SFX">
 					<ShortName>round1_var2_hihat.wav</ShortName>
 					<Path>SFX\round1_var2_hihat_469574DC.wem</Path>
+				</File>
+				<File Id="437581663" Language="SFX">
+					<ShortName>round3_drop2.wav</ShortName>
+					<Path>SFX\round3_drop2_469574DC.wem</Path>
 				</File>
 				<File Id="509773085" Language="SFX">
 					<ShortName>parry01.wav</ShortName>
