@@ -1,12 +1,17 @@
 State Group	ID	Name			Wwise Object Path	Notes
 	984691642	inGame			\Default Work Unit\inGame	
+	3811713195	GeneralGameStates			\Default Work Unit\GeneralGameStates	
 
 State	ID	Name	State Group			Notes
 	0	None	inGame			
 	168610243	fighting	inGame			
 	1709125184	fightingevolved	inGame			
+	2532476867	isDashing	inGame			
 	2996998095	winning	inGame			
 	3092733402	standOff	inGame			
+	0	None	GeneralGameStates			
+	2678566748	inGame_State	GeneralGameStates			
+	3941853002	Menu_State	GeneralGameStates			
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	2479939179	Sidechain_RTPC			\Default Work Unit\Sidechain_RTPC	
@@ -15,12 +20,14 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 Audio Bus	ID	Name			Wwise Object Path	Notes
 	393239870	SFX			\Default Work Unit\Master Audio Bus\SFX	
 	1883033791	Sidechain			\Default Work Unit\Master Audio Bus\SFX\Sidechain	
+	2678099787	Music_FX			\Default Work Unit\Master Audio Bus\Music\Music_FX	
+	2981377429	Ambiance			\Default Work Unit\Master Audio Bus\Ambiance	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
 	3991942870	Music			\Default Work Unit\Master Audio Bus\Music	
 
 Effect plug-ins	ID	Name	Type				Notes
 	552174948	Wwise_Meter_(Custom)	Wwise Meter			
-	727700993	Deep_(Custom)	Wwise Flanger			
+	886211095	Deep_(Custom)	Wwise Flanger			
 
 Audio Devices	ID	Name	Type				Notes
 	2317455096	No_Output	No Output			

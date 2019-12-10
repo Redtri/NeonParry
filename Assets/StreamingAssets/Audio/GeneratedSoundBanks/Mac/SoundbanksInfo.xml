@@ -28,7 +28,6 @@
 				<Event Id="1591749358" Name="attackMidLeft" ObjectPath="\Events\SFX\attackMidLeft"/>
 				<Event Id="74495757" Name="attackMidRight" ObjectPath="\Events\SFX\attackMidRight"/>
 				<Event Id="1585787840" Name="clash" ObjectPath="\Events\SFX\clash"/>
-				<Event Id="1942692385" Name="dash" ObjectPath="\Events\SFX\dash"/>
 				<Event Id="763920020" Name="Dash_Event" ObjectPath="\Events\SFX\Dash_Event"/>
 				<Event Id="779278001" Name="death" ObjectPath="\Events\SFX\death"/>
 				<Event Id="4203913494" Name="follow" ObjectPath="\Events\SFX\follow"/>
@@ -75,6 +74,10 @@
 					<ShortName>parry02.wav</ShortName>
 					<Path>SFX\parry02_11697732.wem</Path>
 				</File>
+				<File Id="425976934" Language="SFX">
+					<ShortName>round1_var2_hihat.wav</ShortName>
+					<Path>SFX\round1_var2_hihat_469574DC.wem</Path>
+				</File>
 				<File Id="509773085" Language="SFX">
 					<ShortName>parry01.wav</ShortName>
 					<Path>SFX\parry01_11697732.wem</Path>
@@ -82,6 +85,14 @@
 				<File Id="584322416" Language="SFX">
 					<ShortName>parry03.wav</ShortName>
 					<Path>SFX\parry03_11697732.wem</Path>
+				</File>
+				<File Id="760556342" Language="SFX">
+					<ShortName>round1_var4_lead.wav</ShortName>
+					<Path>SFX\round1_var4_lead_469574DC.wem</Path>
+				</File>
+				<File Id="794123468" Language="SFX">
+					<ShortName>round1_dash_bassfiltered.wav</ShortName>
+					<Path>SFX\round1_dash_bassfiltered_469574DC.wem</Path>
 				</File>
 				<File Id="829946370" Language="SFX">
 					<ShortName>stem05variante.wav</ShortName>
@@ -94,6 +105,10 @@
 				<File Id="882041133" Language="SFX">
 					<ShortName>stem04drop.wav</ShortName>
 					<Path>SFX\stem04drop_469574DC.wem</Path>
+				</File>
+				<File Id="922072234" Language="SFX">
+					<ShortName>round1_var1.wav</ShortName>
+					<Path>SFX\round1_var1_469574DC.wem</Path>
 				</File>
 				<File Id="984257227" Language="SFX">
 					<ShortName>robotstep_01.wav</ShortName>
