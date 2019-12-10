@@ -1820,7 +1820,7 @@ MonoBehaviour:
       m_RotationOrder: 4
     samples: {fileID: 11400000, guid: 630566b821809cb4d93f5bf32277fd68, type: 2}
   dash:
-    baseCooldownDuration: 0.5
+    baseCooldownDuration: 2
     fury:
       lowestValueOfFury: 0
       highestValueOfFury: 0

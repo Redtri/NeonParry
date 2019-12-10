@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     public int nbSteps;
     public float stepValue;
     public float freezeFrameDuration;
+    public AnimationCurve freezeFrameCurve;
     public Vector3 groundOffset;
     [HideInInspector] public List<Vector3> spots;
     public List<PlayerInfo> playerInfos;
@@ -95,7 +96,7 @@ public class GameManager : MonoBehaviour
         Camera.main.GetComponent<CameraShake>().Shake(16f, 16f, 1.5f);
         ++score[currentRound][playerIndex];
         AudioManager.instance.UpdateMusic(1);
-        StartCoroutine(StopFreezeFrame());
+        StartCoroutine(FreezeFrame(freezeFrameDuration));
         if (score[currentRound][playerIndex] >= nbExchangeForARound)
         {
             ++score[0][playerIndex];
@@ -116,10 +117,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private IEnumerator StopFreezeFrame() {
-        Time.timeScale = 0.1f;
-        yield return new WaitForSecondsRealtime(freezeFrameDuration);
-        Time.timeScale = 1f;
+    private IEnumerator FreezeFrame(float duration) {
+        float refreshTime = Time.unscaledTime;
+
+        while(Time.unscaledTime - refreshTime < duration) {
+            Time.timeScale = freezeFrameCurve.Evaluate((Time.unscaledTime - refreshTime) / duration);
+            yield return new WaitForSecondsRealtime(0.01f);
+        }
     }
 
     public Vector3 GetDashPos(int playerIndex) {

@@ -14,7 +14,7 @@ public class StateDash : PlayerState
     public override void Enter(bool trigger = true)
     {
         base.Enter();
-        owner.allActionsOnCd(actionInfos.currentActionDuration);
+        //owner.allActionsOnCd(actionInfos.currentActionDuration);
         ++owner.currentSpotIndex;
         AudioManager.instance.UpdateMusic(2);
         startPosition = owner.transform.position;

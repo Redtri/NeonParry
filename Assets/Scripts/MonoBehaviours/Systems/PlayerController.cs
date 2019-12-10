@@ -268,13 +268,13 @@ public class PlayerController : MonoBehaviour
     private void OnLook(InputAction.CallbackContext value) {
 
         if (controllerType == eCONTROLLER.KEYBOARD) {
-            temporaryLastLook = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
+            temporaryLastLook = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position - new Vector3(0f, 9f, 0f)).normalized;
         } else {
             temporaryLastLook = value.ReadValue<Vector2>().normalized;
         }
         if (!performingAction) {
             if(controllerType == eCONTROLLER.KEYBOARD) {
-                look = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
+                look = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position - new Vector3(0f, 9f, 0f)).normalized;
             } else {
                 look = value.ReadValue<Vector2>().normalized;
             }
@@ -311,7 +311,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnDash(InputAction.CallbackContext value) {
         if(currentSpotIndex < GameManager.instance.nbSteps-1) {
-            if (machineState.StateRequest(ePLAYER_STATE.DASH)) {
+            if (machineState.currentState != ePLAYER_STATE.REPOS && machineState.StateRequest(ePLAYER_STATE.DASH)) {
                 machineState.ChangeState(ePLAYER_STATE.DASH);
                 StartCoroutine(OpponentReposDelay());
             }
