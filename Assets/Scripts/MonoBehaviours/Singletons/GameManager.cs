@@ -3,21 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using UnityEngine.InputSystem;
-
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public class PlayerInfo {
-        [HideInInspector] public PlayerController controller;
-        [HideInInspector] public int playerIndex;
-        [HideInInspector] public int score;
-
-        public PlayerInfo(PlayerController tController, int tPlayerIndex) {
-            controller = tController;
-            playerIndex = tPlayerIndex;
-        }
-    }
-
     public GameObject[] prefabs;
     public PlayerInputManager inputSystem;
     public int nbExchangeForARound;
@@ -30,10 +19,11 @@ public class GameManager : MonoBehaviour
     public AnimationCurve freezeFrameCurve;
     public Vector3 groundOffset;
     [HideInInspector] public List<Vector3> spots;
-    public List<PlayerInfo> playerInfos;
     public static GameManager instance { get; private set; }
     public Cinemachine.CinemachineVirtualCamera camera;
     public InterpItem cameraCenterPoint;
+
+    private int currentNbPlayers = 0;
 
     public delegate void Strike(int score);
     public Strike onStrike;
@@ -49,7 +39,6 @@ public class GameManager : MonoBehaviour
         score = new List<int[]>();
         score.Add(new int[2] { 0, 0 });
         score.Add(new int[2] { 0, 0 });
-        playerInfos = new List<PlayerInfo>();
         spots = new List<Vector3>();
 
         float startPoint = -((nbSteps * stepValue) - stepValue / 2);
@@ -58,38 +47,43 @@ public class GameManager : MonoBehaviour
             spots.Add(new Vector3(startPoint + i * stepValue, 0, 0) - groundOffset);
         }
         camera = Camera.main.transform.GetChild(0).GetComponent<CinemachineVirtualCamera>();
+
+
+        if (SceneManager.GetActiveScene().name != "IntroScene") {
+            LoadPlayerInfos();
+        }
     }
 
-    // Update is called once per frame
-    void Update() {
+    public void LoadPlayerInfos() {
+        inputSystem.JoinPlayer(0, 0, "Gamepad", GameInfos.playerInfos[0].device);
+        inputSystem.playerPrefab = prefabs[1];
+        inputSystem.JoinPlayer(1, 0, "Gamepad", GameInfos.playerInfos[1].device);
     }
 
     public int NewPlayer(PlayerController newPlayer) {
-        int playerIndex = playerInfos.Count;
 
-        if(playerIndex == 2) {
-            Destroy(newPlayer);
-            return 0;
-        }
+        GameInfos.playerInfos[currentNbPlayers].controller = newPlayer;
+        newPlayer.GetComponent<SpriteSwaper>().PickSkin(GameInfos.playerInfos[currentNbPlayers].skin);
 
-        switch (playerIndex) {
+        switch (currentNbPlayers) {
             case 0:
                 newPlayer.transform.position = spots[nbSteps-1];
                 newPlayer.facingLeft = false;
-                inputSystem.playerPrefab = prefabs[1];
                 break;
             case 1:
                 newPlayer.transform.position = spots[nbSteps];
-                newPlayer.facingLeft = true;
-                newPlayer.opponent = playerInfos[0].controller;
-                playerInfos[0].controller.opponent = newPlayer;
-                cameraCenterPoint.startObject = playerInfos[0].controller.transform;
+                newPlayer.facingLeft = true; //ici
+
+                newPlayer.opponent = GameInfos.playerInfos[0].controller;
+                GameInfos.playerInfos[0].controller.opponent = newPlayer;
+                cameraCenterPoint.startObject = GameInfos.playerInfos[0].controller.transform;
                 cameraCenterPoint.endObject = newPlayer.transform;
                 break;
         }
-        playerInfos.Add(new PlayerInfo(newPlayer, playerIndex));
+        //GameInfos.playerInfos.Add(new PlayerInfo(newPlayer, playerIndex, ));
 
-        return playerIndex;
+        ++currentNbPlayers;
+        return currentNbPlayers-1;
     }
 
     public int StrikeSuccessful(int playerIndex) { // strike succesfull return 0, at the end of a round return 1, at the end of the match return 2
@@ -127,7 +121,7 @@ public class GameManager : MonoBehaviour
     }
 
     public Vector3 GetDashPos(int playerIndex) {
-        PlayerController pc = playerInfos[playerIndex].controller;
+        PlayerController pc = GameInfos.playerInfos[playerIndex].controller;
         if (pc.facingLeft) {
             return (spots[nbSteps + pc.currentSpotIndex]);
         } else {

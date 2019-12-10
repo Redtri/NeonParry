@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StateDash : PlayerState
 {
     private Vector3 startPosition;
+    private Vector3 destPos;
 
     public StateDash(PlayerController player, FSM_Player machine, SwordAction infos, ePLAYER_STATE next, eSTATE_PRIORITY statePriority) :
         base(player, machine, infos, next, statePriority) {
@@ -18,11 +20,13 @@ public class StateDash : PlayerState
         ++owner.currentSpotIndex;
         AudioManager.instance.UpdateMusic(2);
         startPosition = owner.transform.position;
+        destPos = (SceneManager.GetActiveScene().name != "IntroScene") ? GameManager.instance.GetDashPos(owner.playerIndex) : MenuManager.instance.GetDashPos(owner.playerIndex);
     }
 
     public override void Update() {
         base.Update();
-        owner.transform.position = Vector3.Lerp(startPosition, GameManager.instance.GetDashPos(owner.playerIndex), (Time.time- actionInfos.lastRefreshTime)/actionInfos.currentActionDuration);
+
+        owner.transform.position = Vector3.Lerp(startPosition, destPos, (Time.time- actionInfos.lastRefreshTime)/actionInfos.currentActionDuration);
     }
 
     public override void Exit(bool reset = false) {

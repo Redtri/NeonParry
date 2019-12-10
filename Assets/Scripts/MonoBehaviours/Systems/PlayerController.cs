@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public enum eDIRECTION { NONE, UP, MID, DOWN };
 public enum eCONTROLLER { KEYBOARD, GAMEPAD };
@@ -179,8 +180,17 @@ public class PlayerController : MonoBehaviour
     private bool strokeOpponent;
     [HideInInspector] public bool isStop;
     public int currentSpotIndex { get; set; }
+    [HideInInspector] public int skin;
+
+    public delegate void StrikeEvent(eDIRECTION direction, float delay);
+    public StrikeEvent onStrike;
 
     private void Awake() {
+        
+
+        if (SceneManager.GetActiveScene().name == "IntroScene") {
+            gameObject.AddComponent<SpriteController>();
+        }
 
         //REFERENCES
         inputSystem = this.GetComponent<PlayerInput>();
@@ -209,13 +219,6 @@ public class PlayerController : MonoBehaviour
         }
 
         //LISTENERS
-        inputSystem.currentActionMap["Look"].performed += context => OnLook(context);
-        inputSystem.currentActionMap["Look"].canceled += context => OnLook(context);
-
-        inputSystem.currentActionMap["Strike"].started += OnStrike;
-        inputSystem.currentActionMap["Parry"].started += OnParry;
-        inputSystem.currentActionMap["Dash"].started += OnDash;
-        inputSystem.currentActionMap["Feint"].started += OnFeint;
 
         //Charge cooldown is the "attack" skill cooldown, so it needs to consider the strike duration as part of its cooldown
 
@@ -228,13 +231,29 @@ public class PlayerController : MonoBehaviour
         stop.Init(Time.time);
         sword.Initialize(this);
         // charge.currentCooldownDuration = strike.currentActionDuration + charge.currentCooldownDuration;
+
+        print(inputSystem.devices[0]);
     }
 
+
     private void Start() {
-        playerIndex = GameManager.instance.NewPlayer(this);
+        //TODO Mettre condition scene
+        if (SceneManager.GetActiveScene().name != "IntroScene") {
+            playerIndex = GameManager.instance.NewPlayer(this);
+        } else {
+            playerIndex = MenuManager.instance.NewPlayer(this);
+        }
+
         if (facingLeft) {
             transform.rotation = Quaternion.Euler(0f, -180f, 0f);
         }
+        inputSystem.currentActionMap["Look"].performed += context => OnLook(context);
+        inputSystem.currentActionMap["Look"].canceled += context => OnLook(context);
+
+        inputSystem.currentActionMap["Strike"].started += OnStrike;
+        inputSystem.currentActionMap["Parry"].started += OnParry;
+        inputSystem.currentActionMap["Dash"].started += OnDash;
+        inputSystem.currentActionMap["Feint"].started += OnFeint;
         machineState.onStateChanged += UpdateLook;
     }
 
@@ -244,9 +263,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnDisable() {
-        machineState.onStateChanged -= UpdateLook;
+    public void Unsubscribe() {
+        inputSystem.currentActionMap["Look"].performed -= context => OnLook(context);
+        inputSystem.currentActionMap["Look"].canceled -= context => OnLook(context);
+
+        inputSystem.currentActionMap["Strike"].started -= OnStrike;
+        inputSystem.currentActionMap["Parry"].started -= OnParry;
+        inputSystem.currentActionMap["Dash"].started -= OnDash;
+        inputSystem.currentActionMap["Feint"].started -= OnFeint;
     }
+    
 
     // Update is called once per frame
     void Update() {
@@ -290,12 +316,13 @@ public class PlayerController : MonoBehaviour
                 deg *= -1f;
             }
             currentDirection = (eDIRECTION)(nbDirections / Mathf.Abs(angleFullWindow / deg));
-            sword.transform.rotation = Quaternion.Euler(0, 0, deg);
+            //sword.transform.rotation = Quaternion.Euler(0, 0, deg);
         }
     }
 
     private void OnStrike(InputAction.CallbackContext value) {
         if (machineState.StateRequest(ePLAYER_STATE.CHARGE)) {
+            onStrike?.Invoke(currentDirection, charge.currentActionDuration + strike.currentActionDuration);
             charge.direction = currentDirection;
             strike.direction = currentDirection;
             machineState.ChangeState(ePLAYER_STATE.CHARGE);
@@ -310,10 +337,25 @@ public class PlayerController : MonoBehaviour
     }
 
     private void OnDash(InputAction.CallbackContext value) {
-        if(currentSpotIndex < GameManager.instance.nbSteps-1) {
-            if (machineState.currentState != ePLAYER_STATE.REPOS && machineState.StateRequest(ePLAYER_STATE.DASH)) {
-                machineState.ChangeState(ePLAYER_STATE.DASH);
-                StartCoroutine(OpponentReposDelay());
+
+        if (SceneManager.GetActiveScene().name != "IntroScene")
+        {
+            if(currentSpotIndex < GameManager.instance.nbSteps-1) {
+                    if (machineState.currentState != ePLAYER_STATE.REPOS && machineState.StateRequest(ePLAYER_STATE.DASH)) {
+                        machineState.ChangeState(ePLAYER_STATE.DASH);
+                        StartCoroutine(OpponentReposDelay());
+                    }
+            }
+        } else {
+
+            if (currentSpotIndex < MenuManager.instance.nbSteps - 1)
+            {
+                if (machineState.StateRequest(ePLAYER_STATE.DASH))
+                {
+                    StartCoroutine(OpponentReposDelay());
+                    machineState.ChangeState(ePLAYER_STATE.DASH);
+                    MenuManager.instance.PlayerReady();
+                }
             }
         }
     }
