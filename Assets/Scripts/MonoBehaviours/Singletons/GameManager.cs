@@ -21,9 +21,14 @@ public class GameManager : MonoBehaviour
     public GameObject[] prefabs;
     public PlayerInputManager inputSystem;
     public int nbExchangeForARound;
-    public int nbRoundForAMatch;
+    //public int nbRoundForAMatch;
+    [HideInInspector] public int nbRoundForAMatch = 2; //set by the exercices, must be in maximu 3 rounds
     public List<int[]> score; //[0] will stock the number of round won by each player, next well be stock the number of exchange won by each player for each round
     public int currentRound;
+    private bool startNewMatch;
+    private float startStopTime;
+    public int stopDuration;
+    private bool isStop;
     public int nbSteps;
     public float stepValue;
     public float freezeFrameDuration;
@@ -44,12 +49,11 @@ public class GameManager : MonoBehaviour
         } else {
             Destroy(this.gameObject);
         }
-        currentRound = 1;
-        score = new List<int[]>();
-        score.Add(new int[2] { 0, 0 });
-        score.Add(new int[2] { 0, 0 });
+        initMatch();
         playerInfos = new List<PlayerInfo>();
         spots = new List<Vector3>();
+        startNewMatch = false;
+        isStop = false;
 
         float startPoint = -((nbSteps * stepValue) - stepValue / 2);
 
@@ -61,6 +65,11 @@ public class GameManager : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
+        //isStopGame();
+        if (startNewMatch)
+        {
+            resetMatch();
+        }
     }
 
     public int NewPlayer(PlayerController newPlayer) {
@@ -73,12 +82,11 @@ public class GameManager : MonoBehaviour
 
         switch (playerIndex) {
             case 0:
-                newPlayer.transform.position = spots[nbSteps-1];
-                newPlayer.facingLeft = false;
+                placePlayer(newPlayer, playerIndex); newPlayer.facingLeft = false;
                 inputSystem.playerPrefab = prefabs[1];
                 break;
             case 1:
-                newPlayer.transform.position = spots[nbSteps];
+                placePlayer(newPlayer, playerIndex);
                 newPlayer.facingLeft = true;
                 newPlayer.opponent = playerInfos[0].controller;
                 playerInfos[0].controller.opponent = newPlayer;
@@ -91,6 +99,19 @@ public class GameManager : MonoBehaviour
         return playerIndex;
     }
 
+    public void placePlayer(PlayerController player, int playerIndex)
+    {
+        switch (playerIndex)
+        {
+            case 0:
+                player.transform.position = spots[nbSteps - 1];
+                break;
+            case 1:
+                player.transform.position = spots[nbSteps];
+                break;
+        }
+    }
+
     public int StrikeSuccessful(int playerIndex) { // strike succesfull return 0, at the end of a round return 1, at the end of the match return 2
         Camera.main.GetComponent<CameraShake>().Shake(16f, 16f, 1.5f);
         ++score[currentRound][playerIndex];
@@ -101,6 +122,7 @@ public class GameManager : MonoBehaviour
             ++score[0][playerIndex];
             if (score[0][playerIndex] >= nbRoundForAMatch)
             {
+                startNewMatch = true;
                 return 2;
             }
             else
@@ -116,11 +138,53 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void initMatch()
+    { //initilize the score
+        //Debug.Log("match Start");
+        currentRound = 1;
+        score = new List<int[]>();
+        score.Add(new int[2] { 0, 0 }); //for round won count
+        score.Add(new int[2] { 0, 0 }); //for exchange won count
+    }
+
+    public void resetMatch()
+    { //reste the score to 0/0
+        //Debug.Log("match reset");
+        score.Clear();
+        initMatch();
+
+        //yes no for() because it's more understable this way
+        placePlayer(playerInfos[0].controller, 0); //replace player 1
+        placePlayer(playerInfos[1].controller, 1); //replace player 2
+        playerInfos[0].controller.onNeutral(); //stop at Neutral for player 1
+        playerInfos[1].controller.onNeutral(); //stop at Neutral for player 2
+        playerInfos[0].controller.fury.resetFury();
+        playerInfos[1].controller.fury.resetFury();
+        startNewMatch = false;
+    }
+
     private IEnumerator StopFreezeFrame() {
         Time.timeScale = 0.1f;
         yield return new WaitForSecondsRealtime(freezeFrameDuration);
         Time.timeScale = 1f;
     }
+
+    public void isStopGame()
+    {
+        StartCoroutine(Unstop());
+    }
+
+    private IEnumerator Unstop()
+    {
+        Debug.Log("STOP");
+        playerInfos[0].controller.isStop = true;
+        playerInfos[1].controller.isStop = true;
+        yield return new WaitForSecondsRealtime(stopDuration);
+        Debug.Log("OK");
+        playerInfos[0].controller.isStop = false;
+        playerInfos[1].controller.isStop = false;
+    }
+
 
     public Vector3 GetDashPos(int playerIndex) {
         PlayerController pc = playerInfos[playerIndex].controller;

@@ -16,9 +16,6 @@ public class StateNeutral : PlayerState
             owner.cursorAnimator.SetTrigger(stateMachine.currentState.ToString().ToLower());
         }
         owner.animator.SetFloat("duration_neutral", 1f + ((float)owner.fury.currentFury / (float)owner.fury.highestValueOfFury));
-        if (owner.isStop) {
-            owner.onStop();
-        }
     }
 
     public override void Update() {
