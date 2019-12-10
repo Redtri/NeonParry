@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public enum eDIRECTION { NONE, UP, MID, DOWN };
 public enum eCONTROLLER { KEYBOARD, GAMEPAD };
@@ -216,7 +217,15 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Start() {
-        playerIndex = GameManager.instance.NewPlayer(this);
+        //TODO Mettre condition scene
+        if (SceneManager.GetActiveScene().name != "IntroScene")
+        {
+            playerIndex = GameManager.instance.NewPlayer(this);
+        }
+        else
+        {
+            playerIndex = MenuManager.instance.NewPlayer(this);
+        }
         if (facingLeft) {
             transform.rotation = Quaternion.Euler(0f, -180f, 0f);
         }

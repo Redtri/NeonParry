@@ -71,7 +71,8 @@ public class GameManager : MonoBehaviour
                 break;
             case 1:
                 newPlayer.transform.position = spots[nbSteps];
-                newPlayer.facingLeft = true;
+                newPlayer.facingLeft = true; //ici
+
                 newPlayer.opponent = playerInfos[0].controller;
                 playerInfos[0].controller.opponent = newPlayer;
                 cameraCenterPoint.startObject = playerInfos[0].controller.transform;
