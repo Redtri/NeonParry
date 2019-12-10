@@ -1326,10 +1326,10 @@ PrefabInstance:
       propertyPath: cameraCenterPoint
       value: 
       objectReference: {fileID: 21733434}
-    - target: {fileID: 6268276688179462533, guid: 025629b7bbbd3b841a8d1dcb4e029ed1,
+    - target: {fileID: 6268276688179462531, guid: 025629b7bbbd3b841a8d1dcb4e029ed1,
         type: 3}
-      propertyPath: stepValue
-      value: 11.98
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8376317901010420877, guid: 025629b7bbbd3b841a8d1dcb4e029ed1,
         type: 3}
