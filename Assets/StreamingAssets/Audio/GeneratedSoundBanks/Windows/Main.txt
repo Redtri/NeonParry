@@ -20,6 +20,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	2689861876	perfectParryRight			\SFX\perfectParryRight	
 	3260672922	attackLowLeft			\SFX\attackLowLeft	
 	3282946978	Music_Reset			\Music\Music_Reset	
+	3678931145	Music_Death			\Music\Music_Death	
 	3725903807	Music_Start			\Music\Music_Start	
 	4203913494	follow			\SFX\follow	
 
@@ -52,6 +53,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	326377906	parry02	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Windows\SFX\parry02_11697732.wem		\Actor-Mixer Hierarchy\Thomas\SFX\ParryLeft\parry02		20607
 	407386197	round3_intro	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Windows\SFX\round3_intro_469574DC.wem		\Interactive Music Hierarchy\Guerric\roundSwitcher\inGameMusic_Round3\standOffMusic\round3_intro\round3_intro		178752
 	425976934	round1_var2_hihat	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Windows\SFX\round1_var2_hihat_469574DC.wem		\Interactive Music Hierarchy\Guerric\roundSwitcher\inGameMusic_Round1\fightingMusicEvolved\stem05variante\round1_var2_hihat		185877
+	436884565	deathbassdrop	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Windows\SFX\deathbassdrop_469574DC.wem		\Interactive Music Hierarchy\Guerric\roundSwitcher\inGameMusic_Round1\winningMusic\deathbassdrop\deathbassdrop		67312
 	437581663	round3_drop2	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Windows\SFX\round3_drop2_469574DC.wem		\Interactive Music Hierarchy\Guerric\roundSwitcher\inGameMusic_Round3\fightingMusicEvolved\round3_drop2\round3_drop2		202246
 	509773085	parry01	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Windows\SFX\parry01_11697732.wem		\Actor-Mixer Hierarchy\Thomas\SFX\ParryLeft\parry01		21505
 	526054109	round3_dash	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Windows\SFX\round3_dash_469574DC.wem		\Interactive Music Hierarchy\Guerric\roundSwitcher\inGameMusic_Round3\isDashingMusic\round3_dash\round3_dash		126364

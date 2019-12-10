@@ -34,6 +34,7 @@
 				<Event Id="116178158" Name="Footstep_Event" ObjectPath="\Events\SFX\Footstep_Event"/>
 				<Event Id="1133475131" Name="hitLeft" ObjectPath="\Events\SFX\hitLeft"/>
 				<Event Id="1778295094" Name="hitRight" ObjectPath="\Events\SFX\hitRight"/>
+				<Event Id="3678931145" Name="Music_Death" ObjectPath="\Events\Music\Music_Death"/>
 				<Event Id="723605745" Name="Music_FirstPVLost" ObjectPath="\Events\Music\Music_FirstPVLost"/>
 				<Event Id="2688689701" Name="Music_Menu_Start" ObjectPath="\Events\Music\Music_Menu_Start"/>
 				<Event Id="3282946978" Name="Music_Reset" ObjectPath="\Events\Music\Music_Reset"/>
@@ -93,6 +94,10 @@
 				<File Id="425976934" Language="SFX">
 					<ShortName>round1_var2_hihat.wav</ShortName>
 					<Path>SFX\round1_var2_hihat_469574DC.wem</Path>
+				</File>
+				<File Id="436884565" Language="SFX">
+					<ShortName>deathbassdrop.wav</ShortName>
+					<Path>SFX\deathbassdrop_469574DC.wem</Path>
 				</File>
 				<File Id="437581663" Language="SFX">
 					<ShortName>round3_drop2.wav</ShortName>
