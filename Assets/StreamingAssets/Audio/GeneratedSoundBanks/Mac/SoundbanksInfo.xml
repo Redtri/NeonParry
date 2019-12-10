@@ -46,6 +46,10 @@
 				<Event Id="2689861876" Name="perfectParryRight" ObjectPath="\Events\SFX\perfectParryRight"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
+				<File Id="2067877" Language="SFX">
+					<ShortName>round2_drop2.wav</ShortName>
+					<Path>SFX\round2_drop2_469574DC.wem</Path>
+				</File>
 				<File Id="15285904" Language="SFX">
 					<ShortName>round3_drop1.wav</ShortName>
 					<Path>SFX\round3_drop1_469574DC.wem</Path>
@@ -61,6 +65,10 @@
 				<File Id="136294100" Language="SFX">
 					<ShortName>robotstep_03.wav</ShortName>
 					<Path>SFX\robotstep_03_11697732.wem</Path>
+				</File>
+				<File Id="156458855" Language="SFX">
+					<ShortName>round2_dash.wav</ShortName>
+					<Path>SFX\round2_dash_469574DC.wem</Path>
 				</File>
 				<File Id="158783193" Language="SFX">
 					<ShortName>stem02reverb.wav</ShortName>
@@ -94,6 +102,10 @@
 					<ShortName>parry01.wav</ShortName>
 					<Path>SFX\parry01_11697732.wem</Path>
 				</File>
+				<File Id="526054109" Language="SFX">
+					<ShortName>round3_dash.wav</ShortName>
+					<Path>SFX\round3_dash_469574DC.wem</Path>
+				</File>
 				<File Id="584322416" Language="SFX">
 					<ShortName>parry03.wav</ShortName>
 					<Path>SFX\parry03_11697732.wem</Path>
@@ -105,6 +117,10 @@
 				<File Id="794123468" Language="SFX">
 					<ShortName>round1_dash_bassfiltered.wav</ShortName>
 					<Path>SFX\round1_dash_bassfiltered_469574DC.wem</Path>
+				</File>
+				<File Id="805776708" Language="SFX">
+					<ShortName>round2_drop1.wav</ShortName>
+					<Path>SFX\round2_drop1_469574DC.wem</Path>
 				</File>
 				<File Id="829946370" Language="SFX">
 					<ShortName>stem05variante.wav</ShortName>
@@ -121,6 +137,10 @@
 				<File Id="922072234" Language="SFX">
 					<ShortName>round1_var1.wav</ShortName>
 					<Path>SFX\round1_var1_469574DC.wem</Path>
+				</File>
+				<File Id="940805580" Language="SFX">
+					<ShortName>round2_intro.wav</ShortName>
+					<Path>SFX\round2_intro_469574DC.wem</Path>
 				</File>
 				<File Id="984257227" Language="SFX">
 					<ShortName>robotstep_01.wav</ShortName>
