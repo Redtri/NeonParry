@@ -115,6 +115,10 @@ public class Fury
         else return (float)1 / (float)10000; //because we don't really need to have that much of a specific case
     }
 
+    public void resetFury()
+    {
+        currentFury = startingValueOfFury;
+    }
     public void furyModification (float mod)
     {
         currentFury += (int)mod;
@@ -321,23 +325,32 @@ public class PlayerController : MonoBehaviour
     }
 
     private void OnStrike(InputAction.CallbackContext value) {
-        if (machineState.StateRequest(ePLAYER_STATE.CHARGE)) {
+        if (!isStop)
+        {
+            if (machineState.StateRequest(ePLAYER_STATE.CHARGE))
+            {
             onStrike?.Invoke(currentDirection, charge.currentActionDuration + strike.currentActionDuration);
             charge.direction = currentDirection;
             strike.direction = currentDirection;
             machineState.ChangeState(ePLAYER_STATE.CHARGE);
+            }
         }
     }
 
     private void OnParry(InputAction.CallbackContext value) {
-        if (machineState.StateRequest(ePLAYER_STATE.PARRY)) {
-            parry.direction = currentDirection;
-            machineState.ChangeState(ePLAYER_STATE.PARRY);
+        if (!isStop)
+        {
+            if (machineState.StateRequest(ePLAYER_STATE.PARRY))
+            {
+                parry.direction = currentDirection;
+                machineState.ChangeState(ePLAYER_STATE.PARRY);
+            }
         }
     }
 
     private void OnDash(InputAction.CallbackContext value) {
-
+        if (!isStop)
+        {
         if (SceneManager.GetActiveScene().name != "IntroScene")
         {
             if(currentSpotIndex < GameManager.instance.nbSteps-1) {
@@ -361,9 +374,13 @@ public class PlayerController : MonoBehaviour
     }
 
     private void OnFeint(InputAction.CallbackContext value) {
-        if (machineState.StateRequest(ePLAYER_STATE.FEINT)) {
-            charge.direction = currentDirection;
-            machineState.ChangeState(ePLAYER_STATE.FEINT);
+        if (!isStop)
+        {
+            if (machineState.StateRequest(ePLAYER_STATE.FEINT))
+            {
+                charge.direction = currentDirection;
+                machineState.ChangeState(ePLAYER_STATE.FEINT);
+            }
         }
     }
 
@@ -404,7 +421,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void onStop() {
+    public void onNeutral()
+    {
+        isStop = true;
+        machineState.ChangeState(ePLAYER_STATE.NEUTRAL);
+    }
+
+    public void onStop()
+    {
+        isStop = true;
         machineState.ChangeState(ePLAYER_STATE.STOP);
     }
 
