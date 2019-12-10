@@ -61,10 +61,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update() {
         //isStopGame();
-        if (startNewMatch)
-        {
+        if (startNewMatch) {
             resetMatch();
         }
+    }
+
     public void LoadPlayerInfos() {
         inputSystem.JoinPlayer(0, 0, "Gamepad", GameInfos.playerInfos[0].device);
         inputSystem.playerPrefab = prefabs[1];
@@ -78,10 +79,11 @@ public class GameManager : MonoBehaviour
 
         switch (currentNbPlayers) {
             case 0:
-                placePlayer(newPlayer, playerIndex); newPlayer.facingLeft = false;
+                placePlayer(newPlayer, currentNbPlayers);
+                newPlayer.facingLeft = false;
                 break;
             case 1:
-                placePlayer(newPlayer, playerIndex);
+                placePlayer(newPlayer, currentNbPlayers);
                 newPlayer.facingLeft = true;
                 newPlayer.opponent = GameInfos.playerInfos[0].controller;
                 GameInfos.playerInfos[0].controller.opponent = newPlayer;
@@ -137,10 +139,12 @@ public class GameManager : MonoBehaviour
     private IEnumerator FreezeFrame(float duration) {
         float refreshTime = Time.unscaledTime;
 
-        while(Time.unscaledTime - refreshTime < duration) {
+        while (Time.unscaledTime - refreshTime < duration) {
             Time.timeScale = freezeFrameCurve.Evaluate((Time.unscaledTime - refreshTime) / duration);
             yield return new WaitForSecondsRealtime(0.01f);
         }
+    }
+
     public void initMatch()
     { //initilize the score
         //Debug.Log("match Start");
@@ -153,18 +157,23 @@ public class GameManager : MonoBehaviour
     public void resetMatch()
     { //reste the score to 0/0
         //Debug.Log("match reset");
-        score.Clear();
-        initMatch();
-
+        StartCoroutine(MatchReset());
         //yes no for() because it's more understable this way
-        placePlayer(playerInfos[0].controller, 0); //replace player 1
-        placePlayer(playerInfos[1].controller, 1); //replace player 2
-        playerInfos[0].controller.onNeutral(); //stop at Neutral for player 1
-        playerInfos[1].controller.onNeutral(); //stop at Neutral for player 2
-        playerInfos[0].controller.fury.resetFury();
-        playerInfos[1].controller.fury.resetFury();
+        GameInfos.playerInfos[0].controller.onNeutral(); //stop at Neutral for player 1
+        GameInfos.playerInfos[1].controller.onNeutral(); //stop at Neutral for player 2
         startNewMatch = false;
     }
+
+    private IEnumerator MatchReset() {
+        yield return new WaitForSecondsRealtime(6f);
+        score.Clear();
+        initMatch();
+        GameInfos.playerInfos[0].controller.fury.resetFury();
+        GameInfos.playerInfos[1].controller.fury.resetFury();
+        GameInfos.playerInfos[0].controller.currentSpotIndex = 0;
+        GameInfos.playerInfos[1].controller.currentSpotIndex = 0;
+        placePlayer(GameInfos.playerInfos[0].controller, 0); //replace player 1
+        placePlayer(GameInfos.playerInfos[1].controller, 1); //replace player 2
     }
 
     public void isStopGame()
@@ -175,12 +184,12 @@ public class GameManager : MonoBehaviour
     private IEnumerator Unstop()
     {
         Debug.Log("STOP");
-        playerInfos[0].controller.isStop = true;
-        playerInfos[1].controller.isStop = true;
+        GameInfos.playerInfos[0].controller.isStop = true;
+        GameInfos.playerInfos[1].controller.isStop = true;
         yield return new WaitForSecondsRealtime(stopDuration);
         Debug.Log("OK");
-        playerInfos[0].controller.isStop = false;
-        playerInfos[1].controller.isStop = false;
+        GameInfos.playerInfos[0].controller.isStop = false;
+        GameInfos.playerInfos[1].controller.isStop = false;
     }
 
 
