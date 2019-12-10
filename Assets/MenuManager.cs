@@ -85,9 +85,9 @@ public class MenuManager : MonoBehaviour
                 newPlayer.facingLeft = true; //ici
                 /*
                 newPlayer.opponent = playerInfos[0].controller;
-                playerInfos[0].controller.opponent = newPlayer;*/
+                playerInfos[0].controller.opponent = newPlayer;
                 cameraCenterPoint.startObject = playerInfos[0].controller.transform;
-                cameraCenterPoint.endObject = newPlayer.transform;
+                cameraCenterPoint.endObject = newPlayer.transform;*/
                 break;
         }
         playerInfos.Add(new PlayerInfo(newPlayer, playerIndex));
@@ -96,4 +96,16 @@ public class MenuManager : MonoBehaviour
     }
 
 
+    public Vector3 GetDashPos(int playerIndex)
+    {
+        PlayerController pc = playerInfos[playerIndex].controller;
+        if (pc.facingLeft)
+        {
+            return (spots[nbSteps + pc.currentSpotIndex]);
+        }
+        else
+        {
+            return (spots[nbSteps - pc.currentSpotIndex - 1]);
+        }
+    }
 }

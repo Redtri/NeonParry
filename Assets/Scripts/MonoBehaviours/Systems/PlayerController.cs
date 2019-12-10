@@ -304,10 +304,26 @@ public class PlayerController : MonoBehaviour
     }
 
     private void OnDash(InputAction.CallbackContext value) {
-        if(currentSpotIndex < GameManager.instance.nbSteps-1) {
-            if (machineState.StateRequest(ePLAYER_STATE.DASH)) {
-                StartCoroutine(OpponentReposDelay());
-                machineState.ChangeState(ePLAYER_STATE.DASH);
+        if (SceneManager.GetActiveScene().name != "IntroScene")
+        {
+            if (currentSpotIndex < GameManager.instance.nbSteps - 1)
+            {
+                if (machineState.StateRequest(ePLAYER_STATE.DASH))
+                {
+                    StartCoroutine(OpponentReposDelay());
+                    machineState.ChangeState(ePLAYER_STATE.DASH);
+                }
+            }
+        }
+        else
+        {
+            if (currentSpotIndex < MenuManager.instance.nbSteps - 1)
+            {
+                if (machineState.StateRequest(ePLAYER_STATE.DASH))
+                {
+                    StartCoroutine(OpponentReposDelay());
+                    machineState.ChangeState(ePLAYER_STATE.DASH);
+                }
             }
         }
     }
