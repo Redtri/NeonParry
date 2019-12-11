@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public enum eDIRECTION { NONE, UP, MID, DOWN };
 public enum eCONTROLLER { KEYBOARD, GAMEPAD };
@@ -76,9 +77,12 @@ public class Cooldown {
         }
     }
 
-    public void updateCurrentCooldownDuration ()
-    {
+    public void updateCurrentCooldownDuration (bool current = false) {
         currentCooldownDuration = fury.speedMultiplicator(percentageWeightFuryOnCD) * baseCooldownDuration;
+        if (current) {
+            currentCooldownDuration = fury.speedMultiplicator(percentageWeightFuryOnCD) * currentCooldownDuration;
+        } else {
+        }
     }
 
     public void setFury(Fury f)
@@ -111,11 +115,24 @@ public class Fury
         else return (float)1 / (float)10000; //because we don't really need to have that much of a specific case
     }
 
+    public void resetFury()
+    {
+        currentFury = startingValueOfFury;
+    }
     public void furyModification (float mod)
     {
         currentFury += (int)mod;
         if (currentFury > highestValueOfFury) currentFury = highestValueOfFury;
         else if (currentFury < lowestValueOfFury) currentFury = lowestValueOfFury;
+    }
+
+    public void furyMultiplication(float mult) {
+        float f = currentFury * mult;
+        currentFury = (int)f;
+        if (currentFury > highestValueOfFury)
+            currentFury = highestValueOfFury;
+        else if (currentFury < lowestValueOfFury)
+            currentFury = lowestValueOfFury;
     }
 
     public void furyModification (float mod, float perfectParry)
@@ -149,6 +166,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public SwordAction charge;
     [SerializeField] public SwordAction parry;
     [SerializeField] public SwordAction dash;
+    [SerializeField] public SwordAction stop;
     [SerializeField] public SwordAction repos;
     [SerializeField, Range(0, 180)] private float angleFullWindow;
     [SerializeField, Range(2, 10)] private int nbDirections;
@@ -164,10 +182,19 @@ public class PlayerController : MonoBehaviour
     private eDIRECTION currentDirection;
     private bool performingAction;
     private bool strokeOpponent;
-    private bool isHit;
+    [HideInInspector] public bool isStop;
     public int currentSpotIndex { get; set; }
+    [HideInInspector] public int skin;
+
+    public delegate void StrikeEvent(eDIRECTION direction, float delay);
+    public StrikeEvent onStrike;
 
     private void Awake() {
+        
+
+        if (SceneManager.GetActiveScene().name == "IntroScene") {
+            gameObject.AddComponent<SpriteController>();
+        }
 
         //REFERENCES
         inputSystem = this.GetComponent<PlayerInput>();
@@ -182,6 +209,7 @@ public class PlayerController : MonoBehaviour
         charge.setFury(fury);
         parry.setFury(fury);
         dash.setFury(fury);
+        stop.setFury(fury);
 
         machineState = new FSM_Player(this);
         angleFullWindow *= -1;
@@ -195,13 +223,6 @@ public class PlayerController : MonoBehaviour
         }
 
         //LISTENERS
-        inputSystem.currentActionMap["Look"].performed += context => OnLook(context);
-        inputSystem.currentActionMap["Look"].canceled += context => OnLook(context);
-
-        inputSystem.currentActionMap["Strike"].started += OnStrike;
-        inputSystem.currentActionMap["Parry"].started += OnParry;
-        inputSystem.currentActionMap["Dash"].started += OnDash;
-        inputSystem.currentActionMap["Feint"].started += OnFeint;
 
         //Charge cooldown is the "attack" skill cooldown, so it needs to consider the strike duration as part of its cooldown
 
@@ -211,15 +232,30 @@ public class PlayerController : MonoBehaviour
         parry.Init(Time.time);
         dash.Init(Time.time);
         repos.Init(Time.time);
+        stop.Init(Time.time);
         sword.Initialize(this);
         // charge.currentCooldownDuration = strike.currentActionDuration + charge.currentCooldownDuration;
     }
 
+
     private void Start() {
-        playerIndex = GameManager.instance.NewPlayer(this);
+        //TODO Mettre condition scene
+        if (SceneManager.GetActiveScene().name != "IntroScene") {
+            playerIndex = GameManager.instance.NewPlayer(this);
+        } else {
+            playerIndex = MenuManager.instance.NewPlayer(this);
+        }
+
         if (facingLeft) {
             transform.rotation = Quaternion.Euler(0f, -180f, 0f);
         }
+        inputSystem.currentActionMap["Look"].performed += context => OnLook(context);
+        inputSystem.currentActionMap["Look"].canceled += context => OnLook(context);
+
+        inputSystem.currentActionMap["Strike"].started += OnStrike;
+        inputSystem.currentActionMap["Parry"].started += OnParry;
+        inputSystem.currentActionMap["Dash"].started += OnDash;
+        inputSystem.currentActionMap["Feint"].started += OnFeint;
         machineState.onStateChanged += UpdateLook;
     }
 
@@ -229,9 +265,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnDisable() {
-        machineState.onStateChanged -= UpdateLook;
+    public void Unsubscribe() {
+        inputSystem.currentActionMap["Look"].performed -= context => OnLook(context);
+        inputSystem.currentActionMap["Look"].canceled -= context => OnLook(context);
+
+        inputSystem.currentActionMap["Strike"].started -= OnStrike;
+        inputSystem.currentActionMap["Parry"].started -= OnParry;
+        inputSystem.currentActionMap["Dash"].started -= OnDash;
+        inputSystem.currentActionMap["Feint"].started -= OnFeint;
     }
+    
 
     // Update is called once per frame
     void Update() {
@@ -253,13 +296,13 @@ public class PlayerController : MonoBehaviour
     private void OnLook(InputAction.CallbackContext value) {
 
         if (controllerType == eCONTROLLER.KEYBOARD) {
-            temporaryLastLook = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
+            temporaryLastLook = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position - new Vector3(0f, 9f, 0f)).normalized;
         } else {
             temporaryLastLook = value.ReadValue<Vector2>().normalized;
         }
         if (!performingAction) {
             if(controllerType == eCONTROLLER.KEYBOARD) {
-                look = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
+                look = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position - new Vector3(0f, 9f, 0f)).normalized;
             } else {
                 look = value.ReadValue<Vector2>().normalized;
             }
@@ -271,42 +314,66 @@ public class PlayerController : MonoBehaviour
             }
             deg = Mathf.Clamp(deg, angleFullWindow, angleFullWindow / nbDirections);
             if (facingLeft) {
-                //print(deg);
                 deg *= -1f;
             }
             currentDirection = (eDIRECTION)(nbDirections / Mathf.Abs(angleFullWindow / deg));
-            sword.transform.rotation = Quaternion.Euler(0, 0, deg);
         }
     }
 
     private void OnStrike(InputAction.CallbackContext value) {
-        if (machineState.StateRequest(ePLAYER_STATE.CHARGE)) {
+        if (!isStop)
+        {
+            if (machineState.StateRequest(ePLAYER_STATE.CHARGE))
+            {
+            onStrike?.Invoke(currentDirection, charge.currentActionDuration + strike.currentActionDuration);
             charge.direction = currentDirection;
             strike.direction = currentDirection;
             machineState.ChangeState(ePLAYER_STATE.CHARGE);
+            }
         }
     }
 
     private void OnParry(InputAction.CallbackContext value) {
-        if (machineState.StateRequest(ePLAYER_STATE.PARRY)) {
-            parry.direction = currentDirection;
-            machineState.ChangeState(ePLAYER_STATE.PARRY);
+        if (!isStop)
+        {
+            if (machineState.StateRequest(ePLAYER_STATE.PARRY))
+            {
+                parry.direction = currentDirection;
+                machineState.ChangeState(ePLAYER_STATE.PARRY);
+            }
         }
     }
 
     private void OnDash(InputAction.CallbackContext value) {
-        if(currentSpotIndex < GameManager.instance.nbSteps-1) {
-            if (machineState.StateRequest(ePLAYER_STATE.DASH)) {
-                StartCoroutine(OpponentReposDelay());
-                machineState.ChangeState(ePLAYER_STATE.DASH);
+        if (!isStop) {
+            if (SceneManager.GetActiveScene().name != "IntroScene") {
+                if (currentSpotIndex < GameManager.instance.nbSteps - 1) {
+                    if (machineState.currentState != ePLAYER_STATE.REPOS && machineState.StateRequest(ePLAYER_STATE.DASH)) {
+                        machineState.ChangeState(ePLAYER_STATE.DASH);
+                        StartCoroutine(OpponentReposDelay());
+                    }
+                }
+            } else {
+
+                if (currentSpotIndex < MenuManager.instance.nbSteps - 1) {
+                    if (machineState.StateRequest(ePLAYER_STATE.DASH)) {
+                        StartCoroutine(OpponentReposDelay());
+                        machineState.ChangeState(ePLAYER_STATE.DASH);
+                        MenuManager.instance.PlayerReady();
+                    }
+                }
             }
         }
     }
 
     private void OnFeint(InputAction.CallbackContext value) {
-        if (machineState.StateRequest(ePLAYER_STATE.FEINT)) {
-            charge.direction = currentDirection;
-            machineState.ChangeState(ePLAYER_STATE.FEINT);
+        if (!isStop)
+        {
+            if (machineState.StateRequest(ePLAYER_STATE.FEINT))
+            {
+                charge.direction = currentDirection;
+                machineState.ChangeState(ePLAYER_STATE.FEINT);
+            }
         }
     }
 
@@ -319,9 +386,7 @@ public class PlayerController : MonoBehaviour
     }
 
     public void OnOpponentDash() {
-        if (machineState.StateRequest(ePLAYER_STATE.REPOS)) {
             machineState.ChangeState(ePLAYER_STATE.REPOS);
-        }
     }
 
     public void EventPlay(int index) {
@@ -349,11 +414,41 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void onNeutral()
+    {
+        isStop = true;
+        machineState.ChangeState(ePLAYER_STATE.NEUTRAL);
+    }
+
+    public void onStop()
+    {
+        isStop = true;
+        machineState.ChangeState(ePLAYER_STATE.STOP);
+    }
+
     public void furyChange(float mod)
     {
         fury.furyModification(mod);
         fxHandler.UpdateFuryFX(((float)fury.currentFury)/100);
-        updateAllAction();
+        if(machineState.currentState != ePLAYER_STATE.DASH) {
+            updateAllAction();
+        }
+        if (facingLeft) {
+            AkSoundEngine.SetRTPCValue("FuryLeft_RTPC", fury.currentFury / fury.highestValueOfFury);
+        } else {
+            AkSoundEngine.SetRTPCValue("FuryRight_RTPC", fury.currentFury/fury.highestValueOfFury);
+        }
+    }
+
+    public void allActionsOnCd(float t) {
+        charge.currentCooldownDuration = t;
+        charge.Refresh(Time.time, true);
+        strike.currentCooldownDuration = t;
+        strike.Refresh(Time.time, true);
+        parry.currentCooldownDuration = t;
+        parry.Refresh(Time.time, true);
+        dash.currentCooldownDuration = t;
+        dash.Refresh(Time.time, true);
     }
 
     public void updateAllAction()
@@ -369,8 +464,5 @@ public class PlayerController : MonoBehaviour
 
         dash.updateCurrentActionDuration();
         dash.updateCurrentCooldownDuration();
-
-        //repos.updateCurrentActionDuration();
-        //repos.updateCurrentCooldownDuration();
     }
 }

@@ -30,15 +30,15 @@ public class UI_Manager : MonoBehaviour
     }
 
     private void RefreshScore() {
-        if (GameManager.instance.playerInfos.Count > 1) {
-            maxValue = GameManager.instance.playerInfos[0].controller.fury.highestValueOfFury;
+        if (GameInfos.playerInfos.Count > 1) {
+            maxValue = GameInfos.playerInfos[0].controller.fury.highestValueOfFury;
 
-            currentValueLeft = GameManager.instance.playerInfos[0].controller.fury.currentFury;
-            currentValueRight = GameManager.instance.playerInfos[1].controller.fury.currentFury;
+            currentValueLeft = GameInfos.playerInfos[0].controller.fury.currentFury;
+            currentValueRight = GameInfos.playerInfos[1].controller.fury.currentFury;
             barLeft.transform.localPosition = new Vector3(0, barLowPosition.y * (1-(currentValueLeft/maxValue)), 0);
             barRight.transform.localPosition = new Vector3(0, barLowPosition.y * (1 - (currentValueRight / maxValue)), 0);
-            scoreLeft.text = GameManager.instance.playerInfos[0].score.ToString();
-            scoreRight.text = GameManager.instance.playerInfos[1].score.ToString();
+            scoreLeft.text = GameInfos.playerInfos[0].score.ToString();
+            scoreRight.text = GameInfos.playerInfos[1].score.ToString();
         }
     }
 }

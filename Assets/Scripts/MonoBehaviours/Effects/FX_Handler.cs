@@ -52,12 +52,9 @@ public class FX_Handler : MonoBehaviour
         }
     }
 
-    private IEnumerator DisableFX(GameObject fxPrefab) {
-        float duration = 0f;
+    private IEnumerator DisableFX(GameObject fxPrefab, float tDuration = 1f) {
 
-        duration = 1f;//fxPrefab.GetComponent<ParticleSystem>().main.duration;
-
-        yield return new WaitForSeconds(duration);
+        yield return new WaitForSeconds(tDuration);
         
         fxPrefab.SetActive(false); 
     }

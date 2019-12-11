@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class SpriteSwaper : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public CharacterVisuals[] skins;
+    public SpriteRenderer[] bodyParts;
+
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.G)) {
+            PickSkin(1);
+        }else if (Input.GetKeyDown(KeyCode.H)) {
+            PickSkin(0);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void PickSkin(int index) {
+        skins[index].SwapBodyParts(bodyParts);
     }
 }
