@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 56f6a746797f0a4fbbe996ff7dbe6fa2
     GuidInternal: 
-    m_lastTime: -8586255333406911354
+    m_lastTime: -8586255268493657471
     List: []
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
@@ -47,7 +47,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 50b214ac3fa6614795c5eceb4820a998
     GuidInternal: 
-    m_lastTime: -8586255333408955928
+    m_lastTime: -8586255268495024009
     List:
     - name: inGame_Ambiance
       guid: c0a9ee0452e76f4e8e1fff3e31f5362d
@@ -83,8 +83,20 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 1db4f74826e35f4092d5c6972967e448
     GuidInternal: 
-    m_lastTime: -8586255333408945952
+    m_lastTime: -8586255268494984121
     List:
+    - name: Music_Death
+      guid: 16783a26cd03bd4a80c513debbf6a79f
+      id: 3678931145
+      PathAndIcons:
+      - ElementName: Music
+        ObjectType: 12
+      - ElementName: Music_Death
+        ObjectType: 3
+      Path: Music\Music_Death
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Music_FirstPVLost
       guid: 2bad3ecc1698a848b271d33d563c37c2
       id: 723605745
@@ -149,7 +161,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: d2144fa278e9474fa08953a4a0b4c57d
     GuidInternal: 
-    m_lastTime: -8586255333408586907
+    m_lastTime: -8586255268494974156
     List:
     - name: attackHighLeft
       guid: 97c9c837e2a96d45abb5049cddc9e6f6
@@ -232,18 +244,6 @@ MonoBehaviour:
       - ElementName: clash
         ObjectType: 3
       Path: SFX\clash
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
-    - name: dash
-      guid: b801e6ce6b7ab24184bcfa5d98a0d045
-      id: 1942692385
-      PathAndIcons:
-      - ElementName: SFX
-        ObjectType: 12
-      - ElementName: dash
-        ObjectType: 3
-      Path: SFX\dash
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -427,7 +427,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 63f8cb137edd08448f7f5c3e8e1dcee3
     GuidInternal: 
-    m_lastTime: -8586255333401272541
+    m_lastTime: -8586255268481197321
     List:
     - name: GeneralGameStates
       guid: 368f452f521c2e4c8b3e14c699dede29
@@ -482,6 +482,12 @@ MonoBehaviour:
         PathAndIcons:
         - ElementName: fightingevolved
           ObjectType: 8
+      - name: isDashing
+        guid: 7d8cd005e98cbe4f8e181c95b5ea770f
+        id: 2532476867
+        PathAndIcons:
+        - ElementName: isDashing
+          ObjectType: 8
       - name: None
         guid: 85255ac948be6b488a6fda1b643dca64
         id: 748895195
@@ -499,6 +505,43 @@ MonoBehaviour:
         id: 2996998095
         PathAndIcons:
         - ElementName: winning
+          ObjectType: 8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: roundState
+      guid: c5d53991d09f084da9a517dbbdb64ef4
+      id: 244845258
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: roundState
+        ObjectType: 9
+      Path: Default Work Unit\roundState
+      values:
+      - name: None
+        guid: 293d681bec3d304eb6abf68d188bcc02
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      - name: round_01
+        guid: cd7ff5a0c4876f4fa2387130c507c6f6
+        id: 4039654995
+        PathAndIcons:
+        - ElementName: round_01
+          ObjectType: 8
+      - name: round_02
+        guid: 279498b3b2cd7f44973742d93b62eb14
+        id: 4039654992
+        PathAndIcons:
+        - ElementName: round_02
+          ObjectType: 8
+      - name: round_03
+        guid: 76d4f3e9e31c8b48999daa191c7790ca
+        id: 4039654993
+        PathAndIcons:
+        - ElementName: round_03
           ObjectType: 8
       ValueGuids: []
       ValueIcons: []
@@ -522,5 +565,6 @@ MonoBehaviour:
   - /NeonParry_WwiseProject/Events
   - /NeonParry_WwiseProject/Events/Ambiance
   - /NeonParry_WwiseProject/Events/Music
+  - /NeonParry_WwiseProject/Events/SFX
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

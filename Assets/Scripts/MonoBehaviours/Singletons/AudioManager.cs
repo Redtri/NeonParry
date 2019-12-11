@@ -27,9 +27,11 @@ public class AudioManager : MonoBehaviour {
                 break;
             case 1:
                 musicsGame[0].Post(gameObject);
+                AkSoundEngine.SetState("roundState", "round_01");
                 break;
         }
         ambient[SceneManager.GetActiveScene().buildIndex].Post(gameObject);
+
         //events[0].Post(gameObject);
     }
 
@@ -43,8 +45,24 @@ public class AudioManager : MonoBehaviour {
         GameManager.instance.onStrike -= UpdateMusic;
     }    
 
+    public void NewRound() {
+        switch (GameManager.instance.currentRound) {
+            case 2:
+                AkSoundEngine.SetState("roundState", "round_02");
+                AkSoundEngine.PostEvent("Music_Reset", gameObject);
+                break;
+            case 3:
+                AkSoundEngine.SetState("roundState", "round_03");
+                AkSoundEngine.PostEvent("Music_Reset", gameObject);
+                break;
+            default:
+                break;
+        }
+    }
+
     public void UpdateMusic(int[] index) {
         int highest = 0;
+
 
         for(int i = 0; i < index.Length; ++i) {
             if(index[i] > highest) {
@@ -56,11 +74,9 @@ public class AudioManager : MonoBehaviour {
                 break;
             case 1:
                 musicsGame[1].Post(gameObject);
-                print("first");
                 break;
             case 2:
                 musicsGame[2].Post(gameObject);
-                print("second");
                 break;
             case 3:
                 break;

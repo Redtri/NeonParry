@@ -235,8 +235,6 @@ public class PlayerController : MonoBehaviour
         stop.Init(Time.time);
         sword.Initialize(this);
         // charge.currentCooldownDuration = strike.currentActionDuration + charge.currentCooldownDuration;
-
-        print(inputSystem.devices[0]);
     }
 
 
@@ -316,11 +314,9 @@ public class PlayerController : MonoBehaviour
             }
             deg = Mathf.Clamp(deg, angleFullWindow, angleFullWindow / nbDirections);
             if (facingLeft) {
-                //print(deg);
                 deg *= -1f;
             }
             currentDirection = (eDIRECTION)(nbDirections / Mathf.Abs(angleFullWindow / deg));
-            //sword.transform.rotation = Quaternion.Euler(0, 0, deg);
         }
     }
 

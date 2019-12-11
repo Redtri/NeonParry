@@ -103,9 +103,11 @@ public class GameManager : MonoBehaviour
         {
             case 0:
                 player.transform.position = spots[nbSteps - 1];
+                player.currentSpotIndex = 0;
                 break;
             case 1:
                 player.transform.position = spots[nbSteps];
+                player.currentSpotIndex = 0;
                 break;
         }
     }
@@ -113,16 +115,20 @@ public class GameManager : MonoBehaviour
     public int StrikeSuccessful(int playerIndex) { // strike succesfull return 0, at the end of a round return 1, at the end of the match return 2
         Camera.main.GetComponent<CameraShake>().Shake(16f, 16f, 1.5f);
         ++score[currentRound][playerIndex];
-        StartCoroutine(FreezeFrame(freezeFrameDuration));
         onStrike?.Invoke(score[currentRound]);
+        StartCoroutine(FreezeFrame(freezeFrameDuration));
         if (score[currentRound][playerIndex] >= nbExchangeForARound) {
+            AkSoundEngine.PostEvent("death", gameObject);
             ++score[0][playerIndex];
             if (score[0][playerIndex] >= nbRoundForAMatch) {
                 startNewMatch = true;
                 return 2;
             } else {
                 score.Add(new int[2] { 0, 0 });
+                placePlayer(GameInfos.playerInfos[0].controller, 0); //replace player 1
+                placePlayer(GameInfos.playerInfos[1].controller, 1); //replace player 2
                 ++currentRound;
+                AudioManager.instance.NewRound();
 
                 return 1;
             }
@@ -131,12 +137,24 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private IEnumerator FreezeFrame(float duration) {
-        float refreshTime = Time.unscaledTime;
+    private bool freezing;
 
-        while (Time.unscaledTime - refreshTime < duration) {
-            Time.timeScale = freezeFrameCurve.Evaluate((Time.unscaledTime - refreshTime) / duration);
-            yield return new WaitForSecondsRealtime(0.01f);
+    public void Freeze(float duration) {
+        StartCoroutine(FreezeFrame(duration));
+    }
+
+    public IEnumerator FreezeFrame(float duration) {
+        if (!freezing) {
+            float refreshTime = Time.unscaledTime;
+            freezing = true;
+
+            while (Time.unscaledTime - refreshTime < duration) {
+                Time.timeScale = freezeFrameCurve.Evaluate((Time.unscaledTime - refreshTime) / duration);
+                yield return new WaitForSecondsRealtime(0.01f);
+            }
+            freezing = false;
+        } else {
+            yield return null;
         }
     }
 
@@ -178,11 +196,9 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator Unstop()
     {
-        Debug.Log("STOP");
         GameInfos.playerInfos[0].controller.isStop = true;
         GameInfos.playerInfos[1].controller.isStop = true;
         yield return new WaitForSecondsRealtime(stopDuration);
-        Debug.Log("OK");
         GameInfos.playerInfos[0].controller.isStop = false;
         GameInfos.playerInfos[1].controller.isStop = false;
     }

@@ -89,7 +89,6 @@ public class MenuManager : MonoBehaviour
                 break;
         }
         if (playerIndex <= 2) {
-            print(newPlayer.GetComponent<PlayerInput>().devices.Count);
             GameInfos.playerInfos.Add(new PlayerInfo(newPlayer, playerIndex, newPlayer.GetComponent<PlayerInput>().devices[0]));
         }
 
