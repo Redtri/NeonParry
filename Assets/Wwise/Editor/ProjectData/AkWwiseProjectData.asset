@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 56f6a746797f0a4fbbe996ff7dbe6fa2
     GuidInternal: 
-    m_lastTime: -8586255268493657471
+    m_lastTime: -8586255874815551836
     List: []
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
@@ -47,7 +47,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 50b214ac3fa6614795c5eceb4820a998
     GuidInternal: 
-    m_lastTime: -8586255268495024009
+    m_lastTime: -8586255874815596622
     List:
     - name: inGame_Ambiance
       guid: c0a9ee0452e76f4e8e1fff3e31f5362d
@@ -83,7 +83,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 1db4f74826e35f4092d5c6972967e448
     GuidInternal: 
-    m_lastTime: -8586255268494984121
+    m_lastTime: -8586255872983097694
     List:
     - name: Music_Death
       guid: 16783a26cd03bd4a80c513debbf6a79f
@@ -161,7 +161,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: d2144fa278e9474fa08953a4a0b4c57d
     GuidInternal: 
-    m_lastTime: -8586255268494974156
+    m_lastTime: -8586256190641362457
     List:
     - name: attackHighLeft
       guid: 97c9c837e2a96d45abb5049cddc9e6f6
@@ -384,7 +384,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 877bfb69bb34254997bc686db894f7e0
     GuidInternal: 
-    m_lastTime: -8586255333408596891
+    m_lastTime: -8586256983865755247
     List:
     - name: FuryLeft_RTPC
       guid: 0032026f833a4f44b9852e8a0a22d3c4
@@ -427,7 +427,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 63f8cb137edd08448f7f5c3e8e1dcee3
     GuidInternal: 
-    m_lastTime: -8586255268481197321
+    m_lastTime: -8586255877470038664
     List:
     - name: GeneralGameStates
       guid: 368f452f521c2e4c8b3e14c699dede29
@@ -562,9 +562,8 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /NeonParry_WwiseProject
-  - /NeonParry_WwiseProject/Events
-  - /NeonParry_WwiseProject/Events/Ambiance
-  - /NeonParry_WwiseProject/Events/Music
-  - /NeonParry_WwiseProject/Events/SFX
+  - /NeonParry_WwiseProject/States
+  - /NeonParry_WwiseProject/States/Default Work Unit
+  - /NeonParry_WwiseProject/States/Default Work Unit/roundState
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

@@ -21,39 +21,42 @@
 				<Event Id="74495757" Name="attackMidRight" ObjectPath="\Events\SFX\attackMidRight" GUID="{6E994665-D2C3-4211-8F32-9A18BE3A8FC3}" DurationType="OneShot" DurationMin="2.133333" DurationMax="2.133333"/>
 				<Event Id="1585787840" Name="clash" ObjectPath="\Events\SFX\clash" GUID="{BB52A7FD-7A07-4A91-A1FF-550B5BF563CA}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="1942692385" Name="dash" ObjectPath="\Events\SFX\dash" GUID="{CEE601B8-7A6B-41B2-84BC-FA5D98A0D045}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="763920020" Name="Dash_Event" ObjectPath="\Events\SFX\Dash_Event" GUID="{70E1C08F-A2AF-4B6A-B992-CB5682397054}" DurationType="OneShot" DurationMin="1.542086" DurationMax="1.542086"/>
+				<Event Id="763920020" Name="Dash_Event" ObjectPath="\Events\SFX\Dash_Event" GUID="{70E1C08F-A2AF-4B6A-B992-CB5682397054}" DurationType="OneShot" DurationMin="1.246344" DurationMax="1.246344"/>
 				<Event Id="779278001" Name="death" ObjectPath="\Events\SFX\death" GUID="{4CB30F7C-ABF0-4EC4-8EE2-5A315168D754}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="168610243" Name="fighting" ObjectPath="\Events\Music\fighting" GUID="{CC3EAD2B-9816-48A8-B271-D33D563C37C2}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="3151422571" Name="firstRound" ObjectPath="\Events\Music\firstRound" GUID="{EA174F9C-3A27-4D99-9B67-D0F6322BFD39}" DurationType="Infinite"/>
 				<Event Id="4203913494" Name="follow" ObjectPath="\Events\SFX\follow" GUID="{A5236A68-68C9-43D5-B437-0E94253AA05B}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="116178158" Name="Footstep_Event" ObjectPath="\Events\SFX\Footstep_Event" GUID="{588DE496-7896-45AB-9248-4806C0F32C17}" DurationType="OneShot" DurationMin="0.724600" DurationMax="1.013649"/>
 				<Event Id="1133475131" Name="hitLeft" ObjectPath="\Events\SFX\hitLeft" GUID="{5AB6FB50-6E9C-440E-AB03-23526A56863F}" DurationType="OneShot" DurationMin="1.500000" DurationMax="1.500000"/>
 				<Event Id="1778295094" Name="hitRight" ObjectPath="\Events\SFX\hitRight" GUID="{A0853263-061E-4AF7-B975-01A8A2BB89A4}" DurationType="OneShot" DurationMin="1.500000" DurationMax="1.500000"/>
+				<Event Id="723605745" Name="Music_FirstPVLost" ObjectPath="\Events\Music\Music_FirstPVLost" GUID="{CC3EAD2B-9816-48A8-B271-D33D563C37C2}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3282946978" Name="Music_Reset" ObjectPath="\Events\Music\Music_Reset" GUID="{F6A3440C-51F9-47D5-B590-E04EFB208A2C}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2154872981" Name="Music_SecondPVLost" ObjectPath="\Events\Music\Music_SecondPVLost" GUID="{BEB816CA-5E36-4B69-AE74-302E7B6916BD}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3725903807" Name="Music_Start" ObjectPath="\Events\Music\Music_Start" GUID="{EA174F9C-3A27-4D99-9B67-D0F6322BFD39}" DurationType="Infinite"/>
 				<Event Id="2109051510" Name="parryLeft" ObjectPath="\Events\SFX\parryLeft" GUID="{256A09FB-9903-4A50-94D7-81B33F438AD2}" DurationType="OneShot" DurationMin="0.850000" DurationMax="0.900000"/>
 				<Event Id="2394082421" Name="parryRight" ObjectPath="\Events\SFX\parryRight" GUID="{B0B0E6E2-5AD2-440C-A8ED-340910F13443}" DurationType="OneShot" DurationMin="0.850000" DurationMax="0.900000"/>
 				<Event Id="2136132677" Name="parryWhiff" ObjectPath="\Events\SFX\parryWhiff" GUID="{329C0CE5-4BCC-4A5D-B0FC-04CBCC33B084}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="1600228609" Name="perfectParryLeft" ObjectPath="\Events\SFX\perfectParryLeft" GUID="{D337EEF3-FC8B-4D8E-B2B5-C20ED5466F6D}" DurationType="OneShot" DurationMin="1.250000" DurationMax="1.250000"/>
 				<Event Id="2689861876" Name="perfectParryRight" ObjectPath="\Events\SFX\perfectParryRight" GUID="{FF062256-407C-4D9F-A004-31F9D0766007}" DurationType="OneShot" DurationMin="1.250000" DurationMax="1.250000"/>
-				<Event Id="479647031" Name="secondRound" ObjectPath="\Events\Music\secondRound" GUID="{727A7112-18F7-435B-9AF5-70FC16C9DD9E}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="3092733402" Name="standOff" ObjectPath="\Events\Music\standOff" GUID="{BEB816CA-5E36-4B69-AE74-302E7B6916BD}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="777271008" Name="thirdRound" ObjectPath="\Events\Music\thirdRound" GUID="{9A9BBF68-1461-4943-BC7B-1182D336320C}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
+				<File Id="102222190" Language="SFX">
+					<ShortName>stem02reverb2.wav</ShortName>
+					<Path>SFX/stem02reverb2_469574DC.wem</Path>
+				</File>
 				<File Id="134202983" Language="SFX">
 					<ShortName>dash_01.wav</ShortName>
-					<Path>SFX/dash_01_11697732.wem</Path>
+					<Path>SFX/dash_01_005CB2C3.wem</Path>
 				</File>
 				<File Id="136294100" Language="SFX">
 					<ShortName>robotstep_03.wav</ShortName>
 					<Path>SFX/robotstep_03_11697732.wem</Path>
 				</File>
+				<File Id="158783193" Language="SFX">
+					<ShortName>stem02reverb.wav</ShortName>
+					<Path>SFX/stem02reverb_469574DC.wem</Path>
+				</File>
 				<File Id="220227563" Language="SFX">
 					<ShortName>perfectParry.wav</ShortName>
 					<Path>SFX/perfectParry_11697732.wem</Path>
-				</File>
-				<File Id="296044258" Language="SFX">
-					<ShortName>main_bass_noclick.wav</ShortName>
-					<Path>SFX/main_bass_noclick_469574DC.wem</Path>
 				</File>
 				<File Id="305375330" Language="SFX">
 					<ShortName>attackLow.wav</ShortName>
@@ -71,17 +74,17 @@
 					<ShortName>parry03.wav</ShortName>
 					<Path>SFX/parry03_11697732.wem</Path>
 				</File>
-				<File Id="716077513" Language="SFX">
-					<ShortName>ambient_background.wav</ShortName>
-					<Path>SFX/ambient_background_469574DC.wem</Path>
-				</File>
-				<File Id="823978589" Language="SFX">
-					<ShortName>kick_snare.wav</ShortName>
-					<Path>SFX/kick_snare_469574DC.wem</Path>
+				<File Id="829946370" Language="SFX">
+					<ShortName>stem05variante.wav</ShortName>
+					<Path>SFX/stem05variante_469574DC.wem</Path>
 				</File>
 				<File Id="866938126" Language="SFX">
 					<ShortName>attackHigh.wav</ShortName>
 					<Path>SFX/attackHigh_11697732.wem</Path>
+				</File>
+				<File Id="882041133" Language="SFX">
+					<ShortName>stem04drop.wav</ShortName>
+					<Path>SFX/stem04drop_469574DC.wem</Path>
 				</File>
 				<File Id="984257227" Language="SFX">
 					<ShortName>robotstep_01.wav</ShortName>
