@@ -437,6 +437,11 @@ public class PlayerController : MonoBehaviour
         if(machineState.currentState != ePLAYER_STATE.DASH) {
             updateAllAction();
         }
+        if (facingLeft) {
+            AkSoundEngine.SetRTPCValue("FuryLeft_RTPC", fury.currentFury / fury.highestValueOfFury);
+        } else {
+            AkSoundEngine.SetRTPCValue("FuryRight_RTPC", fury.currentFury/fury.highestValueOfFury);
+        }
     }
 
     public void allActionsOnCd(float t) {

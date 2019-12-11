@@ -17,21 +17,21 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 83551d33ae3a43489959aa0b3f1739e1
     GuidInternal: 
-    m_lastTime: -8586262052917536951
+    m_lastTime: -8586259721359206274
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 56f6a746797f0a4fbbe996ff7dbe6fa2
     GuidInternal: 
-    m_lastTime: -8586262052917976245
+    m_lastTime: -8586255333406911354
     List: []
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: aab038f70511ac40accedade1b746b70
     GuidInternal: 
-    m_lastTime: -8586260353747032216
+    m_lastTime: -8586259667011576113
     List:
     - name: Main
       guid: ffba85163ec5c641b7a666271bb1c36e
@@ -43,17 +43,47 @@ MonoBehaviour:
         ObjectType: 7
       Path: Default Work Unit\Main
   EventWwu:
+  - PhysicalPath: Events\Ambiance.wwu
+    ParentPhysicalPath: 
+    guid: 50b214ac3fa6614795c5eceb4820a998
+    GuidInternal: 
+    m_lastTime: -8586255333408955928
+    List:
+    - name: inGame_Ambiance
+      guid: c0a9ee0452e76f4e8e1fff3e31f5362d
+      id: 2370107561
+      PathAndIcons:
+      - ElementName: Ambiance
+        ObjectType: 12
+      - ElementName: inGame_Ambiance
+        ObjectType: 3
+      Path: Ambiance\inGame_Ambiance
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Menu_Ambiance
+      guid: 1a0c6b230a390e46af0e25ebceea809f
+      id: 626061955
+      PathAndIcons:
+      - ElementName: Ambiance
+        ObjectType: 12
+      - ElementName: Menu_Ambiance
+        ObjectType: 3
+      Path: Ambiance\Menu_Ambiance
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 2a81fdbbb1505e4aa9b924cc4da74340
     GuidInternal: 
-    m_lastTime: -8586262052918091060
+    m_lastTime: -8586259667018293816
     List: []
   - PhysicalPath: Events\Music.wwu
     ParentPhysicalPath: 
     guid: 1db4f74826e35f4092d5c6972967e448
     GuidInternal: 
-    m_lastTime: -8586260591412049973
+    m_lastTime: -8586255333408945952
     List:
     - name: Music_FirstPVLost
       guid: 2bad3ecc1698a848b271d33d563c37c2
@@ -64,6 +94,30 @@ MonoBehaviour:
       - ElementName: Music_FirstPVLost
         ObjectType: 3
       Path: Music\Music_FirstPVLost
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Music_Menu_Start
+      guid: 27a800a650cae9438a934ecd3de5210e
+      id: 2688689701
+      PathAndIcons:
+      - ElementName: Music
+        ObjectType: 12
+      - ElementName: Music_Menu_Start
+        ObjectType: 3
+      Path: Music\Music_Menu_Start
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Music_Reset
+      guid: 0c44a3f6f951d547b590e04efb208a2c
+      id: 3282946978
+      PathAndIcons:
+      - ElementName: Music
+        ObjectType: 12
+      - ElementName: Music_Reset
+        ObjectType: 3
+      Path: Music\Music_Reset
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -95,47 +149,77 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: d2144fa278e9474fa08953a4a0b4c57d
     GuidInternal: 
-    m_lastTime: -8586260606331009643
+    m_lastTime: -8586255333408586907
     List:
     - name: attackHighLeft
       guid: 97c9c837e2a96d45abb5049cddc9e6f6
-      id: 344743513
+      id: 1919125814
       PathAndIcons:
-      - ElementName: Default Work Unit
+      - ElementName: SFX
         ObjectType: 12
-      - ElementName: SfxEvents
-        ObjectType: 4
-      - ElementName: attackHigh
+      - ElementName: attackHighLeft
         ObjectType: 3
-      Path: Default Work Unit\SfxEvents\attackHigh
+      Path: SFX\attackHighLeft
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: attackLow
+    - name: attackHighRight
+      guid: aa3810974ed046439d2aa883ccac5784
+      id: 2089799477
+      PathAndIcons:
+      - ElementName: SFX
+        ObjectType: 12
+      - ElementName: attackHighRight
+        ObjectType: 3
+      Path: SFX\attackHighRight
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: attackLowLeft
       guid: d311366d4ea25d4889b7aa159976bd01
-      id: 1121259069
+      id: 3260672922
       PathAndIcons:
-      - ElementName: Default Work Unit
+      - ElementName: SFX
         ObjectType: 12
-      - ElementName: SfxEvents
-        ObjectType: 4
-      - ElementName: attackLow
+      - ElementName: attackLowLeft
         ObjectType: 3
-      Path: Default Work Unit\SfxEvents\attackLow
+      Path: SFX\attackLowLeft
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: attackMid
-      guid: 5b5fb833b9d3204b9e8b3cb116f02d53
-      id: 1221777729
+    - name: attackLowRight
+      guid: a0b43b31d6835d488dc9bd608abdb838
+      id: 454784401
       PathAndIcons:
-      - ElementName: Default Work Unit
+      - ElementName: SFX
         ObjectType: 12
-      - ElementName: SfxEvents
-        ObjectType: 4
-      - ElementName: attackMid
+      - ElementName: attackLowRight
         ObjectType: 3
-      Path: Default Work Unit\SfxEvents\attackMid
+      Path: SFX\attackLowRight
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: attackMidLeft
+      guid: 5b5fb833b9d3204b9e8b3cb116f02d53
+      id: 1591749358
+      PathAndIcons:
+      - ElementName: SFX
+        ObjectType: 12
+      - ElementName: attackMidLeft
+        ObjectType: 3
+      Path: SFX\attackMidLeft
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: attackMidRight
+      guid: 6546996ec3d211428f329a18be3a8fc3
+      id: 74495757
+      PathAndIcons:
+      - ElementName: SFX
+        ObjectType: 12
+      - ElementName: attackMidRight
+        ObjectType: 3
+      Path: SFX\attackMidRight
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -143,13 +227,11 @@ MonoBehaviour:
       guid: fda752bb077a914aa1ff550b5bf563ca
       id: 1585787840
       PathAndIcons:
-      - ElementName: Default Work Unit
+      - ElementName: SFX
         ObjectType: 12
-      - ElementName: SfxEvents
-        ObjectType: 4
       - ElementName: clash
         ObjectType: 3
-      Path: Default Work Unit\SfxEvents\clash
+      Path: SFX\clash
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -157,13 +239,23 @@ MonoBehaviour:
       guid: b801e6ce6b7ab24184bcfa5d98a0d045
       id: 1942692385
       PathAndIcons:
-      - ElementName: Default Work Unit
+      - ElementName: SFX
         ObjectType: 12
-      - ElementName: SfxEvents
-        ObjectType: 4
       - ElementName: dash
         ObjectType: 3
-      Path: Default Work Unit\SfxEvents\dash
+      Path: SFX\dash
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Dash_Event
+      guid: 8fc0e170afa26a4bb992cb5682397054
+      id: 763920020
+      PathAndIcons:
+      - ElementName: SFX
+        ObjectType: 12
+      - ElementName: Dash_Event
+        ObjectType: 3
+      Path: SFX\Dash_Event
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -171,41 +263,11 @@ MonoBehaviour:
       guid: 7c0fb34cf0abc44e8ee25a315168d754
       id: 779278001
       PathAndIcons:
-      - ElementName: Default Work Unit
+      - ElementName: SFX
         ObjectType: 12
-      - ElementName: SfxEvents
-        ObjectType: 4
       - ElementName: death
         ObjectType: 3
-      Path: Default Work Unit\SfxEvents\death
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
-    - name: fighting
-      guid: 2bad3ecc1698a848b271d33d563c37c2
-      id: 168610243
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: MusicEvents
-        ObjectType: 4
-      - ElementName: fighting
-        ObjectType: 3
-      Path: Default Work Unit\MusicEvents\fighting
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
-    - name: firstRound
-      guid: 9c4f17ea273a994d9b67d0f6322bfd39
-      id: 3151422571
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: MusicEvents
-        ObjectType: 4
-      - ElementName: firstRound
-        ObjectType: 3
-      Path: Default Work Unit\MusicEvents\firstRound
+      Path: SFX\death
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -213,97 +275,107 @@ MonoBehaviour:
       guid: 686a23a5c968d543b4370e94253aa05b
       id: 4203913494
       PathAndIcons:
-      - ElementName: Default Work Unit
+      - ElementName: SFX
         ObjectType: 12
-      - ElementName: SfxEvents
-        ObjectType: 4
       - ElementName: follow
         ObjectType: 3
-      Path: Default Work Unit\SfxEvents\follow
+      Path: SFX\follow
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: hit
-      guid: ed41628000805e42b532ed2374d191de
-      id: 1116398592
+    - name: Footstep_Event
+      guid: 96e48d589678ab4592484806c0f32c17
+      id: 116178158
       PathAndIcons:
-      - ElementName: Default Work Unit
+      - ElementName: SFX
         ObjectType: 12
-      - ElementName: SfxEvents
-        ObjectType: 4
-      - ElementName: hit
+      - ElementName: Footstep_Event
         ObjectType: 3
-      Path: Default Work Unit\SfxEvents\hit
+      Path: SFX\Footstep_Event
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: parry
+    - name: hitLeft
+      guid: 50fbb65a9c6e0e44ab0323526a56863f
+      id: 1133475131
+      PathAndIcons:
+      - ElementName: SFX
+        ObjectType: 12
+      - ElementName: hitLeft
+        ObjectType: 3
+      Path: SFX\hitLeft
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: hitRight
+      guid: 633285a01e06f74ab97501a8a2bb89a4
+      id: 1778295094
+      PathAndIcons:
+      - ElementName: SFX
+        ObjectType: 12
+      - ElementName: hitRight
+        ObjectType: 3
+      Path: SFX\hitRight
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: parryLeft
+      guid: fb096a250399504a94d781b33f438ad2
+      id: 2109051510
+      PathAndIcons:
+      - ElementName: SFX
+        ObjectType: 12
+      - ElementName: parryLeft
+        ObjectType: 3
+      Path: SFX\parryLeft
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: parryRight
       guid: e2e6b0b0d25a0c44a8ed340910f13443
-      id: 3076648345
+      id: 2394082421
       PathAndIcons:
-      - ElementName: Default Work Unit
+      - ElementName: SFX
         ObjectType: 12
-      - ElementName: SfxEvents
-        ObjectType: 4
-      - ElementName: parry
+      - ElementName: parryRight
         ObjectType: 3
-      Path: Default Work Unit\SfxEvents\parry
+      Path: SFX\parryRight
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: perfectParry
+    - name: parryWhiff
+      guid: e50c9c32cc4b5d4ab0fc04cbcc33b084
+      id: 2136132677
+      PathAndIcons:
+      - ElementName: SFX
+        ObjectType: 12
+      - ElementName: parryWhiff
+        ObjectType: 3
+      Path: SFX\parryWhiff
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: perfectParryLeft
+      guid: f3ee37d38bfc8e4db2b5c20ed5466f6d
+      id: 1600228609
+      PathAndIcons:
+      - ElementName: SFX
+        ObjectType: 12
+      - ElementName: perfectParryLeft
+        ObjectType: 3
+      Path: SFX\perfectParryLeft
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: perfectParryRight
       guid: 562206ff7c409f4da00431f9d0766007
-      id: 2886306578
+      id: 2689861876
       PathAndIcons:
-      - ElementName: Default Work Unit
+      - ElementName: SFX
         ObjectType: 12
-      - ElementName: SfxEvents
-        ObjectType: 4
-      - ElementName: perfectParry
+      - ElementName: perfectParryRight
         ObjectType: 3
-      Path: Default Work Unit\SfxEvents\perfectParry
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
-    - name: secondRound
-      guid: 12717a72f7185b439af570fc16c9dd9e
-      id: 479647031
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: MusicEvents
-        ObjectType: 4
-      - ElementName: secondRound
-        ObjectType: 3
-      Path: Default Work Unit\MusicEvents\secondRound
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
-    - name: standOff
-      guid: ca16b8be365e694bae74302e7b6916bd
-      id: 3092733402
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: MusicEvents
-        ObjectType: 4
-      - ElementName: standOff
-        ObjectType: 3
-      Path: Default Work Unit\MusicEvents\standOff
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
-    - name: thirdRound
-      guid: 68bf9b9a61144349bc7b1182d336320c
-      id: 777271008
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: MusicEvents
-        ObjectType: 4
-      - ElementName: thirdRound
-        ObjectType: 3
-      Path: Default Work Unit\MusicEvents\thirdRound
+      Path: SFX\perfectParryRight
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -312,24 +384,82 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 877bfb69bb34254997bc686db894f7e0
     GuidInternal: 
-    m_lastTime: -8586260606331004641
+    m_lastTime: -8586255333408596891
     List:
-    - name: Fury_RTPC
+    - name: FuryLeft_RTPC
       guid: 0032026f833a4f44b9852e8a0a22d3c4
-      id: 1993867557
+      id: 2056782216
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Fury_RTPC
+      - ElementName: FuryLeft_RTPC
         ObjectType: 13
-      Path: Default Work Unit\Fury_RTPC
+      Path: Default Work Unit\FuryLeft_RTPC
+    - name: FuryRight_RTPC
+      guid: b3ffe49f735acc4cbc4253b269372ef9
+      id: 3810431161
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: FuryRight_RTPC
+        ObjectType: 13
+      Path: Default Work Unit\FuryRight_RTPC
+    - name: FX_RTPC
+      guid: 3c07cfff0135944da04bd6048c0d59b6
+      id: 3901535175
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: FX_RTPC
+        ObjectType: 13
+      Path: Default Work Unit\FX_RTPC
+    - name: Sidechain_RTPC
+      guid: 06bed34d9593604faf4409690fbbc11a
+      id: 2479939179
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Sidechain_RTPC
+        ObjectType: 13
+      Path: Default Work Unit\Sidechain_RTPC
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 63f8cb137edd08448f7f5c3e8e1dcee3
     GuidInternal: 
-    m_lastTime: -8586262052917566902
+    m_lastTime: -8586255333401272541
     List:
+    - name: GeneralGameStates
+      guid: 368f452f521c2e4c8b3e14c699dede29
+      id: 3811713195
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: GeneralGameStates
+        ObjectType: 9
+      Path: Default Work Unit\GeneralGameStates
+      values:
+      - name: inGame_State
+        guid: d4c96a9acc067c48b6ce347ee8b5ff0b
+        id: 2678566748
+        PathAndIcons:
+        - ElementName: inGame_State
+          ObjectType: 8
+      - name: Menu_State
+        guid: c10a85b51841ca46b423cef757208c69
+        id: 3941853002
+        PathAndIcons:
+        - ElementName: Menu_State
+          ObjectType: 8
+      - name: None
+        guid: 16a6fb5e3ad63142a9b54fef4d7daf4d
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
     - name: inGame
       guid: 39b379b82f69ba47ad1966e0aed0ed42
       id: 984691642
@@ -345,6 +475,12 @@ MonoBehaviour:
         id: 168610243
         PathAndIcons:
         - ElementName: fighting
+          ObjectType: 8
+      - name: fightingevolved
+        guid: 741e621533554041a8f4afbdf8403fa5
+        id: 1709125184
+        PathAndIcons:
+        - ElementName: fightingevolved
           ObjectType: 8
       - name: None
         guid: 85255ac948be6b488a6fda1b643dca64
@@ -372,18 +508,19 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: a4f6631705f8a84f9dbce18c0a015370
     GuidInternal: 
-    m_lastTime: -8586262052917561912
+    m_lastTime: -8586259721359264881
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 81cfa00d5576604d8c63d698b38a82dd
     GuidInternal: 
-    m_lastTime: -8586262052917541944
+    m_lastTime: -8586259721359233510
     List: []
   ExpandedItems:
   - /NeonParry_WwiseProject
   - /NeonParry_WwiseProject/Events
+  - /NeonParry_WwiseProject/Events/Ambiance
   - /NeonParry_WwiseProject/Events/Music
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

@@ -18,7 +18,7 @@ public class StateDash : PlayerState
         base.Enter();
         //owner.allActionsOnCd(actionInfos.currentActionDuration);
         ++owner.currentSpotIndex;
-        AudioManager.instance.UpdateMusic(2);
+        //AudioManager.instance.UpdateMusic(2);
         startPosition = owner.transform.position;
         destPos = (SceneManager.GetActiveScene().name != "IntroScene") ? GameManager.instance.GetDashPos(owner.playerIndex) : MenuManager.instance.GetDashPos(owner.playerIndex);
     }

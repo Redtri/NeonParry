@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
 
     private int currentNbPlayers = 0;
 
-    public delegate void Strike(int score);
+    public delegate void Strike(int[] score);
     public Strike onStrike;
 
     private void Awake() {
@@ -113,25 +113,20 @@ public class GameManager : MonoBehaviour
     public int StrikeSuccessful(int playerIndex) { // strike succesfull return 0, at the end of a round return 1, at the end of the match return 2
         Camera.main.GetComponent<CameraShake>().Shake(16f, 16f, 1.5f);
         ++score[currentRound][playerIndex];
-        AudioManager.instance.UpdateMusic(1);
         StartCoroutine(FreezeFrame(freezeFrameDuration));
-        if (score[currentRound][playerIndex] >= nbExchangeForARound)
-        {
+        onStrike?.Invoke(score[currentRound]);
+        if (score[currentRound][playerIndex] >= nbExchangeForARound) {
             ++score[0][playerIndex];
-            if (score[0][playerIndex] >= nbRoundForAMatch)
-            {
+            if (score[0][playerIndex] >= nbRoundForAMatch) {
                 startNewMatch = true;
                 return 2;
-            }
-            else
-            {
+            } else {
                 score.Add(new int[2] { 0, 0 });
                 ++currentRound;
 
                 return 1;
             }
-        } else
-        {
+        } else {
             return 0;
         }
     }

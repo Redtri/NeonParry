@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour {
-    public AK.Wwise.Event[] events;
+    public AK.Wwise.Event[] musicsMenu;
+    public AK.Wwise.Event[] musicsGame;
+
+    public AK.Wwise.Event[] ambient;
 
     public static AudioManager instance;
 
@@ -17,7 +21,16 @@ public class AudioManager : MonoBehaviour {
 
     private void Start() {
         GameManager.instance.onStrike += UpdateMusic;
-        events[0].Post(gameObject);
+        switch (SceneManager.GetActiveScene().buildIndex) {
+            case 0:
+                musicsMenu[0].Post(gameObject);
+                break;
+            case 1:
+                musicsGame[0].Post(gameObject);
+                break;
+        }
+        ambient[SceneManager.GetActiveScene().buildIndex].Post(gameObject);
+        //events[0].Post(gameObject);
     }
 
     private void OnEnable() {
@@ -30,8 +43,27 @@ public class AudioManager : MonoBehaviour {
         GameManager.instance.onStrike -= UpdateMusic;
     }    
 
-    public void UpdateMusic(int index) {
+    public void UpdateMusic(int[] index) {
+        int highest = 0;
 
-        events[index].Post(gameObject);
+        for(int i = 0; i < index.Length; ++i) {
+            if(index[i] > highest) {
+                highest = index[i];
+            }
+        }
+        switch (highest) {
+            case 0:
+                break;
+            case 1:
+                musicsGame[1].Post(gameObject);
+                print("first");
+                break;
+            case 2:
+                musicsGame[2].Post(gameObject);
+                print("second");
+                break;
+            case 3:
+                break;
+        }
     }
 }

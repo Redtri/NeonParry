@@ -25,7 +25,7 @@ public class MenuManager : MonoBehaviour
 
     private void Awake()
     {
-        print(GameInfos.playerInfos.Count);
+        GameInfos.playerInfos = new List<PlayerInfo>();
         nbPlayerReady = 0;
         Time.timeScale = 1f;
         if (!instance)

@@ -95,16 +95,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29a8871fa42806342b795fbd9f0bd516, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  events:
+  musicsMenu:
   - idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: c67048ee4e112e142a883de38f375a05,
+      type: 2}
+  musicsGame:
   - idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: c7f4e8994dc37ec4ba0ed307b39c2710,
+      type: 2}
   - idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 5a29a7585a4dd0b419ca4cf9d2414829,
+      type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 922bca23aa8c7dc48a1fa82761cb52cb,
+      type: 2}
+  ambient:
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: ed32f3b2d0427804bb9dbbc2fea97427,
+      type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: c29ebb4253d56c743a46f205b5d8e4f3,
+      type: 2}
 --- !u!1 &6268276687221777030
 GameObject:
   m_ObjectHideFlags: 0
