@@ -37,8 +37,8 @@ public class UI_Manager : MonoBehaviour
             currentValueRight = GameInfos.playerInfos[1].controller.fury.currentFury;
             barLeft.transform.localPosition = new Vector3(0, barLowPosition.y * (1-(currentValueLeft/maxValue)), 0);
             barRight.transform.localPosition = new Vector3(0, barLowPosition.y * (1 - (currentValueRight / maxValue)), 0);
-            scoreLeft.text = GameInfos.playerInfos[0].score.ToString();
-            scoreRight.text = GameInfos.playerInfos[1].score.ToString();
+            scoreLeft.text = GameManager.instance.score[0][0].ToString() + " " + GameManager.instance.score[GameManager.instance.currentRound][0].ToString();
+            scoreRight.text = GameManager.instance.score[0][1].ToString() + " " + GameManager.instance.score[GameManager.instance.currentRound][1].ToString();
         }
     }
 }
