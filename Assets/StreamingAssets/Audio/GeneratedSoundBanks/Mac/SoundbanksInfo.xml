@@ -1,27 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="11" SoundbankVersion="134">
 	<RootPaths>
-		<ProjectRoot>/Users/romainmineur/Library/Application Support/Wwise2019/Bottles/wwise/dosdevices/y:/Desktop/Cours ENJMIN/NanoProjet/Git_Prog/NeonParry/NeonParrySound/NeonParry_WwiseProject/</ProjectRoot>
-		<SourceFilesRoot>/Users/romainmineur/Library/Application Support/Wwise2019/Bottles/wwise/dosdevices/y:/Desktop/Cours ENJMIN/NanoProjet/Git_Prog/NeonParry/NeonParrySound/NeonParry_WwiseProject/.cache/Mac/</SourceFilesRoot>
-		<SoundBanksRoot>/Users/romainmineur/Library/Application Support/Wwise2019/Bottles/wwise/dosdevices/y:/Desktop/Cours ENJMIN/NanoProjet/Git_Prog/NeonParry/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Mac/</SoundBanksRoot>
+		<ProjectRoot>C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Mac\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\Assets\StreamingAssets\Audio\GeneratedSoundBanks\Mac\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>/Users/romainmineur/Library/Application Support/Wwise2019/Bottles/wwise/dosdevices/y:/Desktop/Cours ENJMIN/NanoProjet/Git_Prog/NeonParry/NeonParrySound/NeonParry_WwiseProject/GeneratedSoundBanks/Mac</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX">
+		<SoundBank Id="1355168291" Language="SFX">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3161908922" GUID="{1685BAFF-C53E-41C6-B7A6-66271BB1C36E}" Language="SFX">
+		<SoundBank Id="3161908922" Language="SFX">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<IncludedEvents>
-<<<<<<< Updated upstream
 				<Event Id="1919125814" Name="attackHighLeft" ObjectPath="\Events\SFX\attackHighLeft"/>
 				<Event Id="2089799477" Name="attackHighRight" ObjectPath="\Events\SFX\attackHighRight"/>
 				<Event Id="3260672922" Name="attackLowLeft" ObjectPath="\Events\SFX\attackLowLeft"/>
@@ -31,10 +30,17 @@
 				<Event Id="1585787840" Name="clash" ObjectPath="\Events\SFX\clash"/>
 				<Event Id="763920020" Name="Dash_Event" ObjectPath="\Events\SFX\Dash_Event"/>
 				<Event Id="779278001" Name="death" ObjectPath="\Events\SFX\death"/>
-				<Event Id="4203913494" Name="follow" ObjectPath="\Events\SFX\follow"/>
+				<Event Id="3025804676" Name="feintHightLeft" ObjectPath="\Events\SFX\feintHightLeft"/>
+				<Event Id="338654435" Name="feintHightRight" ObjectPath="\Events\SFX\feintHightRight"/>
+				<Event Id="3737837678" Name="feintLowLeft" ObjectPath="\Events\SFX\feintLowLeft"/>
+				<Event Id="3807145869" Name="feintLowRight" ObjectPath="\Events\SFX\feintLowRight"/>
+				<Event Id="1297253722" Name="feintMidLeft" ObjectPath="\Events\SFX\feintMidLeft"/>
+				<Event Id="3074935633" Name="feintMidRight" ObjectPath="\Events\SFX\feintMidRight"/>
 				<Event Id="116178158" Name="Footstep_Event" ObjectPath="\Events\SFX\Footstep_Event"/>
 				<Event Id="1133475131" Name="hitLeft" ObjectPath="\Events\SFX\hitLeft"/>
 				<Event Id="1778295094" Name="hitRight" ObjectPath="\Events\SFX\hitRight"/>
+				<Event Id="2370107561" Name="inGame_Ambiance" ObjectPath="\Events\Ambiance\inGame_Ambiance"/>
+				<Event Id="626061955" Name="Menu_Ambiance" ObjectPath="\Events\Ambiance\Menu_Ambiance"/>
 				<Event Id="3678931145" Name="Music_Death" ObjectPath="\Events\Music\Music_Death"/>
 				<Event Id="723605745" Name="Music_FirstPVLost" ObjectPath="\Events\Music\Music_FirstPVLost"/>
 				<Event Id="2688689701" Name="Music_Menu_Start" ObjectPath="\Events\Music\Music_Menu_Start"/>
@@ -46,66 +52,55 @@
 				<Event Id="2136132677" Name="parryWhiff" ObjectPath="\Events\SFX\parryWhiff"/>
 				<Event Id="1600228609" Name="perfectParryLeft" ObjectPath="\Events\SFX\perfectParryLeft"/>
 				<Event Id="2689861876" Name="perfectParryRight" ObjectPath="\Events\SFX\perfectParryRight"/>
-=======
-				<Event Id="1919125814" Name="attackHighLeft" ObjectPath="\Events\SFX\attackHighLeft" GUID="{37C8C997-A9E2-456D-ABB5-049CDDC9E6F6}" DurationType="OneShot" DurationMin="3.316939" DurationMax="3.316939"/>
-				<Event Id="2089799477" Name="attackHighRight" ObjectPath="\Events\SFX\attackHighRight" GUID="{971038AA-D04E-4346-9D2A-A883CCAC5784}" DurationType="OneShot" DurationMin="3.316939" DurationMax="3.316939"/>
-				<Event Id="3260672922" Name="attackLowLeft" ObjectPath="\Events\SFX\attackLowLeft" GUID="{6D3611D3-A24E-485D-89B7-AA159976BD01}" DurationType="OneShot" DurationMin="2.093515" DurationMax="2.093515"/>
-				<Event Id="454784401" Name="attackLowRight" ObjectPath="\Events\SFX\attackLowRight" GUID="{313BB4A0-83D6-485D-8DC9-BD608ABDB838}" DurationType="OneShot" DurationMin="2.093515" DurationMax="2.093515"/>
-				<Event Id="1591749358" Name="attackMidLeft" ObjectPath="\Events\SFX\attackMidLeft" GUID="{33B85F5B-D3B9-4B20-9E8B-3CB116F02D53}" DurationType="OneShot" DurationMin="2.133333" DurationMax="2.133333"/>
-				<Event Id="74495757" Name="attackMidRight" ObjectPath="\Events\SFX\attackMidRight" GUID="{6E994665-D2C3-4211-8F32-9A18BE3A8FC3}" DurationType="OneShot" DurationMin="2.133333" DurationMax="2.133333"/>
-				<Event Id="1585787840" Name="clash" ObjectPath="\Events\SFX\clash" GUID="{BB52A7FD-7A07-4A91-A1FF-550B5BF563CA}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="763920020" Name="Dash_Event" ObjectPath="\Events\SFX\Dash_Event" GUID="{70E1C08F-A2AF-4B6A-B992-CB5682397054}" DurationType="OneShot" DurationMin="1.246344" DurationMax="1.246344"/>
-				<Event Id="779278001" Name="death" ObjectPath="\Events\SFX\death" GUID="{4CB30F7C-ABF0-4EC4-8EE2-5A315168D754}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="4203913494" Name="follow" ObjectPath="\Events\SFX\follow" GUID="{A5236A68-68C9-43D5-B437-0E94253AA05B}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="116178158" Name="Footstep_Event" ObjectPath="\Events\SFX\Footstep_Event" GUID="{588DE496-7896-45AB-9248-4806C0F32C17}" DurationType="OneShot" DurationMin="0.724600" DurationMax="1.013649"/>
-				<Event Id="1133475131" Name="hitLeft" ObjectPath="\Events\SFX\hitLeft" GUID="{5AB6FB50-6E9C-440E-AB03-23526A56863F}" DurationType="OneShot" DurationMin="1.500000" DurationMax="1.500000"/>
-				<Event Id="1778295094" Name="hitRight" ObjectPath="\Events\SFX\hitRight" GUID="{A0853263-061E-4AF7-B975-01A8A2BB89A4}" DurationType="OneShot" DurationMin="1.500000" DurationMax="1.500000"/>
-				<Event Id="2370107561" Name="inGame_Ambiance" ObjectPath="\Events\Ambiance\inGame_Ambiance" GUID="{04EEA9C0-E752-4E6F-8E1F-FF3E31F5362D}" DurationType="Infinite"/>
-				<Event Id="3678931145" Name="Music_Death" ObjectPath="\Events\Music\Music_Death" GUID="{263A7816-03CD-4ABD-80C5-13DEBBF6A79F}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="723605745" Name="Music_FirstPVLost" ObjectPath="\Events\Music\Music_FirstPVLost" GUID="{CC3EAD2B-9816-48A8-B271-D33D563C37C2}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="2688689701" Name="Music_Menu_Start" ObjectPath="\Events\Music\Music_Menu_Start" GUID="{A600A827-CA50-43E9-8A93-4ECD3DE5210E}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="3282946978" Name="Music_Reset" ObjectPath="\Events\Music\Music_Reset" GUID="{F6A3440C-51F9-47D5-B590-E04EFB208A2C}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="2154872981" Name="Music_SecondPVLost" ObjectPath="\Events\Music\Music_SecondPVLost" GUID="{BEB816CA-5E36-4B69-AE74-302E7B6916BD}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="3725903807" Name="Music_Start" ObjectPath="\Events\Music\Music_Start" GUID="{EA174F9C-3A27-4D99-9B67-D0F6322BFD39}" DurationType="Infinite"/>
-				<Event Id="2109051510" Name="parryLeft" ObjectPath="\Events\SFX\parryLeft" GUID="{256A09FB-9903-4A50-94D7-81B33F438AD2}" DurationType="OneShot" DurationMin="0.850000" DurationMax="0.900000"/>
-				<Event Id="2394082421" Name="parryRight" ObjectPath="\Events\SFX\parryRight" GUID="{B0B0E6E2-5AD2-440C-A8ED-340910F13443}" DurationType="OneShot" DurationMin="0.850000" DurationMax="0.900000"/>
-				<Event Id="2136132677" Name="parryWhiff" ObjectPath="\Events\SFX\parryWhiff" GUID="{329C0CE5-4BCC-4A5D-B0FC-04CBCC33B084}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="1600228609" Name="perfectParryLeft" ObjectPath="\Events\SFX\perfectParryLeft" GUID="{D337EEF3-FC8B-4D8E-B2B5-C20ED5466F6D}" DurationType="OneShot" DurationMin="1.250000" DurationMax="1.250000"/>
-				<Event Id="2689861876" Name="perfectParryRight" ObjectPath="\Events\SFX\perfectParryRight" GUID="{FF062256-407C-4D9F-A004-31F9D0766007}" DurationType="OneShot" DurationMin="1.250000" DurationMax="1.250000"/>
->>>>>>> Stashed changes
 			</IncludedEvents>
 			<IncludedMemoryFiles>
-				<File Id="2067877" Language="SFX">
-					<ShortName>round2_drop2.wav</ShortName>
-<<<<<<< Updated upstream
-					<Path>SFX\round2_drop2_469574DC.wem</Path>
+				<File Id="10275052" Language="SFX">
+					<ShortName>round1_var5_lead2.wav</ShortName>
+					<Path>SFX\round1_var5_lead2_469574DC.wem</Path>
 				</File>
-				<File Id="15285904" Language="SFX">
-					<ShortName>round3_drop1.wav</ShortName>
-					<Path>SFX\round3_drop1_469574DC.wem</Path>
-=======
-					<Path>SFX/round2_drop2_469574DC.wem</Path>
+				<File Id="12335059" Language="SFX">
+					<ShortName>round2_bass_unfiltered.wav</ShortName>
+					<Path>SFX\round2_bass_unfiltered_469574DC.wem</Path>
 				</File>
-				<File Id="15285904" Language="SFX">
-					<ShortName>round3_drop1.wav</ShortName>
-					<Path>SFX/round3_drop1_469574DC.wem</Path>
->>>>>>> Stashed changes
+				<File Id="26437408" Language="SFX">
+					<ShortName>feintMidFurryMed.wav</ShortName>
+					<Path>SFX\feintMidFurryMed_11697732.wem</Path>
+				</File>
+				<File Id="37718121" Language="SFX">
+					<ShortName>feintMidFurryMax.wav</ShortName>
+					<Path>SFX\feintMidFurryMax_11697732.wem</Path>
+				</File>
+				<File Id="62192054" Language="SFX">
+					<ShortName>round3_beat_nofill.wav</ShortName>
+					<Path>SFX\round3_beat_nofill_469574DC.wem</Path>
 				</File>
 				<File Id="102222190" Language="SFX">
 					<ShortName>stem02reverb2.wav</ShortName>
-					<Path>SFX/stem02reverb2_469574DC.wem</Path>
+					<Path>SFX\stem02reverb2_469574DC.wem</Path>
+				</File>
+				<File Id="109637023" Language="SFX">
+					<ShortName>ParryImpact03.wav</ShortName>
+					<Path>SFX\ParryImpact03_11697732.wem</Path>
+				</File>
+				<File Id="124230995" Language="SFX">
+					<ShortName>feintLowFurryMin.wav</ShortName>
+					<Path>SFX\feintLowFurryMin_11697732.wem</Path>
 				</File>
 				<File Id="134202983" Language="SFX">
 					<ShortName>dash_01.wav</ShortName>
-					<Path>SFX/dash_01_005CB2C3.wem</Path>
+					<Path>SFX\dash_01_70006264.wem</Path>
 				</File>
 				<File Id="136294100" Language="SFX">
 					<ShortName>robotstep_03.wav</ShortName>
-					<Path>SFX/robotstep_03_11697732.wem</Path>
+					<Path>SFX\robotstep_03_11697732.wem</Path>
 				</File>
-				<File Id="156458855" Language="SFX">
-					<ShortName>round2_dash.wav</ShortName>
-					<Path>SFX/round2_dash_469574DC.wem</Path>
+				<File Id="140614912" Language="SFX">
+					<ShortName>ParryImpact01.wav</ShortName>
+					<Path>SFX\ParryImpact01_11697732.wem</Path>
+				</File>
+				<File Id="156381287" Language="SFX">
+					<ShortName>round2_beat_fill.wav</ShortName>
+					<Path>SFX\round2_beat_fill_469574DC.wem</Path>
 				</File>
 				<File Id="156458855" Language="SFX">
 					<ShortName>round2_dash.wav</ShortName>
@@ -113,39 +108,55 @@
 				</File>
 				<File Id="158783193" Language="SFX">
 					<ShortName>stem02reverb.wav</ShortName>
-					<Path>SFX/stem02reverb_469574DC.wem</Path>
+					<Path>SFX\stem02reverb_469574DC.wem</Path>
+				</File>
+				<File Id="162646036" Language="SFX">
+					<ShortName>ParryImpact02.wav</ShortName>
+					<Path>SFX\ParryImpact02_11697732.wem</Path>
 				</File>
 				<File Id="220227563" Language="SFX">
 					<ShortName>perfectParry.wav</ShortName>
-					<Path>SFX/perfectParry_11697732.wem</Path>
+					<Path>SFX\perfectParry_11697732.wem</Path>
 				</File>
-				<File Id="305375330" Language="SFX">
-					<ShortName>attackLow.wav</ShortName>
-					<Path>SFX/attackLow_11697732.wem</Path>
+				<File Id="244755321" Language="SFX">
+					<ShortName>round3_beat_extrafill.wav</ShortName>
+					<Path>SFX\round3_beat_extrafill_469574DC.wem</Path>
 				</File>
-				<File Id="326377906" Language="SFX">
-					<ShortName>parry02.wav</ShortName>
-					<Path>SFX/parry02_11697732.wem</Path>
+				<File Id="272836807" Language="SFX">
+					<ShortName>round3_lead_extra.wav</ShortName>
+					<Path>SFX\round3_lead_extra_469574DC.wem</Path>
 				</File>
-				<File Id="407386197" Language="SFX">
-					<ShortName>round3_intro.wav</ShortName>
-					<Path>SFX/round3_intro_469574DC.wem</Path>
+				<File Id="278925160" Language="SFX">
+					<ShortName>attackMidFurryMed.wav</ShortName>
+					<Path>SFX\attackMidFurryMed_11697732.wem</Path>
 				</File>
-				<File Id="425976934" Language="SFX">
-					<ShortName>round1_var2_hihat.wav</ShortName>
-					<Path>SFX/round1_var2_hihat_469574DC.wem</Path>
+				<File Id="354026372" Language="SFX">
+					<ShortName>round2_intro.wav</ShortName>
+					<Path>SFX\round2_intro_469574DC.wem</Path>
 				</File>
-				<File Id="436884565" Language="SFX">
-					<ShortName>deathbassdrop.wav</ShortName>
-					<Path>SFX/deathbassdrop_469574DC.wem</Path>
+				<File Id="366173534" Language="SFX">
+					<ShortName>attackHighFurryMin.wav</ShortName>
+					<Path>SFX\attackHighFurryMin_11697732.wem</Path>
 				</File>
-				<File Id="437581663" Language="SFX">
-					<ShortName>round3_drop2.wav</ShortName>
-					<Path>SFX/round3_drop2_469574DC.wem</Path>
+				<File Id="372262866" Language="SFX">
+					<ShortName>round2_bass_filtered.wav</ShortName>
+					<Path>SFX\round2_bass_filtered_469574DC.wem</Path>
+				</File>
+				<File Id="386631273" Language="SFX">
+					<ShortName>attackLowFurryMed.wav</ShortName>
+					<Path>SFX\attackLowFurryMed_11697732.wem</Path>
+				</File>
+				<File Id="390395798" Language="SFX">
+					<ShortName>round2_beat_openhh.wav</ShortName>
+					<Path>SFX\round2_beat_openhh_469574DC.wem</Path>
 				</File>
 				<File Id="407386197" Language="SFX">
 					<ShortName>round3_intro.wav</ShortName>
 					<Path>SFX\round3_intro_469574DC.wem</Path>
+				</File>
+				<File Id="411652840" Language="SFX">
+					<ShortName>attackLowFurryMin.wav</ShortName>
+					<Path>SFX\attackLowFurryMin_11697732.wem</Path>
 				</File>
 				<File Id="425976934" Language="SFX">
 					<ShortName>round1_var2_hihat.wav</ShortName>
@@ -155,97 +166,113 @@
 					<ShortName>deathbassdrop.wav</ShortName>
 					<Path>SFX\deathbassdrop_469574DC.wem</Path>
 				</File>
-				<File Id="437581663" Language="SFX">
-					<ShortName>round3_drop2.wav</ShortName>
-					<Path>SFX\round3_drop2_469574DC.wem</Path>
+				<File Id="499284639" Language="SFX">
+					<ShortName>attackMidFurryMin.wav</ShortName>
+					<Path>SFX\attackMidFurryMin_11697732.wem</Path>
 				</File>
-				<File Id="509773085" Language="SFX">
-					<ShortName>parry01.wav</ShortName>
-					<Path>SFX/parry01_11697732.wem</Path>
+				<File Id="510472379" Language="SFX">
+					<ShortName>feintMidFurryMin.wav</ShortName>
+					<Path>SFX\feintMidFurryMin_11697732.wem</Path>
 				</File>
-				<File Id="526054109" Language="SFX">
-					<ShortName>round3_dash.wav</ShortName>
-					<Path>SFX/round3_dash_469574DC.wem</Path>
+				<File Id="514994792" Language="SFX">
+					<ShortName>round3_bass_unfiltered.wav</ShortName>
+					<Path>SFX\round3_bass_unfiltered_469574DC.wem</Path>
 				</File>
 				<File Id="526054109" Language="SFX">
 					<ShortName>round3_dash.wav</ShortName>
 					<Path>SFX\round3_dash_469574DC.wem</Path>
 				</File>
-				<File Id="584322416" Language="SFX">
-					<ShortName>parry03.wav</ShortName>
-					<Path>SFX/parry03_11697732.wem</Path>
+				<File Id="545831822" Language="SFX">
+					<ShortName>attackMidFurryMax.wav</ShortName>
+					<Path>SFX\attackMidFurryMax_11697732.wem</Path>
+				</File>
+				<File Id="549341578" Language="SFX">
+					<ShortName>TakeHitSlowdown.wav</ShortName>
+					<Path>SFX\TakeHitSlowdown_11697732.wem</Path>
+				</File>
+				<File Id="560436870" Language="SFX">
+					<ShortName>attackLowFurryMax.wav</ShortName>
+					<Path>SFX\attackLowFurryMax_11697732.wem</Path>
+				</File>
+				<File Id="564121806" Language="SFX">
+					<ShortName>attackHighFurryMed.wav</ShortName>
+					<Path>SFX\attackHighFurryMed_11697732.wem</Path>
 				</File>
 				<File Id="648801527" Language="SFX">
 					<ShortName>wind_ambiance.wav</ShortName>
-					<Path>SFX/wind_ambiance_469574DC.wem</Path>
+					<Path>SFX\wind_ambiance_469574DC.wem</Path>
 				</File>
-				<File Id="760556342" Language="SFX">
-					<ShortName>round1_var4_lead.wav</ShortName>
-					<Path>SFX/round1_var4_lead_469574DC.wem</Path>
+				<File Id="676769416" Language="SFX">
+					<ShortName>round1_var3_bells.wav</ShortName>
+					<Path>SFX\round1_var3_bells_469574DC.wem</Path>
 				</File>
-				<File Id="794123468" Language="SFX">
-					<ShortName>round1_dash_bassfiltered.wav</ShortName>
-					<Path>SFX/round1_dash_bassfiltered_469574DC.wem</Path>
+				<File Id="740393901" Language="SFX">
+					<ShortName>ParryWhiff.wav</ShortName>
+					<Path>SFX\ParryWhiff_11697732.wem</Path>
 				</File>
-				<File Id="805776708" Language="SFX">
-					<ShortName>round2_drop1.wav</ShortName>
-					<Path>SFX/round2_drop1_469574DC.wem</Path>
+				<File Id="776033914" Language="SFX">
+					<ShortName>round3_beat_fill.wav</ShortName>
+					<Path>SFX\round3_beat_fill_469574DC.wem</Path>
 				</File>
-				<File Id="760556342" Language="SFX">
-					<ShortName>round1_var4_lead.wav</ShortName>
-					<Path>SFX\round1_var4_lead_469574DC.wem</Path>
+				<File Id="778060106" Language="SFX">
+					<ShortName>feintHighFurryMed.wav</ShortName>
+					<Path>SFX\feintHighFurryMed_11697732.wem</Path>
 				</File>
 				<File Id="794123468" Language="SFX">
 					<ShortName>round1_dash_bassfiltered.wav</ShortName>
 					<Path>SFX\round1_dash_bassfiltered_469574DC.wem</Path>
 				</File>
-				<File Id="805776708" Language="SFX">
-					<ShortName>round2_drop1.wav</ShortName>
-					<Path>SFX\round2_drop1_469574DC.wem</Path>
+				<File Id="806372395" Language="SFX">
+					<ShortName>attackHighFurryMax.wav</ShortName>
+					<Path>SFX\attackHighFurryMax_11697732.wem</Path>
 				</File>
-				<File Id="829946370" Language="SFX">
-					<ShortName>stem05variante.wav</ShortName>
-					<Path>SFX/stem05variante_469574DC.wem</Path>
+				<File Id="840519646" Language="SFX">
+					<ShortName>feintLowFurryMed.wav</ShortName>
+					<Path>SFX\feintLowFurryMed_11697732.wem</Path>
 				</File>
-				<File Id="866938126" Language="SFX">
-					<ShortName>attackHigh.wav</ShortName>
-					<Path>SFX/attackHigh_11697732.wem</Path>
+				<File Id="841455848" Language="SFX">
+					<ShortName>round2_extralead.wav</ShortName>
+					<Path>SFX\round2_extralead_469574DC.wem</Path>
 				</File>
 				<File Id="882041133" Language="SFX">
 					<ShortName>stem04drop.wav</ShortName>
-					<Path>SFX/stem04drop_469574DC.wem</Path>
+					<Path>SFX\stem04drop_469574DC.wem</Path>
 				</File>
-				<File Id="922072234" Language="SFX">
-					<ShortName>round1_var1.wav</ShortName>
-					<Path>SFX/round1_var1_469574DC.wem</Path>
+				<File Id="882606628" Language="SFX">
+					<ShortName>round1_var4_lead.wav</ShortName>
+					<Path>SFX\round1_var4_lead_469574DC.wem</Path>
 				</File>
-				<File Id="940805580" Language="SFX">
-					<ShortName>round2_intro.wav</ShortName>
-					<Path>SFX/round2_intro_469574DC.wem</Path>
+				<File Id="904009955" Language="SFX">
+					<ShortName>feintLowFurryMax.wav</ShortName>
+					<Path>SFX\feintLowFurryMax_11697732.wem</Path>
 				</File>
 				<File Id="922072234" Language="SFX">
 					<ShortName>round1_var1.wav</ShortName>
 					<Path>SFX\round1_var1_469574DC.wem</Path>
 				</File>
-				<File Id="940805580" Language="SFX">
-					<ShortName>round2_intro.wav</ShortName>
-					<Path>SFX\round2_intro_469574DC.wem</Path>
+				<File Id="947833936" Language="SFX">
+					<ShortName>feintHighFurryMin.wav</ShortName>
+					<Path>SFX\feintHighFurryMin_11697732.wem</Path>
+				</File>
+				<File Id="948661963" Language="SFX">
+					<ShortName>round2_beat_nofill.wav</ShortName>
+					<Path>SFX\round2_beat_nofill_469574DC.wem</Path>
+				</File>
+				<File Id="968388713" Language="SFX">
+					<ShortName>feintHighFurryMax.wav</ShortName>
+					<Path>SFX\feintHighFurryMax_11697732.wem</Path>
+				</File>
+				<File Id="982558120" Language="SFX">
+					<ShortName>round3_bass_filtered.wav</ShortName>
+					<Path>SFX\round3_bass_filtered_469574DC.wem</Path>
 				</File>
 				<File Id="984257227" Language="SFX">
 					<ShortName>robotstep_01.wav</ShortName>
-					<Path>SFX/robotstep_01_11697732.wem</Path>
+					<Path>SFX\robotstep_01_11697732.wem</Path>
 				</File>
 				<File Id="1013949862" Language="SFX">
 					<ShortName>robotstep_02.wav</ShortName>
-					<Path>SFX/robotstep_02_11697732.wem</Path>
-				</File>
-				<File Id="1057970230" Language="SFX">
-					<ShortName>attackMid.wav</ShortName>
-					<Path>SFX/attackMid_11697732.wem</Path>
-				</File>
-				<File Id="1070117648" Language="SFX">
-					<ShortName>Hit.wav</ShortName>
-					<Path>SFX/Hit_11697732.wem</Path>
+					<Path>SFX\robotstep_02_11697732.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>
