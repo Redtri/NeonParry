@@ -1742,11 +1742,9 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    leftSamples: {fileID: 0}
-    rightSamples: {fileID: 0}
-    currentSamples: {fileID: 0}
-  chargeAction:
-    baseCooldownDuration: 0
+    samples: {fileID: 11400000, guid: 58a0927b5967f654282ed7ee8fe6d57c, type: 2}
+  parry:
+    baseCooldownDuration: 0.4
     fury:
       lowestValueOfFury: 0
       highestValueOfFury: 0
