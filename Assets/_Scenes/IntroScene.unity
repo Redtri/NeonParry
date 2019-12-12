@@ -1423,6 +1423,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4729761028141108296, guid: 34891b075e8d01b4e869d5f3af51afc1,
         type: 3}
+    - target: {fileID: 8376317901010420877, guid: 025629b7bbbd3b841a8d1dcb4e029ed1,
+        type: 3}
+      propertyPath: gameStartTransition
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3822954530596038550, guid: 025629b7bbbd3b841a8d1dcb4e029ed1,
         type: 3}
       propertyPath: menu.Array.size
@@ -1455,5 +1460,15 @@ PrefabInstance:
       propertyPath: cameraCenterPoint
       value: 
       objectReference: {fileID: 21733434}
+    - target: {fileID: 6268276688179462533, guid: 025629b7bbbd3b841a8d1dcb4e029ed1,
+        type: 3}
+      propertyPath: nbExchangeForARound
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6268276688179462533, guid: 025629b7bbbd3b841a8d1dcb4e029ed1,
+        type: 3}
+      propertyPath: stopDuration
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 025629b7bbbd3b841a8d1dcb4e029ed1, type: 3}

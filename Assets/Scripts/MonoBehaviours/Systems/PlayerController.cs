@@ -129,7 +129,6 @@ public class PlayerController : MonoBehaviour
         parryAction.SetSampleOwner(facingLeft);
         dashAction.SetSampleOwner(facingLeft);
         reposAction.SetSampleOwner(facingLeft);
-        Debug.Log("Player facing " + ((facingLeft) ? "left" : "right"));
     }
 
     private void OnEnable() {
@@ -153,7 +152,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update() {
         machineState.Update();
-        Debug.Log(gameObject.name + " " + strikeAction.lastRefreshTime + " " + strikeAction.IsActionPerforming(Time.time));
 
         if (machineState.currentState == ePLAYER_STATE.NEUTRAL) {
             performingAction = false;
@@ -234,7 +232,7 @@ public class PlayerController : MonoBehaviour
                     if (machineState.StateRequest(ePLAYER_STATE.DASH)) {
                         StartCoroutine(OpponentReposDelay());
                         machineState.ChangeState(ePLAYER_STATE.DASH);
-                        MenuManager.instance.PlayerReady();
+                        MenuManager.instance.PlayerReady(playerIndex);
                     }
                 }
             }
@@ -293,6 +291,10 @@ public class PlayerController : MonoBehaviour
     {
         isStop = true;
         machineState.ChangeState(ePLAYER_STATE.NEUTRAL);
+    }
+
+    public void onNew(){
+        animator.SetTrigger("new");
     }
 
     public void onStop()

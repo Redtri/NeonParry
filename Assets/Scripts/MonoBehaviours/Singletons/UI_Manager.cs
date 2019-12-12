@@ -8,6 +8,7 @@ public class UI_Manager : MonoBehaviour
     public static UI_Manager instance;
     [SerializeField] private Text scoreLeft;
     [SerializeField] private Text scoreRight;
+    public Image fadeImage;
     public GameObject barLeft;
     public GameObject barRight;
     private float maxValue;
@@ -17,16 +18,46 @@ public class UI_Manager : MonoBehaviour
 
     private void Awake() {
         barLowPosition = barLeft.transform.localPosition; //barLeft.transform.position.y;
-
+        Fade(false);
         if (!instance) {
             instance = this;
         } else {
             Destroy(this.gameObject);
         }
+
+        MenuManager.instance.onGameStart += Fade;
+        GameManager.instance.onRoundEnd += Fade;
+        GameManager.instance.onMatchEnd += Fade;
+        GameManager.instance.onRoundStart += Fade;
+    }
+
+    private void OnDisable() {
+        MenuManager.instance.onGameStart -= Fade;
+        GameManager.instance.onRoundEnd -= Fade;
+        GameManager.instance.onMatchEnd -= Fade;
+        GameManager.instance.onRoundStart -= Fade;
     }
 
     private void Update() {
         RefreshScore();
+    }
+
+    private void Fade(bool fadeOut = false) {
+        StartCoroutine(Fading(fadeOut));
+    }
+
+    private IEnumerator Fading(bool fadeOut = true) {
+        float refreshTime = Time.time;
+
+        while (Time.time - refreshTime < MenuManager.instance.gameStartTransition) {
+            if (fadeOut) {
+                fadeImage.color = new Color(0, 0, 0, (Time.time - refreshTime) / MenuManager.instance.gameStartTransition);
+            } else {
+                fadeImage.color = new Color(0, 0, 0, 1-((Time.time - refreshTime) / MenuManager.instance.gameStartTransition));
+            }
+            yield return new WaitForSeconds(0.01f);
+        }
+        yield return null;
     }
 
     private void RefreshScore() {

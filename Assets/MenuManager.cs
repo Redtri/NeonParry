@@ -6,10 +6,13 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 
+public delegate void GameTransition(bool fadeOut = true);
+
 public class MenuManager : MonoBehaviour
 {
     public GameObject[] prefabs;
     public PlayerInputManager inputSystem;
+    public float gameStartTransition;
     public int nbSteps;
     public float stepValue;
     public float freezeFrameDuration;
@@ -22,6 +25,8 @@ public class MenuManager : MonoBehaviour
 
     public delegate void Strike(int score);
     public Strike onStrike;
+
+    public GameTransition onGameStart;
 
     private void Awake()
     {
@@ -48,15 +53,20 @@ public class MenuManager : MonoBehaviour
         camera = Camera.main.transform.GetChild(0).GetComponent<CinemachineVirtualCamera>();
     }
     
-    public void PlayerReady() {
+    public void PlayerReady(int playerIndex) {
+        StartCoroutine(BlockPlayer(playerIndex, GameInfos.playerInfos[playerIndex].controller.dashAction.currentActionDuration));
         ++nbPlayerReady;
         if (nbPlayerReady == 2) {
             GameInfos.playerInfos[0].controller.Unsubscribe();
-            Destroy(GameInfos.playerInfos[0].controller.gameObject);
             GameInfos.playerInfos[1].controller.Unsubscribe();
-            Destroy(GameInfos.playerInfos[1].controller.gameObject);
-            Invoke("LoadScene", 0.5f);
+            onGameStart?.Invoke(true);
+            Invoke("LoadScene", gameStartTransition);
         }
+    }
+
+    private IEnumerator BlockPlayer(int index, float delay) {
+        yield return new WaitForSeconds(delay);
+        GameInfos.playerInfos[index].controller.onNeutral();
     }
 
     private void LoadScene() {

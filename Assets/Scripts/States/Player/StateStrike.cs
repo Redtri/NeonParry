@@ -41,6 +41,7 @@ public class StateStrike : PlayerState
                 clash = true;
                 FX_Manager.instance.ClashFX();
                 owner.animator.SetTrigger("knockback");
+                actionInfos.currentSamples.additionalSounds[1].Post(owner.gameObject);
                 stateMachine.ChangeState(nextState, false);
             }
         }
@@ -59,7 +60,7 @@ public class StateStrike : PlayerState
                     if (!owner.isStop)
                     {
                         if (!clash) {
-                            GameManager.instance.isStopGame();
+                            GameManager.instance.StopPlayers();
                             owner.furyChange(actionInfos.furyModificationOnSuccess); //change the fury of a fixed amount
                             owner.opponent.fxHandler.SpawnFX(ePLAYER_STATE.STRIKE, actionInfos.direction, owner.facingLeft);
                             switch (GameManager.instance.StrikeSuccessful(owner.playerIndex)) {
@@ -72,6 +73,7 @@ public class StateStrike : PlayerState
                                 case 2:
                                     owner.animator.SetTrigger("victory");
                                     owner.opponent.animator.SetTrigger("death");
+                                    AudioManager.instance.Death();
                                     break;
                             };
                             owner.fury.furyMultiplication(owner.fury.winnerFuryPercentageLeft);
