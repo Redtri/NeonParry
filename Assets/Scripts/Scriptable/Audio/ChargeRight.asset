@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 351b7097f3932d045b668de69225be15, type: 3}
-  m_Name: Charge
+  m_Name: ChargeRight
   m_EditorClassIdentifier: 
   actionSounds:
   - idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: a97f38f7d0b7edc47ab089e134e8612e,
+    WwiseObjectReference: {fileID: 11400000, guid: ea197e0d9c480cb49bfaa285542a26ab,
       type: 2}
   - idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: bc4e368762bf547e1b4974443117b32a,
+    WwiseObjectReference: {fileID: 11400000, guid: 9a284791f4fe1af40a0d65a5a328af5c,
       type: 2}
   - idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 11045925571868b4480760db903f348b,
+    WwiseObjectReference: {fileID: 11400000, guid: 368e030ff39463140bb14f94b9a842b9,
       type: 2}
   additionalSounds: []

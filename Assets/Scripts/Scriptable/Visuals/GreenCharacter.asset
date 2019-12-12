@@ -26,3 +26,45 @@ MonoBehaviour:
   - {fileID: -6994743171975031132, guid: 405af34020090fb44a307dbe49ef50bb, type: 3}
   - {fileID: 1870929858507331550, guid: 405af34020090fb44a307dbe49ef50bb, type: 3}
   - {fileID: -7232564425077555335, guid: 405af34020090fb44a307dbe49ef50bb, type: 3}
+  fxHitGround:
+    field: 1
+    colors:
+    - {r: 1, g: 0, b: 0.6679425, a: 0}
+    - {r: 0.9528302, g: 0.0764062, b: 0.0764062, a: 0}
+    childs: []
+  fxTrailDash:
+    field: 0
+    colors: []
+    childs: []
+  fxFury:
+    field: 0
+    colors: []
+    childs: []
+  fxShield:
+    field: 0
+    colors: []
+    childs: []
+  fxFuryAura:
+    field: 0
+    colors: []
+    childs: []
+  fxLowAttack:
+    field: 0
+    colors: []
+    childs: []
+  fxHighAttack:
+    field: 0
+    colors: []
+    childs: []
+  fxMidAttack:
+    field: 0
+    colors: []
+    childs: []
+  fxEyeTrail1:
+    field: 0
+    colors: []
+    childs: []
+  fxEyeTrail2:
+    field: 0
+    colors: []
+    childs: []

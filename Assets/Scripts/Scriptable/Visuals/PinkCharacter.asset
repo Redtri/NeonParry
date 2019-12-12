@@ -26,3 +26,70 @@ MonoBehaviour:
   - {fileID: 8246212587915640402, guid: b542bb9f351b40b4582dd8b348a31608, type: 3}
   - {fileID: 7993184637130844341, guid: b542bb9f351b40b4582dd8b348a31608, type: 3}
   - {fileID: 4828139379128379279, guid: b542bb9f351b40b4582dd8b348a31608, type: 3}
+  fxHitGround:
+    field: 1
+    colors:
+    - {r: 0.9811321, g: 0.1064436, b: 0.61312014, a: 0}
+    - {r: 1, g: 0, b: 0.43138313, a: 0}
+    childs:
+    - field: 1
+      colors:
+      - {r: 0.601108, g: 0.19063723, b: 0.6415094, a: 0}
+      - {r: 1, g: 0.023584902, b: 0.5100423, a: 0}
+      childs: []
+    - field: 1
+      colors:
+      - {r: 0.601108, g: 0.19063723, b: 0.6415094, a: 0}
+      - {r: 1, g: 0.023584902, b: 0.5100423, a: 0}
+      childs: []
+    - field: 0
+      colors:
+      - {r: 0.601108, g: 0.19063723, b: 0.6415094, a: 0}
+      - {r: 1, g: 0.023584902, b: 0.5100423, a: 0}
+      childs: []
+    - field: 1
+      colors:
+      - {r: 0.601108, g: 0.19063723, b: 0.6415094, a: 0}
+      - {r: 1, g: 0.023584902, b: 0.5100423, a: 0}
+      childs: []
+    - field: 1
+      colors:
+      - {r: 0.601108, g: 0.19063723, b: 0.6415094, a: 0}
+      - {r: 1, g: 0.023584902, b: 0.5100423, a: 0}
+      childs: []
+  fxTrailDash:
+    field: 0
+    colors: []
+    childs: []
+  fxFury:
+    field: 0
+    colors: []
+    childs: []
+  fxShield:
+    field: 0
+    colors: []
+    childs: []
+  fxFuryAura:
+    field: 0
+    colors: []
+    childs: []
+  fxLowAttack:
+    field: 0
+    colors: []
+    childs: []
+  fxHighAttack:
+    field: 0
+    colors: []
+    childs: []
+  fxMidAttack:
+    field: 0
+    colors: []
+    childs: []
+  fxEyeTrail1:
+    field: 0
+    colors: []
+    childs: []
+  fxEyeTrail2:
+    field: 0
+    colors: []
+    childs: []

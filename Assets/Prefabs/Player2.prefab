@@ -225,6 +225,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 1.072
       objectReference: {fileID: 0}
+    - target: {fileID: 7713984672407417320, guid: dc7450c1e03c9854ca86db3c72446622,
+        type: 3}
+      propertyPath: fxHitGround
+      value: 
+      objectReference: {fileID: 5813123397657411051}
     - target: {fileID: 4988402535678216404, guid: dc7450c1e03c9854ca86db3c72446622,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -239,6 +244,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 3.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 2176786242791582002, guid: dc7450c1e03c9854ca86db3c72446622,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5278461372971043100, guid: dc7450c1e03c9854ca86db3c72446622,
         type: 3}
@@ -586,6 +596,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b08699110fda4794a993cb136e427d9b, type: 3}
+--- !u!198 &5813123397657411051 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 631815109122227957, guid: b08699110fda4794a993cb136e427d9b,
+    type: 3}
+  m_PrefabInstance: {fileID: 6370610575819784990}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6373930716516252924
 PrefabInstance:
   m_ObjectHideFlags: 0

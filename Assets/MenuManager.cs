@@ -52,7 +52,9 @@ public class MenuManager : MonoBehaviour
         ++nbPlayerReady;
         if (nbPlayerReady == 2) {
             GameInfos.playerInfos[0].controller.Unsubscribe();
+            Destroy(GameInfos.playerInfos[0].controller.gameObject);
             GameInfos.playerInfos[1].controller.Unsubscribe();
+            Destroy(GameInfos.playerInfos[1].controller.gameObject);
             Invoke("LoadScene", 0.5f);
         }
     }
@@ -89,7 +91,11 @@ public class MenuManager : MonoBehaviour
                 break;
         }
         if (playerIndex <= 2) {
-            GameInfos.playerInfos.Add(new PlayerInfo(newPlayer, playerIndex, newPlayer.GetComponent<PlayerInput>().devices[0]));
+            if (newPlayer.GetComponent<PlayerInput>().devices.Count > 1) {
+                GameInfos.playerInfos.Add(new PlayerInfo(newPlayer, playerIndex, newPlayer.GetComponent<PlayerInput>().devices[0], newPlayer.GetComponent<PlayerInput>().devices[1]));
+            } else {
+                GameInfos.playerInfos.Add(new PlayerInfo(newPlayer, playerIndex, newPlayer.GetComponent<PlayerInput>().devices[0]));
+            }
         }
 
         return playerIndex;

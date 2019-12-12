@@ -25,18 +25,18 @@ public class StateStrike : PlayerState
     public override void Update() {
         base.Update();
         if (owner.opponent != null) {
-            if (owner.opponent.parry.IsActionPerforming(Time.time, actionInfos.direction)) {
+            if (owner.opponent.parryAction.IsActionPerforming(Time.time, actionInfos.direction)) {
                 Debug.Log("Opponent parried successfully");
                 opponentParried = true;
                 owner.animator.SetTrigger("knockback");
                 //TODO : FIXME
-                owner.opponent.parry.BlankRefreshTime(Time.time);
+                owner.opponent.parryAction.BlankRefreshTime(Time.time);
                 stateMachine.ChangeState(nextState, false);
-            } else if (owner.opponent.dash.IsActionPerforming(Time.time)) {
+            } else if (owner.opponent.dashAction.IsActionPerforming(Time.time)) {
                 Debug.Log("Opponent dodged, coward !");
                 opponentDashed = true;
                 nextState = ePLAYER_STATE.REPOS;
-            }else if(owner.opponent.strike.IsActionPerforming(Time.time, actionInfos.direction)) {
+            }else if(owner.opponent.strikeAction.IsActionPerforming(Time.time, actionInfos.direction)) {
                 Debug.Log("Clash");
                 clash = true;
                 FX_Manager.instance.ClashFX();
@@ -49,7 +49,7 @@ public class StateStrike : PlayerState
     public override void Exit(bool reset = false)
     {
         base.Exit(reset);
-        owner.charge.Refresh(Time.time, true);
+        owner.chargeAction.Refresh(Time.time, true);
         if (owner.opponent != null)
         {
             if (!opponentParried)
@@ -61,7 +61,7 @@ public class StateStrike : PlayerState
                         if (!clash) {
                             GameManager.instance.isStopGame();
                             owner.furyChange(actionInfos.furyModificationOnSuccess); //change the fury of a fixed amount
-                            owner.opponent.fxHandler.SpawnFX(ePLAYER_STATE.STRIKE);
+                            owner.opponent.fxHandler.SpawnFX(ePLAYER_STATE.STRIKE, actionInfos.direction, owner.facingLeft);
                             switch (GameManager.instance.StrikeSuccessful(owner.playerIndex)) {
                                 case 0:
                                     owner.opponent.animator.SetTrigger("hit");
@@ -75,14 +75,14 @@ public class StateStrike : PlayerState
                                     break;
                             };
                             owner.fury.furyMultiplication(owner.fury.winnerFuryPercentageLeft);
-                            actionInfos.samples.additionalSounds[0].Post(owner.gameObject);
+                            actionInfos.currentSamples.additionalSounds[0].Post(owner.gameObject);
                         }
                     }
                 }
             }
             else
             {
-                actionInfos.samples.additionalSounds[0].Post(owner.gameObject);
+                actionInfos.currentSamples.additionalSounds[0].Post(owner.gameObject);
             }
         }
         base.Exit(reset);

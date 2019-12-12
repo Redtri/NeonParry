@@ -10,15 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 351b7097f3932d045b668de69225be15, type: 3}
-  m_Name: Strike
+  m_Name: ParryLeft
   m_EditorClassIdentifier: 
-  actionSounds: []
+  actionSounds:
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 53ee73ff9eab6f841a13c3ca60e23ffa,
+      type: 2}
   additionalSounds:
   - idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 537474f76f33749c384e4c58ee2b66c5,
+    WwiseObjectReference: {fileID: 11400000, guid: aa3952b8a1d067a448f9b55a26407c77,
       type: 2}
   - idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 9a5f01fa22f3f484d8b34db416a57ab0,
+    WwiseObjectReference: {fileID: 11400000, guid: 957680d1618bbd84e9df958f1eddf8d7,
       type: 2}

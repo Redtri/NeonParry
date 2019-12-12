@@ -1710,7 +1710,12 @@ MonoBehaviour:
     winnerFuryPercentageLeft: 0.5
     isFeintAndChargeTheSame: 0
     percentagePerfectParyFury: 10
-  strike:
+  strikeInfos: {fileID: 11400000, guid: 18ecffe09a8d31648a5e327fbbc8726b, type: 2}
+  chargeInfos: {fileID: 11400000, guid: 4e40bd5b3fa59aa41aafda007a401a92, type: 2}
+  parryInfos: {fileID: 11400000, guid: f1a4cdf68f62362489cd8dd577480134, type: 2}
+  dashInfos: {fileID: 11400000, guid: d7c88460c0743f94483b3ea5450193fe, type: 2}
+  reposInfos: {fileID: 11400000, guid: b75cdabdfc035bd47b0065fe3df9230d, type: 2}
+  strikeAction:
     baseCooldownDuration: 0
     fury:
       lowestValueOfFury: 0
@@ -1725,62 +1730,7 @@ MonoBehaviour:
     currentCooldownDuration: 0
     percentageWeightFuryOnCD: 0
     lastRefreshTime: 0
-    baseActionDuration: 0.25
-    currentActionDuration: 0
-    percentageWeightFury: 0.5
-    furyModificationOnSuccess: 3
-    perfectPercentTiming: 0.7
-    direction: 0
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.52407026
-        value: 0.21300133
-        inSlope: 1.0128763
-        outSlope: 1.0128763
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 2
-        outSlope: 2
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    samples: {fileID: 11400000, guid: 522ef02ebe727b2478cf0cbdc07181b9, type: 2}
-  charge:
-    baseCooldownDuration: 2
-    fury:
-      lowestValueOfFury: 0
-      highestValueOfFury: 0
-      currentFury: 0
-      startingValueOfFury: 0
-      minimumMultiplicator: 0
-      maximumMultiplicator: 0
-      winnerFuryPercentageLeft: 0
-      isFeintAndChargeTheSame: 0
-      percentagePerfectParyFury: 0
-    currentCooldownDuration: 0
-    percentageWeightFuryOnCD: 0
-    lastRefreshTime: 0
-    baseActionDuration: 1
+    baseActionDuration: 0
     currentActionDuration: 0
     percentageWeightFury: 0
     furyModificationOnSuccess: 0
@@ -1792,82 +1742,10 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    samples: {fileID: 11400000, guid: 58a0927b5967f654282ed7ee8fe6d57c, type: 2}
-  parry:
-    baseCooldownDuration: 2
-    fury:
-      lowestValueOfFury: 0
-      highestValueOfFury: 0
-      currentFury: 0
-      startingValueOfFury: 0
-      minimumMultiplicator: 0
-      maximumMultiplicator: 0
-      winnerFuryPercentageLeft: 0
-      isFeintAndChargeTheSame: 0
-      percentagePerfectParyFury: 0
-    currentCooldownDuration: 0
-    percentageWeightFuryOnCD: 100
-    lastRefreshTime: 0
-    baseActionDuration: 0.53
-    currentActionDuration: 0
-    percentageWeightFury: 0
-    furyModificationOnSuccess: 10
-    perfectPercentTiming: 0
-    direction: 0
-    curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    samples: {fileID: 11400000, guid: 630566b821809cb4d93f5bf32277fd68, type: 2}
-  dash:
-    baseCooldownDuration: 2
-    fury:
-      lowestValueOfFury: 0
-      highestValueOfFury: 0
-      currentFury: 0
-      startingValueOfFury: 0
-      minimumMultiplicator: 0
-      maximumMultiplicator: 0
-      winnerFuryPercentageLeft: 0
-      isFeintAndChargeTheSame: 0
-      percentagePerfectParyFury: 0
-    currentCooldownDuration: 0
-    percentageWeightFuryOnCD: 0
-    lastRefreshTime: 0
-    baseActionDuration: 0.18
-    currentActionDuration: 0
-    percentageWeightFury: 0
-    furyModificationOnSuccess: 0
-    perfectPercentTiming: 0
-    direction: 0
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    samples: {fileID: 11400000, guid: 3a35b764c9817c0468bbe3625c6b8b9a, type: 2}
-  stop:
+    leftSamples: {fileID: 0}
+    rightSamples: {fileID: 0}
+    currentSamples: {fileID: 0}
+  chargeAction:
     baseCooldownDuration: 0
     fury:
       lowestValueOfFury: 0
@@ -1882,7 +1760,7 @@ MonoBehaviour:
     currentCooldownDuration: 0
     percentageWeightFuryOnCD: 0
     lastRefreshTime: 0
-    baseActionDuration: 2
+    baseActionDuration: 0
     currentActionDuration: 0
     percentageWeightFury: 0
     furyModificationOnSuccess: 0
@@ -1894,9 +1772,11 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    samples: {fileID: 0}
-  repos:
-    baseCooldownDuration: 0.1
+    leftSamples: {fileID: 0}
+    rightSamples: {fileID: 0}
+    currentSamples: {fileID: 0}
+  parryAction:
+    baseCooldownDuration: 0
     fury:
       lowestValueOfFury: 0
       highestValueOfFury: 0
@@ -1910,7 +1790,7 @@ MonoBehaviour:
     currentCooldownDuration: 0
     percentageWeightFuryOnCD: 0
     lastRefreshTime: 0
-    baseActionDuration: 1.2
+    baseActionDuration: 0
     currentActionDuration: 0
     percentageWeightFury: 0
     furyModificationOnSuccess: 0
@@ -1918,29 +1798,73 @@ MonoBehaviour:
     direction: 0
     curve:
       serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
+      m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    samples: {fileID: 11400000, guid: 9a53321b929a19d4591e9f4591098f92, type: 2}
+    leftSamples: {fileID: 0}
+    rightSamples: {fileID: 0}
+    currentSamples: {fileID: 0}
+  dashAction:
+    baseCooldownDuration: 0
+    fury:
+      lowestValueOfFury: 0
+      highestValueOfFury: 0
+      currentFury: 0
+      startingValueOfFury: 0
+      minimumMultiplicator: 0
+      maximumMultiplicator: 0
+      winnerFuryPercentageLeft: 0
+      isFeintAndChargeTheSame: 0
+      percentagePerfectParyFury: 0
+    currentCooldownDuration: 0
+    percentageWeightFuryOnCD: 0
+    lastRefreshTime: 0
+    baseActionDuration: 0
+    currentActionDuration: 0
+    percentageWeightFury: 0
+    furyModificationOnSuccess: 0
+    perfectPercentTiming: 0
+    direction: 0
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    leftSamples: {fileID: 0}
+    rightSamples: {fileID: 0}
+    currentSamples: {fileID: 0}
+  reposAction:
+    baseCooldownDuration: 0
+    fury:
+      lowestValueOfFury: 0
+      highestValueOfFury: 0
+      currentFury: 0
+      startingValueOfFury: 0
+      minimumMultiplicator: 0
+      maximumMultiplicator: 0
+      winnerFuryPercentageLeft: 0
+      isFeintAndChargeTheSame: 0
+      percentagePerfectParyFury: 0
+    currentCooldownDuration: 0
+    percentageWeightFuryOnCD: 0
+    lastRefreshTime: 0
+    baseActionDuration: 0
+    currentActionDuration: 0
+    percentageWeightFury: 0
+    furyModificationOnSuccess: 0
+    perfectPercentTiming: 0
+    direction: 0
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    leftSamples: {fileID: 0}
+    rightSamples: {fileID: 0}
+    currentSamples: {fileID: 0}
   angleFullWindow: 130
   nbDirections: 3
   facingLeft: 0
@@ -2632,6 +2556,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6456066603297020624, guid: bdaa1317eef2f4c4b83e8de36a7945cc,
+        type: 3}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456066603297020624, guid: bdaa1317eef2f4c4b83e8de36a7945cc,
+        type: 3}
+      propertyPath: TrailModule.widthOverTrail.minScalar
+      value: 5.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456066603297020624, guid: bdaa1317eef2f4c4b83e8de36a7945cc,
+        type: 3}
+      propertyPath: TrailModule.widthOverTrail.scalar
+      value: 6.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458017459153129700, guid: bdaa1317eef2f4c4b83e8de36a7945cc,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6581915550035048910, guid: bdaa1317eef2f4c4b83e8de36a7945cc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2696,26 +2640,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 4.6500063
-      objectReference: {fileID: 0}
-    - target: {fileID: 6456066603297020624, guid: bdaa1317eef2f4c4b83e8de36a7945cc,
-        type: 3}
-      propertyPath: looping
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6456066603297020624, guid: bdaa1317eef2f4c4b83e8de36a7945cc,
-        type: 3}
-      propertyPath: TrailModule.widthOverTrail.minScalar
-      value: 5.21
-      objectReference: {fileID: 0}
-    - target: {fileID: 6456066603297020624, guid: bdaa1317eef2f4c4b83e8de36a7945cc,
-        type: 3}
-      propertyPath: TrailModule.widthOverTrail.scalar
-      value: 6.86
-      objectReference: {fileID: 0}
-    - target: {fileID: 6458017459153129700, guid: bdaa1317eef2f4c4b83e8de36a7945cc,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdaa1317eef2f4c4b83e8de36a7945cc, type: 3}
@@ -3149,6 +3073,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8456423413388141815, guid: 9f5df837c2f192c4280779f1c779e57b,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 36206633
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456423413388141815, guid: 9f5df837c2f192c4280779f1c779e57b,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8617567516785384165, guid: 9f5df837c2f192c4280779f1c779e57b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3204,32 +3138,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.49600002
       objectReference: {fileID: 0}
-    - target: {fileID: 8456423413388141815, guid: 9f5df837c2f192c4280779f1c779e57b,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: 36206633
-      objectReference: {fileID: 0}
-    - target: {fileID: 8456423413388141815, guid: 9f5df837c2f192c4280779f1c779e57b,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 5549091854570163905, guid: 9f5df837c2f192c4280779f1c779e57b,
         type: 3}
       propertyPath: m_SortingLayerID
       value: 36206633
       objectReference: {fileID: 0}
     - target: {fileID: 5549091854570163905, guid: 9f5df837c2f192c4280779f1c779e57b,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8457316038166440609, guid: 9f5df837c2f192c4280779f1c779e57b,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: 36206633
-      objectReference: {fileID: 0}
-    - target: {fileID: 8457316038166440609, guid: 9f5df837c2f192c4280779f1c779e57b,
         type: 3}
       propertyPath: m_SortingLayer
       value: 3
@@ -3244,12 +3158,22 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 8457035313416444653, guid: 9f5df837c2f192c4280779f1c779e57b,
+    - target: {fileID: 8457249701364629663, guid: 9f5df837c2f192c4280779f1c779e57b,
         type: 3}
       propertyPath: m_SortingLayerID
       value: 36206633
       objectReference: {fileID: 0}
-    - target: {fileID: 8457035313416444653, guid: 9f5df837c2f192c4280779f1c779e57b,
+    - target: {fileID: 8457249701364629663, guid: 9f5df837c2f192c4280779f1c779e57b,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8457316038166440609, guid: 9f5df837c2f192c4280779f1c779e57b,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 36206633
+      objectReference: {fileID: 0}
+    - target: {fileID: 8457316038166440609, guid: 9f5df837c2f192c4280779f1c779e57b,
         type: 3}
       propertyPath: m_SortingLayer
       value: 3
@@ -3264,12 +3188,12 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 8457249701364629663, guid: 9f5df837c2f192c4280779f1c779e57b,
+    - target: {fileID: 8457035313416444653, guid: 9f5df837c2f192c4280779f1c779e57b,
         type: 3}
       propertyPath: m_SortingLayerID
       value: 36206633
       objectReference: {fileID: 0}
-    - target: {fileID: 8457249701364629663, guid: 9f5df837c2f192c4280779f1c779e57b,
+    - target: {fileID: 8457035313416444653, guid: 9f5df837c2f192c4280779f1c779e57b,
         type: 3}
       propertyPath: m_SortingLayer
       value: 3
@@ -3477,16 +3401,6 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 974022260335587237, guid: 25590d53d86c8194a8a385034698549a,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: 36206633
-      objectReference: {fileID: 0}
-    - target: {fileID: 974022260335587237, guid: 25590d53d86c8194a8a385034698549a,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 974165770830105589, guid: 25590d53d86c8194a8a385034698549a,
         type: 3}
       propertyPath: m_SortingLayerID
@@ -3497,12 +3411,22 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 974867667018113001, guid: 25590d53d86c8194a8a385034698549a,
+    - target: {fileID: 974022260335587237, guid: 25590d53d86c8194a8a385034698549a,
         type: 3}
       propertyPath: m_SortingLayerID
       value: 36206633
       objectReference: {fileID: 0}
-    - target: {fileID: 974867667018113001, guid: 25590d53d86c8194a8a385034698549a,
+    - target: {fileID: 974022260335587237, guid: 25590d53d86c8194a8a385034698549a,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 974799594965775831, guid: 25590d53d86c8194a8a385034698549a,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 36206633
+      objectReference: {fileID: 0}
+    - target: {fileID: 974799594965775831, guid: 25590d53d86c8194a8a385034698549a,
         type: 3}
       propertyPath: m_SortingLayer
       value: 3
@@ -3517,12 +3441,12 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 974799594965775831, guid: 25590d53d86c8194a8a385034698549a,
+    - target: {fileID: 974867667018113001, guid: 25590d53d86c8194a8a385034698549a,
         type: 3}
       propertyPath: m_SortingLayerID
       value: 36206633
       objectReference: {fileID: 0}
-    - target: {fileID: 974799594965775831, guid: 25590d53d86c8194a8a385034698549a,
+    - target: {fileID: 974867667018113001, guid: 25590d53d86c8194a8a385034698549a,
         type: 3}
       propertyPath: m_SortingLayer
       value: 3

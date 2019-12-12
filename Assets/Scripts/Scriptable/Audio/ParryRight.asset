@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 351b7097f3932d045b668de69225be15, type: 3}
-  m_Name: Parry
+  m_Name: ParryRight
   m_EditorClassIdentifier: 
   actionSounds:
   - idInternal: 0
@@ -20,5 +20,9 @@ MonoBehaviour:
   additionalSounds:
   - idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: aa3952b8a1d067a448f9b55a26407c77,
+    WwiseObjectReference: {fileID: 11400000, guid: 2815908fdc8bb01479bc0429a19861bd,
+      type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: f816891c81ad0774595aac7205a18676,
       type: 2}

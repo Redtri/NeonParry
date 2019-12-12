@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4db88a67ce0a84144a0c3a9e5061dc88, type: 3}
   m_Name: Charge
   m_EditorClassIdentifier: 
-  infos:
-    baseCooldownDuration: 0
+  parameters:
+    baseCooldownDuration: 0.8
     fury:
       lowestValueOfFury: 0
       highestValueOfFury: 0
@@ -25,11 +25,11 @@ MonoBehaviour:
       isFeintAndChargeTheSame: 0
       percentagePerfectParyFury: 0
     currentCooldownDuration: 0
-    percentageWeightFuryOnCD: 0
+    percentageWeightFuryOnCD: 1
     lastRefreshTime: 0
-    baseActionDuration: 0
+    baseActionDuration: 1
     currentActionDuration: 0
-    percentageWeightFury: 0
+    percentageWeightFury: 0.5
     furyModificationOnSuccess: 0
     perfectPercentTiming: 0
     direction: 0
@@ -39,4 +39,6 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    samples: {fileID: 0}
+    leftSamples: {fileID: 11400000, guid: 58a0927b5967f654282ed7ee8fe6d57c, type: 2}
+    rightSamples: {fileID: 11400000, guid: 629ff1d285526fd459b7930d373e0463, type: 2}
+    currentSamples: {fileID: 0}

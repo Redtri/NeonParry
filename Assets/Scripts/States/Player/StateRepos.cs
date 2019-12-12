@@ -18,11 +18,11 @@ public class StateRepos : PlayerState
             owner.animator.SetTrigger(stateMachine.currentState.ToString().ToLower());
             owner.cursorAnimator.SetTrigger(stateMachine.currentState.ToString().ToLower());
         }
-        if (actionInfos.samples != null) {
-            if (actionInfos.samples.actionSounds.Length > 1) {
-                actionInfos.samples.actionSounds[(int)actionInfos.direction - 1].Post(owner.gameObject);
-            } else if (actionInfos.samples.actionSounds.Length > 0) {
-                actionInfos.samples.actionSounds[0].Post(owner.gameObject);
+        if (actionInfos.currentSamples != null) {
+            if (actionInfos.currentSamples.actionSounds.Length > 1) {
+                actionInfos.currentSamples.actionSounds[(int)actionInfos.direction - 1].Post(owner.gameObject);
+            } else if (actionInfos.currentSamples.actionSounds.Length > 0) {
+                actionInfos.currentSamples.actionSounds[0].Post(owner.gameObject);
             }
             actionInfos.Refresh(Time.time, true);
             owner.animator.SetInteger("direction", (int)actionInfos.direction);

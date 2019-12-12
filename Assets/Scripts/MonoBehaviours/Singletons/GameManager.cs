@@ -5,6 +5,8 @@ using Cinemachine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
+public enum eGAME_PHASE { TITLE, MENU, GAME, SCORE}
+
 public class GameManager : MonoBehaviour
 {
     public GameObject[] prefabs;
@@ -27,6 +29,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance { get; private set; }
     public Cinemachine.CinemachineVirtualCamera camera;
     public InterpItem cameraCenterPoint;
+    public eGAME_PHASE currentPhase;
 
     private int currentNbPlayers = 0;
 

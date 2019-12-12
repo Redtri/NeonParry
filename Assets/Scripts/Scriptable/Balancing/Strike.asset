@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4db88a67ce0a84144a0c3a9e5061dc88, type: 3}
-  m_Name: Repos
+  m_Name: Strike
   m_EditorClassIdentifier: 
   parameters:
-    baseCooldownDuration: 0.1
+    baseCooldownDuration: 0
     fury:
       lowestValueOfFury: 0
       highestValueOfFury: 0
@@ -26,37 +26,19 @@ MonoBehaviour:
       percentagePerfectParyFury: 0
     currentCooldownDuration: 0
     percentageWeightFuryOnCD: 0
-    lastRefreshTime: 54.544754
-    baseActionDuration: 1.2
+    lastRefreshTime: 0
+    baseActionDuration: 0.25
     currentActionDuration: 0
-    percentageWeightFury: 0
-    furyModificationOnSuccess: 0
-    perfectPercentTiming: 0
+    percentageWeightFury: 0.5
+    furyModificationOnSuccess: 3
+    perfectPercentTiming: 0.6
     direction: 0
     curve:
       serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 2
-        outSlope: 2
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
+      m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    leftSamples: {fileID: 11400000, guid: 9a53321b929a19d4591e9f4591098f92, type: 2}
-    rightSamples: {fileID: 11400000, guid: 9a53321b929a19d4591e9f4591098f92, type: 2}
-    currentSamples: {fileID: 11400000, guid: 9a53321b929a19d4591e9f4591098f92, type: 2}
+    leftSamples: {fileID: 11400000, guid: 522ef02ebe727b2478cf0cbdc07181b9, type: 2}
+    rightSamples: {fileID: 11400000, guid: 8c3b0b9c33413664f871b2b50461a7f8, type: 2}
+    currentSamples: {fileID: 0}

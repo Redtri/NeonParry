@@ -7,145 +7,6 @@ using UnityEngine.SceneManagement;
 public enum eDIRECTION { NONE, UP, MID, DOWN };
 public enum eCONTROLLER { KEYBOARD, GAMEPAD };
 
-//CLASSES
-[System.Serializable]
-public class SwordAction : Action {
-    [HideInInspector] public eDIRECTION direction;
-    public AnimationCurve curve;
-    public AudioSampler samples;
-
-    public bool IsActionPerforming(float time, eDIRECTION tDirection) {
-        return base.IsActionPerforming(time) && direction == tDirection;
-    }
-}
-
-[System.Serializable]
-public class Action : Cooldown {
-    public float baseActionDuration;
-    public float currentActionDuration;
-    public float percentageWeightFury; //how much, in percentage, the Action is affected by the fury
-    public int furyModificationOnSuccess; //how much the fury changed when the Action is perform successfully
-    public float perfectPercentTiming;
-
-    public void updateCurrentActionDuration()
-    {
-        currentActionDuration = fury.speedMultiplicator(percentageWeightFury) * baseActionDuration;
-    }
-    public override void Init(float time) {
-        base.Init(time);
-        currentActionDuration = baseActionDuration;
-    }
-
-    public bool IsActionPerforming(float time) {
-        return (time <= lastRefreshTime + currentActionDuration);
-    }
-
-    //OTHER
-    public float GetPercentTime(float time) {
-        return ((time - lastRefreshTime) / currentActionDuration);
-    }
-}
-
-//TODO : We may want to create a separate class file for this one as Cooldowns could be used by other classes.
-[System.Serializable]
-public class Cooldown {
-    public float baseCooldownDuration;
-    [HideInInspector] public Fury fury;
-    public float currentCooldownDuration;
-    public float percentageWeightFuryOnCD; //how much, in percentage, the Action cooldown is affected by the fury
-    [HideInInspector] public float lastRefreshTime;
-
-    //INIT
-    public virtual void Init(float time) {
-        currentCooldownDuration = baseCooldownDuration;
-        BlankRefreshTime(time);
-    }
-
-    public void BlankRefreshTime(float time) {
-        lastRefreshTime = time - currentCooldownDuration;
-    }
-
-    //TESTS
-    public bool CanRefresh(float time) {
-        return (time - lastRefreshTime > currentCooldownDuration || currentCooldownDuration == 0.0f);
-    }
-
-    //OPERATIONS
-    public void Refresh(float time, bool force = false) {
-        if (force || CanRefresh(time)) {
-            lastRefreshTime = time;
-        }
-    }
-
-    public void updateCurrentCooldownDuration (bool current = false) {
-        currentCooldownDuration = fury.speedMultiplicator(percentageWeightFuryOnCD) * baseCooldownDuration;
-        if (current) {
-            currentCooldownDuration = fury.speedMultiplicator(percentageWeightFuryOnCD) * currentCooldownDuration;
-        } else {
-        }
-    }
-
-    public void setFury(Fury f)
-    {
-        fury = f;
-    }
-}
-
-[System.Serializable]
-public class Fury
-{
-    public int lowestValueOfFury; //the lowest cap of fury 
-    public int highestValueOfFury; //the higher cap of fury ; must be bigger (strictly) than lowestValueOfFury
-    public int currentFury; //actual value of the player's Fury // should be [HideInInspector]
-    public int startingValueOfFury; //the base value of the fury when a new match start, must be beetween lowestValueOfFury and HighestValueOfFury
-    public int minimumMultiplicator; //indicate how many times faster an action is at 0% of fury
-    public int maximumMultiplicator; //indicate how many times faster an action is at 100% of fury
-    public float winnerFuryPercentageLeft; //wich percentage of his current fury the winner keep
-    public bool isFeintAndChargeTheSame; //determine if theire's the need to separate Feinte and Charge
-    public float percentagePerfectParyFury; //how much better, in percentage, is a perfect parry
-
-    public float speedMultiplicator (float percentageWeight)
-    {
-        float proportionOfFury = ((float)currentFury / ((float)highestValueOfFury - (float)lowestValueOfFury)); // can't be <1
-        float proportionOfMultiplicator = ((float)maximumMultiplicator - (float)minimumMultiplicator); // if we're max fury we need to return 1/maximumMultiplicator, if we're at 0 fury we need to return 1/minimumMultiplicator
-        float weight = percentageWeight;
-        float ret = ((float)minimumMultiplicator + (proportionOfFury * proportionOfMultiplicator) * weight);// [1/] because we need a multiplicator that reduce speed ; [minimumMultiplicator+] to be sure that at 0% fury we multipli by the right amount 
-
-        if (ret != 0) return (float)1 /ret; //that formula is so much dependent on so much variable we need to be sure
-        else return (float)1 / (float)10000; //because we don't really need to have that much of a specific case
-    }
-
-    public void resetFury()
-    {
-        currentFury = startingValueOfFury;
-    }
-    public void furyModification (float mod)
-    {
-        currentFury += (int)mod;
-        if (currentFury > highestValueOfFury) currentFury = highestValueOfFury;
-        else if (currentFury < lowestValueOfFury) currentFury = lowestValueOfFury;
-    }
-
-    public void furyMultiplication(float mult) {
-        float f = currentFury * mult;
-        currentFury = (int)f;
-        if (currentFury > highestValueOfFury)
-            currentFury = highestValueOfFury;
-        else if (currentFury < lowestValueOfFury)
-            currentFury = lowestValueOfFury;
-    }
-
-    public void furyModification (float mod, float perfectParry)
-    {
-        furyModification(mod*perfectParry);
-    }
-
-    public void Init()
-    {
-        currentFury = startingValueOfFury;
-    }
-}
-
 public class PlayerController : MonoBehaviour
 {
     //REFERENCES
@@ -162,12 +23,16 @@ public class PlayerController : MonoBehaviour
     //PARAMETERS
     [Header("PARAMETERS")]
     [SerializeField] public Fury fury;
-    [SerializeField] public SwordAction strike;
-    [SerializeField] public SwordAction charge;
-    [SerializeField] public SwordAction parry;
-    [SerializeField] public SwordAction dash;
-    [SerializeField] public SwordAction stop;
-    [SerializeField] public SwordAction repos;
+    [SerializeField] public ActionInfos strikeInfos;
+    [SerializeField] public ActionInfos chargeInfos;
+    [SerializeField] public ActionInfos parryInfos;
+    [SerializeField] public ActionInfos dashInfos;
+    [SerializeField] public ActionInfos reposInfos;
+    [HideInInspector] public SwordAction strikeAction;
+    [HideInInspector] public SwordAction chargeAction;
+    [HideInInspector] public SwordAction parryAction;
+    [HideInInspector] public SwordAction dashAction;
+    [HideInInspector] public SwordAction reposAction;
     [SerializeField, Range(0, 180)] private float angleFullWindow;
     [SerializeField, Range(2, 10)] private int nbDirections;
 
@@ -190,8 +55,13 @@ public class PlayerController : MonoBehaviour
     public StrikeEvent onStrike;
 
     private void Awake() {
-        
+        strikeAction = new SwordAction(strikeInfos.parameters);
+        chargeAction = new SwordAction(chargeInfos.parameters);
+        parryAction = new SwordAction(parryInfos.parameters);
+        dashAction = new SwordAction(dashInfos.parameters);
+        reposAction = new SwordAction(reposInfos.parameters);
 
+        currentDirection = eDIRECTION.MID;
         if (SceneManager.GetActiveScene().name == "IntroScene") {
             gameObject.AddComponent<SpriteController>();
         }
@@ -205,13 +75,11 @@ public class PlayerController : MonoBehaviour
 
 
         //VALUES
-        strike.setFury(fury);
-        charge.setFury(fury);
-        parry.setFury(fury);
-        dash.setFury(fury);
-        stop.setFury(fury);
+        strikeAction.setFury(fury);
+        chargeAction.setFury(fury);
+        parryAction.setFury(fury);
+        dashAction.setFury(fury);
 
-        machineState = new FSM_Player(this);
         angleFullWindow *= -1;
         currentSpotIndex = 0;
         performingAction = false;
@@ -227,13 +95,14 @@ public class PlayerController : MonoBehaviour
         //Charge cooldown is the "attack" skill cooldown, so it needs to consider the strike duration as part of its cooldown
 
         fury.Init();
-        charge.Init(Time.time);
-        strike.Init(Time.time);
-        parry.Init(Time.time);
-        dash.Init(Time.time);
-        repos.Init(Time.time);
-        stop.Init(Time.time);
+        chargeAction.Init(Time.time);
+        strikeAction.Init(Time.time);
+        parryAction.Init(Time.time);
+        dashAction.Init(Time.time);
+        reposAction.Init(Time.time);
         sword.Initialize(this);
+
+        machineState = new FSM_Player(this);
         // charge.currentCooldownDuration = strike.currentActionDuration + charge.currentCooldownDuration;
     }
 
@@ -257,6 +126,13 @@ public class PlayerController : MonoBehaviour
         inputSystem.currentActionMap["Dash"].started += OnDash;
         inputSystem.currentActionMap["Feint"].started += OnFeint;
         machineState.onStateChanged += UpdateLook;
+
+        chargeAction.SetSampleOwner(facingLeft);
+        strikeAction.SetSampleOwner(facingLeft);
+        parryAction.SetSampleOwner(facingLeft);
+        dashAction.SetSampleOwner(facingLeft);
+        reposAction.SetSampleOwner(facingLeft);
+        Debug.Log("Player facing " + ((facingLeft) ? "left" : "right"));
     }
 
     private void OnEnable() {
@@ -266,8 +142,9 @@ public class PlayerController : MonoBehaviour
     }
 
     public void Unsubscribe() {
-        inputSystem.currentActionMap["Look"].performed -= context => OnLook(context);
-        inputSystem.currentActionMap["Look"].canceled -= context => OnLook(context);
+        machineState.onStateChanged -= UpdateLook;
+        inputSystem.currentActionMap["Look"].performed -= OnLook;
+        inputSystem.currentActionMap["Look"].canceled -=  OnLook;
 
         inputSystem.currentActionMap["Strike"].started -= OnStrike;
         inputSystem.currentActionMap["Parry"].started -= OnParry;
@@ -279,6 +156,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update() {
         machineState.Update();
+        Debug.Log(gameObject.name + " " + strikeAction.lastRefreshTime + " " + strikeAction.IsActionPerforming(Time.time));
 
         if (machineState.currentState == ePLAYER_STATE.NEUTRAL) {
             performingAction = false;
@@ -317,6 +195,7 @@ public class PlayerController : MonoBehaviour
                 deg *= -1f;
             }
             currentDirection = (eDIRECTION)(nbDirections / Mathf.Abs(angleFullWindow / deg));
+            sword.transform.rotation = Quaternion.Euler(0, 0, deg);
         }
     }
 
@@ -325,10 +204,10 @@ public class PlayerController : MonoBehaviour
         {
             if (machineState.StateRequest(ePLAYER_STATE.CHARGE))
             {
-            onStrike?.Invoke(currentDirection, charge.currentActionDuration + strike.currentActionDuration);
-            charge.direction = currentDirection;
-            strike.direction = currentDirection;
-            machineState.ChangeState(ePLAYER_STATE.CHARGE);
+                onStrike?.Invoke(currentDirection, chargeAction.currentActionDuration + strikeAction.currentActionDuration);
+                chargeAction.direction = currentDirection;
+                strikeAction.direction = currentDirection;
+                machineState.ChangeState(ePLAYER_STATE.CHARGE);
             }
         }
     }
@@ -338,7 +217,7 @@ public class PlayerController : MonoBehaviour
         {
             if (machineState.StateRequest(ePLAYER_STATE.PARRY))
             {
-                parry.direction = currentDirection;
+                parryAction.direction = currentDirection;
                 machineState.ChangeState(ePLAYER_STATE.PARRY);
             }
         }
@@ -371,7 +250,7 @@ public class PlayerController : MonoBehaviour
         {
             if (machineState.StateRequest(ePLAYER_STATE.FEINT))
             {
-                charge.direction = currentDirection;
+                chargeAction.direction = currentDirection;
                 machineState.ChangeState(ePLAYER_STATE.FEINT);
             }
         }
@@ -390,7 +269,7 @@ public class PlayerController : MonoBehaviour
     }
 
     public void EventPlay(int index) {
-        repos.samples.additionalSounds[index].Post(gameObject);
+        reposAction.currentSamples.additionalSounds[index].Post(gameObject);
     }
 
     private void UpdateLook() {
@@ -441,28 +320,28 @@ public class PlayerController : MonoBehaviour
     }
 
     public void allActionsOnCd(float t) {
-        charge.currentCooldownDuration = t;
-        charge.Refresh(Time.time, true);
-        strike.currentCooldownDuration = t;
-        strike.Refresh(Time.time, true);
-        parry.currentCooldownDuration = t;
-        parry.Refresh(Time.time, true);
-        dash.currentCooldownDuration = t;
-        dash.Refresh(Time.time, true);
+        chargeAction.currentCooldownDuration = t;
+        chargeAction.Refresh(Time.time, true);
+        strikeAction.currentCooldownDuration = t;
+        strikeAction.Refresh(Time.time, true);
+        parryAction.currentCooldownDuration = t;
+        parryAction.Refresh(Time.time, true);
+        dashAction.currentCooldownDuration = t;
+        dashAction.Refresh(Time.time, true);
     }
 
     public void updateAllAction()
     {
-        charge.updateCurrentActionDuration();
-        charge.updateCurrentCooldownDuration();
+        chargeAction.updateCurrentActionDuration();
+        chargeAction.updateCurrentCooldownDuration();
 
-        strike.updateCurrentActionDuration();
-        strike.updateCurrentCooldownDuration();
+        strikeAction.updateCurrentActionDuration();
+        strikeAction.updateCurrentCooldownDuration();
 
-        parry.updateCurrentActionDuration();
-        parry.updateCurrentCooldownDuration();
+        parryAction.updateCurrentActionDuration();
+        parryAction.updateCurrentCooldownDuration();
 
-        dash.updateCurrentActionDuration();
-        dash.updateCurrentCooldownDuration();
+        dashAction.updateCurrentActionDuration();
+        dashAction.updateCurrentCooldownDuration();
     }
 }

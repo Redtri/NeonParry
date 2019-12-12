@@ -7,10 +7,13 @@ public class SpriteSwaper : MonoBehaviour
     public CharacterVisuals[] skins;
     public SpriteRenderer[] bodyParts;
 
+    private void Awake() {
+    }
+
     private void Update() {
         if (Input.GetKeyDown(KeyCode.G)) {
             PickSkin(1);
-        }else if (Input.GetKeyDown(KeyCode.H)) {
+        } else if (Input.GetKeyDown(KeyCode.H)) {
             PickSkin(0);
         }
     }

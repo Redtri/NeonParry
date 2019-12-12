@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4db88a67ce0a84144a0c3a9e5061dc88, type: 3}
   m_Name: Dash
   m_EditorClassIdentifier: 
-  infos:
-    baseCooldownDuration: 0
+  parameters:
+    baseCooldownDuration: 0.5
     fury:
       lowestValueOfFury: 0
       highestValueOfFury: 0
@@ -27,10 +27,10 @@ MonoBehaviour:
     currentCooldownDuration: 0
     percentageWeightFuryOnCD: 0
     lastRefreshTime: 0
-    baseActionDuration: 0
+    baseActionDuration: 0.18
     currentActionDuration: 0
     percentageWeightFury: 0
-    furyModificationOnSuccess: 0
+    furyModificationOnSuccess: -10
     perfectPercentTiming: 0
     direction: 0
     curve:
@@ -39,4 +39,6 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    samples: {fileID: 0}
+    leftSamples: {fileID: 11400000, guid: 3a35b764c9817c0468bbe3625c6b8b9a, type: 2}
+    rightSamples: {fileID: 11400000, guid: 3a35b764c9817c0468bbe3625c6b8b9a, type: 2}
+    currentSamples: {fileID: 0}

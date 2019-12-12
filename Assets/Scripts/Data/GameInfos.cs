@@ -7,11 +7,11 @@ public class PlayerInfo {
     [HideInInspector] public PlayerController controller;
     [HideInInspector] public int playerIndex;
     [HideInInspector] public int score;
-    [HideInInspector] public InputDevice device;
+    [HideInInspector] public InputDevice[] device;
     [HideInInspector] public int skin;
 
 
-    public PlayerInfo(PlayerController tController, int tPlayerIndex, InputDevice tDevice) {
+    public PlayerInfo(PlayerController tController, int tPlayerIndex, params InputDevice[] tDevice) {
         controller = tController;
         playerIndex = tPlayerIndex;
         device = tDevice;
@@ -21,4 +21,5 @@ public class PlayerInfo {
 public static class GameInfos {
 
     public static List<PlayerInfo> playerInfos = new List<PlayerInfo>();
+    public static eGAME_PHASE currentPhase;
 }

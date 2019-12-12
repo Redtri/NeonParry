@@ -30,11 +30,15 @@ public class FX_Handler : MonoBehaviour
         }
     }
 
-    public void SpawnFX(ePLAYER_STATE type, eDIRECTION direction = eDIRECTION.NONE) {
+    public void SpawnFX(ePLAYER_STATE type, eDIRECTION direction = eDIRECTION.NONE, bool facingLeft = false) {
         float zRot = 0f;
 
         if(direction != eDIRECTION.NONE) {
-            zRot = -45f * (int)direction;
+            if (facingLeft) {
+                zRot = -45f * (int)direction;
+            } else {
+                zRot = 45f * (int)direction;
+            }
         }
 
         switch (type) {

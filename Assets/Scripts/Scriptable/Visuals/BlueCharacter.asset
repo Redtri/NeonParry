@@ -26,3 +26,6 @@ MonoBehaviour:
   - {fileID: 7828682071026495602, guid: c4e56ba5e294a194691533b5751ee646, type: 3}
   - {fileID: 5471425452362824083, guid: c4e56ba5e294a194691533b5751ee646, type: 3}
   - {fileID: -2029220023171477421, guid: c4e56ba5e294a194691533b5751ee646, type: 3}
+  color: {r: 0, g: 0, b: 1, a: 0}
+  fxShield:
+    colors: []
