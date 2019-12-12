@@ -172,6 +172,26 @@ public class GameManager : MonoBehaviour
         score.Add(new int[2] { 0, 0 }); //for exchange won count
     }
 
+    public void resetRound()
+    {
+        StartCoroutine(RoundReset());
+        GameInfos.playerInfos[0].controller.onNeutral(); //stop at Neutral for player 1
+        GameInfos.playerInfos[1].controller.onNeutral(); //stop at Neutral for player 2
+    }
+
+    public IEnumerator RoundReset()
+    {
+        float refreshTime = Time.unscaledTime;
+        float duration = 3;
+        isStopGame();
+        int temp = 0;
+        while (temp < duration)
+        {
+            yield return new WaitForSeconds(1f);
+            ++temp;
+        }
+
+    }
     public void resetMatch()
     { //reste the score to 0/0
         //Debug.Log("match reset");
