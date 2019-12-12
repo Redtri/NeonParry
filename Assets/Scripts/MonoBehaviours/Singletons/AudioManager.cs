@@ -82,4 +82,8 @@ public class AudioManager : MonoBehaviour {
                 break;
         }
     }
+
+    public void Death() {
+        musicsGame[3].Post(gameObject);
+    }
 }

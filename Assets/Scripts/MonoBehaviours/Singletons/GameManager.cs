@@ -121,9 +121,11 @@ public class GameManager : MonoBehaviour
         onStrike?.Invoke(score[currentRound]);
         StartCoroutine(FreezeFrame(freezeFrameDuration));
         if (score[currentRound][playerIndex] >= nbExchangeForARound) {
+
             AkSoundEngine.PostEvent("death", gameObject);
             ++score[0][playerIndex];
             if (score[0][playerIndex] >= nbRoundForAMatch) {
+               
                 startNewMatch = true;
                 return 2;
             } else {

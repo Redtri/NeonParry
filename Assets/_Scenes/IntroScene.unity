@@ -1430,9 +1430,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3822954530596038550, guid: 025629b7bbbd3b841a8d1dcb4e029ed1,
         type: 3}
+      propertyPath: musicsGame.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822954530596038550, guid: 025629b7bbbd3b841a8d1dcb4e029ed1,
+        type: 3}
       propertyPath: menu.Array.data[0].WwiseObjectReference
       value: 
       objectReference: {fileID: 11400000, guid: c67048ee4e112e142a883de38f375a05,
+        type: 2}
+    - target: {fileID: 3822954530596038550, guid: 025629b7bbbd3b841a8d1dcb4e029ed1,
+        type: 3}
+      propertyPath: musicsGame.Array.data[3].WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 922bca23aa8c7dc48a1fa82761cb52cb,
         type: 2}
     - target: {fileID: 6268276688179462533, guid: 025629b7bbbd3b841a8d1dcb4e029ed1,
         type: 3}

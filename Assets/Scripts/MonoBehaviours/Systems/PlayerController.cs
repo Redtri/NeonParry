@@ -73,7 +73,6 @@ public class PlayerController : MonoBehaviour
         rb = this.GetComponent<Rigidbody2D>();
         fxHandler = this.GetComponent<FX_Handler>();
 
-
         //VALUES
         strikeAction.setFury(fury);
         chargeAction.setFury(fury);
@@ -91,8 +90,6 @@ public class PlayerController : MonoBehaviour
         }
 
         //LISTENERS
-
-        //Charge cooldown is the "attack" skill cooldown, so it needs to consider the strike duration as part of its cooldown
 
         fury.Init();
         chargeAction.Init(Time.time);
@@ -185,17 +182,16 @@ public class PlayerController : MonoBehaviour
                 look = value.ReadValue<Vector2>().normalized;
             }
             var angleRadians = Mathf.Atan2(look.y, Mathf.Abs(look.x));
-            var deg = (angleRadians * Mathf.Rad2Deg) - 90f;//-90 is offset sprite
+            var deg = ((angleRadians * Mathf.Rad2Deg) - 90f)%360;//-90 is offset sprite
+            var halfCirclePart = 180 / nbDirections; // determine the angle of a direction
+            int part = Mathf.Abs((int)(deg / halfCirclePart)); // in wich part will be the strike
+            var posKunai = (part * halfCirclePart) + (halfCirclePart / 2);
 
-            if (deg % (angleFullWindow / nbDirections) != 0) {
-                deg = (deg - (deg % (angleFullWindow / nbDirections)));
+            if (!facingLeft) {
+                posKunai *= -1;
             }
-            deg = Mathf.Clamp(deg, angleFullWindow, angleFullWindow / nbDirections);
-            if (facingLeft) {
-                deg *= -1f;
-            }
-            currentDirection = (eDIRECTION)(nbDirections / Mathf.Abs(angleFullWindow / deg));
-            sword.transform.rotation = Quaternion.Euler(0, 0, deg);
+            currentDirection = (eDIRECTION)(part+ 1);
+            sword.transform.rotation = Quaternion.Euler(0, 0, posKunai);
         }
     }
 

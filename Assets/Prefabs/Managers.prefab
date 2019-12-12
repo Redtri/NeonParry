@@ -113,6 +113,10 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 922bca23aa8c7dc48a1fa82761cb52cb,
       type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 7c6e964612a13624e87d31ea0f1fb3e2,
+      type: 2}
   ambient:
   - idInternal: 0
     valueGuidInternal: 
@@ -334,6 +338,7 @@ MonoBehaviour:
   spots: []
   camera: {fileID: 0}
   cameraCenterPoint: {fileID: 0}
+  currentPhase: 0
 --- !u!114 &7679405992117681758
 MonoBehaviour:
   m_ObjectHideFlags: 0
