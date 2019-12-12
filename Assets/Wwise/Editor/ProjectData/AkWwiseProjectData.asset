@@ -24,14 +24,14 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 56f6a746797f0a4fbbe996ff7dbe6fa2
     GuidInternal: 
-    m_lastTime: -8586255874815551836
+    m_lastTime: -8586254246973682456
     List: []
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: aab038f70511ac40accedade1b746b70
     GuidInternal: 
-    m_lastTime: -8586259667011576113
+    m_lastTime: -8586254257783605061
     List:
     - name: Main
       guid: ffba85163ec5c641b7a666271bb1c36e
@@ -47,7 +47,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 50b214ac3fa6614795c5eceb4820a998
     GuidInternal: 
-    m_lastTime: -8586255874815596622
+    m_lastTime: -8586255130653383273
     List:
     - name: inGame_Ambiance
       guid: c0a9ee0452e76f4e8e1fff3e31f5362d
@@ -83,7 +83,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 1db4f74826e35f4092d5c6972967e448
     GuidInternal: 
-    m_lastTime: -8586255872983097694
+    m_lastTime: -8586254249447872489
     List:
     - name: Music_Death
       guid: 16783a26cd03bd4a80c513debbf6a79f
@@ -161,7 +161,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: d2144fa278e9474fa08953a4a0b4c57d
     GuidInternal: 
-    m_lastTime: -8586256190641362457
+    m_lastTime: -8586254268324431209
     List:
     - name: attackHighLeft
       guid: 97c9c837e2a96d45abb5049cddc9e6f6
@@ -271,15 +271,75 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: follow
-      guid: 686a23a5c968d543b4370e94253aa05b
-      id: 4203913494
+    - name: feintHightLeft
+      guid: b7dcfcdefbfd9246a19f0a87642e4a63
+      id: 3025804676
       PathAndIcons:
       - ElementName: SFX
         ObjectType: 12
-      - ElementName: follow
+      - ElementName: feintHightLeft
         ObjectType: 3
-      Path: SFX\follow
+      Path: SFX\feintHightLeft
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: feintHightRight
+      guid: 5df60289ccf1104fb441b143777d5833
+      id: 338654435
+      PathAndIcons:
+      - ElementName: SFX
+        ObjectType: 12
+      - ElementName: feintHightRight
+        ObjectType: 3
+      Path: SFX\feintHightRight
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: feintLowLeft
+      guid: 23ee150246128a4d87b1f62398a621e0
+      id: 3737837678
+      PathAndIcons:
+      - ElementName: SFX
+        ObjectType: 12
+      - ElementName: feintLowLeft
+        ObjectType: 3
+      Path: SFX\feintLowLeft
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: feintLowRight
+      guid: 5a9a11962d430b4f9696de46df77073c
+      id: 3807145869
+      PathAndIcons:
+      - ElementName: SFX
+        ObjectType: 12
+      - ElementName: feintLowRight
+        ObjectType: 3
+      Path: SFX\feintLowRight
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: feintMidLeft
+      guid: 5abf9bfb5ea81542b4983643ab24e6db
+      id: 1297253722
+      PathAndIcons:
+      - ElementName: SFX
+        ObjectType: 12
+      - ElementName: feintMidLeft
+        ObjectType: 3
+      Path: SFX\feintMidLeft
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: feintMidRight
+      guid: 9a61b506cd5f944f957c3693e33f9f7e
+      id: 3074935633
+      PathAndIcons:
+      - ElementName: SFX
+        ObjectType: 12
+      - ElementName: feintMidRight
+        ObjectType: 3
+      Path: SFX\feintMidRight
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -384,8 +444,17 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 877bfb69bb34254997bc686db894f7e0
     GuidInternal: 
-    m_lastTime: -8586256983865755247
+    m_lastTime: -8586254269435914909
     List:
+    - name: FirstPVLost
+      guid: af434f09b590284281f881c906718a39
+      id: 1058781849
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: FirstPVLost
+        ObjectType: 13
+      Path: Default Work Unit\FirstPVLost
     - name: FuryLeft_RTPC
       guid: 0032026f833a4f44b9852e8a0a22d3c4
       id: 2056782216
@@ -413,6 +482,15 @@ MonoBehaviour:
       - ElementName: FX_RTPC
         ObjectType: 13
       Path: Default Work Unit\FX_RTPC
+    - name: SecondPVLost
+      guid: 0d9c888520b9ae45928e4e598d225ec8
+      id: 3326791549
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SecondPVLost
+        ObjectType: 13
+      Path: Default Work Unit\SecondPVLost
     - name: Sidechain_RTPC
       guid: 06bed34d9593604faf4409690fbbc11a
       id: 2479939179
@@ -427,7 +505,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 63f8cb137edd08448f7f5c3e8e1dcee3
     GuidInternal: 
-    m_lastTime: -8586255877470038664
+    m_lastTime: -8586254269435305907
     List:
     - name: GeneralGameStates
       guid: 368f452f521c2e4c8b3e14c699dede29
@@ -475,12 +553,6 @@ MonoBehaviour:
         id: 168610243
         PathAndIcons:
         - ElementName: fighting
-          ObjectType: 8
-      - name: fightingevolved
-        guid: 741e621533554041a8f4afbdf8403fa5
-        id: 1709125184
-        PathAndIcons:
-        - ElementName: fightingevolved
           ObjectType: 8
       - name: isDashing
         guid: 7d8cd005e98cbe4f8e181c95b5ea770f

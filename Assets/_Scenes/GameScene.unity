@@ -1289,12 +1289,12 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 127
       objectReference: {fileID: 0}
-    - target: {fileID: 4279431019718999055, guid: 1729d5456d7ea7244b7c413f9b4859a2,
+    - target: {fileID: 2378689541674971207, guid: 1729d5456d7ea7244b7c413f9b4859a2,
         type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2378689541674971207, guid: 1729d5456d7ea7244b7c413f9b4859a2,
+    - target: {fileID: 4279431019718999055, guid: 1729d5456d7ea7244b7c413f9b4859a2,
         type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1524,6 +1524,11 @@ PrefabInstance:
         type: 3}
       propertyPath: freezeFrameDuration
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6268276688179462533, guid: 025629b7bbbd3b841a8d1dcb4e029ed1,
+        type: 3}
+      propertyPath: stepValue
+      value: 12.29
       objectReference: {fileID: 0}
     - target: {fileID: 7679405992117681758, guid: 025629b7bbbd3b841a8d1dcb4e029ed1,
         type: 3}

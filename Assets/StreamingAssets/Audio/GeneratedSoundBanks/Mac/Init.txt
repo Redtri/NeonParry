@@ -10,7 +10,6 @@ State	ID	Name	State Group			Notes
 	4039654995	round_01	roundState			
 	0	None	inGame			
 	168610243	fighting	inGame			
-	1709125184	fightingevolved	inGame			
 	2532476867	isDashing	inGame			
 	2996998095	winning	inGame			
 	3092733402	standOff	inGame			
