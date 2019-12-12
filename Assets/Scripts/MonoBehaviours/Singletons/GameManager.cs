@@ -99,16 +99,17 @@ public class GameManager : MonoBehaviour
 
     public void placePlayer(PlayerController player, int playerIndex)
     {
-        switch (playerIndex)
-        {
-            case 0:
-                player.transform.position = spots[nbSteps - 1];
-                player.currentSpotIndex = 0;
-                break;
-            case 1:
-                player.transform.position = spots[nbSteps];
-                player.currentSpotIndex = 0;
-                break;
+        if(player != null) {
+            switch (playerIndex) {
+                case 0:
+                    player.transform.position = spots[nbSteps - 1];
+                    player.currentSpotIndex = 0;
+                    break;
+                case 1:
+                    player.transform.position = spots[nbSteps];
+                    player.currentSpotIndex = 0;
+                    break;
+            }
         }
     }
 

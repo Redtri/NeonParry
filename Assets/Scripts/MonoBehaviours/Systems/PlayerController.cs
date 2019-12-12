@@ -115,8 +115,8 @@ public class PlayerController : MonoBehaviour
         if (facingLeft) {
             transform.rotation = Quaternion.Euler(0f, -180f, 0f);
         }
-        inputSystem.currentActionMap["Look"].performed += context => OnLook(context);
-        inputSystem.currentActionMap["Look"].canceled += context => OnLook(context);
+        inputSystem.currentActionMap["Look"].performed += OnLook;
+        inputSystem.currentActionMap["Look"].canceled += OnLook;
 
         inputSystem.currentActionMap["Strike"].started += OnStrike;
         inputSystem.currentActionMap["Parry"].started += OnParry;
@@ -140,7 +140,7 @@ public class PlayerController : MonoBehaviour
     public void Unsubscribe() {
         machineState.onStateChanged -= UpdateLook;
         inputSystem.currentActionMap["Look"].performed -= OnLook;
-        inputSystem.currentActionMap["Look"].canceled -=  OnLook;
+        inputSystem.currentActionMap["Look"].canceled -= OnLook;
 
         inputSystem.currentActionMap["Strike"].started -= OnStrike;
         inputSystem.currentActionMap["Parry"].started -= OnParry;
