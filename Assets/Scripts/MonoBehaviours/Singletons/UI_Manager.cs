@@ -80,7 +80,7 @@ public class UI_Manager : MonoBehaviour
         float refreshTime = Time.time;
         float duration = (overrideDuration == 0f) ? MenuManager.instance.gameStartTransition : overrideDuration;
 
-        while (Time.time - refreshTime < (duration))
+        while (Time.time - refreshTime < (duration+0.1f))
         {
             if (fadeOut)
             {

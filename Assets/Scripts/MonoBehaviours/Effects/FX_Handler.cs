@@ -34,10 +34,10 @@ public class FX_Handler : MonoBehaviour
         float zRot = 0f;
 
         if(direction != eDIRECTION.NONE) {
-            if (facingLeft) {
-                zRot = -45f * (int)direction;
+            if (!facingLeft) {
+                zRot = -135f / (int)direction;
             } else {
-                zRot = 45f * (int)direction;
+                zRot = 135f / (int)direction;
             }
         }
 
