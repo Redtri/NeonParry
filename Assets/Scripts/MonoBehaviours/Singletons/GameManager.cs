@@ -212,7 +212,7 @@ public class GameManager : MonoBehaviour
             ++count;
         }
         StopPlayers(false);
-        StartCoroutine(MatchReset());
+        SceneManager.LoadScene(0);
         yield return null;
     }
 
