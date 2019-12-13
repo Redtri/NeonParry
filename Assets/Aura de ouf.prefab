@@ -4765,7 +4765,7 @@ GameObject:
   - component: {fileID: 1333427207836774244}
   - component: {fileID: 1333427207836774247}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: Aura de ouf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5675,7 +5675,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2.37
+      scalar: 0.9
       minScalar: 0
       maxCurve:
         serializedVersion: 2
