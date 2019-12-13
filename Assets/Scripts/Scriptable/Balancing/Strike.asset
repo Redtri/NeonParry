@@ -30,7 +30,7 @@ MonoBehaviour:
     baseActionDuration: 0.25
     currentActionDuration: 0
     percentageWeightFury: 0.5
-    furyModificationOnSuccess: 3
+    furyModificationOnSuccess: 0
     perfectPercentTiming: 0.6
     direction: 0
     curve:
