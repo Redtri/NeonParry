@@ -93,14 +93,22 @@
       "DurationMax": "1.246344"
      },
      {
+      "Id": "1433790123",
+      "Name": "Dash_Event_2",
+      "ObjectPath": "\\Events\\SFX\\Dash_Event_2",
+      "GUID": "{60337BFF-4EF8-44B9-9A31-187403F7B561}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.246344",
+      "DurationMax": "1.246344"
+     },
+     {
       "Id": "779278001",
       "Name": "death",
       "ObjectPath": "\\Events\\SFX\\death",
       "GUID": "{4CB30F7C-ABF0-4EC4-8EE2-5A315168D754}",
-      "MaxAttenuation": "0.000000",
       "DurationType": "OneShot",
-      "DurationMin": "0.000000",
-      "DurationMax": "0.000000"
+      "DurationMin": "6.500000",
+      "DurationMax": "6.500000"
      },
      {
       "Id": "3025804676",
@@ -198,6 +206,15 @@
       "DurationType": "Infinite"
      },
      {
+      "Id": "3582890026",
+      "Name": "Menu_SlideStart",
+      "ObjectPath": "\\Events\\SFX\\Menu_SlideStart",
+      "GUID": "{4EDF87CA-CEB4-4B34-96AB-8FA956D17C7B}",
+      "DurationType": "OneShot",
+      "DurationMin": "4.065850",
+      "DurationMax": "4.065850"
+     },
+     {
       "Id": "2012936489",
       "Name": "Music_Dash",
       "ObjectPath": "\\Events\\Music\\Music_Dash",
@@ -265,6 +282,15 @@
       "DurationType": "Infinite"
      },
      {
+      "Id": "1064933119",
+      "Name": "one",
+      "ObjectPath": "\\Events\\SFX\\Countdown\\one",
+      "GUID": "{2ECFBDB6-9A0D-4C91-BABE-528C42DDCEC0}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.375011",
+      "DurationMax": "1.375011"
+     },
+     {
       "Id": "2109051510",
       "Name": "parryLeft",
       "ObjectPath": "\\Events\\SFX\\parryLeft",
@@ -308,6 +334,24 @@
       "DurationType": "OneShot",
       "DurationMin": "1.250000",
       "DurationMax": "1.250000"
+     },
+     {
+      "Id": "912956111",
+      "Name": "three",
+      "ObjectPath": "\\Events\\SFX\\Countdown\\three",
+      "GUID": "{98698AF9-AEE1-4966-82A7-D682EFB14302}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.375011",
+      "DurationMax": "1.375011"
+     },
+     {
+      "Id": "678209053",
+      "Name": "two",
+      "ObjectPath": "\\Events\\SFX\\Countdown\\two",
+      "GUID": "{39D0A244-2893-472F-BFCD-8763EBD98697}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.375011",
+      "DurationMax": "1.375011"
      }
     ],
     "IncludedMemoryFiles": [
@@ -324,6 +368,12 @@
       "Path": "SFX/round2_bass_unfiltered_469574DC.wem"
      },
      {
+      "Id": "18795556",
+      "Language": "SFX",
+      "ShortName": "whooshdebut.wav",
+      "Path": "SFX/whooshdebut_CC7C5247.wem"
+     },
+     {
       "Id": "26437408",
       "Language": "SFX",
       "ShortName": "feintMidFurryMed.wav",
@@ -334,6 +384,12 @@
       "Language": "SFX",
       "ShortName": "feintMidFurryMax.wav",
       "Path": "SFX/feintMidFurryMax_11697732.wem"
+     },
+     {
+      "Id": "45027625",
+      "Language": "SFX",
+      "ShortName": "1.wav",
+      "Path": "SFX/1_11697732.wem"
      },
      {
       "Id": "62192054",
@@ -426,6 +482,12 @@
       "Path": "SFX/attackMidFurryMed_11697732.wem"
      },
      {
+      "Id": "290737477",
+      "Language": "SFX",
+      "ShortName": "3.wav",
+      "Path": "SFX/3_11697732.wem"
+     },
+     {
       "Id": "354026372",
       "Language": "SFX",
       "ShortName": "round2_intro.wav",
@@ -442,6 +504,12 @@
       "Language": "SFX",
       "ShortName": "round2_bass_filtered.wav",
       "Path": "SFX/round2_bass_filtered_469574DC.wem"
+     },
+     {
+      "Id": "381935569",
+      "Language": "SFX",
+      "ShortName": "2.wav",
+      "Path": "SFX/2_11697732.wem"
      },
      {
       "Id": "386631273",
@@ -514,6 +582,12 @@
       "Language": "SFX",
       "ShortName": "TakeHitSlowdown.wav",
       "Path": "SFX/TakeHitSlowdown_11697732.wem"
+     },
+     {
+      "Id": "554827245",
+      "Language": "SFX",
+      "ShortName": "thunderdeath.wav",
+      "Path": "SFX/thunderdeath_11697732.wem"
      },
      {
       "Id": "560436870",
