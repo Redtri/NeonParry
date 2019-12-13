@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 
 public enum eGAME_PHASE { TITLE, MENU, GAME, SCORE}
 
+public delegate void Counter(int count, int max);
+public delegate void tEvent();
+
 public class GameManager : MonoBehaviour
 {
     public GameObject[] prefabs;
@@ -34,35 +37,35 @@ public class GameManager : MonoBehaviour
     public GameTransition onRoundEnd;
     public GameTransition onRoundStart;
     public GameTransition onMatchEnd;
+    public tEvent onScore;
 
     private int currentNbPlayers = 0;
 
     public delegate void Strike(int[] score);
     public Strike onStrike;
+    public Counter onCountdown;
 
     private void Awake() {
-        Time.timeScale = 1f;
         if (!instance) {
             instance = this;
         } else {
             Destroy(this.gameObject);
         }
-        initMatch();
+        Time.timeScale = 1f;
         spots = new List<Vector3>();
-        startNewMatch = false;
-        isStop = false;
-
         float startPoint = -((nbSteps * stepValue) - stepValue / 2);
 
-        for (int i = 0; i < nbSteps*2; ++i) {
+        for (int i = 0; i < nbSteps * 2; ++i) {
             spots.Add(new Vector3(startPoint + i * stepValue, 0, 0) - groundOffset);
         }
         camera = Camera.main.transform.GetChild(0).GetComponent<CinemachineVirtualCamera>();
 
+    }
 
+    private void Start() {
         if (SceneManager.GetActiveScene().name != "IntroScene") {
             LoadPlayerInfos();
-            StartCoroutine(RoundReset());
+            StartCoroutine(MatchReset(true));
         }
     }
 
@@ -113,14 +116,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void CameraShake(float shake, float frequency, float duration) {
+        Camera.main.GetComponent<CameraShake>().Shake(shake, frequency, duration);
+    }
+
     public int StrikeSuccessful(int playerIndex) { // strike succesfull return 0, at the end of a round return 1, at the end of the match return 2
-        Camera.main.GetComponent<CameraShake>().Shake(16f, 16f, 1.5f);
+        CameraShake(16f, 16f, 1.5f);
         ++score[currentRound][playerIndex];
+        onScore?.Invoke();
         onStrike?.Invoke(score[currentRound]);
         StartCoroutine(FreezeFrame(freezeFrameDuration));
         if (score[currentRound][playerIndex] >= nbExchangeForARound) {
-
-            AkSoundEngine.PostEvent("death", gameObject);
             ++score[0][playerIndex];
             if (score[0][playerIndex] >= nbRoundForAMatch) {
                 StartCoroutine(MatchStop());
@@ -159,25 +165,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void initMatch()
-    { //initilize the score
-        //Debug.Log("match Start");
-        currentRound = 1;
-        score = new List<int[]>();
-        score.Add(new int[2] { 0, 0 }); //for round won count
-        score.Add(new int[2] { 0, 0 }); //for exchange won count
-    }
-
     public IEnumerator RoundStop() {
         StopPlayers(true);
         onRoundEnd?.Invoke(true);
         yield return new WaitForSeconds(stopDuration);
         StopPlayers(false);
         StartCoroutine(RoundReset());
+        yield return null;
     }
 
-    public IEnumerator RoundReset()
+    public IEnumerator RoundReset(bool newGame = false)
     {
+        print("RoundReset");
         float refreshTime = Time.unscaledTime;
         float duration = 3;
         int temp = 0;
@@ -186,10 +185,14 @@ public class GameManager : MonoBehaviour
         onRoundStart?.Invoke(false);
         placePlayer(GameInfos.playerInfos[0].controller, 0); //replace player 1
         placePlayer(GameInfos.playerInfos[1].controller, 1); //replace player 2
-        GameInfos.playerInfos[0].controller.onNeutral(); //stop at Neutral for player 1
-        GameInfos.playerInfos[1].controller.onNeutral(); //stop at Neutral for player 2
-        while (temp < duration)
-        {
+
+        //Otherwise it would throw errors about animator reference not set
+        if (!newGame) {
+            GameInfos.playerInfos[0].controller.onNeutral(); //stop at Neutral for player 1
+            GameInfos.playerInfos[1].controller.onNeutral(); //stop at Neutral for player 2
+        }
+        while (temp < duration) {
+            onCountdown?.Invoke(temp, (int)duration - 1);
             yield return new WaitForSeconds(1f);
             ++temp;
         }
@@ -209,30 +212,36 @@ public class GameManager : MonoBehaviour
             ++count;
         }
         StopPlayers(false);
-        resetMatch();
+        StartCoroutine(MatchReset());
         yield return null;
     }
 
-    public void resetMatch() { //reste the score to 0/0
-        //Debug.Log("match reset");
-        StartCoroutine(MatchReset());
-        //yes no for() because it's more understable this way
-        GameInfos.playerInfos[0].controller.onNeutral(); //stop at Neutral for player 1
-        GameInfos.playerInfos[1].controller.onNeutral(); //stop at Neutral for player 2
-        startNewMatch = false;
+    private IEnumerator MatchReset(bool newGame = false) {
+        if (!newGame) {
+            yield return new WaitForSecondsRealtime(stopDuration);
+        } else {
+            yield return new WaitForSecondsRealtime(0.1f);
+        }
+        NewMatch(newGame);
+        StartCoroutine(RoundReset(newGame));
+        yield return null;
     }
 
-    private IEnumerator MatchReset() {
-        yield return new WaitForSecondsRealtime(stopDuration);
-        score.Clear();
-        initMatch();
+    public void NewMatch(bool newGame = false) {
+        currentRound = 1;
+        score = new List<int[]>();
+        score.Add(new int[2] { 0, 0 }); //for round won count
+        score.Add(new int[2] { 0, 0 }); //for exchange won count
         GameInfos.playerInfos[0].controller.fury.resetFury();
         GameInfos.playerInfos[1].controller.fury.resetFury();
         placePlayer(GameInfos.playerInfos[0].controller, 0); //replace player 1
-        GameInfos.playerInfos[0].controller.onNew();
         placePlayer(GameInfos.playerInfos[1].controller, 1); //replace player 2
-        GameInfos.playerInfos[1].controller.onNew();
-        StartCoroutine(RoundReset());
+        if (!newGame) {
+            GameInfos.playerInfos[0].controller.onNew();
+            GameInfos.playerInfos[1].controller.onNew();
+        }
+        GameInfos.playerInfos[0].controller.onNeutral(); //stop at Neutral for player 1
+        GameInfos.playerInfos[1].controller.onNeutral(); //stop at Neutral for player 2
     }
 
     public void StopPlayers(bool stop) {
@@ -240,13 +249,13 @@ public class GameManager : MonoBehaviour
         GameInfos.playerInfos[1].controller.isStop = stop;
     }
 
-    public void StopPlayers() {
-        StartCoroutine(TempStop());
+    public void StopPlayers(float duration) {
+        StartCoroutine(TempStop(duration));
     }
 
-    public IEnumerator TempStop() {
+    public IEnumerator TempStop(float duration) {
         StopPlayers(true);
-        yield return new WaitForSeconds(stopDuration);
+        yield return new WaitForSeconds(duration);
         StopPlayers(false);
     }
 

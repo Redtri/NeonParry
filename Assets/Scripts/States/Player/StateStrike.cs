@@ -60,7 +60,7 @@ public class StateStrike : PlayerState
                     if (!owner.isStop)
                     {
                         if (!clash) {
-                            GameManager.instance.StopPlayers();
+                            GameManager.instance.StopPlayers(2f);
                             owner.furyChange(actionInfos.furyModificationOnSuccess); //change the fury of a fixed amount
                             owner.opponent.fxHandler.SpawnFX(ePLAYER_STATE.STRIKE, actionInfos.direction, owner.facingLeft);
                             switch (GameManager.instance.StrikeSuccessful(owner.playerIndex)) {

@@ -66,9 +66,9 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    private IEnumerator BlockPlayer(int index, float delay) {
+    private IEnumerator BlockPlayer(int index, float delay, bool block = true) {
         yield return new WaitForSeconds(delay);
-        GameInfos.playerInfos[index].controller.onNeutral();
+        GameInfos.playerInfos[index].controller.isStop = block;
     }
 
     private void LoadScene() {
@@ -78,6 +78,11 @@ public class MenuManager : MonoBehaviour
     public int NewPlayer(PlayerController newPlayer) {
         menuCam.GetComponent<Animator>().SetTrigger("travelling");
         int playerIndex = GameInfos.playerInfos.Count;
+        if(playerIndex == 0) {
+            StartCoroutine(BlockPlayer(playerIndex, 4f, false));
+        } else {
+            StartCoroutine(BlockPlayer(playerIndex, 1.5f, false));
+        }
 
         if (playerIndex == 2)
         {

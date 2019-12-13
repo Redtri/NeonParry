@@ -58,7 +58,9 @@ public abstract class PlayerState
                 actionInfos.BlankRefreshTime(Time.time);
             }
         }
-        owner.animator.ResetTrigger(stateMachine.currentState.ToString().ToLower());
-        owner.cursorAnimator.ResetTrigger(stateMachine.currentState.ToString().ToLower());
+        if(owner.animator != null) {
+            owner.animator.ResetTrigger(stateMachine.currentState.ToString().ToLower());
+            owner.cursorAnimator.ResetTrigger(stateMachine.currentState.ToString().ToLower());
+        }
     }
 }

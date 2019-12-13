@@ -45,13 +45,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabs: []
   inputSystem: {fileID: 0}
+  menuCam: {fileID: 0}
+  skinSelectorPrefab: {fileID: 0}
+  gameStartTransition: 0
   nbSteps: 0
   stepValue: 0
   freezeFrameDuration: 0
   groundOffset: {x: 0, y: 0, z: 0}
   spots: []
-  camera: {fileID: 0}
-  cameraCenterPoint: {fileID: 0}
 --- !u!1 &5030059174973426855
 GameObject:
   m_ObjectHideFlags: 0

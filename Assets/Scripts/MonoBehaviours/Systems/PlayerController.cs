@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
         parryAction = new SwordAction(parryInfos.parameters);
         dashAction = new SwordAction(dashInfos.parameters);
         reposAction = new SwordAction(reposInfos.parameters);
-
+        isStop = true;
         currentDirection = eDIRECTION.MID;
         if (SceneManager.GetActiveScene().name == "IntroScene") {
             gameObject.AddComponent<SpriteController>();
@@ -152,6 +152,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update() {
         machineState.Update();
+        Debug.Log("Player is " + ((isStop) ? "stopped" : "active"));
 
         if (machineState.currentState == ePLAYER_STATE.NEUTRAL) {
             performingAction = false;
@@ -298,12 +299,6 @@ public class PlayerController : MonoBehaviour
         animator.SetTrigger("new");
     }
 
-    public void onStop()
-    {
-        isStop = true;
-        machineState.ChangeState(ePLAYER_STATE.STOP);
-    }
-
     public void furyChange(float mod)
     {
         fury.furyModification(mod);
@@ -312,9 +307,9 @@ public class PlayerController : MonoBehaviour
             updateAllAction();
         }
         if (facingLeft) {
-            AkSoundEngine.SetRTPCValue("FuryLeft_RTPC", (float)fury.currentFury / (float)fury.highestValueOfFury);
+            AkSoundEngine.SetRTPCValue("FuryLeft_RTPC", ((float)fury.currentFury / (float)fury.highestValueOfFury) * 100f);
         } else {
-            AkSoundEngine.SetRTPCValue("FuryRight_RTPC", (float)fury.currentFury/(float)fury.highestValueOfFury);
+            AkSoundEngine.SetRTPCValue("FuryRight_RTPC", ((float)fury.currentFury/(float)fury.highestValueOfFury) * 100f);
         }
     }
 

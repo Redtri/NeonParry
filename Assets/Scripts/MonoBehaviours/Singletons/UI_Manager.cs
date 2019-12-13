@@ -8,6 +8,8 @@ public class UI_Manager : MonoBehaviour
     public static UI_Manager instance;
     [SerializeField] private Text scoreLeft;
     [SerializeField] private Text scoreRight;
+    [SerializeField] private Image countdownImage;
+    [SerializeField] private Sprite[] countImages;
     public Image fadeImage;
     public GameObject barLeft;
     public GameObject barRight;
@@ -30,6 +32,8 @@ public class UI_Manager : MonoBehaviour
         GameManager.instance.onRoundEnd += Fade;
         GameManager.instance.onMatchEnd += Fade;
         GameManager.instance.onRoundStart += Fade;
+        GameManager.instance.onCountdown += Countdown;
+        GameManager.instance.onScore += RefreshScore;
     }
 
     private void OnDisable() {
@@ -38,10 +42,8 @@ public class UI_Manager : MonoBehaviour
         GameManager.instance.onRoundEnd -= Fade;
         GameManager.instance.onMatchEnd -= Fade;
         GameManager.instance.onRoundStart -= Fade;
-    }
-
-    private void Update() {
-        RefreshScore();
+        GameManager.instance.onCountdown -= Countdown;
+        GameManager.instance.onScore -= RefreshScore;
     }
 
     private void Fade(bool fadeOut = false, float overrideDuration = 0f) {
@@ -74,5 +76,22 @@ public class UI_Manager : MonoBehaviour
             scoreLeft.text = GameManager.instance.score[0][0].ToString() + " " + GameManager.instance.score[GameManager.instance.currentRound][0].ToString();
             scoreRight.text = GameManager.instance.score[0][1].ToString() + " " + GameManager.instance.score[GameManager.instance.currentRound][1].ToString();
         }
+    }
+
+    private void Countdown(int count, int max) {
+        if(count < max) {
+            if (!countdownImage.gameObject.activeInHierarchy) {
+                countdownImage.gameObject.SetActive(true);
+            }
+        } else {
+            StartCoroutine(StopCountdown());
+        }
+        countdownImage.sprite = countImages[count];
+        countdownImage.GetComponent<Animator>().SetTrigger("count");
+    }
+
+    private IEnumerator StopCountdown() {
+        yield return new WaitForSeconds(1f);
+        countdownImage.gameObject.SetActive(false);
     }
 }
