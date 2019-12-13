@@ -7,6 +7,8 @@ public class SpriteController : MonoBehaviour
     private PlayerController controller;
     private SpriteSwaper sprSwaper;
 
+    public StrikeEvent onSwap;
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +28,7 @@ public class SpriteController : MonoBehaviour
 
     private IEnumerator SwapSkinCall(eDIRECTION direction, float delay) {
         yield return new WaitForSeconds(delay);
+        onSwap?.Invoke(direction);
         GameInfos.playerInfos[controller.playerIndex].skin = (int)direction - 1;
         sprSwaper.PickSkin((int)direction-1);
     }

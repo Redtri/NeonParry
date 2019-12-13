@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public enum eDIRECTION { NONE, UP, MID, DOWN };
 public enum eCONTROLLER { KEYBOARD, GAMEPAD };
 
+public delegate void StrikeEvent(eDIRECTION direction, float delay = 0f);
 public class PlayerController : MonoBehaviour
 {
     //REFERENCES
@@ -51,7 +52,6 @@ public class PlayerController : MonoBehaviour
     public int currentSpotIndex { get; set; }
     [HideInInspector] public int skin;
 
-    public delegate void StrikeEvent(eDIRECTION direction, float delay);
     public StrikeEvent onStrike;
 
     private void Awake() {

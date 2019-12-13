@@ -26,6 +26,7 @@ public class UI_Manager : MonoBehaviour
         }
 
         MenuManager.instance.onGameStart += Fade;
+        MenuManager.instance.onScreen += Fade;
         GameManager.instance.onRoundEnd += Fade;
         GameManager.instance.onMatchEnd += Fade;
         GameManager.instance.onRoundStart += Fade;
@@ -33,6 +34,7 @@ public class UI_Manager : MonoBehaviour
 
     private void OnDisable() {
         MenuManager.instance.onGameStart -= Fade;
+        MenuManager.instance.onScreen -= Fade;
         GameManager.instance.onRoundEnd -= Fade;
         GameManager.instance.onMatchEnd -= Fade;
         GameManager.instance.onRoundStart -= Fade;
@@ -42,18 +44,19 @@ public class UI_Manager : MonoBehaviour
         RefreshScore();
     }
 
-    private void Fade(bool fadeOut = false) {
-        StartCoroutine(Fading(fadeOut));
+    private void Fade(bool fadeOut = false, float overrideDuration = 0f) {
+        StartCoroutine(Fading(fadeOut, overrideDuration));
     }
 
-    private IEnumerator Fading(bool fadeOut = true) {
+    private IEnumerator Fading(bool fadeOut = true, float overrideDuration = 0f) {
         float refreshTime = Time.time;
+        float duration = (overrideDuration == 0f) ? MenuManager.instance.gameStartTransition : overrideDuration;
 
-        while (Time.time - refreshTime < MenuManager.instance.gameStartTransition) {
+        while (Time.time - refreshTime < (duration)) {
             if (fadeOut) {
-                fadeImage.color = new Color(0, 0, 0, (Time.time - refreshTime) / MenuManager.instance.gameStartTransition);
+                fadeImage.color = new Color(0, 0, 0, (Time.time - refreshTime) / duration);
             } else {
-                fadeImage.color = new Color(0, 0, 0, 1-((Time.time - refreshTime) / MenuManager.instance.gameStartTransition));
+                fadeImage.color = new Color(0, 0, 0, 1-((Time.time - refreshTime) / duration));
             }
             yield return new WaitForSeconds(0.01f);
         }
