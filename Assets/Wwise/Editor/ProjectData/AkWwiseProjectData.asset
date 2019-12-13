@@ -13,25 +13,25 @@ MonoBehaviour:
   m_Name: AkWwiseProjectData
   m_EditorClassIdentifier: 
   AcousticTextureWwu:
-  - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
+  - PhysicalPath: Virtual Acoustics/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 83551d33ae3a43489959aa0b3f1739e1
     GuidInternal: 
-    m_lastTime: -8586259721359206274
+    m_lastTime: -8586262227514775808
     List: []
   AuxBusWwu:
-  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
+  - PhysicalPath: Master-Mixer Hierarchy/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 56f6a746797f0a4fbbe996ff7dbe6fa2
     GuidInternal: 
-    m_lastTime: -8586254128001732092
+    m_lastTime: -8586253632494775808
     List: []
   BankWwu:
-  - PhysicalPath: SoundBanks\Default Work Unit.wwu
+  - PhysicalPath: SoundBanks/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: aab038f70511ac40accedade1b746b70
     GuidInternal: 
-    m_lastTime: -8586254128000125318
+    m_lastTime: -8586253632484775808
     List:
     - name: Main
       guid: ffba85163ec5c641b7a666271bb1c36e
@@ -41,13 +41,13 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Main
         ObjectType: 7
-      Path: Default Work Unit\Main
+      Path: Default Work Unit/Main
   EventWwu:
-  - PhysicalPath: Events\Ambiance.wwu
+  - PhysicalPath: Events/Ambiance.wwu
     ParentPhysicalPath: 
     guid: 50b214ac3fa6614795c5eceb4820a998
     GuidInternal: 
-    m_lastTime: -8586255130653383273
+    m_lastTime: -8586255226584775808
     List:
     - name: inGame_Ambiance
       guid: c0a9ee0452e76f4e8e1fff3e31f5362d
@@ -57,7 +57,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: inGame_Ambiance
         ObjectType: 3
-      Path: Ambiance\inGame_Ambiance
+      Path: Ambiance/inGame_Ambiance
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -69,21 +69,21 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Menu_Ambiance
         ObjectType: 3
-      Path: Ambiance\Menu_Ambiance
+      Path: Ambiance/Menu_Ambiance
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-  - PhysicalPath: Events\Default Work Unit.wwu
+  - PhysicalPath: Events/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 2a81fdbbb1505e4aa9b924cc4da74340
     GuidInternal: 
-    m_lastTime: -8586259667018293816
+    m_lastTime: -8586262175144775808
     List: []
-  - PhysicalPath: Events\Music.wwu
+  - PhysicalPath: Events/Music.wwu
     ParentPhysicalPath: 
     guid: 1db4f74826e35f4092d5c6972967e448
     GuidInternal: 
-    m_lastTime: -8586253626713406196
+    m_lastTime: -8586253632494775808
     List:
     - name: Music_Dash
       guid: 6cca3183ab723d45be58bfbd74aa3b2d
@@ -93,7 +93,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Music_Dash
         ObjectType: 3
-      Path: Music\Music_Dash
+      Path: Music/Music_Dash
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -105,7 +105,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Music_Death
         ObjectType: 3
-      Path: Music\Music_Death
+      Path: Music/Music_Death
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -117,7 +117,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Music_FirstPVLost
         ObjectType: 3
-      Path: Music\Music_FirstPVLost
+      Path: Music/Music_FirstPVLost
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -129,7 +129,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Music_Menu_Start
         ObjectType: 3
-      Path: Music\Music_Menu_Start
+      Path: Music/Music_Menu_Start
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -141,7 +141,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Music_Reset
         ObjectType: 3
-      Path: Music\Music_Reset
+      Path: Music/Music_Reset
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -153,7 +153,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Music_SecondPVLost
         ObjectType: 3
-      Path: Music\Music_SecondPVLost
+      Path: Music/Music_SecondPVLost
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -165,15 +165,15 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Music_Start
         ObjectType: 3
-      Path: Music\Music_Start
+      Path: Music/Music_Start
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-  - PhysicalPath: Events\SFX.wwu
+  - PhysicalPath: Events/SFX.wwu
     ParentPhysicalPath: 
     guid: d2144fa278e9474fa08953a4a0b4c57d
     GuidInternal: 
-    m_lastTime: -8586253626713416174
+    m_lastTime: -8586253566454775808
     List:
     - name: attackHighLeft
       guid: 97c9c837e2a96d45abb5049cddc9e6f6
@@ -183,7 +183,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: attackHighLeft
         ObjectType: 3
-      Path: SFX\attackHighLeft
+      Path: SFX/attackHighLeft
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -195,7 +195,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: attackHighRight
         ObjectType: 3
-      Path: SFX\attackHighRight
+      Path: SFX/attackHighRight
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -207,7 +207,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: attackLowLeft
         ObjectType: 3
-      Path: SFX\attackLowLeft
+      Path: SFX/attackLowLeft
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -219,7 +219,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: attackLowRight
         ObjectType: 3
-      Path: SFX\attackLowRight
+      Path: SFX/attackLowRight
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -231,7 +231,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: attackMidLeft
         ObjectType: 3
-      Path: SFX\attackMidLeft
+      Path: SFX/attackMidLeft
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -243,7 +243,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: attackMidRight
         ObjectType: 3
-      Path: SFX\attackMidRight
+      Path: SFX/attackMidRight
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -255,7 +255,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: clash
         ObjectType: 3
-      Path: SFX\clash
+      Path: SFX/clash
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -267,7 +267,19 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Dash_Event
         ObjectType: 3
-      Path: SFX\Dash_Event
+      Path: SFX/Dash_Event
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Dash_Event_2
+      guid: ff7b3360f84eb9449a31187403f7b561
+      id: 1433790123
+      PathAndIcons:
+      - ElementName: SFX
+        ObjectType: 12
+      - ElementName: Dash_Event_2
+        ObjectType: 3
+      Path: SFX/Dash_Event_2
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -279,7 +291,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: death
         ObjectType: 3
-      Path: SFX\death
+      Path: SFX/death
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -291,7 +303,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: feintHightLeft
         ObjectType: 3
-      Path: SFX\feintHightLeft
+      Path: SFX/feintHightLeft
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -303,7 +315,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: feintHightRight
         ObjectType: 3
-      Path: SFX\feintHightRight
+      Path: SFX/feintHightRight
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -315,7 +327,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: feintLowLeft
         ObjectType: 3
-      Path: SFX\feintLowLeft
+      Path: SFX/feintLowLeft
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -327,7 +339,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: feintLowRight
         ObjectType: 3
-      Path: SFX\feintLowRight
+      Path: SFX/feintLowRight
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -339,7 +351,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: feintMidLeft
         ObjectType: 3
-      Path: SFX\feintMidLeft
+      Path: SFX/feintMidLeft
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -351,7 +363,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: feintMidRight
         ObjectType: 3
-      Path: SFX\feintMidRight
+      Path: SFX/feintMidRight
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -363,7 +375,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Footstep_Event
         ObjectType: 3
-      Path: SFX\Footstep_Event
+      Path: SFX/Footstep_Event
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -375,7 +387,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: hitLeft
         ObjectType: 3
-      Path: SFX\hitLeft
+      Path: SFX/hitLeft
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -387,7 +399,33 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: hitRight
         ObjectType: 3
-      Path: SFX\hitRight
+      Path: SFX/hitRight
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Menu_SlideStart
+      guid: ca87df4eb4ce344b96ab8fa956d17c7b
+      id: 3582890026
+      PathAndIcons:
+      - ElementName: SFX
+        ObjectType: 12
+      - ElementName: Menu_SlideStart
+        ObjectType: 3
+      Path: SFX/Menu_SlideStart
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: one
+      guid: b6bdcf2e0d9a914cbabe528c42ddcec0
+      id: 1064933119
+      PathAndIcons:
+      - ElementName: SFX
+        ObjectType: 12
+      - ElementName: Countdown
+        ObjectType: 4
+      - ElementName: one
+        ObjectType: 3
+      Path: SFX/Countdown/one
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -399,7 +437,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: parryLeft
         ObjectType: 3
-      Path: SFX\parryLeft
+      Path: SFX/parryLeft
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -411,7 +449,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: parryRight
         ObjectType: 3
-      Path: SFX\parryRight
+      Path: SFX/parryRight
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -423,7 +461,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: parryWhiff
         ObjectType: 3
-      Path: SFX\parryWhiff
+      Path: SFX/parryWhiff
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -435,7 +473,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: perfectParryLeft
         ObjectType: 3
-      Path: SFX\perfectParryLeft
+      Path: SFX/perfectParryLeft
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -447,16 +485,44 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: perfectParryRight
         ObjectType: 3
-      Path: SFX\perfectParryRight
+      Path: SFX/perfectParryRight
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: three
+      guid: f98a6998e1ae664982a7d682efb14302
+      id: 912956111
+      PathAndIcons:
+      - ElementName: SFX
+        ObjectType: 12
+      - ElementName: Countdown
+        ObjectType: 4
+      - ElementName: three
+        ObjectType: 3
+      Path: SFX/Countdown/three
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: two
+      guid: 44a2d03993282f47bfcd8763ebd98697
+      id: 678209053
+      PathAndIcons:
+      - ElementName: SFX
+        ObjectType: 12
+      - ElementName: Countdown
+        ObjectType: 4
+      - ElementName: two
+        ObjectType: 3
+      Path: SFX/Countdown/two
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
   RtpcWwu:
-  - PhysicalPath: Game Parameters\Default Work Unit.wwu
+  - PhysicalPath: Game Parameters/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 877bfb69bb34254997bc686db894f7e0
     GuidInternal: 
-    m_lastTime: -8586254128004285940
+    m_lastTime: -8586254375794775808
     List:
     - name: FirstPVLost
       guid: af434f09b590284281f881c906718a39
@@ -466,7 +532,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: FirstPVLost
         ObjectType: 13
-      Path: Default Work Unit\FirstPVLost
+      Path: Default Work Unit/FirstPVLost
     - name: FuryLeft_RTPC
       guid: 0032026f833a4f44b9852e8a0a22d3c4
       id: 2056782216
@@ -475,7 +541,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: FuryLeft_RTPC
         ObjectType: 13
-      Path: Default Work Unit\FuryLeft_RTPC
+      Path: Default Work Unit/FuryLeft_RTPC
     - name: FuryRight_RTPC
       guid: b3ffe49f735acc4cbc4253b269372ef9
       id: 3810431161
@@ -484,7 +550,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: FuryRight_RTPC
         ObjectType: 13
-      Path: Default Work Unit\FuryRight_RTPC
+      Path: Default Work Unit/FuryRight_RTPC
     - name: FX_RTPC
       guid: 3c07cfff0135944da04bd6048c0d59b6
       id: 3901535175
@@ -493,7 +559,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: FX_RTPC
         ObjectType: 13
-      Path: Default Work Unit\FX_RTPC
+      Path: Default Work Unit/FX_RTPC
     - name: SecondPVLost
       guid: 0d9c888520b9ae45928e4e598d225ec8
       id: 3326791549
@@ -502,7 +568,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: SecondPVLost
         ObjectType: 13
-      Path: Default Work Unit\SecondPVLost
+      Path: Default Work Unit/SecondPVLost
     - name: Sidechain_RTPC
       guid: 06bed34d9593604faf4409690fbbc11a
       id: 2479939179
@@ -511,13 +577,13 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Sidechain_RTPC
         ObjectType: 13
-      Path: Default Work Unit\Sidechain_RTPC
+      Path: Default Work Unit/Sidechain_RTPC
   StateWwu:
-  - PhysicalPath: States\Default Work Unit.wwu
+  - PhysicalPath: States/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 63f8cb137edd08448f7f5c3e8e1dcee3
     GuidInternal: 
-    m_lastTime: -8586254127999963666
+    m_lastTime: -8586254375794775808
     List:
     - name: GeneralGameStates
       guid: 368f452f521c2e4c8b3e14c699dede29
@@ -527,7 +593,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: GeneralGameStates
         ObjectType: 9
-      Path: Default Work Unit\GeneralGameStates
+      Path: Default Work Unit/GeneralGameStates
       values:
       - name: inGame_State
         guid: d4c96a9acc067c48b6ce347ee8b5ff0b
@@ -558,7 +624,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: inGame
         ObjectType: 9
-      Path: Default Work Unit\inGame
+      Path: Default Work Unit/inGame
       values:
       - name: fighting
         guid: 0d112b7d9d96ec4fabb6611d867c77e1
@@ -601,7 +667,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: roundState
         ObjectType: 9
-      Path: Default Work Unit\roundState
+      Path: Default Work Unit/roundState
       values:
       - name: None
         guid: 293d681bec3d304eb6abf68d188bcc02
@@ -631,22 +697,23 @@ MonoBehaviour:
       ValueIcons: []
       valuesInternal: []
   SwitchWwu:
-  - PhysicalPath: Switches\Default Work Unit.wwu
+  - PhysicalPath: Switches/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: a4f6631705f8a84f9dbce18c0a015370
     GuidInternal: 
-    m_lastTime: -8586259721359264881
+    m_lastTime: -8586262227514775808
     List: []
   TriggerWwu:
-  - PhysicalPath: Triggers\Default Work Unit.wwu
+  - PhysicalPath: Triggers/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 81cfa00d5576604d8c63d698b38a82dd
     GuidInternal: 
-    m_lastTime: -8586259721359233510
+    m_lastTime: -8586262227514775808
     List: []
   ExpandedItems:
   - /NeonParry_WwiseProject
-  - /NeonParry_WwiseProject/Events
-  - /NeonParry_WwiseProject/Events/Music
+  - /NeonParry_WwiseProject/States
+  - /NeonParry_WwiseProject/States/Default Work Unit
+  - /NeonParry_WwiseProject/States/Default Work Unit/roundState
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

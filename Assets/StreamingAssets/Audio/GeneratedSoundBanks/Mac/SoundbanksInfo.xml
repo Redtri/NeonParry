@@ -29,7 +29,8 @@
 				<Event Id="74495757" Name="attackMidRight" ObjectPath="\Events\SFX\attackMidRight" GUID="{6E994665-D2C3-4211-8F32-9A18BE3A8FC3}" DurationType="OneShot" DurationMin="2.500000" DurationMax="2.500000"/>
 				<Event Id="1585787840" Name="clash" ObjectPath="\Events\SFX\clash" GUID="{BB52A7FD-7A07-4A91-A1FF-550B5BF563CA}" DurationType="OneShot" DurationMin="1.250000" DurationMax="1.250000"/>
 				<Event Id="763920020" Name="Dash_Event" ObjectPath="\Events\SFX\Dash_Event" GUID="{70E1C08F-A2AF-4B6A-B992-CB5682397054}" DurationType="OneShot" DurationMin="1.246344" DurationMax="1.246344"/>
-				<Event Id="779278001" Name="death" ObjectPath="\Events\SFX\death" GUID="{4CB30F7C-ABF0-4EC4-8EE2-5A315168D754}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1433790123" Name="Dash_Event_2" ObjectPath="\Events\SFX\Dash_Event_2" GUID="{60337BFF-4EF8-44B9-9A31-187403F7B561}" DurationType="OneShot" DurationMin="1.246344" DurationMax="1.246344"/>
+				<Event Id="779278001" Name="death" ObjectPath="\Events\SFX\death" GUID="{4CB30F7C-ABF0-4EC4-8EE2-5A315168D754}" DurationType="OneShot" DurationMin="6.500000" DurationMax="6.500000"/>
 				<Event Id="3025804676" Name="feintHightLeft" ObjectPath="\Events\SFX\feintHightLeft" GUID="{DEFCDCB7-FDFB-4692-A19F-0A87642E4A63}" DurationType="OneShot" DurationMin="2.624377" DurationMax="2.624377"/>
 				<Event Id="338654435" Name="feintHightRight" ObjectPath="\Events\SFX\feintHightRight" GUID="{8902F65D-F1CC-4F10-B441-B143777D5833}" DurationType="OneShot" DurationMin="2.624377" DurationMax="2.624377"/>
 				<Event Id="3737837678" Name="feintLowLeft" ObjectPath="\Events\SFX\feintLowLeft" GUID="{0215EE23-1246-4D8A-87B1-F62398A621E0}" DurationType="OneShot" DurationMin="2.016667" DurationMax="2.016667"/>
@@ -41,6 +42,7 @@
 				<Event Id="1778295094" Name="hitRight" ObjectPath="\Events\SFX\hitRight" GUID="{A0853263-061E-4AF7-B975-01A8A2BB89A4}" DurationType="OneShot" DurationMin="2.234240" DurationMax="2.234240"/>
 				<Event Id="2370107561" Name="inGame_Ambiance" ObjectPath="\Events\Ambiance\inGame_Ambiance" GUID="{04EEA9C0-E752-4E6F-8E1F-FF3E31F5362D}" DurationType="Infinite"/>
 				<Event Id="626061955" Name="Menu_Ambiance" ObjectPath="\Events\Ambiance\Menu_Ambiance" GUID="{236B0C1A-390A-460E-AF0E-25EBCEEA809F}" DurationType="Infinite"/>
+				<Event Id="3582890026" Name="Menu_SlideStart" ObjectPath="\Events\SFX\Menu_SlideStart" GUID="{4EDF87CA-CEB4-4B34-96AB-8FA956D17C7B}" DurationType="OneShot" DurationMin="4.065850" DurationMax="4.065850"/>
 				<Event Id="2012936489" Name="Music_Dash" ObjectPath="\Events\Music\Music_Dash" GUID="{8331CA6C-72AB-453D-BE58-BFBD74AA3B2D}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="3678931145" Name="Music_Death" ObjectPath="\Events\Music\Music_Death" GUID="{263A7816-03CD-4ABD-80C5-13DEBBF6A79F}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="723605745" Name="Music_FirstPVLost" ObjectPath="\Events\Music\Music_FirstPVLost" GUID="{CC3EAD2B-9816-48A8-B271-D33D563C37C2}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
@@ -48,11 +50,14 @@
 				<Event Id="3282946978" Name="Music_Reset" ObjectPath="\Events\Music\Music_Reset" GUID="{F6A3440C-51F9-47D5-B590-E04EFB208A2C}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="2154872981" Name="Music_SecondPVLost" ObjectPath="\Events\Music\Music_SecondPVLost" GUID="{BEB816CA-5E36-4B69-AE74-302E7B6916BD}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="3725903807" Name="Music_Start" ObjectPath="\Events\Music\Music_Start" GUID="{EA174F9C-3A27-4D99-9B67-D0F6322BFD39}" DurationType="Infinite"/>
+				<Event Id="1064933119" Name="one" ObjectPath="\Events\SFX\Countdown\one" GUID="{2ECFBDB6-9A0D-4C91-BABE-528C42DDCEC0}" DurationType="OneShot" DurationMin="1.375011" DurationMax="1.375011"/>
 				<Event Id="2109051510" Name="parryLeft" ObjectPath="\Events\SFX\parryLeft" GUID="{256A09FB-9903-4A50-94D7-81B33F438AD2}" DurationType="OneShot" DurationMin="0.849683" DurationMax="0.850000"/>
 				<Event Id="2394082421" Name="parryRight" ObjectPath="\Events\SFX\parryRight" GUID="{B0B0E6E2-5AD2-440C-A8ED-340910F13443}" DurationType="OneShot" DurationMin="0.849683" DurationMax="0.850000"/>
 				<Event Id="2136132677" Name="parryWhiff" ObjectPath="\Events\SFX\parryWhiff" GUID="{329C0CE5-4BCC-4A5D-B0FC-04CBCC33B084}" DurationType="OneShot" DurationMin="1.083333" DurationMax="1.083333"/>
 				<Event Id="1600228609" Name="perfectParryLeft" ObjectPath="\Events\SFX\perfectParryLeft" GUID="{D337EEF3-FC8B-4D8E-B2B5-C20ED5466F6D}" DurationType="OneShot" DurationMin="1.250000" DurationMax="1.250000"/>
 				<Event Id="2689861876" Name="perfectParryRight" ObjectPath="\Events\SFX\perfectParryRight" GUID="{FF062256-407C-4D9F-A004-31F9D0766007}" DurationType="OneShot" DurationMin="1.250000" DurationMax="1.250000"/>
+				<Event Id="912956111" Name="three" ObjectPath="\Events\SFX\Countdown\three" GUID="{98698AF9-AEE1-4966-82A7-D682EFB14302}" DurationType="OneShot" DurationMin="1.375011" DurationMax="1.375011"/>
+				<Event Id="678209053" Name="two" ObjectPath="\Events\SFX\Countdown\two" GUID="{39D0A244-2893-472F-BFCD-8763EBD98697}" DurationType="OneShot" DurationMin="1.375011" DurationMax="1.375011"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="10275052" Language="SFX">
@@ -63,6 +68,10 @@
 					<ShortName>round2_bass_unfiltered.wav</ShortName>
 					<Path>SFX/round2_bass_unfiltered_469574DC.wem</Path>
 				</File>
+				<File Id="18795556" Language="SFX">
+					<ShortName>whooshdebut.wav</ShortName>
+					<Path>SFX/whooshdebut_CC7C5247.wem</Path>
+				</File>
 				<File Id="26437408" Language="SFX">
 					<ShortName>feintMidFurryMed.wav</ShortName>
 					<Path>SFX/feintMidFurryMed_11697732.wem</Path>
@@ -70,6 +79,10 @@
 				<File Id="37718121" Language="SFX">
 					<ShortName>feintMidFurryMax.wav</ShortName>
 					<Path>SFX/feintMidFurryMax_11697732.wem</Path>
+				</File>
+				<File Id="45027625" Language="SFX">
+					<ShortName>1.wav</ShortName>
+					<Path>SFX/1_11697732.wem</Path>
 				</File>
 				<File Id="62192054" Language="SFX">
 					<ShortName>round3_beat_nofill.wav</ShortName>
@@ -131,6 +144,10 @@
 					<ShortName>attackMidFurryMed.wav</ShortName>
 					<Path>SFX/attackMidFurryMed_11697732.wem</Path>
 				</File>
+				<File Id="290737477" Language="SFX">
+					<ShortName>3.wav</ShortName>
+					<Path>SFX/3_11697732.wem</Path>
+				</File>
 				<File Id="354026372" Language="SFX">
 					<ShortName>round2_intro.wav</ShortName>
 					<Path>SFX/round2_intro_469574DC.wem</Path>
@@ -142,6 +159,10 @@
 				<File Id="372262866" Language="SFX">
 					<ShortName>round2_bass_filtered.wav</ShortName>
 					<Path>SFX/round2_bass_filtered_469574DC.wem</Path>
+				</File>
+				<File Id="381935569" Language="SFX">
+					<ShortName>2.wav</ShortName>
+					<Path>SFX/2_11697732.wem</Path>
 				</File>
 				<File Id="386631273" Language="SFX">
 					<ShortName>attackLowFurryMed.wav</ShortName>
@@ -190,6 +211,10 @@
 				<File Id="549341578" Language="SFX">
 					<ShortName>TakeHitSlowdown.wav</ShortName>
 					<Path>SFX/TakeHitSlowdown_11697732.wem</Path>
+				</File>
+				<File Id="554827245" Language="SFX">
+					<ShortName>thunderdeath.wav</ShortName>
+					<Path>SFX/thunderdeath_11697732.wem</Path>
 				</File>
 				<File Id="560436870" Language="SFX">
 					<ShortName>attackLowFurryMax.wav</ShortName>
