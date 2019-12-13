@@ -2,31 +2,50 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class FX_StartSize {
+    public ParticleSystem ps;
+    [HideInInspector] public ParticleSystem.MainModule main;
+    [HideInInspector] public ParticleSystem.MinMaxCurve minMaxCurve;
+}
+
 public class FX_Handler : MonoBehaviour
 {
     public GameObject parryFxPrefab;
     public GameObject hitFxPrefab;
     public GameObject furySteamFxPrefab;
-    public GameObject furyElecFxPrefab;
+    public FX_StartSize furyElecFx;
+    private List<FX_StartSize> elecFXChilds;
 
     private void Start() {
-        var main = furyElecFxPrefab.GetComponent<ParticleSystem>().main;
-        main.startSize = new ParticleSystem.MinMaxCurve(0.0f, 0.0f);
+        elecFXChilds = new List<FX_StartSize>();
+            
+        foreach(ParticleSystem child in furyElecFx.ps.transform.GetComponentsInChildren<ParticleSystem>()) {
+
+            FX_StartSize fxTemp = new FX_StartSize();
+
+            fxTemp.ps = child;
+            fxTemp.main = child.main;
+            fxTemp.minMaxCurve = new ParticleSystem.MinMaxCurve(fxTemp.main.startSize.constantMin, fxTemp.main.startSize.constantMax);
+
+            elecFXChilds.Add(fxTemp);
+        }
     }
 
     public void UpdateFuryFX(float furyPercent) {
         //0.45 0.87
 
-        var main = furyElecFxPrefab.GetComponent<ParticleSystem>().main;
-        main.startSize = new ParticleSystem.MinMaxCurve(0.05f * furyPercent, 0.1f * furyPercent);
+        foreach(FX_StartSize fx in elecFXChilds) {
+            fx.main.startSize = new ParticleSystem.MinMaxCurve(fx.minMaxCurve.constantMin * furyPercent, fx.minMaxCurve.constantMax * furyPercent);
 
-        if(furyPercent > 0) {
-            //TODO : Handle fury percent with FX feedback amount
-            furySteamFxPrefab.SetActive(true);
-            furyElecFxPrefab.SetActive(true);
-        } else {
-            furySteamFxPrefab.SetActive(false);
-            furyElecFxPrefab.SetActive(false);
+            if (furyPercent > 0) {
+                //TODO : Handle fury percent with FX feedback amount
+                furySteamFxPrefab.SetActive(true);
+                fx.ps.gameObject.SetActive(true);
+            } else {
+                furySteamFxPrefab.SetActive(false);
+                fx.ps.gameObject.SetActive(false);
+            }
         }
     }
 
