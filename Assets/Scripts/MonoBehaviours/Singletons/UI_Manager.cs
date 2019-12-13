@@ -120,7 +120,7 @@ public class UI_Manager : MonoBehaviour
                     break;
                     case 1:
 
-                            Debug.Log("OK ???");
+                            //Debug.Log("OK ???");
                         FuryJarLeft.sprite = LessHP;
                     FuryMaskLeft.sprite = LessHPMask;
 

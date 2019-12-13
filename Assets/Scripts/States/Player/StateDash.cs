@@ -23,7 +23,7 @@ public class StateDash : PlayerState
             uint state;
             AkSoundEngine.GetState("inGame", out state);
 
-            Debug.Log("InGame Wwise state : " + state);
+            //Debug.Log("InGame Wwise state : " + state);
             if(state == 2) {
                 actionInfos.currentSamples.actionSounds[0].Post(owner.gameObject);
             } else {
@@ -50,7 +50,9 @@ public class StateDash : PlayerState
     }
 
     public override void Exit(bool reset = false) {
+        owner.isStop = false;
         base.Exit(reset);
+        GameManager.instance.StopPlayers(0.5f);
         owner.furyChange(actionInfos.furyModificationOnSuccess); //change the fury of a fixed amount
     }
 }
