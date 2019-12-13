@@ -4,6 +4,7 @@ using UnityEngine;
 using Cinemachine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering.PostProcessing;
 
 public enum eGAME_PHASE { TITLE, MENU, GAME, SCORE}
 
@@ -33,6 +34,7 @@ public class GameManager : MonoBehaviour
     public Cinemachine.CinemachineVirtualCamera camera;
     public InterpItem cameraCenterPoint;
     public eGAME_PHASE currentPhase;
+    public PostProcessVolume postProcess;
 
     public GameTransition onRoundEnd;
     public GameTransition onRoundStart;
@@ -193,10 +195,29 @@ public class GameManager : MonoBehaviour
         }
         while (temp < duration) {
             onCountdown?.Invoke(temp, (int)duration - 1);
+            Glitch();
             yield return new WaitForSeconds(1f);
             ++temp;
         }
         StopPlayers(false);
+        yield return null;
+    }
+
+    public void Glitch() {
+        StartCoroutine(Glitching());
+    }
+
+    private IEnumerator Glitching() {
+        float count = 0.0f;
+        LensDistortion lensDist = postProcess.profile.AddSettings<LensDistortion>();
+
+        while (count < 1f) {
+            yield return new WaitForSeconds(0.01f);
+            lensDist.intensity.value = -(1 - (count / 1f));
+            lensDist.intensityX.value = 1 - (count / 1f);
+            count += 0.01f;
+        }
+        postProcess.profile.RemoveSettings<LensDistortion>();
         yield return null;
     }
 
