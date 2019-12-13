@@ -25,4 +25,16 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 11045925571868b4480760db903f348b,
       type: 2}
-  additionalSounds: []
+  additionalSounds:
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: f349c86c32768c44ba708d5388118439,
+      type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 6d8e7f2b30e52774bb521a1d7ffc0710,
+      type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 11111c8a7a06b1c4fb36140374031ccb,
+      type: 2}

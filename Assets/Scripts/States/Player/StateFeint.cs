@@ -16,6 +16,7 @@ public class StateFeint : PlayerState
         owner.animator.SetTrigger("feint");
         owner.cursorAnimator.SetTrigger("feint");
         if (actionInfos != null) {
+            actionInfos.currentSamples.additionalSounds[(int)actionInfos.direction - 1].Post(owner.gameObject);
             actionInfos.Refresh(Time.time);
             owner.animator.SetInteger("direction", (int)actionInfos.direction);
             //Refresh animation clips speeds
