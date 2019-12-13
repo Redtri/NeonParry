@@ -34,8 +34,13 @@ public class UI_Manager : MonoBehaviour
     public Sprite LessHPMask;   //-1
     public Sprite LowHPMask;  //-2
 
+    public Transform BarTransform;
+    private Transform AwakeTransform;
+
+
     private void Awake()
     {
+        AwakeTransform = BarTransform;
         InitFury();
         Fade(false);
         /*FULLHP = Resources.Load<Sprite>("Assets/Images/UI/UI_3pv.png");      //FULL
@@ -95,7 +100,7 @@ public class UI_Manager : MonoBehaviour
         yield return null;
     }
 
-    private void RefreshScore()
+    private void Update()
     {
         if (GameInfos.playerInfos.Count > 1)
         {
@@ -107,6 +112,13 @@ public class UI_Manager : MonoBehaviour
             barRight.fillAmount = currentValueRight / maxValue;
             barLeftSmooth.fillAmount += (barLeft.fillAmount - barLeftSmooth.fillAmount) / 50;
             barRightSmooth.fillAmount += (barRight.fillAmount - barRightSmooth.fillAmount) / 50;
+        }
+    }
+    private void RefreshScore()
+    {
+        if (GameInfos.playerInfos.Count > 1)
+        {
+
             scoreLeft.text = GameManager.instance.score[0][0].ToString() + " " + GameManager.instance.score[GameManager.instance.currentRound][0].ToString();
             scoreRight.text = GameManager.instance.score[0][1].ToString() + " " + GameManager.instance.score[GameManager.instance.currentRound][1].ToString();
 
@@ -120,7 +132,7 @@ public class UI_Manager : MonoBehaviour
                     break;
                     case 1:
 
-                            Debug.Log("OK ???");
+
                         FuryJarLeft.sprite = LessHP;
                     FuryMaskLeft.sprite = LessHPMask;
 
@@ -139,7 +151,6 @@ public class UI_Manager : MonoBehaviour
                     FuryMaskRight.sprite = FullHPMask;
                     break;
                 case 1:
-                        Debug.Log("OK ???");
                         FuryJarRight.sprite = LessHP;
                     FuryMaskRight.sprite = LessHPMask;
 
