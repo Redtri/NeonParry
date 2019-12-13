@@ -176,7 +176,7 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator RoundReset(bool newGame = false)
     {
-        print("RoundReset");
+        //  print("RoundReset");
         float refreshTime = Time.unscaledTime;
         float duration = 3;
         int temp = 0;

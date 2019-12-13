@@ -7,6 +7,7 @@ public class StateStrike : PlayerState
     private bool opponentParried;
     private bool opponentDashed;
     private bool clash;
+    public bool dashed;
 
     public StateStrike(PlayerController player, FSM_Player machine, SwordAction infos, ePLAYER_STATE next, eSTATE_PRIORITY statePriority) :
         base(player, machine, infos, next, statePriority) {
@@ -18,8 +19,16 @@ public class StateStrike : PlayerState
         base.Enter();
         opponentParried = false;
         opponentDashed = false;
+        dashed = false;
         clash = false;
+        owner.onDash += DashEvent;
         nextState = ePLAYER_STATE.NEUTRAL;
+    }
+
+    private void DashEvent()
+    {
+        Debug.Log("DASH DE COUILLES");
+        dashed = true;
     }
 
     public override void Update() {
@@ -60,24 +69,28 @@ public class StateStrike : PlayerState
                     if (!owner.isStop)
                     {
                         if (!clash) {
-                            GameManager.instance.StopPlayers(2f);
-                            owner.furyChange(actionInfos.furyModificationOnSuccess); //change the fury of a fixed amount
-                            owner.opponent.fxHandler.SpawnFX(ePLAYER_STATE.STRIKE, actionInfos.direction, owner.facingLeft);
-                            switch (GameManager.instance.StrikeSuccessful(owner.playerIndex)) {
-                                case 0:
-                                    owner.opponent.animator.SetTrigger("hit");
-                                    break;
-                                case 1:
-                                    owner.opponent.animator.SetTrigger("down");
-                                    break;
-                                case 2:
-                                    owner.animator.SetTrigger("victory");
-                                    owner.opponent.animator.SetTrigger("death");
-                                    AudioManager.instance.Death();
-                                    break;
-                            };
-                            owner.fury.furyMultiplication(owner.fury.winnerFuryPercentageLeft);
-                            actionInfos.currentSamples.additionalSounds[0].Post(owner.gameObject);
+                            if (!dashed)
+                            {
+                                GameManager.instance.StopPlayers(2f);
+                                owner.furyChange(actionInfos.furyModificationOnSuccess); //change the fury of a fixed amount
+                                owner.opponent.fxHandler.SpawnFX(ePLAYER_STATE.STRIKE, actionInfos.direction, owner.facingLeft);
+                                switch (GameManager.instance.StrikeSuccessful(owner.playerIndex))
+                                {
+                                    case 0:
+                                        owner.opponent.animator.SetTrigger("hit");
+                                        break;
+                                    case 1:
+                                        owner.opponent.animator.SetTrigger("down");
+                                        break;
+                                    case 2:
+                                        owner.animator.SetTrigger("victory");
+                                        owner.opponent.animator.SetTrigger("death");
+                                        AudioManager.instance.Death();
+                                        break;
+                                };
+                                owner.fury.furyMultiplication(owner.fury.winnerFuryPercentageLeft);
+                                actionInfos.currentSamples.additionalSounds[0].Post(owner.gameObject);
+                            }
                         }
                     }
                 }
@@ -87,6 +100,6 @@ public class StateStrike : PlayerState
                 actionInfos.currentSamples.additionalSounds[0].Post(owner.gameObject);
             }
         }
-        base.Exit(reset);
+        owner.onDash -= DashEvent;
     }
 }

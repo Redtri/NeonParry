@@ -41,7 +41,7 @@ public class StateRepos : PlayerState
     }
 
     public override void Exit(bool reset = false) {
-        Debug.Log("Leaving repos");
+        //Debug.Log("Leaving repos");
         base.Exit(reset);
     }
 }

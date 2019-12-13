@@ -8,6 +8,8 @@ public enum eDIRECTION { NONE, UP, MID, DOWN };
 public enum eCONTROLLER { KEYBOARD, GAMEPAD };
 
 public delegate void StrikeEvent(eDIRECTION direction, float delay = 0f);
+public delegate void DashEvent();
+
 public class PlayerController : MonoBehaviour
 {
     //REFERENCES
@@ -53,6 +55,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public int skin;
 
     public StrikeEvent onStrike;
+    public DashEvent onDash;
 
     private void Awake() {
         strikeAction = new SwordAction(strikeInfos.parameters);
@@ -152,7 +155,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update() {
         machineState.Update();
-        Debug.Log("Player is " + ((isStop) ? "stopped" : "active"));
+        //Debug.Log("Player is " + ((isStop) ? "stopped" : "active"));
 
         if (machineState.currentState == ePLAYER_STATE.NEUTRAL) {
             performingAction = false;
@@ -221,15 +224,17 @@ public class PlayerController : MonoBehaviour
 
     private void OnDash(InputAction.CallbackContext value) {
         if (!isStop) {
-            if (SceneManager.GetActiveScene().name != "IntroScene") {
-                if (currentSpotIndex < GameManager.instance.nbSteps - 1) {
+            if (SceneManager.GetActiveScene().name != "IntroScene")
+            {
+                if (currentSpotIndex < GameManager.instance.nbSteps - 1)
+                {
+                    onDash?.Invoke();
                     if (machineState.currentState != ePLAYER_STATE.REPOS && machineState.StateRequest(ePLAYER_STATE.DASH)) {
                         machineState.ChangeState(ePLAYER_STATE.DASH);
                         StartCoroutine(OpponentReposDelay());
                     }
                 }
             } else {
-
                 if (currentSpotIndex < MenuManager.instance.nbSteps - 1) {
                     if (machineState.StateRequest(ePLAYER_STATE.DASH)) {
                         StartCoroutine(OpponentReposDelay());
