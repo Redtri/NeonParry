@@ -15,7 +15,7 @@ MonoBehaviour:
   actionSounds:
   - idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: c65011007f4ab47fe85e2637da8e175a,
+    WwiseObjectReference: {fileID: 11400000, guid: 6208b7988e89a564094b2f875aaba607,
       type: 2}
   additionalSounds:
   - idInternal: 0
