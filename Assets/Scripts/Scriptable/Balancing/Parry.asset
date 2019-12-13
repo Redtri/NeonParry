@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Parry
   m_EditorClassIdentifier: 
   parameters:
-    baseCooldownDuration: 0.4
+    baseCooldownDuration: 0.3
     fury:
       lowestValueOfFury: 0
       highestValueOfFury: 0

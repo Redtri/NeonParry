@@ -1709,7 +1709,7 @@ MonoBehaviour:
     maximumMultiplicator: 3
     winnerFuryPercentageLeft: 0.5
     isFeintAndChargeTheSame: 0
-    percentagePerfectParyFury: 10
+    percentagePerfectParyFury: 2
   strikeInfos: {fileID: 11400000, guid: 18ecffe09a8d31648a5e327fbbc8726b, type: 2}
   chargeInfos: {fileID: 11400000, guid: 4e40bd5b3fa59aa41aafda007a401a92, type: 2}
   parryInfos: {fileID: 11400000, guid: f1a4cdf68f62362489cd8dd577480134, type: 2}
@@ -1742,9 +1742,11 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    samples: {fileID: 11400000, guid: 58a0927b5967f654282ed7ee8fe6d57c, type: 2}
-  parry:
-    baseCooldownDuration: 0.4
+    leftSamples: {fileID: 0}
+    rightSamples: {fileID: 0}
+    currentSamples: {fileID: 0}
+  chargeAction:
+    baseCooldownDuration: 0
     fury:
       lowestValueOfFury: 0
       highestValueOfFury: 0
