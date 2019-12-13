@@ -679,9 +679,14 @@ MonoBehaviour:
   barRightSmooth: {fileID: 8445242002307508771}
   FuryJarLeft: {fileID: 2839120534836111140}
   FuryJarRight: {fileID: 2247401649216962715}
-  FULLHP: {fileID: 21300000, guid: 25a6e9a867a21e64f8a30ee306154b60, type: 3}
-  LESSHP: {fileID: 21300000, guid: 8aef05bee53d3fc49a474cc6a31d82bf, type: 3}
-  LESSERHP: {fileID: 21300000, guid: cc83ffe450f1c17479fc71a8487093e0, type: 3}
+  FuryMaskLeft: {fileID: 7257171782975046627}
+  FuryMaskRight: {fileID: 2790895139355649715}
+  FullHP: {fileID: 21300000, guid: 25a6e9a867a21e64f8a30ee306154b60, type: 3}
+  LessHP: {fileID: 21300000, guid: 8aef05bee53d3fc49a474cc6a31d82bf, type: 3}
+  LowHP: {fileID: 21300000, guid: cc83ffe450f1c17479fc71a8487093e0, type: 3}
+  FullHPMask: {fileID: 21300000, guid: fab4f8678dbd74c40ba7e391ca012275, type: 3}
+  LessHPMask: {fileID: 21300000, guid: fb1ce2c9369ee2e4581b50fceabf7173, type: 3}
+  LowHPMask: {fileID: 21300000, guid: 954ffc5c9fdce364e93c43c4037a23fe, type: 3}
 --- !u!1 &2758944274612069202
 GameObject:
   m_ObjectHideFlags: 0

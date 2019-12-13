@@ -15,14 +15,22 @@ public class UI_Manager : MonoBehaviour
     public Image barRightSmooth;
     public Image FuryJarLeft;
     public Image FuryJarRight;
+
+    public Image FuryMaskLeft;
+    public Image FuryMaskRight;
+
     private float maxValue;
-    private Vector3 barLowPosition;
+
     private float currentValueLeft;
     private float currentValueRight;
 
-    public Sprite FULLHP;     //FULL
-    public Sprite LESSHP;   //-1
-    public Sprite LESSERHP;  //-2
+    public Sprite FullHP;     //FULL
+    public Sprite LessHP;   //-1
+    public Sprite LowHP;  //-2
+
+    public Sprite FullHPMask;     //FULL
+    public Sprite LessHPMask;   //-1
+    public Sprite LowHPMask;  //-2
 
     private void Awake()
     {
@@ -107,34 +115,39 @@ public class UI_Manager : MonoBehaviour
                 {
                     case 0:
                         
-                        FuryJarLeft.sprite = FULLHP;
-                        break;
+                        FuryJarLeft.sprite = FullHP;
+                        FuryMaskLeft.sprite = FullHPMask;
+                    break;
                     case 1:
 
                             Debug.Log("OK ???");
-                        FuryJarLeft.sprite = LESSHP;
-                        
-                        break;
+                        FuryJarLeft.sprite = LessHP;
+                    FuryMaskLeft.sprite = LessHPMask;
+
+                    break;
                 default:
-                    FuryJarLeft.sprite = LESSERHP;
-                        break;
+                    FuryJarLeft.sprite = LowHP;
+                    FuryMaskLeft.sprite = LowHPMask;
+                    break;
 
                 }
             switch (GameManager.instance.score[GameManager.instance.currentRound][0])
             {
                 case 0:
 
-                    if (FuryJarRight.sprite != FULLHP) FuryJarRight.sprite = FULLHP;
+                    FuryJarRight.sprite = FullHP;
+                    FuryMaskRight.sprite = FullHPMask;
                     break;
                 case 1:
-                    if (FuryJarRight.sprite != LESSHP)
-                    {
                         Debug.Log("OK ???");
-                        FuryJarRight.sprite = LESSHP;   
-                    }
+                        FuryJarRight.sprite = LessHP;
+                    FuryMaskRight.sprite = LessHPMask;
+
                     break;
                 default:
-                    if (FuryJarRight.sprite != LESSERHP) FuryJarRight.sprite = LESSERHP;
+                    FuryJarRight.sprite = LowHP;
+                    FuryMaskRight.sprite = LowHPMask;
+
                     break;
             }
 
