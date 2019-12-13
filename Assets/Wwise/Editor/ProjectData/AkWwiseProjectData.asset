@@ -83,7 +83,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 1db4f74826e35f4092d5c6972967e448
     GuidInternal: 
-    m_lastTime: -8586253721065620825
+    m_lastTime: -8586253495806428488
     List:
     - name: Music_Dash
       guid: 6cca3183ab723d45be58bfbd74aa3b2d
@@ -173,7 +173,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: d2144fa278e9474fa08953a4a0b4c57d
     GuidInternal: 
-    m_lastTime: -8586253541998283483
+    m_lastTime: -8586253495806503502
     List:
     - name: attackHighLeft
       guid: 97c9c837e2a96d45abb5049cddc9e6f6
@@ -713,6 +713,7 @@ MonoBehaviour:
   ExpandedItems:
   - /NeonParry_WwiseProject
   - /NeonParry_WwiseProject/Events
+  - /NeonParry_WwiseProject/Events/Music
   - /NeonParry_WwiseProject/Events/SFX
   - /NeonParry_WwiseProject/Events/SFX/Countdown
   autoPopulateEnabled: 1
