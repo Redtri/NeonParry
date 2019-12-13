@@ -181,6 +181,7 @@ public class PlayerController : MonoBehaviour
             }
             var angleRadians = Mathf.Atan2(look.y, Mathf.Abs(look.x));
             var deg = ((angleRadians * Mathf.Rad2Deg) - 90f)%360;//-90 is offset sprite
+            if (Mathf.Abs(deg) == 180) deg = 179; //for the perfect 180 that fuck with me
             var halfCirclePart = 180 / nbDirections; // determine the angle of a direction
             int part = Mathf.Abs((int)(deg / halfCirclePart)); // in wich part will be the strike
             var posKunai = (part * halfCirclePart) + (halfCirclePart / 2);
