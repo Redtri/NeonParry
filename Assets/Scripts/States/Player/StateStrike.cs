@@ -16,7 +16,22 @@ public class StateStrike : PlayerState
     
     public override void Enter(bool trigger = true)
     {
-        base.Enter();
+        if (trigger)
+        {
+            owner.animator.SetTrigger(stateMachine.currentState.ToString().ToLower());
+            owner.cursorAnimator.SetTrigger(stateMachine.currentState.ToString().ToLower());
+        }
+        if (actionInfos != null)
+        {
+            if (actionInfos.currentSamples != null)
+            {
+                actionInfos.Refresh(Time.time);
+                owner.animator.SetInteger("direction", (int)actionInfos.direction);
+                //Refresh animation clips speeds
+                owner.animator.SetFloat("duration_" + stateMachine.currentState.ToString().ToLower(), 1 / actionInfos.currentActionDuration);
+                owner.cursorAnimator.SetFloat("duration_" + stateMachine.currentState.ToString().ToLower(), 1 / actionInfos.currentActionDuration);
+            }
+        }
         opponentParried = false;
         opponentDashed = false;
         dashed = false;
@@ -27,7 +42,6 @@ public class StateStrike : PlayerState
 
     private void DashEvent()
     {
-        Debug.Log("DASH DE COUILLES");
         dashed = true;
     }
 
@@ -94,10 +108,6 @@ public class StateStrike : PlayerState
                         }
                     }
                 }
-            }
-            else
-            {
-                actionInfos.currentSamples.additionalSounds[0].Post(owner.gameObject);
             }
         }
         owner.onDash -= DashEvent;

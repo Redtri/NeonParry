@@ -34,8 +34,6 @@ public class AudioManager : MonoBehaviour {
                 break;
         }
         ambient[SceneManager.GetActiveScene().buildIndex].Post(gameObject);
-
-        //events[0].Post(gameObject);
     }
 
     private void OnEnable() {
