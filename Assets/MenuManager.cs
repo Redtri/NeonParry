@@ -79,6 +79,7 @@ public class MenuManager : MonoBehaviour
         menuCam.GetComponent<Animator>().SetTrigger("travelling");
         int playerIndex = GameInfos.playerInfos.Count;
         if(playerIndex == 0) {
+            AudioManager.instance.specialEffets[0].Post(gameObject);
             StartCoroutine(BlockPlayer(playerIndex, 4f, false));
         } else {
             StartCoroutine(BlockPlayer(playerIndex, 1.5f, false));

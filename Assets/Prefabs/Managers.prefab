@@ -127,6 +127,20 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: c29ebb4253d56c743a46f205b5d8e4f3,
       type: 2}
+  specialEffets:
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 41d7a6c2bef4ff84da16bdad00a53d6b,
+      type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: fd76cb4f89a828649a8757bd1eeefa54,
+      type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: a33165d8d151f884983a7aaf464d7f79,
+      type: 2}
+  countdown: []
 --- !u!1 &6268276687221777030
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,8 @@ public class AudioManager : MonoBehaviour {
     public AK.Wwise.Event[] musicsGame;
 
     public AK.Wwise.Event[] ambient;
+    public AK.Wwise.Event[] specialEffets;
+    public AK.Wwise.Event[] countdown;
 
     public static AudioManager instance;
 
@@ -21,6 +23,7 @@ public class AudioManager : MonoBehaviour {
 
     private void Start() {
         GameManager.instance.onStrike += UpdateMusic;
+        GameManager.instance.onCountdown += Countdown;
         switch (SceneManager.GetActiveScene().buildIndex) {
             case 0:
                 musicsMenu[0].Post(gameObject);
@@ -43,7 +46,13 @@ public class AudioManager : MonoBehaviour {
 
     private void OnDisable() {
         GameManager.instance.onStrike -= UpdateMusic;
+        GameManager.instance.onCountdown -= Countdown;
     }    
+
+    private void Countdown(int count, int max) {
+        print(count);
+        countdown[count].Post(gameObject);
+    }
 
     public void NewRound() {
         switch (GameManager.instance.currentRound) {
