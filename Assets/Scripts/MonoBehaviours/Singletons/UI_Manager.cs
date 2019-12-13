@@ -37,7 +37,7 @@ public class UI_Manager : MonoBehaviour
     private void Awake()
     {
         InitFury();
-
+        Fade(false);
         /*FULLHP = Resources.Load<Sprite>("Assets/Images/UI/UI_3pv.png");      //FULL
         LESSHP = Resources.Load<Sprite>("Assets/Images/UI/UI_2pv.png");    //-1
         LESSERHP = Resources.Load<Sprite>("Assets/Images/UI/UI_1pv.png");  //-2
