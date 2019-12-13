@@ -754,9 +754,9 @@ MonoBehaviour:
   scoreRight: {fileID: 2758944274181080556}
   countdownImage: {fileID: 1780661001226460153}
   countImages:
-  - {fileID: 21300000, guid: 34f0bbb6b91c0c64882740fe929ebc97, type: 3}
-  - {fileID: 21300000, guid: bb5fe9f0a64596c49a23d5117e9d9f59, type: 3}
-  - {fileID: 21300000, guid: bdef91e6f728fe84383caf43a6ff884a, type: 3}
+  - {fileID: 21300000, guid: a9ff0bad44d8471458910f0c7224599b, type: 3}
+  - {fileID: 21300000, guid: 571e804b2f823dc4f87aea22c4230155, type: 3}
+  - {fileID: 21300000, guid: 651c4a26bed15774eb21ae785fdc4137, type: 3}
   fadeImage: {fileID: 301657167602365156}
   barLeft: {fileID: 5709768256445654885}
   barRight: {fileID: 7062344210437299318}
@@ -2058,7 +2058,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2026577547231811550
 RectTransform:
   m_ObjectHideFlags: 0
