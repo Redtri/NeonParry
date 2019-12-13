@@ -34,6 +34,14 @@ public class UI_Manager : MonoBehaviour
     public Sprite LessHPMask;   //-1
     public Sprite LowHPMask;  //-2
 
+    public Image scoreLeft1;
+    public Image scroreLeft2;
+    public Image scoreRight1;
+    public Image scoreRight2;
+
+    public Sprite spriteOn;
+    public Sprite spriteOff;
+
     public Transform BarTransform;
     private Transform AwakeTransform;
 
@@ -112,6 +120,39 @@ public class UI_Manager : MonoBehaviour
             barRight.fillAmount = currentValueRight / maxValue;
             barLeftSmooth.fillAmount += (barLeft.fillAmount - barLeftSmooth.fillAmount) / 50;
             barRightSmooth.fillAmount += (barRight.fillAmount - barRightSmooth.fillAmount) / 50;
+
+            switch (GameManager.instance.score[0][0])
+            {
+                case 0:
+                    scoreLeft1.sprite = spriteOff;
+                    scroreLeft2.sprite = spriteOff;
+                    break;
+                case 1:
+                    scoreLeft1.sprite = spriteOn;
+                    scroreLeft2.sprite = spriteOff;
+                    break;
+                case 2:
+                    scoreLeft1.sprite = spriteOn;
+                    scroreLeft2.sprite = spriteOn;
+                    break;
+
+            }
+            switch (GameManager.instance.score[0][1])
+            {
+                case 0:
+                    scoreRight1.sprite = spriteOff;
+                    scoreRight2.sprite = spriteOff;
+                    break;
+                case 1:
+                    scoreRight1.sprite = spriteOn;
+                    scoreRight2.sprite = spriteOff;
+                    break;
+                case 2:
+                    scoreRight1.sprite = spriteOn;
+                    scoreRight2.sprite = spriteOn;
+                    break;
+
+            }
         }
     }
     private void RefreshScore()
@@ -122,8 +163,9 @@ public class UI_Manager : MonoBehaviour
             scoreLeft.text = GameManager.instance.score[0][0].ToString() + " " + GameManager.instance.score[GameManager.instance.currentRound][0].ToString();
             scoreRight.text = GameManager.instance.score[0][1].ToString() + " " + GameManager.instance.score[GameManager.instance.currentRound][1].ToString();
 
+               
 
-                switch (GameManager.instance.score[GameManager.instance.currentRound][1])
+            switch (GameManager.instance.score[GameManager.instance.currentRound][1])
                 {
                     case 0:
                         
