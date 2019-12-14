@@ -185,7 +185,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: d2144fa278e9474fa08953a4a0b4c57d
     GuidInternal: 
-    m_lastTime: -8586252723507148107
+    m_lastTime: -8586252669873325618
     List:
     - name: attackHighLeft
       guid: 97c9c837e2a96d45abb5049cddc9e6f6
@@ -376,6 +376,20 @@ MonoBehaviour:
       - ElementName: feintMidRight
         ObjectType: 3
       Path: SFX\feintMidRight
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: fight
+      guid: 11ccd5669900fd47809b1d4249918ef0
+      id: 514064485
+      PathAndIcons:
+      - ElementName: SFX
+        ObjectType: 12
+      - ElementName: Countdown
+        ObjectType: 4
+      - ElementName: fight
+        ObjectType: 3
+      Path: SFX\Countdown\fight
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1

@@ -3,6 +3,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	116178158	Footstep_Event			\SFX\Footstep_Event	
 	338654435	feintHightRight			\SFX\feintHightRight	
 	454784401	attackLowRight			\SFX\attackLowRight	
+	514064485	fight			\SFX\Countdown\fight	
 	626061955	Menu_Ambiance			\Ambiance\Menu_Ambiance	
 	678209053	two			\SFX\Countdown\two	
 	723605745	Music_FirstPVLost			\Music\Music_FirstPVLost	
@@ -88,6 +89,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	162646036	ParryImpact02	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Mac\SFX\ParryImpact02_11697732.wem		\Actor-Mixer Hierarchy\Thomas\SFX\ParryLeft\ParryImpact02		10282
 	220227563	perfectParry	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Mac\SFX\perfectParry_11697732.wem		\Actor-Mixer Hierarchy\Thomas\SFX\perfectParry		27740
 	244755321	round3_beat_extrafill	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Mac\SFX\round3_beat_extrafill_469574DC.wem		\Interactive Music Hierarchy\Guerric\roundSwitcher\inGameMusic_Round3\fightingMusic\round3_segment1\round3_beat_extrafill		165329
+	253230169	fight	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Mac\SFX\fight_B60F76E9.wem		\Actor-Mixer Hierarchy\Guerric\Countdown\fight		24784
 	272836807	round3_lead_extra	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Mac\SFX\round3_lead_extra_469574DC.wem		\Interactive Music Hierarchy\Guerric\roundSwitcher\inGameMusic_Round3\fightingMusic\round3_segment1\round3_lead_extra		201889
 	278925160	attackMidFurryMed	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Mac\SFX\attackMidFurryMed_11697732.wem		\Actor-Mixer Hierarchy\Thomas\SFX\attackMidLeft\attackMidFurryMed		32071
 	332385486	three	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Mac\SFX\three_11697732.wem		\Actor-Mixer Hierarchy\Guerric\Countdown\three		26188
@@ -109,6 +111,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	545831822	attackMidFurryMax	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Mac\SFX\attackMidFurryMax_11697732.wem		\Actor-Mixer Hierarchy\Thomas\SFX\attackMidLeft\attackMidFurryMax		31177
 	549341578	TakeHitSlowdown	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Mac\SFX\TakeHitSlowdown_11697732.wem		\Actor-Mixer Hierarchy\Thomas\SFX\TakeHitSlowdown		41505
 	554827245	thunderdeath	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Mac\SFX\thunderdeath_11697732.wem		\Actor-Mixer Hierarchy\Guerric\Thunderdead\thunderdeath		144383
+	556657704	fightdrop	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Mac\SFX\fightdrop_EAB6A226.wem		\Actor-Mixer Hierarchy\Guerric\Countdown\fightdrop		43030
 	560436870	attackLowFurryMax	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Mac\SFX\attackLowFurryMax_11697732.wem		\Actor-Mixer Hierarchy\Thomas\SFX\attackLowRight\attackLowFurryMax		28263
 	564121806	attackHighFurryMed	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Mac\SFX\attackHighFurryMed_11697732.wem		\Actor-Mixer Hierarchy\Thomas\SFX\attackHighRight\attackHighFurryMed		33255
 	583371099	impact3	C:\Users\test\Desktop\ENJMIN\NANOPROJET\Git_General\NeonParry\NeonParrySound\NeonParry_WwiseProject\.cache\Mac\SFX\impact3_11697732.wem		\Actor-Mixer Hierarchy\Guerric\Countdown\impact3		29692

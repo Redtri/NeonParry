@@ -37,6 +37,7 @@
 				<Event Id="3807145869" Name="feintLowRight" ObjectPath="\Events\SFX\feintLowRight"/>
 				<Event Id="1297253722" Name="feintMidLeft" ObjectPath="\Events\SFX\feintMidLeft"/>
 				<Event Id="3074935633" Name="feintMidRight" ObjectPath="\Events\SFX\feintMidRight"/>
+				<Event Id="514064485" Name="fight" ObjectPath="\Events\SFX\Countdown\fight"/>
 				<Event Id="116178158" Name="Footstep_Event" ObjectPath="\Events\SFX\Footstep_Event"/>
 				<Event Id="1133475131" Name="hitLeft" ObjectPath="\Events\SFX\hitLeft"/>
 				<Event Id="1778295094" Name="hitRight" ObjectPath="\Events\SFX\hitRight"/>
@@ -134,6 +135,10 @@
 					<ShortName>round3_beat_extrafill.wav</ShortName>
 					<Path>SFX\round3_beat_extrafill_469574DC.wem</Path>
 				</File>
+				<File Id="253230169" Language="SFX">
+					<ShortName>fight.wav</ShortName>
+					<Path>SFX\fight_B60F76E9.wem</Path>
+				</File>
 				<File Id="272836807" Language="SFX">
 					<ShortName>round3_lead_extra.wav</ShortName>
 					<Path>SFX\round3_lead_extra_469574DC.wem</Path>
@@ -217,6 +222,10 @@
 				<File Id="554827245" Language="SFX">
 					<ShortName>thunderdeath.wav</ShortName>
 					<Path>SFX\thunderdeath_11697732.wem</Path>
+				</File>
+				<File Id="556657704" Language="SFX">
+					<ShortName>fightdrop.wav</ShortName>
+					<Path>SFX\fightdrop_EAB6A226.wem</Path>
 				</File>
 				<File Id="560436870" Language="SFX">
 					<ShortName>attackLowFurryMax.wav</ShortName>
