@@ -105,6 +105,8 @@ public class StateStrike : PlayerState
                                 owner.fury.furyMultiplication(owner.fury.winnerFuryPercentageLeft);
                                 actionInfos.currentSamples.additionalSounds[0].Post(owner.gameObject);
                             }
+                        } else {
+                            PostProcessManager.instance.Glitch(1, 0.8f);
                         }
                     }
                 }
