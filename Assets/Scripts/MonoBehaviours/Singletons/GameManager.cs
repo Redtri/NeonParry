@@ -72,6 +72,23 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            Quit();
+        }
+    }
+
+    public void Quit() {
+        switch (SceneManager.GetActiveScene().buildIndex) {
+            case 0:
+                Application.Quit();
+                break;
+            case 1:
+                SceneManager.LoadSceneAsync(0);
+                break;
+        }
+    }
+
     public void LoadPlayerInfos() {
         inputSystem.JoinPlayer(0, 0, "Gamepad", GameInfos.playerInfos[0].device);
         inputSystem.playerPrefab = prefabs[1];

@@ -4,9 +4,11 @@ using UnityEngine;
 using Cinemachine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 
 public delegate void GameTransition(bool fadeOut = true, float overrideDuration = 0f);
+public delegate void IntEvent(int value);
 
 public class MenuManager : MonoBehaviour
 {
@@ -28,6 +30,7 @@ public class MenuManager : MonoBehaviour
 
     public GameTransition onGameStart;
     public GameTransition onScreen;
+    public IntEvent onJoin;
 
     private void Awake()
     {
@@ -78,7 +81,8 @@ public class MenuManager : MonoBehaviour
     public int NewPlayer(PlayerController newPlayer) {
         menuCam.GetComponent<Animator>().SetTrigger("travelling");
         int playerIndex = GameInfos.playerInfos.Count;
-        if(playerIndex == 0) {
+        onJoin?.Invoke(playerIndex);
+        if (playerIndex == 0) {
             AudioManager.instance.specialEffets[0].Post(gameObject);
             StartCoroutine(BlockPlayer(playerIndex, 4f, false));
         } else {

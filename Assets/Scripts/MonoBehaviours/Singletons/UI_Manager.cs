@@ -43,12 +43,11 @@ public class UI_Manager : MonoBehaviour
     public Sprite spriteOff;
 
     public Transform BarTransform;
-    private Transform AwakeTransform;
+    public Transform[] joinMessage;
 
 
     private void Awake()
     {
-        AwakeTransform = BarTransform;
         InitFury();
         Fade(false);
         /*FULLHP = Resources.Load<Sprite>("Assets/Images/UI/UI_3pv.png");      //FULL
@@ -63,7 +62,6 @@ public class UI_Manager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-
         MenuManager.instance.onGameStart += Fade;
         MenuManager.instance.onScreen += Fade;
         GameManager.instance.onRoundEnd += Fade;
@@ -73,10 +71,15 @@ public class UI_Manager : MonoBehaviour
         GameManager.instance.onScore += RefreshScore;
     }
 
+    private void Start() {
+        MenuManager.instance.onJoin += PlayerJoined;
+    }
+
     private void OnDisable()
     {
         MenuManager.instance.onGameStart -= Fade;
         MenuManager.instance.onScreen -= Fade;
+        MenuManager.instance.onJoin -= PlayerJoined;
         GameManager.instance.onRoundEnd -= Fade;
         GameManager.instance.onMatchEnd -= Fade;
         GameManager.instance.onRoundStart -= Fade;
@@ -228,6 +231,10 @@ public class UI_Manager : MonoBehaviour
     private IEnumerator StopCountdown() {
         yield return new WaitForSeconds(1f);
         countdownImage.gameObject.SetActive(false);
+    }
+
+    private void PlayerJoined(int playerIndex) {
+        joinMessage[playerIndex].gameObject.SetActive(false);
     }
 
     private void InitFury()
