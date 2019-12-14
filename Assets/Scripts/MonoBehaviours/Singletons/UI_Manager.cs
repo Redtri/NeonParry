@@ -64,6 +64,10 @@ public class UI_Manager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+    }
+
+    private void Start() {
+        MenuManager.instance.onJoin += PlayerJoined;
         MenuManager.instance.onGameStart += Fade;
         MenuManager.instance.onScreen += Fade;
         GameManager.instance.onRoundEnd += Fade;
@@ -71,10 +75,6 @@ public class UI_Manager : MonoBehaviour
         GameManager.instance.onRoundStart += Fade;
         GameManager.instance.onCountdown += Countdown;
         GameManager.instance.onScore += RefreshScore;
-    }
-
-    private void Start() {
-        MenuManager.instance.onJoin += PlayerJoined;
     }
 
     private void OnDisable()

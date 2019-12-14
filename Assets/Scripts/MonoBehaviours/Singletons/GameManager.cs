@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour
                 Application.Quit();
                 break;
             case 1:
-                AkSoundEngine.PostEvent("Music_Stop", gameObject);
+                AudioManager.instance.stopMusic.Post(gameObject);
                 GameInfos.playerInfos[0].controller.Unsubscribe();
                 GameInfos.playerInfos[1].controller.Unsubscribe();
                 SceneManager.LoadSceneAsync(0);

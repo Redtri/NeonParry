@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour {
     public AK.Wwise.Event[] ambient;
     public AK.Wwise.Event[] specialEffets;
     public AK.Wwise.Event[] countdown;
+    public AK.Wwise.Event stopMusic;
 
     public static AudioManager instance;
 
