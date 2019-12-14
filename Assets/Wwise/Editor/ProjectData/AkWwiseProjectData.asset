@@ -83,7 +83,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 1db4f74826e35f4092d5c6972967e448
     GuidInternal: 
-    m_lastTime: -8586252703113734170
+    m_lastTime: -8586252578840626793
     List:
     - name: Music_Dash
       guid: 6cca3183ab723d45be58bfbd74aa3b2d
@@ -185,7 +185,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: d2144fa278e9474fa08953a4a0b4c57d
     GuidInternal: 
-    m_lastTime: -8586252669873325618
+    m_lastTime: -8586252668296119975
     List:
     - name: attackHighLeft
       guid: 97c9c837e2a96d45abb5049cddc9e6f6
@@ -380,7 +380,7 @@ MonoBehaviour:
       maxDuration: -1
       minDuration: -1
     - name: fight
-      guid: 11ccd5669900fd47809b1d4249918ef0
+      guid: 925fae268052b34ea87c28454da18e0e
       id: 514064485
       PathAndIcons:
       - ElementName: SFX

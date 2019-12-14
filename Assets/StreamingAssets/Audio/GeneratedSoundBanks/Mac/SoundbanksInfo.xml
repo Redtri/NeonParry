@@ -135,10 +135,6 @@
 					<ShortName>round3_beat_extrafill.wav</ShortName>
 					<Path>SFX\round3_beat_extrafill_469574DC.wem</Path>
 				</File>
-				<File Id="253230169" Language="SFX">
-					<ShortName>fight.wav</ShortName>
-					<Path>SFX\fight_B60F76E9.wem</Path>
-				</File>
 				<File Id="272836807" Language="SFX">
 					<ShortName>round3_lead_extra.wav</ShortName>
 					<Path>SFX\round3_lead_extra_469574DC.wem</Path>
@@ -191,6 +187,10 @@
 					<ShortName>deathbassdrop.wav</ShortName>
 					<Path>SFX\deathbassdrop_469574DC.wem</Path>
 				</File>
+				<File Id="489264448" Language="SFX">
+					<ShortName>fight.wav</ShortName>
+					<Path>SFX\fight_F1ACF722.wem</Path>
+				</File>
 				<File Id="499284639" Language="SFX">
 					<ShortName>attackMidFurryMin.wav</ShortName>
 					<Path>SFX\attackMidFurryMin_11697732.wem</Path>
@@ -222,10 +222,6 @@
 				<File Id="554827245" Language="SFX">
 					<ShortName>thunderdeath.wav</ShortName>
 					<Path>SFX\thunderdeath_11697732.wem</Path>
-				</File>
-				<File Id="556657704" Language="SFX">
-					<ShortName>fightdrop.wav</ShortName>
-					<Path>SFX\fightdrop_EAB6A226.wem</Path>
 				</File>
 				<File Id="560436870" Language="SFX">
 					<ShortName>attackLowFurryMax.wav</ShortName>
@@ -314,6 +310,10 @@
 				<File Id="968388713" Language="SFX">
 					<ShortName>feintHighFurryMax.wav</ShortName>
 					<Path>SFX\feintHighFurryMax_11697732.wem</Path>
+				</File>
+				<File Id="978667265" Language="SFX">
+					<ShortName>fightdrop.wav</ShortName>
+					<Path>SFX\fightdrop_EF5AAF79.wem</Path>
 				</File>
 				<File Id="982558120" Language="SFX">
 					<ShortName>round3_bass_filtered.wav</ShortName>
