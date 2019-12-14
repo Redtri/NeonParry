@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     public int nbSteps;
     public float stepValue;
     public float freezeFrameDuration;
-    public AnimationCurve freezeFrameCurve;
+    public AnimationCurve[] freezeFrameCurve;
     public Vector3 groundOffset;
     [HideInInspector] public List<Vector3> spots;
     public static GameManager instance { get; private set; }
@@ -128,7 +128,8 @@ public class GameManager : MonoBehaviour
         ++score[currentRound][playerIndex];
         onScore?.Invoke();
         onStrike?.Invoke(score[currentRound]);
-        StartCoroutine(FreezeFrame(freezeFrameDuration));
+        PostProcessManager.instance.Glitch(1, .5f, true);
+        StartCoroutine(FreezeFrame(0, freezeFrameDuration));
         if (score[currentRound][playerIndex] >= nbExchangeForARound) {
             ++score[0][playerIndex];
             if (score[0][playerIndex] >= nbRoundForAMatch) {
@@ -149,17 +150,17 @@ public class GameManager : MonoBehaviour
 
     private bool freezing;
 
-    public void Freeze(float duration) {
-        StartCoroutine(FreezeFrame(duration));
+    public void Freeze(int curveIndex, float duration) {
+        StartCoroutine(FreezeFrame(curveIndex, duration));
     }
 
-    public IEnumerator FreezeFrame(float duration) {
+    public IEnumerator FreezeFrame(int curveIndex, float duration) {
         if (!freezing) {
             float refreshTime = Time.unscaledTime;
             freezing = true;
 
             while (Time.unscaledTime - refreshTime < duration) {
-                Time.timeScale = freezeFrameCurve.Evaluate((Time.unscaledTime - refreshTime) / duration);
+                Time.timeScale = freezeFrameCurve[curveIndex].Evaluate((Time.unscaledTime - refreshTime) / duration);
                 yield return new WaitForSecondsRealtime(0.01f);
             }
             freezing = false;
@@ -196,68 +197,17 @@ public class GameManager : MonoBehaviour
         }
         while (temp < duration) {
             onCountdown?.Invoke(temp, (int)duration - 1);
-            Glitch(temp, 1f);
+            PostProcessManager.instance.Glitch(temp, .1f, true, true);
             yield return new WaitForSeconds(1f);
             ++temp;
         }
-        postProcess.profile.Remove<LensDistortion>();
         StopPlayers(false);
         yield return null;
     }
 
-    public void Glitch(int tCount, float duration) {
-        StartCoroutine(Glitching(tCount, duration));
-    }
-
-    private IEnumerator Glitching(int tCount, float duration) {
-        float count = 0.0f;
-        LensDistortion lensDist;
-        ChannelMixer chanMix;
-        Bloom bloom;
-        postProcess.profile.TryGet(out lensDist);
-        postProcess.profile.TryGet(out chanMix);
-        postProcess.profile.TryGet(out bloom);
-        if(!lensDist) {
-            lensDist = postProcess.profile.Add<LensDistortion>();
-        }
-        if (!chanMix) {
-            chanMix = postProcess.profile.Add<ChannelMixer>();
-        }
-        chanMix.redOutBlueIn.overrideState = true;
-        chanMix.greenOutBlueIn.overrideState = true;
-        chanMix.blueOutBlueIn.overrideState = true;
-        lensDist.intensity.overrideState = true;
-        lensDist.xMultiplier.overrideState = true;
-        lensDist.yMultiplier.overrideState = true;
-        lensDist.center.overrideState = true;
-
-        while (count < duration) {
-            yield return new WaitForSeconds(0.01f);
-            switch (tCount) {
-                case 0:
-                case 1:
-                    lensDist.intensity.value = -(1 - (count / duration));
-                    lensDist.xMultiplier.value = 1 - (count / duration);
-                    bloom.intensity.value = 1 - (count / duration);
-                    break;
-                case 2:
-                    lensDist.intensity.value = (1 - (count / duration));
-                    lensDist.xMultiplier.value = 1 - (count / duration);
-                    lensDist.center.value = new Vector2(.5f, 1-((count / duration)));
-                    bloom.intensity.value = 1 - (count / duration);
-                    break;
-            }
-            count += 0.01f;
-        }
-        bloom.intensity.value = 0.067f;
-        postProcess.profile.Remove<ChannelMixer>();
-        postProcess.profile.Remove<LensDistortion>();
-        yield return null;
-    }
 
     public IEnumerator MatchStop() {
         int count = 0;
-
         StopPlayers(true);
         while (count < 2) {
             if(count > 0) {
@@ -267,7 +217,9 @@ public class GameManager : MonoBehaviour
             ++count;
         }
         StopPlayers(false);
-        SceneManager.LoadScene(0);
+        GameInfos.playerInfos[0].controller.Unsubscribe();
+        GameInfos.playerInfos[1].controller.Unsubscribe();
+        SceneManager.LoadSceneAsync(0);
         yield return null;
     }
 

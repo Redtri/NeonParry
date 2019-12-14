@@ -48,7 +48,6 @@ public class AudioManager : MonoBehaviour {
     }    
 
     private void Countdown(int count, int max) {
-        print(count);
         countdown[count].Post(gameObject);
     }
 

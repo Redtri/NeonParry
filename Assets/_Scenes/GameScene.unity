@@ -2306,6 +2306,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7607955283735862316, guid: 1729d5456d7ea7244b7c413f9b4859a2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2758944274475106403, guid: 1729d5456d7ea7244b7c413f9b4859a2,
         type: 3}
       propertyPath: barLeft
@@ -2360,11 +2365,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0.000061035156
-      objectReference: {fileID: 0}
-    - target: {fileID: 7607955283735862316, guid: 1729d5456d7ea7244b7c413f9b4859a2,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 519786567840441991, guid: 1729d5456d7ea7244b7c413f9b4859a2,
         type: 3}
@@ -2544,5 +2544,10 @@ PrefabInstance:
       propertyPath: clashFxPrefab
       value: 
       objectReference: {fileID: 1749155323}
+    - target: {fileID: 4633194568492423135, guid: 025629b7bbbd3b841a8d1dcb4e029ed1,
+        type: 3}
+      propertyPath: postProcess
+      value: 
+      objectReference: {fileID: 210362566}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 025629b7bbbd3b841a8d1dcb4e029ed1, type: 3}
