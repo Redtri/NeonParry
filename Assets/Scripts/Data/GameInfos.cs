@@ -21,5 +21,4 @@ public class PlayerInfo {
 public static class GameInfos {
 
     public static List<PlayerInfo> playerInfos = new List<PlayerInfo>();
-    public static eGAME_PHASE currentPhase;
 }

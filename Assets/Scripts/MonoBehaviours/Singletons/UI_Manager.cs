@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UI_Manager : MonoBehaviour
@@ -11,6 +12,7 @@ public class UI_Manager : MonoBehaviour
     [SerializeField] private Image countdownImage;
     [SerializeField] private Sprite[] countImages;
     public Image fadeImage;
+    public Image creditsImage;
     public Image barLeft;
     public Image barRight;
     public Image barLeftSmooth;
@@ -65,7 +67,7 @@ public class UI_Manager : MonoBehaviour
         MenuManager.instance.onGameStart += Fade;
         MenuManager.instance.onScreen += Fade;
         GameManager.instance.onRoundEnd += Fade;
-        GameManager.instance.onMatchEnd += Fade;
+        GameManager.instance.onMatchEnd += OnMatchEnd;
         GameManager.instance.onRoundStart += Fade;
         GameManager.instance.onCountdown += Countdown;
         GameManager.instance.onScore += RefreshScore;
@@ -81,7 +83,7 @@ public class UI_Manager : MonoBehaviour
         MenuManager.instance.onScreen -= Fade;
         MenuManager.instance.onJoin -= PlayerJoined;
         GameManager.instance.onRoundEnd -= Fade;
-        GameManager.instance.onMatchEnd -= Fade;
+        GameManager.instance.onMatchEnd -= OnMatchEnd;
         GameManager.instance.onRoundStart -= Fade;
         GameManager.instance.onCountdown -= Countdown;
         GameManager.instance.onScore -= RefreshScore;
@@ -255,13 +257,36 @@ public class UI_Manager : MonoBehaviour
 
         float playback = 0.0f;
 
-        while(playback < duration) {
+        while (playback < duration) {
             yield return new WaitForSecondsRealtime(pace);
             playback += pace;
             Vector2 v = Random.insideUnitCircle;
             bar.position = initialPosition + v * range;
         }
         bar.position = initialPosition;
+        yield return null;
+    }
+
+    private void OnMatchEnd(bool fadeOut, float overrideDuration) {
+        StartCoroutine(Credits(fadeOut, overrideDuration));
+    }
+
+    private IEnumerator Credits(bool fadeOut, float overrideDuration) {
+        float refreshTime = Time.time;
+        float duration = (overrideDuration == 0f) ? MenuManager.instance.gameStartTransition : overrideDuration;
+
+        while (Time.time - refreshTime < (duration + 0.1f)) {
+            if (fadeOut) {
+                creditsImage.color = new Color(1, 1, 1, (Time.time - refreshTime) / duration);
+            } else {
+                creditsImage.color = new Color(1, 1, 1, 1 - ((Time.time - refreshTime) / duration));
+            }
+            yield return new WaitForSeconds(0.01f);
+        }
+        if (fadeOut) {
+            yield return new WaitForSeconds(4f);
+            Fading(false, 2f);
+        }
         yield return null;
     }
 }

@@ -232,18 +232,11 @@ public class GameManager : MonoBehaviour
     public IEnumerator MatchStop() {
         int count = 0;
         StopPlayers(true);
-        while (count < 2) {
-            if(count > 0) {
-                onMatchEnd?.Invoke(true);
-            }
-            yield return new WaitForSeconds(MenuManager.instance.gameStartTransition);
-            ++count;
-        }
-        StopPlayers(false);
+        onMatchEnd?.Invoke(true, 2f);
         GameInfos.playerInfos[0].controller.Unsubscribe();
         GameInfos.playerInfos[1].controller.Unsubscribe();
+        yield return new WaitForSeconds(8f);
         SceneManager.LoadSceneAsync(0);
-        yield return null;
     }
 
     private IEnumerator MatchReset(bool newGame = false) {
