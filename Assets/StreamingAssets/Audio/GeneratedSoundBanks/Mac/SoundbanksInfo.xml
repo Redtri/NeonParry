@@ -50,6 +50,7 @@
 				<Event Id="3282946978" Name="Music_Reset" ObjectPath="\Events\Music\Music_Reset"/>
 				<Event Id="2154872981" Name="Music_SecondPVLost" ObjectPath="\Events\Music\Music_SecondPVLost"/>
 				<Event Id="3725903807" Name="Music_Start" ObjectPath="\Events\Music\Music_Start"/>
+				<Event Id="3227181061" Name="Music_Stop" ObjectPath="\Events\Music\Music_Stop"/>
 				<Event Id="1064933119" Name="one" ObjectPath="\Events\SFX\Countdown\one"/>
 				<Event Id="3858441939" Name="orbChoosen" ObjectPath="\Events\SFX\orbChoosen"/>
 				<Event Id="2109051510" Name="parryLeft" ObjectPath="\Events\SFX\parryLeft"/>

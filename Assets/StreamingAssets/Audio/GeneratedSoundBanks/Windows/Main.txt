@@ -29,6 +29,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	2689861876	perfectParryRight			\SFX\perfectParryRight	
 	3025804676	feintHightLeft			\SFX\feintHightLeft	
 	3074935633	feintMidRight			\SFX\feintMidRight	
+	3227181061	Music_Stop			\Music\Music_Stop	
 	3260672922	attackLowLeft			\SFX\attackLowLeft	
 	3282946978	Music_Reset			\Music\Music_Reset	
 	3582890026	Menu_SlideStart			\SFX\Menu_SlideStart	
