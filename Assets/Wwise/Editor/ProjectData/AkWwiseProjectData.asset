@@ -173,7 +173,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: d2144fa278e9474fa08953a4a0b4c57d
     GuidInternal: 
-    m_lastTime: -8586252793914787025
+    m_lastTime: -8586252723507148107
     List:
     - name: attackHighLeft
       guid: 97c9c837e2a96d45abb5049cddc9e6f6
@@ -426,6 +426,18 @@ MonoBehaviour:
       - ElementName: one
         ObjectType: 3
       Path: SFX\Countdown\one
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: orbChoosen
+      guid: 5b802d68346ac14bbcd44d568f63e227
+      id: 3858441939
+      PathAndIcons:
+      - ElementName: SFX
+        ObjectType: 12
+      - ElementName: orbChoosen
+        ObjectType: 3
+      Path: SFX\orbChoosen
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
