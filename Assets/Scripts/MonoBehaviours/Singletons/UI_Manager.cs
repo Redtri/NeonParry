@@ -285,7 +285,7 @@ public class UI_Manager : MonoBehaviour
         }
         if (fadeOut) {
             yield return new WaitForSeconds(4f);
-            Fading(false, 2f);
+            Fade(true, 2f);
         }
         yield return null;
     }

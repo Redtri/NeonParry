@@ -230,11 +230,11 @@ public class GameManager : MonoBehaviour
 
 
     public IEnumerator MatchStop() {
-        int count = 0;
         StopPlayers(true);
-        onMatchEnd?.Invoke(true, 2f);
         GameInfos.playerInfos[0].controller.Unsubscribe();
         GameInfos.playerInfos[1].controller.Unsubscribe();
+        yield return new WaitForSeconds(2.25f);
+        onMatchEnd?.Invoke(true, 2f);
         yield return new WaitForSeconds(8f);
         SceneManager.LoadSceneAsync(0);
     }

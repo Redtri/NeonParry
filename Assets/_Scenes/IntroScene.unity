@@ -2276,6 +2276,37 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2758944274475106403, guid: 1729d5456d7ea7244b7c413f9b4859a2,
+        type: 3}
+      propertyPath: joinMessage.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2758944274475106403, guid: 1729d5456d7ea7244b7c413f9b4859a2,
+        type: 3}
+      propertyPath: joinMessage
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2758944274475106403, guid: 1729d5456d7ea7244b7c413f9b4859a2,
+        type: 3}
+      propertyPath: joinMessage.Array.data[0]
+      value: 
+      objectReference: {fileID: 1384705761}
+    - target: {fileID: 2758944274475106403, guid: 1729d5456d7ea7244b7c413f9b4859a2,
+        type: 3}
+      propertyPath: joinMessage.Array.data[1]
+      value: 
+      objectReference: {fileID: 1910800332}
+    - target: {fileID: 1780661001226460153, guid: 1729d5456d7ea7244b7c413f9b4859a2,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 651c4a26bed15774eb21ae785fdc4137,
+        type: 3}
+    - target: {fileID: 301657167602365156, guid: 1729d5456d7ea7244b7c413f9b4859a2,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2758944275237273416, guid: 1729d5456d7ea7244b7c413f9b4859a2,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -2285,6 +2316,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 94
+      objectReference: {fileID: 0}
+    - target: {fileID: 7607955283735862316, guid: 1729d5456d7ea7244b7c413f9b4859a2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2378689541674971207, guid: 1729d5456d7ea7244b7c413f9b4859a2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2758944273705061162, guid: 1729d5456d7ea7244b7c413f9b4859a2,
         type: 3}
@@ -2302,6 +2343,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2758944275610875762, guid: 1729d5456d7ea7244b7c413f9b4859a2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279431019718999055, guid: 1729d5456d7ea7244b7c413f9b4859a2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047671523547542187, guid: 1729d5456d7ea7244b7c413f9b4859a2,
         type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2341,57 +2392,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -193.95
       objectReference: {fileID: 0}
-    - target: {fileID: 2047671523547542187, guid: 1729d5456d7ea7244b7c413f9b4859a2,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2378689541674971207, guid: 1729d5456d7ea7244b7c413f9b4859a2,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4279431019718999055, guid: 1729d5456d7ea7244b7c413f9b4859a2,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1780661001226460153, guid: 1729d5456d7ea7244b7c413f9b4859a2,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 651c4a26bed15774eb21ae785fdc4137,
-        type: 3}
-    - target: {fileID: 7607955283735862316, guid: 1729d5456d7ea7244b7c413f9b4859a2,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2758944274475106403, guid: 1729d5456d7ea7244b7c413f9b4859a2,
-        type: 3}
-      propertyPath: joinMessage.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2758944274475106403, guid: 1729d5456d7ea7244b7c413f9b4859a2,
-        type: 3}
-      propertyPath: joinMessage
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2758944274475106403, guid: 1729d5456d7ea7244b7c413f9b4859a2,
-        type: 3}
-      propertyPath: joinMessage.Array.data[0]
-      value: 
-      objectReference: {fileID: 1384705761}
-    - target: {fileID: 2758944274475106403, guid: 1729d5456d7ea7244b7c413f9b4859a2,
-        type: 3}
-      propertyPath: joinMessage.Array.data[1]
-      value: 
-      objectReference: {fileID: 1910800332}
-    - target: {fileID: 301657167602365156, guid: 1729d5456d7ea7244b7c413f9b4859a2,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1729d5456d7ea7244b7c413f9b4859a2, type: 3}
 --- !u!1001 &6268276688227740945
@@ -2405,36 +2405,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Managers
-      objectReference: {fileID: 0}
-    - target: {fileID: 6268276687221777032, guid: 025629b7bbbd3b841a8d1dcb4e029ed1,
-        type: 3}
-      propertyPath: m_PlayerLeftEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6268276687221777032, guid: 025629b7bbbd3b841a8d1dcb4e029ed1,
-        type: 3}
-      propertyPath: m_NotificationBehavior
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6268276687221777032, guid: 025629b7bbbd3b841a8d1dcb4e029ed1,
-        type: 3}
-      propertyPath: m_PlayerJoinedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 6268276688227740946}
-    - target: {fileID: 6268276687221777032, guid: 025629b7bbbd3b841a8d1dcb4e029ed1,
-        type: 3}
-      propertyPath: m_PlayerJoinedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6268276687221777032, guid: 025629b7bbbd3b841a8d1dcb4e029ed1,
-        type: 3}
-      propertyPath: m_PlayerLeftEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6268276687221777032, guid: 025629b7bbbd3b841a8d1dcb4e029ed1,
-        type: 3}
-      propertyPath: m_PlayerLeftEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6268276687483780728, guid: 025629b7bbbd3b841a8d1dcb4e029ed1,
         type: 3}
@@ -2564,6 +2534,36 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: c67048ee4e112e142a883de38f375a05,
         type: 2}
+    - target: {fileID: 6268276687221777032, guid: 025629b7bbbd3b841a8d1dcb4e029ed1,
+        type: 3}
+      propertyPath: m_PlayerLeftEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6268276687221777032, guid: 025629b7bbbd3b841a8d1dcb4e029ed1,
+        type: 3}
+      propertyPath: m_NotificationBehavior
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6268276687221777032, guid: 025629b7bbbd3b841a8d1dcb4e029ed1,
+        type: 3}
+      propertyPath: m_PlayerJoinedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6268276688227740946}
+    - target: {fileID: 6268276687221777032, guid: 025629b7bbbd3b841a8d1dcb4e029ed1,
+        type: 3}
+      propertyPath: m_PlayerJoinedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6268276687221777032, guid: 025629b7bbbd3b841a8d1dcb4e029ed1,
+        type: 3}
+      propertyPath: m_PlayerLeftEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6268276687221777032, guid: 025629b7bbbd3b841a8d1dcb4e029ed1,
+        type: 3}
+      propertyPath: m_PlayerLeftEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6268276688179462533, guid: 025629b7bbbd3b841a8d1dcb4e029ed1,
         type: 3}
       propertyPath: camera

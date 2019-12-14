@@ -362,7 +362,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 4729761028141108296, guid: 34891b075e8d01b4e869d5f3af51afc1, type: 3}
   inputSystem: {fileID: 6268276687221777032}
-  nbExchangeForARound: 1
+  nbExchangeForARound: 3
   nbRoundForAMatch: 0
   currentRound: 0
   stopDuration: 4
