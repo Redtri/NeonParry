@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ePLAYER_STATE { NEUTRAL, CHARGE, FEINT, STRIKE, PARRY, DASH, REPOS}
+public enum ePLAYER_STATE { NEUTRAL, CHARGE, FEINT, STRIKE, PARRY, DASH, REPOS, STOP}
 
 public class FSM_Player
 {
@@ -15,13 +15,13 @@ public class FSM_Player
 
     public FSM_Player(PlayerController player) {
         states = new Dictionary<ePLAYER_STATE, PlayerState> { { ePLAYER_STATE.NEUTRAL, new StateNeutral(player, this, null, ePLAYER_STATE.NEUTRAL, eSTATE_PRIORITY.DEFAULT) },
-                                                              { ePLAYER_STATE.CHARGE, new StateCharge(player, this, player.charge, ePLAYER_STATE.STRIKE, eSTATE_PRIORITY.DEFAULT) },
-                                                              { ePLAYER_STATE.STRIKE, new StateStrike(player, this, player.strike, ePLAYER_STATE.NEUTRAL, eSTATE_PRIORITY.DEFAULT) },
-                                                              { ePLAYER_STATE.PARRY, new StateParry(player, this, player.parry, ePLAYER_STATE.NEUTRAL, eSTATE_PRIORITY.DEFAULT) },
-                                                              { ePLAYER_STATE.DASH, new StateDash(player, this, player.dash, ePLAYER_STATE.NEUTRAL, eSTATE_PRIORITY.OVERRIDE) },
-                                                              { ePLAYER_STATE.REPOS, new StateRepos(player, this, player.dash, ePLAYER_STATE.NEUTRAL, eSTATE_PRIORITY.OVERRIDE) },
+                                                              { ePLAYER_STATE.CHARGE, new StateCharge(player, this, player.chargeAction, ePLAYER_STATE.STRIKE, eSTATE_PRIORITY.DEFAULT) },
+                                                              { ePLAYER_STATE.STRIKE, new StateStrike(player, this, player.strikeAction, ePLAYER_STATE.NEUTRAL, eSTATE_PRIORITY.DEFAULT) },
+                                                              { ePLAYER_STATE.PARRY, new StateParry(player, this, player.parryAction, ePLAYER_STATE.NEUTRAL, eSTATE_PRIORITY.DEFAULT) },
+                                                              { ePLAYER_STATE.DASH, new StateDash(player, this, player.dashAction, ePLAYER_STATE.NEUTRAL, eSTATE_PRIORITY.OVERRIDE) },
+                                                              { ePLAYER_STATE.REPOS, new StateRepos(player, this, player.reposAction, ePLAYER_STATE.NEUTRAL, eSTATE_PRIORITY.OVERRIDE) },
                                                               //TODO : Watch out, we may want to create a new feint swordaction for this
-                                                              { ePLAYER_STATE.FEINT, new StateFeint(player, this, player.charge, ePLAYER_STATE.NEUTRAL, eSTATE_PRIORITY.DEFAULT) }
+                                                              { ePLAYER_STATE.FEINT, new StateFeint(player, this, player.chargeAction, ePLAYER_STATE.NEUTRAL, eSTATE_PRIORITY.DEFAULT) }
         };
         currentState = ePLAYER_STATE.NEUTRAL;
         previousState = currentState;

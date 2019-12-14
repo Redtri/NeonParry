@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4db88a67ce0a84144a0c3a9e5061dc88, type: 3}
+  m_Name: Repos
+  m_EditorClassIdentifier: 
+  parameters:
+    baseCooldownDuration: 0.1
+    fury:
+      lowestValueOfFury: 0
+      highestValueOfFury: 0
+      currentFury: 0
+      startingValueOfFury: 0
+      minimumMultiplicator: 0
+      maximumMultiplicator: 0
+      winnerFuryPercentageLeft: 0
+      isFeintAndChargeTheSame: 0
+      percentagePerfectParyFury: 0
+    currentCooldownDuration: 0
+    percentageWeightFuryOnCD: 0
+    lastRefreshTime: 54.544754
+    baseActionDuration: 1.2
+    currentActionDuration: 0
+    percentageWeightFury: 0
+    furyModificationOnSuccess: 0
+    perfectPercentTiming: 0
+    direction: 0
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    leftSamples: {fileID: 11400000, guid: 9a53321b929a19d4591e9f4591098f92, type: 2}
+    rightSamples: {fileID: 11400000, guid: 9a53321b929a19d4591e9f4591098f92, type: 2}
+    currentSamples: {fileID: 11400000, guid: 9a53321b929a19d4591e9f4591098f92, type: 2}

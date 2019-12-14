@@ -9,10 +9,13 @@ public class StateNeutral : PlayerState
         base(player, machine, infos, next, statePriority) {
         stateColor = Color.white;
     }
-    
-    public override void Enter(bool trigger = true)
-    {
-        base.Enter(trigger);
+
+    public override void Enter(bool trigger = true) {
+        if (trigger) {
+            owner.animator.SetTrigger(stateMachine.currentState.ToString().ToLower());
+            owner.cursorAnimator.SetTrigger(stateMachine.currentState.ToString().ToLower());
+        }
+        owner.animator.SetFloat("duration_neutral", 1f + ((float)owner.fury.currentFury / (float)owner.fury.highestValueOfFury));
     }
 
     public override void Update() {

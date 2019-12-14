@@ -9,11 +9,15 @@ public class ParallaxItem : MonoBehaviour
     Vector3 lastpos;
 
     void Start() {
-        lastpos = camera.position;
+        if (camera) {
+            lastpos = camera.position;
+        }
     }
 
     void Update() {
-        transform.position -= ((lastpos - camera.position) * speedCoefficient);
-        lastpos = camera.position;
+        if (camera) {
+            transform.position -= ((lastpos - camera.position) * speedCoefficient);
+            lastpos = camera.position;
+        }
     }
 }

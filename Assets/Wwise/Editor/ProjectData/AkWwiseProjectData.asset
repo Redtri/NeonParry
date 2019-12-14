@@ -24,14 +24,14 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 56f6a746797f0a4fbbe996ff7dbe6fa2
     GuidInternal: 
-    m_lastTime: -8586262052917976245
+    m_lastTime: -8586254246973682456
     List: []
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: aab038f70511ac40accedade1b746b70
     GuidInternal: 
-    m_lastTime: -8586260353747032216
+    m_lastTime: -8586254257783605061
     List:
     - name: Main
       guid: ffba85163ec5c641b7a666271bb1c36e
@@ -43,6 +43,36 @@ MonoBehaviour:
         ObjectType: 7
       Path: Default Work Unit\Main
   EventWwu:
+  - PhysicalPath: Events\Ambiance.wwu
+    ParentPhysicalPath: 
+    guid: 50b214ac3fa6614795c5eceb4820a998
+    GuidInternal: 
+    m_lastTime: -8586255130653383273
+    List:
+    - name: inGame_Ambiance
+      guid: c0a9ee0452e76f4e8e1fff3e31f5362d
+      id: 2370107561
+      PathAndIcons:
+      - ElementName: Ambiance
+        ObjectType: 12
+      - ElementName: inGame_Ambiance
+        ObjectType: 3
+      Path: Ambiance\inGame_Ambiance
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Menu_Ambiance
+      guid: 1a0c6b230a390e46af0e25ebceea809f
+      id: 626061955
+      PathAndIcons:
+      - ElementName: Ambiance
+        ObjectType: 12
+      - ElementName: Menu_Ambiance
+        ObjectType: 3
+      Path: Ambiance\Menu_Ambiance
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 2a81fdbbb1505e4aa9b924cc4da74340
@@ -53,8 +83,32 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 1db4f74826e35f4092d5c6972967e448
     GuidInternal: 
-    m_lastTime: -8586260591412049973
+    m_lastTime: -8586253495806428488
     List:
+    - name: Music_Dash
+      guid: 6cca3183ab723d45be58bfbd74aa3b2d
+      id: 2012936489
+      PathAndIcons:
+      - ElementName: Music
+        ObjectType: 12
+      - ElementName: Music_Dash
+        ObjectType: 3
+      Path: Music\Music_Dash
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Music_Death
+      guid: 16783a26cd03bd4a80c513debbf6a79f
+      id: 3678931145
+      PathAndIcons:
+      - ElementName: Music
+        ObjectType: 12
+      - ElementName: Music_Death
+        ObjectType: 3
+      Path: Music\Music_Death
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Music_FirstPVLost
       guid: 2bad3ecc1698a848b271d33d563c37c2
       id: 723605745
@@ -64,6 +118,30 @@ MonoBehaviour:
       - ElementName: Music_FirstPVLost
         ObjectType: 3
       Path: Music\Music_FirstPVLost
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Music_Menu_Start
+      guid: 27a800a650cae9438a934ecd3de5210e
+      id: 2688689701
+      PathAndIcons:
+      - ElementName: Music
+        ObjectType: 12
+      - ElementName: Music_Menu_Start
+        ObjectType: 3
+      Path: Music\Music_Menu_Start
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Music_Reset
+      guid: 0c44a3f6f951d547b590e04efb208a2c
+      id: 3282946978
+      PathAndIcons:
+      - ElementName: Music
+        ObjectType: 12
+      - ElementName: Music_Reset
+        ObjectType: 3
+      Path: Music\Music_Reset
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -95,7 +173,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: d2144fa278e9474fa08953a4a0b4c57d
     GuidInternal: 
-    m_lastTime: -8586260606331009643
+    m_lastTime: -8586253495806503502
     List:
     - name: attackHighLeft
       guid: 97c9c837e2a96d45abb5049cddc9e6f6
@@ -181,18 +259,6 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: dash
-      guid: b801e6ce6b7ab24184bcfa5d98a0d045
-      id: 1942692385
-      PathAndIcons:
-      - ElementName: SFX
-        ObjectType: 12
-      - ElementName: dash
-        ObjectType: 3
-      Path: SFX\dash
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
     - name: Dash_Event
       guid: 8fc0e170afa26a4bb992cb5682397054
       id: 763920020
@@ -202,6 +268,18 @@ MonoBehaviour:
       - ElementName: Dash_Event
         ObjectType: 3
       Path: SFX\Dash_Event
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Dash_Event_2
+      guid: ff7b3360f84eb9449a31187403f7b561
+      id: 1433790123
+      PathAndIcons:
+      - ElementName: SFX
+        ObjectType: 12
+      - ElementName: Dash_Event_2
+        ObjectType: 3
+      Path: SFX\Dash_Event_2
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -217,15 +295,75 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: follow
-      guid: 686a23a5c968d543b4370e94253aa05b
-      id: 4203913494
+    - name: feintHightLeft
+      guid: b7dcfcdefbfd9246a19f0a87642e4a63
+      id: 3025804676
       PathAndIcons:
       - ElementName: SFX
         ObjectType: 12
-      - ElementName: follow
+      - ElementName: feintHightLeft
         ObjectType: 3
-      Path: SFX\follow
+      Path: SFX\feintHightLeft
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: feintHightRight
+      guid: 5df60289ccf1104fb441b143777d5833
+      id: 338654435
+      PathAndIcons:
+      - ElementName: SFX
+        ObjectType: 12
+      - ElementName: feintHightRight
+        ObjectType: 3
+      Path: SFX\feintHightRight
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: feintLowLeft
+      guid: 23ee150246128a4d87b1f62398a621e0
+      id: 3737837678
+      PathAndIcons:
+      - ElementName: SFX
+        ObjectType: 12
+      - ElementName: feintLowLeft
+        ObjectType: 3
+      Path: SFX\feintLowLeft
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: feintLowRight
+      guid: 5a9a11962d430b4f9696de46df77073c
+      id: 3807145869
+      PathAndIcons:
+      - ElementName: SFX
+        ObjectType: 12
+      - ElementName: feintLowRight
+        ObjectType: 3
+      Path: SFX\feintLowRight
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: feintMidLeft
+      guid: 5abf9bfb5ea81542b4983643ab24e6db
+      id: 1297253722
+      PathAndIcons:
+      - ElementName: SFX
+        ObjectType: 12
+      - ElementName: feintMidLeft
+        ObjectType: 3
+      Path: SFX\feintMidLeft
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: feintMidRight
+      guid: 9a61b506cd5f944f957c3693e33f9f7e
+      id: 3074935633
+      PathAndIcons:
+      - ElementName: SFX
+        ObjectType: 12
+      - ElementName: feintMidRight
+        ObjectType: 3
+      Path: SFX\feintMidRight
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -262,6 +400,32 @@ MonoBehaviour:
       - ElementName: hitRight
         ObjectType: 3
       Path: SFX\hitRight
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Menu_SlideStart
+      guid: ca87df4eb4ce344b96ab8fa956d17c7b
+      id: 3582890026
+      PathAndIcons:
+      - ElementName: SFX
+        ObjectType: 12
+      - ElementName: Menu_SlideStart
+        ObjectType: 3
+      Path: SFX\Menu_SlideStart
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: one
+      guid: b6bdcf2e0d9a914cbabe528c42ddcec0
+      id: 1064933119
+      PathAndIcons:
+      - ElementName: SFX
+        ObjectType: 12
+      - ElementName: Countdown
+        ObjectType: 4
+      - ElementName: one
+        ObjectType: 3
+      Path: SFX\Countdown\one
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -325,29 +489,133 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: three
+      guid: f98a6998e1ae664982a7d682efb14302
+      id: 912956111
+      PathAndIcons:
+      - ElementName: SFX
+        ObjectType: 12
+      - ElementName: Countdown
+        ObjectType: 4
+      - ElementName: three
+        ObjectType: 3
+      Path: SFX\Countdown\three
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: two
+      guid: 44a2d03993282f47bfcd8763ebd98697
+      id: 678209053
+      PathAndIcons:
+      - ElementName: SFX
+        ObjectType: 12
+      - ElementName: Countdown
+        ObjectType: 4
+      - ElementName: two
+        ObjectType: 3
+      Path: SFX\Countdown\two
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 877bfb69bb34254997bc686db894f7e0
     GuidInternal: 
-    m_lastTime: -8586260606331004641
+    m_lastTime: -8586254269435914909
     List:
-    - name: Fury_RTPC
-      guid: 0032026f833a4f44b9852e8a0a22d3c4
-      id: 1993867557
+    - name: FirstPVLost
+      guid: af434f09b590284281f881c906718a39
+      id: 1058781849
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Fury_RTPC
+      - ElementName: FirstPVLost
         ObjectType: 13
-      Path: Default Work Unit\Fury_RTPC
+      Path: Default Work Unit\FirstPVLost
+    - name: FuryLeft_RTPC
+      guid: 0032026f833a4f44b9852e8a0a22d3c4
+      id: 2056782216
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: FuryLeft_RTPC
+        ObjectType: 13
+      Path: Default Work Unit\FuryLeft_RTPC
+    - name: FuryRight_RTPC
+      guid: b3ffe49f735acc4cbc4253b269372ef9
+      id: 3810431161
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: FuryRight_RTPC
+        ObjectType: 13
+      Path: Default Work Unit\FuryRight_RTPC
+    - name: FX_RTPC
+      guid: 3c07cfff0135944da04bd6048c0d59b6
+      id: 3901535175
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: FX_RTPC
+        ObjectType: 13
+      Path: Default Work Unit\FX_RTPC
+    - name: SecondPVLost
+      guid: 0d9c888520b9ae45928e4e598d225ec8
+      id: 3326791549
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SecondPVLost
+        ObjectType: 13
+      Path: Default Work Unit\SecondPVLost
+    - name: Sidechain_RTPC
+      guid: 06bed34d9593604faf4409690fbbc11a
+      id: 2479939179
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Sidechain_RTPC
+        ObjectType: 13
+      Path: Default Work Unit\Sidechain_RTPC
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 63f8cb137edd08448f7f5c3e8e1dcee3
     GuidInternal: 
-    m_lastTime: -8586262052917566902
+    m_lastTime: -8586254269435305907
     List:
+    - name: GeneralGameStates
+      guid: 368f452f521c2e4c8b3e14c699dede29
+      id: 3811713195
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: GeneralGameStates
+        ObjectType: 9
+      Path: Default Work Unit\GeneralGameStates
+      values:
+      - name: inGame_State
+        guid: d4c96a9acc067c48b6ce347ee8b5ff0b
+        id: 2678566748
+        PathAndIcons:
+        - ElementName: inGame_State
+          ObjectType: 8
+      - name: Menu_State
+        guid: c10a85b51841ca46b423cef757208c69
+        id: 3941853002
+        PathAndIcons:
+        - ElementName: Menu_State
+          ObjectType: 8
+      - name: None
+        guid: 16a6fb5e3ad63142a9b54fef4d7daf4d
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
     - name: inGame
       guid: 39b379b82f69ba47ad1966e0aed0ed42
       id: 984691642
@@ -363,6 +631,12 @@ MonoBehaviour:
         id: 168610243
         PathAndIcons:
         - ElementName: fighting
+          ObjectType: 8
+      - name: isDashing
+        guid: 7d8cd005e98cbe4f8e181c95b5ea770f
+        id: 2532476867
+        PathAndIcons:
+        - ElementName: isDashing
           ObjectType: 8
       - name: None
         guid: 85255ac948be6b488a6fda1b643dca64
@@ -385,6 +659,43 @@ MonoBehaviour:
       ValueGuids: []
       ValueIcons: []
       valuesInternal: []
+    - name: roundState
+      guid: c5d53991d09f084da9a517dbbdb64ef4
+      id: 244845258
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: roundState
+        ObjectType: 9
+      Path: Default Work Unit\roundState
+      values:
+      - name: None
+        guid: 293d681bec3d304eb6abf68d188bcc02
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      - name: round_01
+        guid: cd7ff5a0c4876f4fa2387130c507c6f6
+        id: 4039654995
+        PathAndIcons:
+        - ElementName: round_01
+          ObjectType: 8
+      - name: round_02
+        guid: 279498b3b2cd7f44973742d93b62eb14
+        id: 4039654992
+        PathAndIcons:
+        - ElementName: round_02
+          ObjectType: 8
+      - name: round_03
+        guid: 76d4f3e9e31c8b48999daa191c7790ca
+        id: 4039654993
+        PathAndIcons:
+        - ElementName: round_03
+          ObjectType: 8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
     ParentPhysicalPath: 
@@ -403,5 +714,7 @@ MonoBehaviour:
   - /NeonParry_WwiseProject
   - /NeonParry_WwiseProject/Events
   - /NeonParry_WwiseProject/Events/Music
+  - /NeonParry_WwiseProject/Events/SFX
+  - /NeonParry_WwiseProject/Events/SFX/Countdown
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
