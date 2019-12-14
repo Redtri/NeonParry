@@ -132,6 +132,10 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 5555c6a81d927fc419b9550b2504044e,
       type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 6aa032f0c8377e2478b9e76c56a06361,
+      type: 2}
   countdown:
   - idInternal: 0
     valueGuidInternal: 
@@ -358,6 +362,7 @@ MonoBehaviour:
   camera: {fileID: 0}
   cameraCenterPoint: {fileID: 0}
   currentPhase: 0
+  postProcess: {fileID: 0}
 --- !u!114 &7679405992117681758
 MonoBehaviour:
   m_ObjectHideFlags: 0

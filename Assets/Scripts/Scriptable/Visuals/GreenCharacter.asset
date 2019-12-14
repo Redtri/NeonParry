@@ -27,44 +27,29 @@ MonoBehaviour:
   - {fileID: 1870929858507331550, guid: 405af34020090fb44a307dbe49ef50bb, type: 3}
   - {fileID: -7232564425077555335, guid: 405af34020090fb44a307dbe49ef50bb, type: 3}
   fxHitGround:
-    field: 1
-    colors:
-    - {r: 1, g: 0, b: 0.6679425, a: 0}
-    - {r: 0.9528302, g: 0.0764062, b: 0.0764062, a: 0}
-    childs: []
-  fxTrailDash:
-    field: 0
-    colors: []
-    childs: []
+  - colorMin: {r: 0.08235292, g: 0.44313726, b: 0.16012883, a: 1}
+    colorMax: {r: 0.1137255, g: 0.5647059, b: 0.14437112, a: 1}
+  - colorMin: {r: 0.16015486, g: 0.5754717, b: 0.40368885, a: 1}
+    colorMax: {r: 0.04116233, g: 0.3490566, b: 0.33208033, a: 1}
+  - colorMin: {r: 0.2509804, g: 0.45490196, b: 0.27191016, a: 1}
+    colorMax: {r: 0.3540953, g: 0.9607843, b: 0.14901958, a: 1}
+  - colorMin: {r: 0.14148454, g: 0.62352943, b: 0.10588235, a: 0.341}
+    colorMax: {r: 0.14148454, g: 0.62352943, b: 0.10588235, a: 0.341}
+  - colorMin: {r: 0.090196095, g: 0.9254902, b: 0.26824862, a: 1}
+    colorMax: {r: 0.36506653, g: 0.7647059, b: 0.16862744, a: 1}
+  - colorMin: {r: 0.0745098, g: 0.35686275, b: 0.09560059, a: 1}
+    colorMax: {r: 0.14117645, g: 0.6039216, b: 0.21109599, a: 1}
   fxFury:
-    field: 0
-    colors: []
-    childs: []
-  fxShield:
-    field: 0
-    colors: []
-    childs: []
-  fxFuryAura:
-    field: 0
-    colors: []
-    childs: []
-  fxLowAttack:
-    field: 0
-    colors: []
-    childs: []
-  fxHighAttack:
-    field: 0
-    colors: []
-    childs: []
-  fxMidAttack:
-    field: 0
-    colors: []
-    childs: []
-  fxEyeTrail1:
-    field: 0
-    colors: []
-    childs: []
-  fxEyeTrail2:
-    field: 0
-    colors: []
-    childs: []
+    colorMin: {r: 0.7921569, g: 0.039215676, b: 0.7819766, a: 1}
+    colorMax: {r: 0.3807989, g: 0, b: 0.43529412, a: 1}
+  shieldMesh: {r: 0.14901961, g: 0.41568628, b: 0.18947905, a: 1}
+  fxShieldAura:
+    colorMin: {r: 0.35411295, g: 1, b: 0.28627455, a: 0.63529414}
+    colorMax: {r: 0, g: 1, b: 0.39359426, a: 0.57254905}
+  fxHighAttack: {r: 0.2784314, g: 0.8117647, b: 0.21176471, a: 0}
+  fxMidAttack: {r: 0.2784314, g: 0.8117647, b: 0.21176471, a: 0}
+  fxLowAttack: {r: 0.2784314, g: 0.8117647, b: 0.21176471, a: 0}
+  fxEyesTrail: {r: 1, g: 0, b: 0.91821, a: 1}
+  fxAxeAura:
+    colorMin: {r: 0.13333331, g: 0.8, b: 0.33941662, a: 1}
+    colorMax: {r: 0.6115898, g: 1, b: 0, a: 1}

@@ -17,8 +17,13 @@ public class FX_Manager : MonoBehaviour
 
     public void ClashFX() {
         if (!clashFxPrefab.activeInHierarchy) {
+            AudioManager.instance.specialEffets[1].Post(gameObject);
             StartCoroutine(DelayedFX(clashFxPrefab, .2f, true, 1.5f));
         }
+    }
+
+    public void PerfectParryFX() {
+
     }
 
     private IEnumerator DelayedFX(GameObject fxPrefab, float tDuration, bool disable = false, float tDisableDelay = 1f) {

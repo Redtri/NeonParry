@@ -4,7 +4,8 @@ using UnityEngine;
 using Cinemachine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.Rendering;
+using UnityEngine.Experimental.Rendering.HDPipeline;
 
 public enum eGAME_PHASE { TITLE, MENU, GAME, SCORE}
 
@@ -34,7 +35,7 @@ public class GameManager : MonoBehaviour
     public Cinemachine.CinemachineVirtualCamera camera;
     public InterpItem cameraCenterPoint;
     public eGAME_PHASE currentPhase;
-    public PostProcessVolume postProcess;
+    public Volume postProcess;
 
     public GameTransition onRoundEnd;
     public GameTransition onRoundStart;
@@ -195,29 +196,62 @@ public class GameManager : MonoBehaviour
         }
         while (temp < duration) {
             onCountdown?.Invoke(temp, (int)duration - 1);
-            Glitch();
+            Glitch(temp, 1f);
             yield return new WaitForSeconds(1f);
             ++temp;
         }
+        postProcess.profile.Remove<LensDistortion>();
         StopPlayers(false);
         yield return null;
     }
 
-    public void Glitch() {
-        StartCoroutine(Glitching());
+    public void Glitch(int tCount, float duration) {
+        StartCoroutine(Glitching(tCount, duration));
     }
 
-    private IEnumerator Glitching() {
+    private IEnumerator Glitching(int tCount, float duration) {
         float count = 0.0f;
-        LensDistortion lensDist = postProcess.profile.AddSettings<LensDistortion>();
+        LensDistortion lensDist;
+        ChannelMixer chanMix;
+        Bloom bloom;
+        postProcess.profile.TryGet(out lensDist);
+        postProcess.profile.TryGet(out chanMix);
+        postProcess.profile.TryGet(out bloom);
+        if(!lensDist) {
+            lensDist = postProcess.profile.Add<LensDistortion>();
+        }
+        if (!chanMix) {
+            chanMix = postProcess.profile.Add<ChannelMixer>();
+        }
+        chanMix.redOutBlueIn.overrideState = true;
+        chanMix.greenOutBlueIn.overrideState = true;
+        chanMix.blueOutBlueIn.overrideState = true;
+        lensDist.intensity.overrideState = true;
+        lensDist.xMultiplier.overrideState = true;
+        lensDist.yMultiplier.overrideState = true;
+        lensDist.center.overrideState = true;
 
-        while (count < 1f) {
+        while (count < duration) {
             yield return new WaitForSeconds(0.01f);
-            lensDist.intensity.value = -(1 - (count / 1f));
-            lensDist.intensityX.value = 1 - (count / 1f);
+            switch (tCount) {
+                case 0:
+                case 1:
+                    lensDist.intensity.value = -(1 - (count / duration));
+                    lensDist.xMultiplier.value = 1 - (count / duration);
+                    bloom.intensity.value = 1 - (count / duration);
+                    break;
+                case 2:
+                    lensDist.intensity.value = (1 - (count / duration));
+                    lensDist.xMultiplier.value = 1 - (count / duration);
+                    lensDist.center.value = new Vector2(.5f, 1-((count / duration)));
+                    bloom.intensity.value = 1 - (count / duration);
+                    break;
+            }
             count += 0.01f;
         }
-        postProcess.profile.RemoveSettings<LensDistortion>();
+        bloom.intensity.value = 0.067f;
+        postProcess.profile.Remove<ChannelMixer>();
+        postProcess.profile.Remove<LensDistortion>();
         yield return null;
     }
 
