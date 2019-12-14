@@ -47,7 +47,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 50b214ac3fa6614795c5eceb4820a998
     GuidInternal: 
-    m_lastTime: -8586252810652841125
+    m_lastTime: -8586252706170529665
     List:
     - name: inGame_Ambiance
       guid: c0a9ee0452e76f4e8e1fff3e31f5362d
@@ -83,7 +83,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 1db4f74826e35f4092d5c6972967e448
     GuidInternal: 
-    m_lastTime: -8586252793314626596
+    m_lastTime: -8586252703113734170
     List:
     - name: Music_Dash
       guid: 6cca3183ab723d45be58bfbd74aa3b2d
@@ -169,11 +169,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Music_Stop
+      guid: 4623c09991de5542925a63f1a709dbbc
+      id: 3227181061
+      PathAndIcons:
+      - ElementName: Music
+        ObjectType: 12
+      - ElementName: Music_Stop
+        ObjectType: 3
+      Path: Music\Music_Stop
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   - PhysicalPath: Events\SFX.wwu
     ParentPhysicalPath: 
     guid: d2144fa278e9474fa08953a4a0b4c57d
     GuidInternal: 
-    m_lastTime: -8586252793914787025
+    m_lastTime: -8586252723507148107
     List:
     - name: attackHighLeft
       guid: 97c9c837e2a96d45abb5049cddc9e6f6
@@ -426,6 +438,18 @@ MonoBehaviour:
       - ElementName: one
         ObjectType: 3
       Path: SFX\Countdown\one
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: orbChoosen
+      guid: 5b802d68346ac14bbcd44d568f63e227
+      id: 3858441939
+      PathAndIcons:
+      - ElementName: SFX
+        ObjectType: 12
+      - ElementName: orbChoosen
+        ObjectType: 3
+      Path: SFX\orbChoosen
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1

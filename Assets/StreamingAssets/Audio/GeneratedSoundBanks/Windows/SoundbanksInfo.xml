@@ -50,7 +50,9 @@
 				<Event Id="3282946978" Name="Music_Reset" ObjectPath="\Events\Music\Music_Reset"/>
 				<Event Id="2154872981" Name="Music_SecondPVLost" ObjectPath="\Events\Music\Music_SecondPVLost"/>
 				<Event Id="3725903807" Name="Music_Start" ObjectPath="\Events\Music\Music_Start"/>
+				<Event Id="3227181061" Name="Music_Stop" ObjectPath="\Events\Music\Music_Stop"/>
 				<Event Id="1064933119" Name="one" ObjectPath="\Events\SFX\Countdown\one"/>
+				<Event Id="3858441939" Name="orbChoosen" ObjectPath="\Events\SFX\orbChoosen"/>
 				<Event Id="2109051510" Name="parryLeft" ObjectPath="\Events\SFX\parryLeft"/>
 				<Event Id="2394082421" Name="parryRight" ObjectPath="\Events\SFX\parryRight"/>
 				<Event Id="2136132677" Name="parryWhiff" ObjectPath="\Events\SFX\parryWhiff"/>
@@ -79,10 +81,6 @@
 				<File Id="62192054" Language="SFX">
 					<ShortName>round3_beat_nofill.wav</ShortName>
 					<Path>SFX\round3_beat_nofill_469574DC.wem</Path>
-				</File>
-				<File Id="68839472" Language="SFX">
-					<ShortName>start.wav</ShortName>
-					<Path>SFX\start_11697732.wem</Path>
 				</File>
 				<File Id="102222190" Language="SFX">
 					<ShortName>stem02reverb2.wav</ShortName>
@@ -132,10 +130,6 @@
 					<ShortName>perfectParry.wav</ShortName>
 					<Path>SFX\perfectParry_11697732.wem</Path>
 				</File>
-				<File Id="234437705" Language="SFX">
-					<ShortName>deathhh.wav</ShortName>
-					<Path>SFX\deathhh_11697732.wem</Path>
-				</File>
 				<File Id="244755321" Language="SFX">
 					<ShortName>round3_beat_extrafill.wav</ShortName>
 					<Path>SFX\round3_beat_extrafill_469574DC.wem</Path>
@@ -175,6 +169,10 @@
 				<File Id="407386197" Language="SFX">
 					<ShortName>round3_intro.wav</ShortName>
 					<Path>SFX\round3_intro_469574DC.wem</Path>
+				</File>
+				<File Id="407473609" Language="SFX">
+					<ShortName>orbchoose.wav</ShortName>
+					<Path>SFX\orbchoose_11697732.wem</Path>
 				</File>
 				<File Id="411652840" Language="SFX">
 					<ShortName>attackLowFurryMin.wav</ShortName>
@@ -272,6 +270,10 @@
 					<ShortName>round2_extralead.wav</ShortName>
 					<Path>SFX\round2_extralead_469574DC.wem</Path>
 				</File>
+				<File Id="869074781" Language="SFX">
+					<ShortName>start_wind_v2.wav</ShortName>
+					<Path>SFX\start_wind_v2_11697732.wem</Path>
+				</File>
 				<File Id="882041133" Language="SFX">
 					<ShortName>stem04drop.wav</ShortName>
 					<Path>SFX\stem04drop_469574DC.wem</Path>
@@ -279,6 +281,10 @@
 				<File Id="882606628" Language="SFX">
 					<ShortName>round1_var4_lead.wav</ShortName>
 					<Path>SFX\round1_var4_lead_469574DC.wem</Path>
+				</File>
+				<File Id="900712928" Language="SFX">
+					<ShortName>deathhh_v2.wav</ShortName>
+					<Path>SFX\deathhh_v2_11697732.wem</Path>
 				</File>
 				<File Id="904009955" Language="SFX">
 					<ShortName>feintLowFurryMax.wav</ShortName>
