@@ -85,12 +85,12 @@ public class StateStrike : PlayerState
                         if (!clash) {
                             if (!dashed)
                             {
-                                GameManager.instance.StopPlayers(2f);
                                 owner.furyChange(actionInfos.furyModificationOnSuccess); //change the fury of a fixed amount
                                 owner.opponent.fxHandler.SpawnFX(ePLAYER_STATE.STRIKE, actionInfos.direction, owner.facingLeft);
                                 switch (GameManager.instance.StrikeSuccessful(owner.playerIndex))
                                 {
                                     case 0:
+                                        GameManager.instance.StopPlayers(2f);
                                         owner.opponent.animator.SetTrigger("hit");
                                         break;
                                     case 1:

@@ -19,10 +19,10 @@ public class SkinSelector : MonoBehaviour
     }
 
     private void SwapGlyph(eDIRECTION direction, float overrideDuration = 0f) {
-	if((int)direction-1 != current){
+        if ((int)direction-1 != current){
         	glyphes[current].GetComponent<Animator>().SetTrigger("deselect");
         	current = (int)direction-1;
         	glyphes[current].GetComponent<Animator>().SetTrigger("select");
-	}
+	    }
     }
 }

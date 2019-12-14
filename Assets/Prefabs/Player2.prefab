@@ -297,6 +297,16 @@ PrefabInstance:
       propertyPath: fxAxeAura
       value: 
       objectReference: {fileID: 6295729829784189298}
+    - target: {fileID: 2475207946422626673, guid: dc7450c1e03c9854ca86db3c72446622,
+        type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 2475207946422626673, guid: dc7450c1e03c9854ca86db3c72446622,
+        type: 3}
+      propertyPath: ShapeModule.m_Rotation.x
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 5445287269020308366, guid: dc7450c1e03c9854ca86db3c72446622,
         type: 3}
       propertyPath: simulationSpeed
@@ -342,10 +352,30 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 3.28
       objectReference: {fileID: 0}
-    - target: {fileID: 2176786242791582002, guid: dc7450c1e03c9854ca86db3c72446622,
+    - target: {fileID: 9042302626800339984, guid: dc7450c1e03c9854ca86db3c72446622,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9042302626800339984, guid: dc7450c1e03c9854ca86db3c72446622,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9042302626595645275, guid: dc7450c1e03c9854ca86db3c72446622,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 36206633
+      objectReference: {fileID: 0}
+    - target: {fileID: 9042302626595645275, guid: dc7450c1e03c9854ca86db3c72446622,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2475207946422626675, guid: dc7450c1e03c9854ca86db3c72446622,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5278461372971043100, guid: dc7450c1e03c9854ca86db3c72446622,
         type: 3}

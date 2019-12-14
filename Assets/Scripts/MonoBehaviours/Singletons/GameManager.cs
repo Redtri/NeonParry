@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
     public GameTransition onRoundStart;
     public GameTransition onMatchEnd;
     public ScoreEvent onScore;
+    
 
     private int currentNbPlayers = 0;
 
@@ -84,6 +85,9 @@ public class GameManager : MonoBehaviour
                 Application.Quit();
                 break;
             case 1:
+                AkSoundEngine.PostEvent("Music_Stop", gameObject);
+                GameInfos.playerInfos[0].controller.Unsubscribe();
+                GameInfos.playerInfos[1].controller.Unsubscribe();
                 SceneManager.LoadSceneAsync(0);
                 break;
         }
@@ -190,7 +194,7 @@ public class GameManager : MonoBehaviour
         StopPlayers(true);
         onRoundEnd?.Invoke(true);
         yield return new WaitForSeconds(stopDuration);
-        StopPlayers(false);
+        onScore?.Invoke();
         StartCoroutine(RoundReset());
         yield return null;
     }
@@ -213,12 +217,14 @@ public class GameManager : MonoBehaviour
             GameInfos.playerInfos[1].controller.onNeutral(); //stop at Neutral for player 2
         }
         while (temp < duration) {
+            StopPlayers(true);
             onCountdown?.Invoke(temp, (int)duration - 1);
             PostProcessManager.instance.Glitch(temp, .1f, true, true);
             yield return new WaitForSeconds(1f);
             ++temp;
         }
         StopPlayers(false);
+        PostProcessManager.instance.Glitch(3, .2f, true, true);
         yield return null;
     }
 

@@ -28,6 +28,7 @@ public class SpriteController : MonoBehaviour
 
     private IEnumerator SwapSkinCall(eDIRECTION direction, float delay) {
         yield return new WaitForSeconds(delay);
+        GetComponent<AudioHandler>().SFX_Event(1);
         onSwap?.Invoke(direction);
         GameInfos.playerInfos[controller.playerIndex].skin = (int)direction - 1;
         sprSwaper.PickSkin((int)direction-1);

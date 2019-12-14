@@ -80,6 +80,13 @@ public class PostProcessManager : MonoBehaviour {
                     lensDist.scale.value = Mathf.Lerp(0.5f, 1, (count / duration));
                     bloom.intensity.value = Mathf.Lerp(1, 0.067f, (count / duration));
                     break;
+                case 3:
+                    lensDist.intensity.value = -(1 - (count / duration));
+                    lensDist.xMultiplier.value = -(1 - (count / duration));
+                    lensDist.yMultiplier.value = (1 - (count / duration));
+                    lensDist.scale.value = Mathf.Lerp(0.5f, 1, (count / duration));
+                    bloom.intensity.value = Mathf.Lerp(1, 0.067f, (count / duration));
+                    break;
             }
             count += 0.01f;
         }

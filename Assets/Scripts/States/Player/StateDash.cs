@@ -24,7 +24,7 @@ public class StateDash : PlayerState
             AkSoundEngine.GetState("inGame", out state);
 
             //Debug.Log("InGame Wwise state : " + state);
-            if(state == 2) {
+            if(state != 168610243) {
                 actionInfos.currentSamples.actionSounds[0].Post(owner.gameObject);
             } else {
                 actionInfos.currentSamples.actionSounds[0].Post(owner.gameObject);

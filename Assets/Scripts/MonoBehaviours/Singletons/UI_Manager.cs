@@ -49,7 +49,7 @@ public class UI_Manager : MonoBehaviour
     private void Awake()
     {
         InitFury();
-        Fade(false);
+        StartCoroutine(BlackScreen(2f));
         /*FULLHP = Resources.Load<Sprite>("Assets/Images/UI/UI_3pv.png");      //FULL
         LESSHP = Resources.Load<Sprite>("Assets/Images/UI/UI_2pv.png");    //-1
         LESSERHP = Resources.Load<Sprite>("Assets/Images/UI/UI_1pv.png");  //-2
@@ -91,6 +91,12 @@ public class UI_Manager : MonoBehaviour
         StartCoroutine(Fading(fadeOut, overrideDuration));
     }
 
+    private IEnumerator BlackScreen(float duration) {
+        fadeImage.color = new Color(0, 0, 0, 1f);
+        yield return new WaitForSeconds(duration);
+        Fade(false, .5f);
+    }
+
     private IEnumerator Fading(bool fadeOut = true, float overrideDuration = 0f)
     {
         float refreshTime = Time.time;
@@ -123,38 +129,37 @@ public class UI_Manager : MonoBehaviour
             barRight.fillAmount = currentValueRight / maxValue;
             barLeftSmooth.fillAmount += (barLeft.fillAmount - barLeftSmooth.fillAmount) / 50;
             barRightSmooth.fillAmount += (barRight.fillAmount - barRightSmooth.fillAmount) / 50;
+            if(GameManager.instance.score != null && GameManager.instance.score.Count > 0) {
+                switch (GameManager.instance.score[0][0]) {
+                    case 0:
+                        scoreLeft1.sprite = spriteOff;
+                        scroreLeft2.sprite = spriteOff;
+                        break;
+                    case 1:
+                        scoreLeft1.sprite = spriteOn;
+                        scroreLeft2.sprite = spriteOff;
+                        break;
+                    case 2:
+                        scoreLeft1.sprite = spriteOn;
+                        scroreLeft2.sprite = spriteOn;
+                        break;
 
-            switch (GameManager.instance.score[0][0])
-            {
-                case 0:
-                    scoreLeft1.sprite = spriteOff;
-                    scroreLeft2.sprite = spriteOff;
-                    break;
-                case 1:
-                    scoreLeft1.sprite = spriteOn;
-                    scroreLeft2.sprite = spriteOff;
-                    break;
-                case 2:
-                    scoreLeft1.sprite = spriteOn;
-                    scroreLeft2.sprite = spriteOn;
-                    break;
+                }
+                switch (GameManager.instance.score[0][1]) {
+                    case 0:
+                        scoreRight1.sprite = spriteOff;
+                        scoreRight2.sprite = spriteOff;
+                        break;
+                    case 1:
+                        scoreRight1.sprite = spriteOn;
+                        scoreRight2.sprite = spriteOff;
+                        break;
+                    case 2:
+                        scoreRight1.sprite = spriteOn;
+                        scoreRight2.sprite = spriteOn;
+                        break;
 
-            }
-            switch (GameManager.instance.score[0][1])
-            {
-                case 0:
-                    scoreRight1.sprite = spriteOff;
-                    scoreRight2.sprite = spriteOff;
-                    break;
-                case 1:
-                    scoreRight1.sprite = spriteOn;
-                    scoreRight2.sprite = spriteOff;
-                    break;
-                case 2:
-                    scoreRight1.sprite = spriteOn;
-                    scoreRight2.sprite = spriteOn;
-                    break;
-
+                }
             }
         }
     }
