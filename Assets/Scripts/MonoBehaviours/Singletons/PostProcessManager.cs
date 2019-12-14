@@ -83,7 +83,6 @@ public class PostProcessManager : MonoBehaviour {
             }
             count += 0.01f;
         }
-        Debug.Log(lensDist.intensity.value + " " + lensDist.xMultiplier.value + " " + lensDist.scale.value);
         //bloom.intensity.value = 0.067f;
         lensDist.active = false;
         chanMix.active = false;

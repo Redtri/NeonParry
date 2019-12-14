@@ -155,15 +155,21 @@ public class UI_Manager : MonoBehaviour
             }
         }
     }
-    private void RefreshScore()
+
+    private void RefreshScore(int playerIndex)
     {
+        switch (playerIndex) {
+            case 0:
+                StartCoroutine(ShakeBar(FuryJarRight.transform, .5f));
+                break;
+            case 1:
+                StartCoroutine(ShakeBar(FuryJarLeft.transform, .5f));
+                break;
+        }
         if (GameInfos.playerInfos.Count > 1)
         {
-
             scoreLeft.text = GameManager.instance.score[0][0].ToString() + " " + GameManager.instance.score[GameManager.instance.currentRound][0].ToString();
             scoreRight.text = GameManager.instance.score[0][1].ToString() + " " + GameManager.instance.score[GameManager.instance.currentRound][1].ToString();
-
-               
 
             switch (GameManager.instance.score[GameManager.instance.currentRound][1])
                 {
@@ -230,5 +236,20 @@ public class UI_Manager : MonoBehaviour
         barRight.fillAmount = 0f;
         barLeftSmooth.fillAmount = 0f;
         barRightSmooth.fillAmount = 0f;
+    }
+
+    private IEnumerator ShakeBar(Transform bar, float duration, float range = 8f, float pace = 0.01f) {
+        Vector2 initialPosition = bar.position;
+
+        float playback = 0.0f;
+
+        while(playback < duration) {
+            yield return new WaitForSecondsRealtime(pace);
+            playback += pace;
+            Vector2 v = Random.insideUnitCircle;
+            bar.position = initialPosition + v * range;
+        }
+        bar.position = initialPosition;
+        yield return null;
     }
 }

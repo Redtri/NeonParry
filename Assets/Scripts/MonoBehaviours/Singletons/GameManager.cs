@@ -10,7 +10,7 @@ using UnityEngine.Experimental.Rendering.HDPipeline;
 public enum eGAME_PHASE { TITLE, MENU, GAME, SCORE}
 
 public delegate void Counter(int count, int max);
-public delegate void tEvent();
+public delegate void ScoreEvent(int playerIndex = 0);
 
 public class GameManager : MonoBehaviour
 {
@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     public GameTransition onRoundEnd;
     public GameTransition onRoundStart;
     public GameTransition onMatchEnd;
-    public tEvent onScore;
+    public ScoreEvent onScore;
 
     private int currentNbPlayers = 0;
 
@@ -126,7 +126,7 @@ public class GameManager : MonoBehaviour
     public int StrikeSuccessful(int playerIndex) { // strike succesfull return 0, at the end of a round return 1, at the end of the match return 2
         CameraShake(16f, 16f, 1.5f);
         ++score[currentRound][playerIndex];
-        onScore?.Invoke();
+        onScore?.Invoke(playerIndex);
         onStrike?.Invoke(score[currentRound]);
         PostProcessManager.instance.Glitch(1, .5f, true);
         StartCoroutine(FreezeFrame(0, freezeFrameDuration));
